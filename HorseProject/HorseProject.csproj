@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Cavalo.cs" />
     <Compile Include="Corrida.cs" />
+    <Compile Include="Graficos.cs" />
     <Compile Include="Pista.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

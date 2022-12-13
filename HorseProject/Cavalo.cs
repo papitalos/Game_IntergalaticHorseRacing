@@ -90,7 +90,7 @@ namespace HorseProject
             this.racas = raca.shire;
             this.idade = 3;
             this.velocidadeMax = 20.1;//m/s
-            this.aceleracao = ;//m/s^2
+            this.aceleracao = 1;//m/s^2
             this.peso = 900;
 
         }
@@ -110,10 +110,7 @@ namespace HorseProject
 
 
 
-        public void calcResistencia()
-        {
-
-        }
+ 
 
 
 
