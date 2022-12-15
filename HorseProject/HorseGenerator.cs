@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,14 +18,16 @@ namespace HorseStats
             var firstNames = new List<string> { "Thunder", "Lightning", "Shadow", "Storm", "Echo" };
             var lastNames = new List<string> { "Runner", "Charger", "Hoof", "Mane", "Tail" };
 
-            for (float i = 0; i < 10; i++)
+            for (int i = 0; i < 10; i++)
             {
                 // Generate random stats for each horse
                 var age = random.Next(1, 8);
                 var stamina = random.Next(700, 1000);
                 var mass = random.Next(500, 1000);
-                float acceleration = random.Next((int) 0.40, (int) 0.5);
+                var acceleration = (random.NextDouble() * (0.5 - 0.4) + 0.4);
+                acceleration = Math.Round(acceleration, 2);
                 var topSpeed = random.Next(13, 16);
+                
 
                 // Choose a random first and last name for the horse
                 var firstName = firstNames[random.Next(firstNames.Count)];
@@ -57,12 +59,12 @@ namespace HorseStats
         public int Age { get; set; }
         public int Stamina { get; set; }
         public int Mass { get; set; }
-        public float Acceleration { get; set; }
+        public double Acceleration { get; set; }
         public int TopSpeed { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
 
-        public Horse(int age, int stamina, int mass, float acceleration, int topSpeed, string firstName, string lastName)
+        public Horse(int age, int stamina, int mass, double acceleration, int topSpeed, string firstName, string lastName)
         {
             Age = age;
             Stamina = stamina;
