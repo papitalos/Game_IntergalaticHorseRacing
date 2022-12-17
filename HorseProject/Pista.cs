@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace HorseProject
 {
-    class Pista
+    public class Pista
     {
         public bool estaAberto;
         public estadoHorario ciclo;
         public estadoPista estadoP;
-        public int myDelay = 2000; //300.000ms = 5min
+        public int myDelay = 2;
 
         //enum dos estados e dos horarios
         public enum estadoHorario
@@ -29,9 +29,9 @@ namespace HorseProject
             nevoeiro,
             limpo
         }
-        public void CicloDiario()
+        public async Task CicloDiario()
         {
-
+            await Aguardar(5);
             //mudar os periodos do dia
             for (estadoHorario ciclo = estadoHorario.manha; ciclo <= estadoHorario.madrugada; ciclo++)
             {
@@ -54,8 +54,6 @@ namespace HorseProject
                     estaAberto = false;
                 }
 
-                Thread.Sleep(myDelay);
-
                 Console.WriteLine(ciclo);
                 Console.WriteLine(estaAberto);
                 Console.WriteLine(estadoP);
@@ -64,7 +62,10 @@ namespace HorseProject
 
         }
 
-
+        public async Task Aguardar(int tempo)
+        {
+            await Task.Delay(TimeSpan.FromSeconds(tempo));
+        }
 
 
     }

@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace HorseProject
 {
-    class Cavalo
+    public class Cavalo
     {
+        public string nome;
         public bool podeParticipar = true;
         public estadoDaDoenca doente;
         public raca racas;
@@ -28,6 +29,9 @@ namespace HorseProject
             arabe,
             purosangueingles
         }
+
+
+
 
         public double CalculoResistencia(raca racaAtual, Pista pistaAtual)
         {
@@ -83,7 +87,7 @@ namespace HorseProject
             return resistencia;
         }
 
-        //Cavalo inicial - opçao 1
+        //Cavalo inicial - Pan
         public Cavalo()
         {
             this.podeParticipar = true;

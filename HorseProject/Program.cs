@@ -10,7 +10,8 @@ namespace HorseProject
     {
         static void Main(string[] args)
         {
-            Graficos.MenuCarregar(2);
+            Pista Terra = new Pista();
+            Terra.CicloDiario();
         }
     }
 }
