@@ -87,7 +87,7 @@ namespace HorseProject
             return resistencia;
         }
 
-        //Cavalo inicial - Pan
+        //Cavalo inicial - Pangaré desnutrido
         public Cavalo()
         {
             this.podeParticipar = true;
@@ -101,8 +101,9 @@ namespace HorseProject
 
 
         //cavalo geral
-        public Cavalo(raca racas, int velocidadeMax, int aceleracao, int peso, int idade)
+        public Cavalo(string nome, raca racas, int velocidadeMax, int aceleracao, int peso, int idade)
         {
+            this.nome = nome;
             this.podeParticipar = podeParticipar;
             this.racas = racas;
             this.idade = idade;

@@ -1,6 +1,9 @@
-﻿using System;
+﻿using HorseProject;
+using Microsoft.SqlServer.Server;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -12,7 +15,8 @@ namespace HorseProject
         public bool estaAberto;
         public estadoHorario ciclo;
         public estadoPista estadoP;
-        public int myDelay = 2;
+        public int myDelay = 2000;
+      
 
         //enum dos estados e dos horarios
         public enum estadoHorario
@@ -29,9 +33,18 @@ namespace HorseProject
             nevoeiro,
             limpo
         }
-        public async Task CicloDiario()
+        public void ThreadTimerDiario()
         {
-            await Aguardar(5);
+            //Criar uma nova thread para rodar o relogio do dia de maneira independente
+            Thread dia = new Thread(CicloDiario);
+            dia.Start();
+            
+            
+
+        }
+
+        public void CicloDiario()
+        {
             //mudar os periodos do dia
             for (estadoHorario ciclo = estadoHorario.manha; ciclo <= estadoHorario.madrugada; ciclo++)
             {
@@ -54,19 +67,18 @@ namespace HorseProject
                     estaAberto = false;
                 }
 
-                Console.WriteLine(ciclo);
-                Console.WriteLine(estaAberto);
-                Console.WriteLine(estadoP);
 
+
+
+                Thread.Sleep(myDelay);
             }
-
-        }
-
-        public async Task Aguardar(int tempo)
-        {
-            await Task.Delay(TimeSpan.FromSeconds(tempo));
+            
         }
 
 
     }
 }
+
+
+
+
