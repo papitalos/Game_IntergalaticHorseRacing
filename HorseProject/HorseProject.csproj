@@ -46,7 +46,7 @@
     <Compile Include="Cavalo.cs" />
     <Compile Include="Corrida.cs" />
     <Compile Include="Graficos.cs" />
-    <Compile Include="Menu.cs" />
+    <Compile Include="BootJogo.cs" />
     <Compile Include="Pista.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

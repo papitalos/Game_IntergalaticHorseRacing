@@ -14,7 +14,7 @@ namespace HorseProject
             Pista Terra = new Pista();
             Terra.ThreadTimerDiario();
 
-            Menu.RodarMenu(cavalo);
+            BootJogo.RodarJogo(cavalo);
 ;
         }
     }
