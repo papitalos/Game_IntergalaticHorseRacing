@@ -11,242 +11,41 @@ namespace HorseProject
 {
     public static class BootJogo
     {
-    
-        public static bool estaRodando,primeiraVez = true,estaNoMenuInicial = true, estaNoMenuLoading=false;
+
+        public static bool estaRodando = false, primeiraVez = true;//jogo nao esta rodando
+        public static menu menuAtual, subMenuAtual;
+        
         public static int qntdSaves = 1;
+        
+        public enum menu
+        {
+            menuInicial = 1,
+            menuLoading,
+            subMenuCorridas,
+            subMenuCeleiro,
+            subMenuLoja,
+            menuEscolhaInicial,
+            menuJogos
+
+        }
         public static void RodarJogo(Cavalo cavalo)
-        {   
+        {
             
             estaRodando = true;//o jogo passa a estar rodando
             Console.Clear();
-            Graficos.MenuPrincipal(); //inicia o menu principal
-
+            Graficos.MenuInicial(); //inicia o menu principal
+            menuAtual = menu.menuInicial;//MENU ATUAL: menu inicial
             
             while (estaRodando) //enquanto o jogo estiver rodando
             {
+
                 switch (Console.ReadKey().Key) //verifica a KEY clicada
                 {
                     case ConsoleKey.Enter://se ENTER entra:
-                        if (primeiraVez)
-                        {
-                        int slotEscolhido = 1; //começa no primeiro cavalo
-                        bool escolhaFinal = false;//usuario ainda nao fez sua escolha final
-                        Console.Clear();
-                        Graficos.MenuEscolhaInicial(slotEscolhido);
-
-                        while (escolhaFinal == false)
-                        {
-                            switch (Console.ReadKey().Key)
-                            {
-                                case ConsoleKey.LeftArrow://se SETA ESQUERDA
-                                    if (slotEscolhido == 1)//se estiver no primeiro slot
-                                    {
-                                        slotEscolhido = 3;//vai pro 3º slot
-                                    }
-                                    else if (slotEscolhido == 2 || slotEscolhido == 3)//se estiver no 2 ou 3 slot
-                                    {
-                                        slotEscolhido--;//diminui menus um slot
-                                    }
-                                    Console.Clear();
-                                    Graficos.MenuEscolhaInicial(slotEscolhido);
-                                    break;
-                                case ConsoleKey.RightArrow://se SETA DIREITA
-
-                                    if (slotEscolhido == 3)//se estiver no terceiro slot
-                                    {
-                                        slotEscolhido = 1;//vai pro 1º slot
-                                    }
-                                    else if (slotEscolhido == 1 || slotEscolhido == 2)//se estiver no 1 ou 2 slot
-                                    {
-                                        slotEscolhido++;//adiciona mais um slot
-                                    }
-
-                                    Console.Clear();
-                                    Graficos.MenuEscolhaInicial(slotEscolhido);
-                                    break;
-                                case ConsoleKey.Enter://se ENTER
-                                    escolhaFinal = true;//usuario escolheu
-                                    break;
-                                default:
-                                    Console.Clear();
-                                    Graficos.MenuEscolhaInicial(slotEscolhido);//se ERROR, volta pro slot escolhido anterior
-                                    break;
-
-                            }//verifica a KEY cliquada
-
-                        }//enquanto usuario nao fez escolha final
-                        
-                        //depois do usuario ter feito a escolha final:
-                        Console.Clear();//limpa
-                        Graficos.MenuJogar_Corridas(0, 1, cavalo);//imprime menu corridas inicial (DEFAULT)
-                            primeiraVez = false;//primeira vez passa a ser falso
-                            estaNoMenuInicial = false;//não esta no menu inicial
-
-                        }//se primeira vez na opção ENTER entra no menu de escolha de cavalo inicial
-                        else
-                        {
-                            Console.Clear();
-                            Graficos.MenuJogar_Corridas(0, 1, cavalo);//imprime o menu inicial de corridas na tela (DEFAULT)
-                            estaNoMenuInicial = false;//nao esta mais no menu inicial
-
-                            while(estaNoMenuInicial = false)
-                            {
-                                switch(Console.ReadKey().Key)
-                                {
-                                    case ConsoleKey.Enter://se ENTER
-                                        break;
-                                    case ConsoleKey.I://se I
-                                        break;
-                                    case ConsoleKey.L://se L
-                                        break;
-
-                                }//verifique a KEY clicada
-                            }//enquanto nao estiver no menu incial
-                        }//senao entra no menu de corridas
-                        break;
+                        menuJogar(cavalo);//ativa o menu jogar
+                        break;   
                     case ConsoleKey.Tab://se TAB:
-                        if (estaNoMenuInicial)
-                        {
-
-                            estaNoMenuLoading = true; //passa a estar no menu de Loading
-                           
-                            while (estaNoMenuLoading)
-                            { 
-                                Console.Clear();
-                                Graficos.MenuCarregar(qntdSaves);//CARREGA COM A QNTD SAVE ANTERIOR
-
-                                switch (Console.ReadKey().Key)
-                                {
-                                    case ConsoleKey.A://se A
-                                        if(qntdSaves < 4)//so adiciona se tiver menos que 4 saves
-                                        {
-                                            
-                                            qntdSaves++;//adiciona mais um save
-                                            Console.Clear();
-                                            Graficos.MenuCarregar(qntdSaves);//imprime
-                                        }//se quantidade de saves for menor que 4
-                                        break;
-                                    case ConsoleKey.D://se D
-                                        if(qntdSaves > 1)//so apaga se tiver mais q 1 save
-                                        {
-                                            //LIMPA O D imprimido na tela ***
-                                            Console.Clear();
-                                            Graficos.MenuCarregar(qntdSaves);
-                                            //LIMPA O D imprimido na tela ***
-
-
-                                            Console.WriteLine("Qual slot deseja apagar? [NUM + ENTER]");//pergunta qual slot deve apagar
-                                            int slot = Console.Read();//cria uma variavel do slot a apagar (equivalente a linha a apagar no arquivo de saves)    
-                                            
-                                            qntdSaves--;//diminui a quantidade de saves
-                                            switch (slot)
-                                            {
-                                                case 1://apaga a linha 1 do arquivo
-                                                    Console.Clear();
-                                                    Graficos.MenuCarregar(qntdSaves);
-                                                    break;
-                                                case 2://apaga a linha 2 do arquivo
-                                                    Console.Clear();
-                                                    Graficos.MenuCarregar(qntdSaves);
-                                                    break;
-                                                case 3://apaga a linha 3 do arquivo
-                                                    Console.Clear();
-                                                    Graficos.MenuCarregar(qntdSaves);
-                                                    break;
-                                                case 4://apaga a linha 4 do arquivo
-                                                    Console.Clear();
-                                                    Graficos.MenuCarregar(qntdSaves);
-                                                    break;
-                                                default:
-                                                    Console.WriteLine("Não é um SLOT existente");
-                                                    break;
-                                            }//verifica de acordo com o SLOT escolhido
-                                            
-                                        }//se quantidade de saves maior que 1
-                                        break;
-
-
-
-                                    case ConsoleKey.Enter://permite entrar no menu jogar a partir do meno de loading
-                                        if (primeiraVez)
-                                        {
-                                            int escolhaCI = 1;
-                                            bool escolhaFinal = false;
-                                            Console.Clear();
-                                            Graficos.MenuEscolhaInicial(escolhaCI);
-
-                                            while (escolhaFinal == false)
-                                            {
-                                                switch (Console.ReadKey().Key)
-                                                {
-                                                    case ConsoleKey.LeftArrow:
-                                                        if (escolhaCI == 1)
-                                                        {
-                                                            escolhaCI = 3;
-                                                        }
-                                                        else if (escolhaCI == 2 || escolhaCI == 3)
-                                                        {
-                                                            escolhaCI--;
-                                                        }
-                                                        Console.Clear();
-                                                        Graficos.MenuEscolhaInicial(escolhaCI);
-                                                        break;
-                                                    case ConsoleKey.RightArrow:
-
-                                                        if (escolhaCI == 3)
-                                                        {
-                                                            escolhaCI = 1;
-                                                        }
-                                                        else if (escolhaCI == 1 || escolhaCI == 2)
-                                                        {
-                                                            escolhaCI++;
-                                                        }
-
-                                                        Console.Clear();
-                                                        Graficos.MenuEscolhaInicial(escolhaCI);
-                                                        break;
-                                                    case ConsoleKey.Enter:
-                                                        escolhaFinal = true;
-                                                        break;
-                                                    default:
-                                                        Console.Clear();
-                                                        Graficos.MenuEscolhaInicial(escolhaCI);
-                                                        break;
-
-                                                }
-
-                                            }
-                                            Console.Clear();
-                                            Graficos.MenuJogar_Corridas(0, 1, cavalo);
-                                            primeiraVez = false;
-                                            estaNoMenuInicial = false;
-                                            estaNoMenuLoading = false;
-                                        }
-                                        else
-                                        {
-                                            Console.Clear();
-                                            Graficos.MenuJogar_Corridas(0, 1, cavalo);
-                                            estaNoMenuInicial = false;
-                                            estaNoMenuLoading = false;
-                                        }
-                                        break;
-                                    case ConsoleKey.Escape://permite sair caso esteja no menu de loading
-                                        Environment.Exit(0);
-                                        break;
-                                }//verifica a KEY clicada
-                            } //enquanto estiver no Menu de Loading //**** BUG na HORA DE APAGAR ****
-
-
-
-
-                        }//entra no menu de LOADING se estiver no Menu Inicial
-                        else
-                        {   
-                            Console.Clear();
-                            Graficos.MenuPrincipal();
-                            estaNoMenuInicial=true;//passa a estar no menu inicial
-                        }//senao volta para o menu inicial
-
+                        menuLoading(cavalo);//ativa o menu de loading
                         break;
                     case ConsoleKey.Escape://se ESC sai do jogo
                         Environment.Exit(0);
@@ -260,6 +59,325 @@ namespace HorseProject
             }
            
         
+        }
+        public static void menuJogar(Cavalo cavalo)
+        {
+            if (primeiraVez)
+            {
+                primeiraVez = false;//deixa de ser a primeira vez
+                menuAtual = menu.menuEscolhaInicial;//MENU ATUAL: ESCOLHA INICIAL
+
+                int slotEscolhido = 1; //começa no primeiro cavalo
+                bool escolhaFinal = false;//usuario ainda nao fez sua escolha final
+                Console.Clear();
+                Graficos.MenuEscolhaInicial(slotEscolhido);
+
+                while (escolhaFinal == false)
+                {
+                    switch (Console.ReadKey().Key)
+                    {
+                        case ConsoleKey.LeftArrow://se SETA ESQUERDA
+                            if (slotEscolhido == 1)//se estiver no primeiro slot
+                            {
+                                slotEscolhido = 3;//vai pro 3º slot
+                            }
+                            else if (slotEscolhido == 2 || slotEscolhido == 3)//se estiver no 2 ou 3 slot
+                            {
+                                slotEscolhido--;//diminui menus um slot
+                            }
+                            Console.Clear();
+                            Graficos.MenuEscolhaInicial(slotEscolhido);
+                            break;
+                        case ConsoleKey.RightArrow://se SETA DIREITA
+
+                            if (slotEscolhido == 3)//se estiver no terceiro slot
+                            {
+                                slotEscolhido = 1;//vai pro 1º slot
+                            }
+                            else if (slotEscolhido == 1 || slotEscolhido == 2)//se estiver no 1 ou 2 slot
+                            {
+                                slotEscolhido++;//adiciona mais um slot
+                            }
+
+                            Console.Clear();
+                            Graficos.MenuEscolhaInicial(slotEscolhido);
+                            break;
+                        case ConsoleKey.Enter://se ENTER
+                            escolhaFinal = true;//usuario escolheu
+                            break;
+                        default:
+                            Console.Clear();
+                            Graficos.MenuEscolhaInicial(slotEscolhido);//se ERROR, volta pro slot escolhido anterior
+                            break;
+
+                    }//verifica a KEY cliquada
+
+                }//enquanto usuario nao fez escolha final
+
+                //depois do usuario ter feito a escolha final:
+                Console.Clear();//limpa
+                
+
+            }//se primeira vez na opção ENTER entra no menu de escolha de cavalo inicial
+                subMenuCeleiro(cavalo);
+                menuAtual = menu.menuJogos;//MENU ATUAL: Menu Jogos 
+                subMenuAtual = menu.subMenuCeleiro;//submenu: corridas (default)
+
+                while (menuAtual == menu.menuJogos)
+                {
+                    switch (Console.ReadKey().Key)
+                    {
+                        case ConsoleKey.Enter://se ENTER
+                            subMenuCorrida(1, cavalo);
+                            break;
+                        case ConsoleKey.I://se I
+                            subMenuCeleiro(cavalo);
+                            break; 
+                        case ConsoleKey.L://se L
+                            subMenuLoja(cavalo);
+                            break;
+
+
+
+                        //COMANDOS PADRÃO ****
+                        case ConsoleKey.Tab://se TAB
+                            Console.Clear();
+                            Graficos.MenuInicial();//volta ao menu inicial
+                            menuAtual = menu.menuInicial;//passa a estar no menu inicial
+                            break;
+                        case ConsoleKey.Escape://se ESC
+                            Environment.Exit(0);//sai do programa
+                            break;
+                        //COMANDOS PADRÃO ****
+
+                        default :
+                            Console.Clear();
+                            switch (menuAtual)
+                            {
+                                case menu.subMenuCorridas:
+                                    Graficos.SubMenuCorrida(0, 1, cavalo);
+                                    break;
+                                case menu.subMenuCeleiro:  
+                                    
+                                    Graficos.SubMenuCeleiro();
+                                    break;
+                                case menu.subMenuLoja:
+                                    
+                                    break;
+                            }
+                            
+                            break;
+
+                    }//verifique a KEY clicada
+                }//enquanto nao estiver no menu incial, ou seja, estiver no menu de jogar
+
+            
+        }
+        public static void menuLoading(Cavalo cavalo)
+        {
+            if (menuAtual == menu.menuInicial)
+            {
+
+                menuAtual = menu.menuLoading; //passa a estar no menu de Loading
+                Console.Clear();
+                Graficos.MenuLoading(qntdSaves);//CARREGA COM A QNTD SAVE ANTERIOR
+
+                while (menuAtual == menu.menuLoading)
+                {
+                    switch (Console.ReadKey().Key)
+                    {
+                        case ConsoleKey.A://se A
+                            if (qntdSaves < 4)//so adiciona se tiver menos que 4 saves
+                            {
+
+                                qntdSaves++;//adiciona mais um save
+                                Console.Clear();
+                                Graficos.MenuLoading(qntdSaves);//imprime
+                            }//se quantidade de saves for menor que 4
+                            break;
+                        case ConsoleKey.D://se D
+                            if (qntdSaves > 1)//so apaga se tiver mais q 1 save
+                            {
+                                //LIMPA O D imprimido na tela ***
+                                Console.Clear();
+                                Graficos.MenuLoading(qntdSaves);
+                                //LIMPA O D imprimido na tela ***
+
+
+                                Console.WriteLine("Qual slot deseja apagar? [NUM + ENTER] [0 - cancelar]");//pergunta qual slot deve apagar
+                                string slot = Console.ReadLine();//cria uma variavel do slot a apagar (equivalente a linha a apagar no arquivo de saves)    
+
+                                if (slot == "1" || slot == "2" || slot == "3" || slot == "4")//se for 1, 2,3 ou 4
+                                {
+                                    qntdSaves--;//diminui a quantidade de saves
+                                    Console.Clear();
+                                    Graficos.MenuLoading(qntdSaves);//imprime
+                                }
+                                else if (slot == "0")
+                                {//se for 0
+                                    Console.Clear();
+                                    Graficos.MenuLoading(qntdSaves);//imprime sem alterar o valor
+
+                                }
+                                else//se for qualquer outra tecla
+                                {
+                                    Console.Clear();
+                                    Graficos.MenuLoading(qntdSaves);
+                                    Console.WriteLine("Não existe esse SLOT!");//avisa que nao existe esse SLOT
+                                    Thread.Sleep(1000);//espera 1 segundo
+                                    Console.Clear();
+                                    Graficos.MenuLoading(qntdSaves);//apaga o aviso
+                                }
+
+
+
+                            }//se quantidade de saves maior que 1
+                            break;
+                        default://se for qualquer outra KEY
+                            Console.Clear();
+                            Graficos.MenuLoading(qntdSaves);//limpa e imprime o que estava antes
+                            break;
+                        case ConsoleKey.Enter:
+                            menuJogar(cavalo);
+                            break;
+                        case ConsoleKey.Escape:
+                            Environment.Exit(0);
+                            break;
+                    }//verifica a KEY clicada
+                } //enquanto estiver no Menu de Loading 
+
+            }//entra no menu de LOADING se estiver no Menu Inicial
+        }
+        public static void subMenuCorrida(int posicaoVitoria, Cavalo cavalo)
+        {
+            Console.Clear();
+            Graficos.SubMenuCorrida(0, posicaoVitoria, cavalo);
+            subMenuAtual = menu.subMenuCorridas;
+            int tipoCorrida = 0;
+            while (subMenuAtual == menu.subMenuCorridas)
+            {
+                switch (Console.ReadKey().Key)
+                {
+                    case ConsoleKey.D1:
+                        tipoCorrida = 1;
+
+                        break;
+                    case ConsoleKey.D2:
+                        tipoCorrida = 2;
+                        break;
+                    case ConsoleKey.D3:
+                        tipoCorrida = 3;
+                        break;
+
+
+                    //COMANDOS PADRÃO ****
+                    case ConsoleKey.Tab://se TAB
+                        Console.Clear();
+                        Graficos.MenuInicial();//volta ao menu inicial
+                        menuAtual = menu.menuInicial;//passa a estar no menu inicial
+                        subMenuAtual = menu.menuInicial;
+                        break;
+                    case ConsoleKey.Escape://se ESC
+                        Environment.Exit(0);//sai do programa
+                        break;
+                    //COMANDOS PADRÃO ****
+
+                    case ConsoleKey.I:
+                        subMenuCeleiro(cavalo);
+                        break;
+                    case ConsoleKey.L:
+                        subMenuLoja(cavalo);
+                        break;
+
+
+
+
+                    default:
+                        tipoCorrida = 0;
+                        Console.Clear();
+                        Graficos.SubMenuCorrida(tipoCorrida,posicaoVitoria, cavalo);
+                        break;
+                }
+            }
+        }
+        public static void subMenuCeleiro(Cavalo cavalo)
+        {
+            Console.Clear();
+            Graficos.SubMenuCeleiro();
+            subMenuAtual = menu.subMenuCeleiro;
+            while (subMenuAtual == menu.subMenuCeleiro)
+            {
+                switch (Console.ReadKey().Key)
+                {
+
+
+
+
+                    //COMANDOS PADRÃO ****
+                    case ConsoleKey.Tab://se TAB
+                        Console.Clear();
+                        Graficos.MenuInicial();//volta ao menu inicial
+                        menuAtual = menu.menuInicial;//passa a estar no menu inicial
+                        subMenuAtual = menu.menuInicial;
+                        break;
+                    case ConsoleKey.Escape://se ESC
+                        Environment.Exit(0);//sai do programa
+                        break;
+                    //COMANDOS PADRÃO ****
+
+                    case ConsoleKey.Enter:
+                        subMenuCorrida(0,cavalo);
+                        break;
+                    case ConsoleKey.L:
+                        subMenuLoja(cavalo);
+                        break;
+
+                    default :
+                        Console.Clear();
+                        Graficos.SubMenuCeleiro();
+                        break;
+
+                }
+
+
+
+
+            }
+            
+        }
+        public static void subMenuLoja(Cavalo cavalo) {
+            subMenuAtual = menu.subMenuLoja;
+            while (subMenuAtual == menu.subMenuLoja)
+            {
+                switch (Console.ReadKey().Key)
+                {
+
+
+                    //COMANDOS PADRÃO ****
+                    case ConsoleKey.Tab://se TAB
+                        Console.Clear();
+                        Graficos.MenuInicial();//volta ao menu inicial
+                        menuAtual = menu.menuInicial;//passa a estar no menu inicial
+                        subMenuAtual = menu.menuInicial;
+                        break;
+                    case ConsoleKey.Escape://se ESC
+                        Environment.Exit(0);//sai do programa
+                        break;
+                    //COMANDOS PADRÃO ****
+
+                    case ConsoleKey.Enter:
+                        subMenuCorrida(0, cavalo);
+                        break;
+                    case ConsoleKey.I:
+                        subMenuCeleiro(cavalo);
+                        break;
+
+                    default:
+                        Console.Clear();
+                        
+                        break;
+                }
+            }
         }
     }
 }

@@ -12,7 +12,7 @@ namespace HorseProject
         static public string[] data = new string[4] { "00/00/00", "00/00/00", "00/00/00", "00/00/00"}, hora = new string[4] { "00:00", "00:00", "00:00", "00:00"};
         
         
-        static public void MenuPrincipal()
+        static public void MenuInicial()
         {
            
             Console.WriteLine("┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
@@ -39,7 +39,7 @@ namespace HorseProject
                               "│                         │                                                   │\r\n" +
                               "└─────────────────────────┴───────────────────────────────────────────────────┘");
         }
-        static public void MenuCarregar(int qntdSaves)
+        static public void MenuLoading(int qntdSaves)
         {
 
             switch (qntdSaves)
@@ -174,11 +174,11 @@ namespace HorseProject
                                       "│  |   peso: 150kg      |    |   peso: 150kg      |    |   peso: 150kg      |  │\r\n" +
                                       "│  |                    |    |                    |    |                    |  │\r\n" +
                                       "│  |   Resistencia      |    |   Resistencia      |    |   Resistencia      |  │\r\n" +
-                                      "│  |   ■□□□□□□□□□□□□□   |    |   ■■■■□□□□□□□□□□   |    |   ■■■□□□□□□□□□□□   |  │\r\n" +
+                                      "│  |   ■¤¤¤¤¤¤¤¤¤¤¤¤¤   |    |   ■■■■¤¤¤¤¤¤¤¤¤¤   |    |   ■■■¤¤¤¤¤¤¤¤¤¤¤   |  │\r\n" +
                                       "│  |   Aceleração       |    |   Aceleração       |    |   Aceleração       |  │\r\n" +
-                                      "│  |   ■■■□□□□□□□□□□□   |    |   ■■■□□□□□□□□□□□   |    |   ■□□□□□□□□□□□□□   |  │\r\n" +
+                                      "│  |   ■■■¤¤¤¤¤¤¤¤¤¤¤   |    |   ■■■¤¤¤¤¤¤¤¤¤¤¤   |    |   ■¤¤¤¤¤¤¤¤¤¤¤¤¤   |  │\r\n" +
                                       "│  |   Velocidade       |    |   Velocidade       |    |   Velocidade       |  │\r\n" +
-                                      "│  |   ■■■■□□□□□□□□□□   |    |   ■□□□□□□□□□□□□□   |    |   ■■■■□□□□□□□□□□   |  │\r\n" +
+                                      "│  |   ■■■■¤¤¤¤¤¤¤¤¤¤   |    |   ■¤¤¤¤¤¤¤¤¤¤¤¤¤   |    |   ■■■■¤¤¤¤¤¤¤¤¤¤   |  │\r\n" +
                                       "│  |                    |    |                    |    |                    |  │\r\n" +
                                       "│  └────────────────────┘    └────────────────────┘    └────────────────────┘  │\r\n" +
                                       "│            ▲                                                                 │\r\n" +
@@ -200,11 +200,11 @@ namespace HorseProject
                                       "│  |   peso: 150kg      |    |   peso: 150kg      |    |   peso: 150kg      |  │\r\n" +
                                       "│  |                    |    |                    |    |                    |  │\r\n" +
                                       "│  |   Resistencia      |    |   Resistencia      |    |   Resistencia      |  │\r\n" +
-                                      "│  |   ■□□□□□□□□□□□□□   |    |   ■■■■□□□□□□□□□□   |    |   ■■■□□□□□□□□□□□   |  │\r\n" +
+                                      "│  |   ■¤¤¤¤¤¤¤¤¤¤¤¤¤   |    |   ■■■■¤¤¤¤¤¤¤¤¤¤   |    |   ■■■¤¤¤¤¤¤¤¤¤¤¤   |  │\r\n" +
                                       "│  |   Aceleração       |    |   Aceleração       |    |   Aceleração       |  │\r\n" +
-                                      "│  |   ■■■□□□□□□□□□□□   |    |   ■■■□□□□□□□□□□□   |    |   ■□□□□□□□□□□□□□   |  │\r\n" +
+                                      "│  |   ■■■¤¤¤¤¤¤¤¤¤¤¤   |    |   ■■■¤¤¤¤¤¤¤¤¤¤¤   |    |   ■¤¤¤¤¤¤¤¤¤¤¤¤¤   |  │\r\n" +
                                       "│  |   Velocidade       |    |   Velocidade       |    |   Velocidade       |  │\r\n" +
-                                      "│  |   ■■■■□□□□□□□□□□   |    |   ■□□□□□□□□□□□□□   |    |   ■■■■□□□□□□□□□□   |  │\r\n" +
+                                      "│  |   ■■■■¤¤¤¤¤¤¤¤¤¤   |    |   ■¤¤¤¤¤¤¤¤¤¤¤¤¤   |    |   ■■■■¤¤¤¤¤¤¤¤¤¤   |  │\r\n" +
                                       "│  |                    |    |                    |    |                    |  │\r\n" +
                                       "│  └────────────────────┘    └────────────────────┘    └────────────────────┘  │\r\n" +
                                       "│                                       ▲                                      │\r\n" +
@@ -216,7 +216,7 @@ namespace HorseProject
                                       "│──────────────────────────────────────────────────────────────────────────────│\r\n" +
                                       "│            *Seu cavalo inicial é um Noob Imortal, literalmente*              │\r\n" +
                                       "│                                                                              │\r\n" +
-                                      "│                                                                 ▼            │\r\n" +
+                                      "│                                                                ▼             │\r\n" +
                                       "│  ┌────────────────────┐    ┌────────────────────┐    ┌────────────────────┐  │\r\n" +
                                       "│  | Pangaré Desnutrido |    |  Montaria Peluda   |    |    Corsel Burro    |  │\r\n" +
                                       "│  |────────────────────|    |────────────────────|    |────────────────────|  │\r\n" +
@@ -226,14 +226,14 @@ namespace HorseProject
                                       "│  |   peso: 150kg      |    |   peso: 150kg      |    |   peso: 150kg      |  │\r\n" +
                                       "│  |                    |    |                    |    |                    |  │\r\n" +
                                       "│  |   Resistencia      |    |   Resistencia      |    |   Resistencia      |  │\r\n" +
-                                      "│  |   ■□□□□□□□□□□□□□   |    |   ■■■■□□□□□□□□□□   |    |   ■■■□□□□□□□□□□□   |  │\r\n" +
+                                      "│  |   ■¤¤¤¤¤¤¤¤¤¤¤¤¤   |    |   ■■■■¤¤¤¤¤¤¤¤¤¤   |    |   ■■■¤¤¤¤¤¤¤¤¤¤¤   |  │\r\n" +
                                       "│  |   Aceleração       |    |   Aceleração       |    |   Aceleração       |  │\r\n" +
-                                      "│  |   ■■■□□□□□□□□□□□   |    |   ■■■□□□□□□□□□□□   |    |   ■□□□□□□□□□□□□□   |  │\r\n" +
+                                      "│  |   ■■■¤¤¤¤¤¤¤¤¤¤¤   |    |   ■■■¤¤¤¤¤¤¤¤¤¤¤   |    |   ■¤¤¤¤¤¤¤¤¤¤¤¤¤   |  │\r\n" +
                                       "│  |   Velocidade       |    |   Velocidade       |    |   Velocidade       |  │\r\n" +
-                                      "│  |   ■■■■□□□□□□□□□□   |    |   ■□□□□□□□□□□□□□   |    |   ■■■■□□□□□□□□□□   |  │\r\n" +
+                                      "│  |   ■■■■¤¤¤¤¤¤¤¤¤¤   |    |   ■¤¤¤¤¤¤¤¤¤¤¤¤¤   |    |   ■■■■¤¤¤¤¤¤¤¤¤¤   |  │\r\n" +
                                       "│  |                    |    |                    |    |                    |  │\r\n" +
                                       "│  └────────────────────┘    └────────────────────┘    └────────────────────┘  │\r\n" +
-                                      "│                                                                 ▲            │\r\n" +
+                                      "│                                                                ▲             │\r\n" +
                                       "└──────────────────────────────────────────────────────────────────────────────┘");
                     break;
                 default:
@@ -242,7 +242,7 @@ namespace HorseProject
             }
             
         }
-        static public void MenuJogar_Corridas(int escolha, int posicaoVitoria, Cavalo cavalo)
+        static public void SubMenuCorrida(int escolha, int posicaoVitoria, Cavalo cavalo)
         {
             
             switch (escolha)
@@ -251,9 +251,9 @@ namespace HorseProject
                     if(posicaoVitoria == 1)
                     {
                         Console.WriteLine("┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
-                                          "│  Madrugada ◈ Nevoeiro   │                      CORRIDAS                     │\r\n" +
+                                          "│ "+CicloDiario.cicloRelogio + " * " + CicloDiario.condicoesPista + "  │      CORRIDAS (Equipe seu cavalo no celeiro)      │\r\n" +
                                           "│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─│───────────────────────────────────────────────────│\r\n" +
-                                          "│  Carteira ▶  10.000 ฿   │ [h] » help?                                       │\r\n" +
+                                          "│  Carteira »  10.000 ß   │ [h] » help?                                       │\r\n" +
                                           "│─────────────────────────│                        1º                         │\r\n" +
                                           "│                         │              ┌────────────────────┐               │\r\n" +
                                           "│                         │              │ "+cavalo.nome+"│               │\r\n" +
@@ -278,9 +278,9 @@ namespace HorseProject
                     else if(posicaoVitoria == 2)
                     {
                         Console.WriteLine("┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
-                                         "│  Madrugada ◈ Nevoeiro   │                      CORRIDAS                     │\r\n" +
+                                         "│  Madrugada * Nevoeiro   │      CORRIDAS (Equipe seu cavalo no celeiro)      │\r\n" +
                                          "│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─│───────────────────────────────────────────────────│\r\n" +
-                                         "│  Carteira ▶  10.000 ฿   │ [h] » help?                                       │\r\n" +
+                                         "│  Carteira »  10.000 ß   │ [h] » help?                                       │\r\n" +
                                          "│─────────────────────────│                        1º                         │\r\n" +
                                          "│                         │              ┌────────────────────┐               │\r\n" +
                                          "│                         │              │                    │               │\r\n" +
@@ -305,9 +305,9 @@ namespace HorseProject
                     else if(posicaoVitoria == 3)
                     {
                         Console.WriteLine("┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
-                                         "│  Madrugada ◈ Nevoeiro   │                      CORRIDAS                     │\r\n" +
+                                         "│  Madrugada * Nevoeiro   │      CORRIDAS (Equipe seu cavalo no celeiro)      │\r\n" +
                                          "│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─│───────────────────────────────────────────────────│\r\n" +
-                                         "│  Carteira ▶  10.000 ฿   │ [h] » help?                                       │\r\n" +
+                                         "│  Carteira »  10.000 ß   │ [h] » help?                                       │\r\n" +
                                          "│─────────────────────────│                        1º                         │\r\n" +
                                          "│                         │              ┌────────────────────┐               │\r\n" +
                                          "│                         │              │                    │               │\r\n" +
@@ -332,9 +332,9 @@ namespace HorseProject
                     else if (posicaoVitoria == 4)
                     {
                         Console.WriteLine("┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
-                                         "│  Madrugada ◈ Nevoeiro   │                      CORRIDAS                     │\r\n" +
+                                         "│  Madrugada * Nevoeiro   │      CORRIDAS (Equipe seu cavalo no celeiro)      │\r\n" +
                                          "│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─│───────────────────────────────────────────────────│\r\n" +
-                                         "│  Carteira ▶  10.000 ฿   │ [h] » help?                                       │\r\n" +
+                                         "│  Carteira »  10.000 ß   │ [h] » help?                                       │\r\n" +
                                          "│─────────────────────────│                        1º                         │\r\n" +
                                          "│                         │              ┌────────────────────┐               │\r\n" +
                                          "│                         │              │                    │               │\r\n" +
@@ -361,9 +361,9 @@ namespace HorseProject
                     if (posicaoVitoria == 1)
                     {
                         Console.WriteLine("┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
-                                          "│  Madrugada ◈ Nevoeiro   │                      CORRIDAS                     │\r\n" +
+                                          "│  Madrugada * Nevoeiro   │      CORRIDAS (Equipe seu cavalo no celeiro)      │\r\n" +
                                           "│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─│───────────────────────────────────────────────────│\r\n" +
-                                          "│  Carteira ▶  10.000 ฿   │ [h] » help?                                       │\r\n" +
+                                          "│  Carteira »  10.000 ß   │ [h] » help?                                       │\r\n" +
                                           "│─────────────────────────│                                                   │\r\n" +
                                           "│                         │                                                   │\r\n" +
                                           "│                         │                                                   │\r\n" +
@@ -388,9 +388,9 @@ namespace HorseProject
                     else if (posicaoVitoria == 2)
                     {
                         Console.WriteLine("┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
-                                          "│  Madrugada ◈ Nevoeiro   │                      CORRIDAS                     │\r\n" +
+                                          "│  Madrugada * Nevoeiro   │      CORRIDAS (Equipe seu cavalo no celeiro)      │\r\n" +
                                           "│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─│───────────────────────────────────────────────────│\r\n" +
-                                          "│  Carteira ▶  10.000 ฿   │ [h] » help?                                       │\r\n" +
+                                          "│  Carteira »  10.000 ß   │ [h] » help?                                       │\r\n" +
                                           "│─────────────────────────│                                                   │\r\n" +
                                           "│                         │                                                   │\r\n" +
                                           "│                         │                                                   │\r\n" +
@@ -417,9 +417,9 @@ namespace HorseProject
                     if (posicaoVitoria == 1)
                     {
                         Console.WriteLine("┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
-                                          "│  Madrugada ◈ Nevoeiro   │                      CORRIDAS                     │\r\n" +
+                                          "│  Madrugada * Nevoeiro   │      CORRIDAS (Equipe seu cavalo no celeiro)      │\r\n" +
                                           "│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─│───────────────────────────────────────────────────│\r\n" +
-                                          "│  Carteira ▶  10.000 ฿   │ [h] » help?                                       │\r\n" +
+                                          "│  Carteira »  10.000 ß   │ [h] » help?                                       │\r\n" +
                                           "│─────────────────────────│                        1º                         │\r\n" +
                                           "│                         │              ┌────────────────────┐               │\r\n" +
                                           "│                         │              │ "+cavalo.nome+"│               │\r\n" +                                
@@ -444,9 +444,9 @@ namespace HorseProject
                     else if (posicaoVitoria == 2)
                     {
                         Console.WriteLine("┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
-                                          "│  Madrugada ◈ Nevoeiro   │                      CORRIDAS                     │\r\n" +
+                                          "│  Madrugada * Nevoeiro   │      CORRIDAS (Equipe seu cavalo no celeiro)      │\r\n" +
                                           "│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─│───────────────────────────────────────────────────│\r\n" +
-                                          "│  Carteira ▶  10.000 ฿   │ [h] » help?                                       │\r\n" +
+                                          "│  Carteira »  10.000 ß   │ [h] » help?                                       │\r\n" +
                                           "│─────────────────────────│                        1º                         │\r\n" +
                                           "│                         │              ┌────────────────────┐               │\r\n" +
                                           "│                         │              │                    │               │\r\n" +
@@ -472,9 +472,9 @@ namespace HorseProject
                     else if (posicaoVitoria == 3)
                     {
                         Console.WriteLine("┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
-                                          "│  Madrugada ◈ Nevoeiro   │                      CORRIDAS                     │\r\n" +
+                                          "│  Madrugada * Nevoeiro   │      CORRIDAS (Equipe seu cavalo no celeiro)      │\r\n" +
                                           "│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─│───────────────────────────────────────────────────│\r\n" +
-                                          "│  Carteira ▶  10.000 ฿   │ [h] » help?                                       │\r\n" +
+                                          "│  Carteira »  10.000 ß   │ [h] » help?                                       │\r\n" +
                                           "│─────────────────────────│                        1º                         │\r\n" +
                                           "│                         │              ┌────────────────────┐               │\r\n" +
                                           "│                         │              │                    │               │\r\n" +
@@ -499,9 +499,9 @@ namespace HorseProject
                     else if(posicaoVitoria == 4)
                     {
                         Console.WriteLine("┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
-                                         "│  Madrugada ◈ Nevoeiro   │                      CORRIDAS                     │\r\n" +
+                                         "│  Madrugada * Nevoeiro   │      CORRIDAS (Equipe seu cavalo no celeiro)      │\r\n" +
                                          "│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─│───────────────────────────────────────────────────│\r\n" +
-                                         "│  Carteira ▶  10.000 ฿   │ [h] » help?                                       │\r\n" +
+                                         "│  Carteira »  10.000 ß   │ [h] » help?                                       │\r\n" +
                                          "│─────────────────────────│                        1º                         │\r\n" +
                                          "│                         │              ┌────────────────────┐               │\r\n" +
                                          "│                         │              │                    │               │\r\n" +
@@ -526,9 +526,9 @@ namespace HorseProject
                     break;
                 default:
                     Console.WriteLine("┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
-                                      "│  Madrugada ◈ Nevoeiro   │                      CORRIDAS                     │\r\n" +
+                                      "│  Madrugada * Nevoeiro   │      CORRIDAS (Equipe seu cavalo no celeiro)      │\r\n" +
                                       "│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─│───────────────────────────────────────────────────│\r\n" +
-                                      "│  Carteira ▶  10.000 ฿   │ [h] » help?                                       │\r\n" +
+                                      "│  Carteira »  10.000 ß   │ [h] » help?                                       │\r\n" +
                                       "│─────────────────────────│                                                   │\r\n" +
                                       "│                         │ Casual » Recompensas para 1º, 2º e 3º lugar       │\r\n" +
                                       "│                         │                                                   │\r\n" +
@@ -553,12 +553,12 @@ namespace HorseProject
             }
             
         }
-        static public void MenuJogar_Celeiro()
+        static public void SubMenuCeleiro()
         { 
             Console.WriteLine(            "┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
-                                          "│  Madrugada ◈ Nevoeiro   │                   CELEIRO (Max.4)                 │\r\n" +
+                                          "│  "+CicloDiario.horaDoDia + " * " + CicloDiario.condicoesPista + "   │                   CELEIRO (Max.4)                 │\r\n" +
                                           "│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─│───────────────────────────────────────────────────│\r\n" +
-                                          "│  Carteira ▶  10.000 ฿   │ [h] » help?                                       │\r\n" +
+                                          "│  Carteira »  10.000 ß   │ [h] » help?                                       │\r\n" +
                                           "│─────────────────────────│                                                   │\r\n" +
                                           "│                         │        » Selecione o cavalo que deseja ver «      │\r\n" +
                                           "│                         │                                                   │\r\n" +
@@ -584,9 +584,9 @@ namespace HorseProject
         static public void MenuStatusDoCavalo(Cavalo cavaloEscolhido)
         {
              Console.WriteLine(    "┌─────────────────────────┬─────────────────────────────────────────────────────────────────────┐\r\n" +
-                                   "│  Madrugada ◈ Nevoeiro   │                           STATUS DO CAVALO                          │\r\n" +
+                                   "│  Madrugada * Nevoeiro   │                           STATUS DO CAVALO                          │\r\n" +
                                    "│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─│─────────────────────────────────────────────────────────────────────│\r\n" +
-                                   "│  Carteira ▶  10.000 ฿   │ Nome: Pangaré Desnutrido                                            │\r\n" +
+                                   "│  Carteira »  10.000 ß   │ Nome: Pangaré Desnutrido                                            │\r\n" +
                                    "│─────────────────────────│                                                                     │\r\n" +
                                    "│                         │ Raça: Puro Sangue Ingles            Recebe Bônus  »  Nevoeiro ▲ 10% │\r\n" +
                                    "│                         │ Peso:  150Kg                   Velocidade Maxima  »  ■■■■□□□□□□□□□□ │\r\n" +

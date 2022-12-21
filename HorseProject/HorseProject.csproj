@@ -47,7 +47,7 @@
     <Compile Include="Corrida.cs" />
     <Compile Include="Graficos.cs" />
     <Compile Include="BootJogo.cs" />
-    <Compile Include="Pista.cs" />
+    <Compile Include="CicloDiario.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

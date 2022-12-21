@@ -11,10 +11,12 @@ namespace HorseProject
         static void Main(string[] args)
         {
             Cavalo cavalo = new Cavalo("Pangaré Desnutrido ", Cavalo.raca.shire, 100, 2, 15, 4);
-            Pista Terra = new Pista();
-            Terra.ThreadTimerDiario();
-
             BootJogo.RodarJogo(cavalo);
+            CicloDiario.ThreadTimerDiario();
+
+
+
+            
 ;
         }
     }
