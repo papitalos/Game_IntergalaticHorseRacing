@@ -251,7 +251,7 @@ namespace HorseProject
                     if(posicaoVitoria == 1)
                     {
                         Console.WriteLine("┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
-                                          "│ "+CicloDiario.cicloRelogio + " * " + CicloDiario.condicoesPista + "  │      CORRIDAS (Equipe seu cavalo no celeiro)      │\r\n" +
+                                          "│ " + CicloDiario.cicloRelogio[1] + " * " + CicloDiario.condicoesPista[1] + "  │      CORRIDAS (Equipe seu cavalo no celeiro)      │\r\n" +
                                           "│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─│───────────────────────────────────────────────────│\r\n" +
                                           "│  Carteira »  10.000 ß   │ [h] » help?                                       │\r\n" +
                                           "│─────────────────────────│                        1º                         │\r\n" +
@@ -556,7 +556,7 @@ namespace HorseProject
         static public void SubMenuCeleiro()
         { 
             Console.WriteLine(            "┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
-                                          "│  "+CicloDiario.horaDoDia + " * " + CicloDiario.condicoesPista + "   │                   CELEIRO (Max.4)                 │\r\n" +
+                                          "│  " + CicloDiario.horaDoDia + " * " + CicloDiario.condicoesPista + "   │                   CELEIRO (Max.4)                 │\r\n" +
                                           "│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─│───────────────────────────────────────────────────│\r\n" +
                                           "│  Carteira »  10.000 ß   │ [h] » help?                                       │\r\n" +
                                           "│─────────────────────────│                                                   │\r\n" +

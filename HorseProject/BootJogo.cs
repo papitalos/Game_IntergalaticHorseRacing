@@ -15,7 +15,7 @@ namespace HorseProject
         public static bool estaRodando = false, primeiraVez = true;//jogo nao esta rodando
         public static menu menuAtual, subMenuAtual;
         
-        public static int qntdSaves = 1;
+        public static int qntdSaves = 1, escolhaCorrida = 0;
         
         public enum menu
         {
@@ -25,7 +25,8 @@ namespace HorseProject
             subMenuCeleiro,
             subMenuLoja,
             menuEscolhaInicial,
-            menuJogos
+            menuJogos,
+            nenhum
 
         }
         public static void RodarJogo(Cavalo cavalo)
@@ -39,9 +40,13 @@ namespace HorseProject
             while (estaRodando) //enquanto o jogo estiver rodando
             {
 
+
+                
                 switch (Console.ReadKey().Key) //verifica a KEY clicada
                 {
                     case ConsoleKey.Enter://se ENTER entra:
+                        menuAtual = menu.menuJogos;
+                        subMenuAtual = menu.subMenuCeleiro;
                         menuJogar(cavalo);//ativa o menu jogar
                         break;   
                     case ConsoleKey.Tab://se TAB:
@@ -74,6 +79,7 @@ namespace HorseProject
 
                 while (escolhaFinal == false)
                 {
+                    
                     switch (Console.ReadKey().Key)
                     {
                         case ConsoleKey.LeftArrow://se SETA ESQUERDA
@@ -104,6 +110,10 @@ namespace HorseProject
                             break;
                         case ConsoleKey.Enter://se ENTER
                             escolhaFinal = true;//usuario escolheu
+                            menuAtual = menu.menuJogos;
+                            subMenuAtual = menu.subMenuCeleiro;
+                            Console.Clear();
+                            subMenuCeleiro(cavalo);
                             break;
                         default:
                             Console.Clear();
@@ -115,15 +125,22 @@ namespace HorseProject
                 }//enquanto usuario nao fez escolha final
 
                 //depois do usuario ter feito a escolha final:
-                Console.Clear();//limpa
+                
                 
 
             }//se primeira vez na opção ENTER entra no menu de escolha de cavalo inicial
-                subMenuCeleiro(cavalo);
-                menuAtual = menu.menuJogos;//MENU ATUAL: Menu Jogos 
-                subMenuAtual = menu.subMenuCeleiro;//submenu: corridas (default)
 
-                while (menuAtual == menu.menuJogos)
+            
+            while (menuAtual == menu.menuJogos)
+            {   
+                if(subMenuAtual == menu.subMenuCeleiro)
+                {
+                    Console.Clear();
+                    subMenuCeleiro(cavalo);
+                }
+                
+
+                if(menuAtual == menu.menuJogos)
                 {
                     switch (Console.ReadKey().Key)
                     {
@@ -132,51 +149,50 @@ namespace HorseProject
                             break;
                         case ConsoleKey.I://se I
                             subMenuCeleiro(cavalo);
-                            break; 
+                            break;
                         case ConsoleKey.L://se L
                             subMenuLoja(cavalo);
                             break;
-
-
 
                         //COMANDOS PADRÃO ****
                         case ConsoleKey.Tab://se TAB
                             Console.Clear();
                             Graficos.MenuInicial();//volta ao menu inicial
                             menuAtual = menu.menuInicial;//passa a estar no menu inicial
+                            subMenuAtual = menu.nenhum;
                             break;
                         case ConsoleKey.Escape://se ESC
                             Environment.Exit(0);//sai do programa
                             break;
                         //COMANDOS PADRÃO ****
 
-                        default :
+                        default:
                             Console.Clear();
                             switch (menuAtual)
                             {
                                 case menu.subMenuCorridas:
                                     Graficos.SubMenuCorrida(0, 1, cavalo);
                                     break;
-                                case menu.subMenuCeleiro:  
-                                    
+                                case menu.subMenuCeleiro:
+
                                     Graficos.SubMenuCeleiro();
                                     break;
                                 case menu.subMenuLoja:
-                                    
+
                                     break;
                             }
-                            
+
                             break;
 
                     }//verifique a KEY clicada
-                }//enquanto nao estiver no menu incial, ou seja, estiver no menu de jogar
+                }
+               
+            }//enquanto nao estiver no menu incial, ou seja, estiver no menu de jogar
 
             
         }
         public static void menuLoading(Cavalo cavalo)
         {
-            if (menuAtual == menu.menuInicial)
-            {
 
                 menuAtual = menu.menuLoading; //passa a estar no menu de Loading
                 Console.Clear();
@@ -238,6 +254,8 @@ namespace HorseProject
                             Graficos.MenuLoading(qntdSaves);//limpa e imprime o que estava antes
                             break;
                         case ConsoleKey.Enter:
+                            menuAtual = menu.menuJogos;
+                            subMenuAtual = menu.subMenuCeleiro;
                             menuJogar(cavalo);
                             break;
                         case ConsoleKey.Escape:
@@ -246,27 +264,38 @@ namespace HorseProject
                     }//verifica a KEY clicada
                 } //enquanto estiver no Menu de Loading 
 
-            }//entra no menu de LOADING se estiver no Menu Inicial
+            
         }
         public static void subMenuCorrida(int posicaoVitoria, Cavalo cavalo)
         {
             Console.Clear();
-            Graficos.SubMenuCorrida(0, posicaoVitoria, cavalo);
+            Graficos.SubMenuCorrida(escolhaCorrida, posicaoVitoria, cavalo);
             subMenuAtual = menu.subMenuCorridas;
-            int tipoCorrida = 0;
+            escolhaCorrida = 0;
             while (subMenuAtual == menu.subMenuCorridas)
             {
                 switch (Console.ReadKey().Key)
                 {
                     case ConsoleKey.D1:
-                        tipoCorrida = 1;
-
+                        escolhaCorrida = 1;
+                        Console.Clear();
+                        Graficos.SubMenuCorrida(escolhaCorrida, posicaoVitoria, cavalo);
+                        Thread.Sleep(2000);
+                        escolhaCorrida = 0;
                         break;
                     case ConsoleKey.D2:
-                        tipoCorrida = 2;
+                        escolhaCorrida = 2;
+                        Console.Clear();
+                        Graficos.SubMenuCorrida(escolhaCorrida, posicaoVitoria, cavalo);
+                        Thread.Sleep(2000);
+                        escolhaCorrida = 0;
                         break;
                     case ConsoleKey.D3:
-                        tipoCorrida = 3;
+                        escolhaCorrida = 3;
+                        Console.Clear();
+                        Graficos.SubMenuCorrida(escolhaCorrida, posicaoVitoria, cavalo);
+                        Thread.Sleep(2000);
+                        escolhaCorrida = 0;
                         break;
 
 
@@ -293,9 +322,9 @@ namespace HorseProject
 
 
                     default:
-                        tipoCorrida = 0;
+                        escolhaCorrida = 0;
                         Console.Clear();
-                        Graficos.SubMenuCorrida(tipoCorrida,posicaoVitoria, cavalo);
+                        Graficos.SubMenuCorrida(escolhaCorrida,posicaoVitoria, cavalo);
                         break;
                 }
             }
@@ -310,7 +339,7 @@ namespace HorseProject
                 switch (Console.ReadKey().Key)
                 {
 
-
+                        
 
 
                     //COMANDOS PADRÃO ****
@@ -318,7 +347,7 @@ namespace HorseProject
                         Console.Clear();
                         Graficos.MenuInicial();//volta ao menu inicial
                         menuAtual = menu.menuInicial;//passa a estar no menu inicial
-                        subMenuAtual = menu.menuInicial;
+                        subMenuAtual = menu.nenhum;
                         break;
                     case ConsoleKey.Escape://se ESC
                         Environment.Exit(0);//sai do programa

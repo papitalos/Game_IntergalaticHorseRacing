@@ -16,20 +16,22 @@ namespace HorseProject
 {
     public static class CicloDiario
     {
+        public static Cavalo cavalo;
+        public static int numVitoria = 1, escolhaCorrida = BootJogo.escolhaCorrida;
         public static bool pistaAberta;
-        public static string[] cicloRelogio = new string[4] {"manhã    ", "tarde    ","noite    ", "madrugada"};
-        public static string[] possiveisEstados = new string[4] { "neve    ", "chuva   ", "nevoeiro", "limpo   " };
+        public static string[] cicloRelogio = new string[4] { "Manhã    ", "Tarde    ", "Noite    ", "Madrugada" };
+        public static string[] possiveisEstados = new string[4] { "Neve    ", "Chuva   ", "Nevoeiro", "Limpo   " };
         public static string condicoesPista, horaDoDia;
-        public static int myDelay = 3000;
+        public static int myDelay = 5000;
 
-      
+
         public static void ThreadTimerDiario()
         {
             //Criar uma nova thread para rodar o relogio do dia de maneira independente
             Thread dia = new Thread(PassarTempo);
             dia.Start();
-            
-            
+
+
 
         }
 
@@ -61,36 +63,33 @@ namespace HorseProject
                 }
 
 
-                Console.WriteLine("PASSOU!");
+
+                if(BootJogo.menuAtual == BootJogo.menu.menuJogos)
+                {
+                    switch (BootJogo.subMenuAtual)
+                    {
+                        case BootJogo.menu.subMenuCeleiro:
+                            Console.Clear();
+                            Graficos.SubMenuCeleiro();
+                            break;
+                        case BootJogo.menu.subMenuCorridas:
+                            Console.Clear();
+                            Graficos.SubMenuCorrida(escolhaCorrida,numVitoria, cavalo);
+                            break;
+                        case BootJogo.menu.subMenuLoja:
+                            break;
+                    }
+                }
 
                 Thread.Sleep(myDelay);
             }
-         
-            
+
+
         }
-
-        /*public static void AtualizarGraficos(int posiçaoVitoria, Cavalo cavalo)
-        {
-            Console.Clear();
-            BootJogo.menu menuAtual, subMenuAtual;
-            menuAtual = BootJogo.menuAtual;
-            subMenuAtual = BootJogo.subMenuAtual;
-            if(menuAtual == BootJogo.menu.menuJogos && subMenuAtual == BootJogo.menu.subMenuCeleiro)
-            {
-                Graficos.SubMenuCeleiro();
-            }
-            else if (menuAtual == BootJogo.menu.menuJogos && subMenuAtual == BootJogo.menu.subMenuCorridas)
-            {
-                Graficos.SubMenuCorrida(0, posiçaoVitoria, cavalo);
-            }
-            else if (menuAtual == BootJogo.menu.menuJogos && subMenuAtual == BootJogo.menu.subMenuLoja)
-            {
-                
-            }
-        }*/
-
     }
 }
+
+
 
 
 
