@@ -6,11 +6,19 @@ using System.Threading.Tasks;
 
 namespace HorseProject
 {
-    internal class Program
+    class Program
     {
         static void Main(string[] args)
         {
-            Graficos.Graficos();
+            Cavalo cavalo = new Cavalo("Pangaré Desnutrido ", Cavalo.raca.shire, 100, 2, 15, 4);
+            CicloDiario.ThreadTimerDiario();
+            BootJogo.RodarJogo(cavalo);
+            
+
+
+
+            
+
         }
     }
 }
