@@ -10,7 +10,7 @@ namespace HorseProject
     {
         static void Main(string[] args)
         {
-            Graficos.MenuPrincipal();
+            Graficos.Graficos();
         }
     }
 }
