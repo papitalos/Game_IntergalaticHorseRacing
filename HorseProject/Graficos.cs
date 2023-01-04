@@ -263,9 +263,9 @@ namespace HorseProject
                                           "│                         │ │                    │     ┌────────────────────┐ │\r\n" +
                                           "│-» CELEIRO[I]            │ └────────────────────┘     │                    │ │\r\n" +
                                           "│                         │                            └────────────────────┘ │\r\n" +
-                                          "│-» LOJA[E]               │                                                   │\r\n" +
+                                          "│-» LOJA[L]               │                                                   │\r\n" +
                                           "│                         │                                                   │\r\n" +
-                                          "│                         │                                                   │\r\n" +
+                                          "│-» Inventario[E]         │                                                   │\r\n" +
                                           "│                         │                                                   │\r\n" +
                                           "│─────────────────────────│                                                   │\r\n" +
                                           "│                         │         _____|---»   VITORIA   «---|_____         │\r\n" +
@@ -290,9 +290,9 @@ namespace HorseProject
                                          "│                         │ │ "+cavalo.nome+"│     ┌────────────────────┐ │\r\n" +
                                          "│-» CELEIRO[I]            │ └────────────────────┘     │                    │ │\r\n" +
                                          "│                         │                            └────────────────────┘ │\r\n" +
-                                         "│-» LOJA[E]               │                                                   │\r\n" +
+                                         "│-» LOJA[L]               │                                                   │\r\n" +
                                          "│                         │                                                   │\r\n" +
-                                         "│                         │                                                   │\r\n" +
+                                         "│-» Inventario[E]         │                                                   │\r\n" +
                                          "│                         │                                                   │\r\n" +
                                          "│─────────────────────────│                                                   │\r\n" +
                                          "│                         │         _____|---»   VITORIA   «---|_____         │\r\n" +
@@ -317,9 +317,9 @@ namespace HorseProject
                                          "│                         │ │                    │     ┌────────────────────┐ │\r\n" +
                                          "│-» CELEIRO[I]            │ └────────────────────┘     │ "+cavalo.nome+"│ │\r\n" +
                                          "│                         │                            └────────────────────┘ │\r\n" +
-                                         "│-» LOJA[E]               │                                                   │\r\n" +
+                                         "│-» LOJA[L]               │                                                   │\r\n" +
                                          "│                         │                                                   │\r\n" +
-                                         "│                         │                                                   │\r\n" +
+                                         "│-» Inventario[E]         │                                                   │\r\n" +
                                          "│                         │                                                   │\r\n" +
                                          "│─────────────────────────│                                                   │\r\n" +
                                          "│                         │         _____|---»   VITORIA   «---|_____         │\r\n" +
@@ -344,9 +344,9 @@ namespace HorseProject
                                          "│                         │ │                    │     ┌────────────────────┐ │\r\n" +
                                          "│-» CELEIRO[I]            │ └────────────────────┘     │                    │ │\r\n" +
                                          "│                         │                            └────────────────────┘ │\r\n" +
-                                         "│-» LOJA[E]               │                                                   │\r\n" +
+                                         "│-» LOJA[L]               │                                                   │\r\n" +
                                          "│                         │                                                   │\r\n" +
-                                         "│                         │                                                   │\r\n" +
+                                         "│-» Inventario[E]         │                                                   │\r\n" +
                                          "│                         │                                                   │\r\n" +
                                          "│─────────────────────────│                                                   │\r\n" +
                                          "│                         │         _____|---»   DERROTA   «---|_____         │\r\n" +
@@ -373,9 +373,9 @@ namespace HorseProject
                                           "│                         │ │ "+cavalo.nome+"│  x  │                    │ │\r\n" +
                                           "│-» CELEIRO[I]            │ └────────────────────┘     └────────────────────┘ │\r\n" +
                                           "│                         │                                                   │\r\n" +
-                                          "│-» LOJA[E]               │                                                   │\r\n" +
+                                          "│-» LOJA[L]               │                                                   │\r\n" +
                                           "│                         │                                                   │\r\n" +
-                                          "│                         │                                                   │\r\n" +
+                                          "│-» Inventario[E]         │                                                   │\r\n" +
                                           "│                         │                                                   │\r\n" +
                                           "│─────────────────────────│                                                   │\r\n" +
                                           "│                         │         _____|---»   VITORIA   «---|_____         │\r\n" +
@@ -400,9 +400,9 @@ namespace HorseProject
                                           "│                         │ │                    │  x  │ "+cavalo.nome+"│ │\r\n" +
                                           "│-» CELEIRO[I]            │ └────────────────────┘     └────────────────────┘ │\r\n" +
                                           "│                         │                                                   │\r\n" +
-                                          "│-» LOJA[E]               │                                                   │\r\n" +
+                                          "│-» LOJA[L]               │                                                   │\r\n" +
                                           "│                         │                                                   │\r\n" +
-                                          "│                         │                                                   │\r\n" +
+                                          "│-» Inventario[E]         │                                                   │\r\n" +
                                           "│                         │                                                   │\r\n" +
                                           "│─────────────────────────│                                                   │\r\n" +
                                           "│                         │         _____|---»   DERROTA   «---|_____         │\r\n" +
@@ -429,9 +429,9 @@ namespace HorseProject
                                           "│                         │ │                    │     ┌────────────────────┐ │\r\n" +
                                           "│-» CELEIRO[I]            │ └────────────────────┘     │                    │ │\r\n" +
                                           "│                         │                            └────────────────────┘ │\r\n" +
-                                          "│-» LOJA[E]               │                                                   │\r\n" +
+                                          "│-» LOJA[L]               │                                                   │\r\n" +
                                           "│                         │                      00/03  ⇡                     │\r\n" +
-                                          "│                         │            Corridas para subir o rank             │\r\n" +
+                                          "│-» Inventario[E]         │            Corridas para subir o rank             │\r\n" +
                                           "│                         │                                                   │\r\n" +
                                           "│─────────────────────────│                                                   │\r\n" +
                                           "│                         │         _____|---»   VITORIA   «---|_____         │\r\n" +
@@ -456,9 +456,9 @@ namespace HorseProject
                                           "│                         │ │ "+cavalo.nome+"│     ┌────────────────────┐ │\r\n" +
                                           "│-» CELEIRO[I]            │ └────────────────────┘     │                    │ │\r\n" +
                                           "│                         │                            └────────────────────┘ │\r\n" +
-                                          "│-» LOJA[E]               │                                                   │\r\n" +
+                                          "│-» LOJA[L]               │                                                   │\r\n" +
                                           "│                         │                      00/03  ⇡                     │\r\n" +
-                                          "│                         │            Corridas para subir o rank             │\r\n" +
+                                          "│-» Inventario[E]         │            Corridas para subir o rank             │\r\n" +
                                           "│                         │                                                   │\r\n" +
                                           "│─────────────────────────│                                                   │\r\n" +
                                           "│                         │         _____|---»   VITORIA   «---|_____         │\r\n" +
@@ -484,9 +484,9 @@ namespace HorseProject
                                           "│                         │ │                    │     ┌────────────────────┐ │\r\n" +
                                           "│-» CELEIRO[I]            │ └────────────────────┘     │ "+cavalo.nome+"│ │\r\n" +
                                           "│                         │                            └────────────────────┘ │\r\n" +
-                                          "│-» LOJA[E]               │                                                   │\r\n" +
+                                          "│-» LOJA[L]               │                                                   │\r\n" +
                                           "│                         │                      00/03  ⇡                     │\r\n" +
-                                          "│                         │            Corridas para subir o rank             │\r\n" +
+                                          "│-» Inventario[E]         │            Corridas para subir o rank             │\r\n" +
                                           "│                         │                                                   │\r\n" +
                                           "│─────────────────────────│                                                   │\r\n" +
                                           "│                         │         _____|---»   VITORIA   «---|_____         │\r\n" +
@@ -511,9 +511,9 @@ namespace HorseProject
                                          "│                         │ │                    │     ┌────────────────────┐ │\r\n" +
                                          "│-» CELEIRO[I]            │ └────────────────────┘     │                    │ │\r\n" +
                                          "│                         │                            └────────────────────┘ │\r\n" +
-                                         "│-» LOJA[E]               │                                                   │\r\n" +
+                                         "│-» LOJA[L]               │                                                   │\r\n" +
                                          "│                         │                       00/03  ⇣                    │\r\n" +
-                                         "│                         │             Corridas para subir o rank            │\r\n" +
+                                         "│-» Inventario[E]         │             Corridas para subir o rank            │\r\n" +
                                          "│                         │                                                   │\r\n" +
                                          "│─────────────────────────│                                                   │\r\n" +
                                          "│                         │         _____|---»   DERROTA   «---|_____         │\r\n" +
@@ -538,9 +538,9 @@ namespace HorseProject
                                       "│                         │          recompensas                              │\r\n" +
                                       "│-» CELEIRO[I]            │                                                   │\r\n" +
                                       "│                         │                                                   │\r\n" +
-                                      "│-» LOJA[E]               │                    Esta Pronto?                   │\r\n" +
+                                      "│-» LOJA[L]               │                    Esta Pronto?                   │\r\n" +
                                       "│                         │                                                   │\r\n" +
-                                      "│                         │                ESCOLHA SUA CORRIDA                │\r\n" +
+                                      "│-» Inventario[E]         │                ESCOLHA SUA CORRIDA                │\r\n" +
                                       "│                         │                                                   │\r\n" +
                                       "│─────────────────────────│                                                   │\r\n" +
                                       "│                         │                                                   │\r\n" +
@@ -568,9 +568,9 @@ namespace HorseProject
                                           "│                         │                                                   │\r\n" +
                                           "│-» CELEIRO[I]            │     ┌──────────────────────┐                      │\r\n" +
                                           "│                         │ [2] │  Puro Sangue Inglês  │                      │\r\n" +
-                                          "│-» LOJA[E]               │     └──────────────────────┘                      │\r\n" +
+                                          "│-» LOJA[L]               │     └──────────────────────┘                      │\r\n" +
                                           "│                         │                                                   │\r\n" +
-                                          "│                         │     ┌──────────────────────┐                      │\r\n" +
+                                          "│-» Inventario[E]         │     ┌──────────────────────┐                      │\r\n" +
                                           "│                         │ [3] │  Pedro Pereira       │                      │\r\n" +
                                           "│─────────────────────────│     └──────────────────────┘                      │\r\n" +
                                           "│                         │                                                   │\r\n" +
@@ -595,6 +595,62 @@ namespace HorseProject
                                    "│-» SAIR[ESC]             │                                                                     │\r\n" +
                                    "│                         │ [T]Treinar [V]Vender  [R]Mudar Nome                                 │\r\n" +
                                    "└─────────────────────────┴─────────────────────────────────────────────────────────────────────┘");
+        }
+
+        static public void SubMenuLoja()
+        {
+            Console.WriteLine("┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
+                                          "│  " + CicloDiario.horaDoDia + " * " + CicloDiario.condicoesPista + "   │                   Loja                  │\r\n" +
+                                          "│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─│───────────────────────────────────────────────────│\r\n" +
+                                          "│  Carteira »  " + BootJogo.guita + " ß    │ [h] » help?                                       │\r\n" +
+                                          "│─────────────────────────│                                                   │\r\n" +
+                                          "│                         │      » Selecione o cavalo que deseja comprar «    │\r\n" +
+                                          "│                         │                                                   │\r\n" +
+                                          "│                         │     ┌──────────────────────┐                      │\r\n" +
+                                          "│                         │ [1] │       Luzitano       │                      │\r\n" +
+                                          "│-» CORRIDAS[ENTER]       │     └──────────────────────┘                      │\r\n" +
+                                          "│                         │                                                   │\r\n" +
+                                          "│-» CELEIRO[I]            │     ┌──────────────────────┐                      │\r\n" +
+                                          "│                         │ [2] │   Quarto de Milha    │                      │\r\n" +
+                                          "│-» LOJA[L]               │     └──────────────────────┘                      │\r\n" +
+                                          "│                         │                                                   │\r\n" +
+                                          "│-» Inventario[E]         │     ┌──────────────────────┐                      │\r\n" +
+                                          "│                         │ [3] │      Percheron       │                      │\r\n" +
+                                          "│─────────────────────────│     └──────────────────────┘                      │\r\n" +
+                                          "│                         │  -->                                              │\r\n" +
+                                          "│-» VOLTAR[TAB]           │                                                   │\r\n" +
+                                          "│                         │ [4] Comprar curativos ß100                        │\r\n" +
+                                          "│-» SAIR[ESC]             │ [5] Comprar alimentação ß500                      │\r\n" +
+                                          "│                         │ [6] Comprar equipamentos                          │\r\n" +
+                                          "└─────────────────────────┴───────────────────────────────────────────────────┘");
+        }
+
+        static public void SubMenuInventario()
+        {
+            Console.WriteLine("┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
+                                          "│  " + CicloDiario.horaDoDia + " * " + CicloDiario.condicoesPista + "   │                   Inventario                  │\r\n" +
+                                          "│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─│───────────────────────────────────────────────────│\r\n" +
+                                          "│  Carteira »  " + BootJogo.guita + " ß    │ [h] » help?                                       │\r\n" +
+                                          "│─────────────────────────│                                                   │\r\n" +
+                                          "│                         │      » Itens armazenados «                        │\r\n" +
+                                          "│                         │                                                   │\r\n" +
+                                          "│                         │     ┌──────────────────────┐                      │\r\n" +
+                                          "│                         │ [1] │       " + BootJogo.curativo + "       │                      │\r\n" +
+                                          "│-» CORRIDAS[ENTER]       │     └──────────────────────┘                      │\r\n" +
+                                          "│                         │                                                   │\r\n" +
+                                          "│-» CELEIRO[I]            │     ┌──────────────────────┐                      │\r\n" +
+                                          "│                         │ [2] │                      │                      │\r\n" +
+                                          "│-» LOJA[L]               │     └──────────────────────┘                      │\r\n" +
+                                          "│                         │                                                   │\r\n" +
+                                          "│-» Inventario[E]         │     ┌──────────────────────┐                      │\r\n" +
+                                          "│                         │ [3] │                      │                      │\r\n" +
+                                          "│─────────────────────────│     └──────────────────────┘                      │\r\n" +
+                                          "│                         │                                                   │\r\n" +
+                                          "│-» VOLTAR[TAB]           │                                                   │\r\n" +
+                                          "│                         │                                                   │\r\n" +
+                                          "│-» SAIR[ESC]             │                                                   │\r\n" +
+                                          "│                         │                                                   │\r\n" +
+                                          "└─────────────────────────┴───────────────────────────────────────────────────┘");
         }
 
         static public void MenuStatusDoCavaloCompra(string opcao)

@@ -11,11 +11,14 @@ namespace HorseProject
 {
     public static class BootJogo
     {
+        // Declara a lista de itens do inventário
+        public static List<string> inventario = new List<string>();
+        public static string curativo;
 
         public static bool estaRodando = false, primeiraVez = true;//jogo nao esta rodando
         public static menu menuAtual, subMenuAtual;
         
-        public static int qntdSaves = 1, escolhaCorrida = 0;
+        public static int qntdSaves = 1, escolhaCorrida = 0, guita = 10000;
         
         public enum menu
         {
@@ -24,6 +27,7 @@ namespace HorseProject
             subMenuCorridas,
             subMenuCeleiro,
             subMenuLoja,
+            subMenuInventario,
             menuEscolhaInicial,
             menuJogos,
             nenhum
@@ -152,6 +156,9 @@ namespace HorseProject
                             break;
                         case ConsoleKey.L://se L
                             subMenuLoja(cavalo);
+                            break;
+                        case ConsoleKey.E://Se E
+                            subMenuInventario(cavalo);
                             break;
 
                         //COMANDOS PADRÃO ****
@@ -317,6 +324,9 @@ namespace HorseProject
                     case ConsoleKey.L:
                         subMenuLoja(cavalo);
                         break;
+                    case ConsoleKey.E:
+                        subMenuInventario(cavalo);
+                        break;
 
 
 
@@ -360,6 +370,9 @@ namespace HorseProject
                     case ConsoleKey.L:
                         subMenuLoja(cavalo);
                         break;
+                    case ConsoleKey.E:
+                        subMenuInventario(cavalo);
+                        break;
 
                     default :
                         Console.Clear();
@@ -374,10 +387,153 @@ namespace HorseProject
             }
             
         }
-        public static void subMenuLoja(Cavalo cavalo) {
+
+        public static void subMenuLoja(Cavalo cavalo)
+        {
+            Console.Clear();
             subMenuAtual = menu.subMenuLoja;
+            Graficos.SubMenuLoja();
+
             while (subMenuAtual == menu.subMenuLoja)
             {
+                string opcao = Console.ReadLine();
+                // Armazena o valor do item escolhido
+                int valorItem = 0;
+                if (opcao == "1")
+                {
+                    valorItem = 1000;
+                }
+                if (opcao == "2")
+                {
+                    valorItem = 1000;
+                }
+                if (opcao == "3")
+                {
+                    valorItem = 1000;
+                }
+                else if (opcao == "4")
+                {
+                    valorItem = 100;
+                }
+                if (opcao == "5")
+                {
+                    valorItem = 500;
+                }
+
+                switch (opcao)//Mecanica de compra
+                {
+                    case "1":
+                        
+                        // Verifica se o jogador tem saldo suficiente para comprar o item
+                        if (valorItem > guita)
+                        {
+                            Console.WriteLine("Você não tem saldo suficiente para realizar esta compra.");
+                        }
+                        else
+                        {
+                            guita -= valorItem;
+                            Console.Clear();
+                            Graficos.MenuStatusDoCavaloCompra(opcao);
+                        }
+                        /*
+                        Console.Clear();
+                        Graficos.SubMenuLoja();*/
+                        break;
+                    case "2":
+                        // Verifica se o jogador tem saldo suficiente para comprar o item
+                        if (valorItem > guita)
+                        {
+                            Console.WriteLine("Você não tem saldo suficiente para realizar esta compra.");
+                        }
+                        else
+                        {
+                            // Deduz o valor do item do saldo do jogador
+                            guita -= valorItem;
+                            //Ação por tomar...;
+                        }
+
+                        Console.Clear();
+                        Graficos.SubMenuLoja();
+                        break;
+                    case "3":
+                        // Verifica se o jogador tem saldo suficiente para comprar o item
+                        if (valorItem > guita)
+                        {
+                            Console.WriteLine("Você não tem saldo suficiente para realizar esta compra.");
+                        }
+                        else
+                        {
+                            // Deduz o valor do item do saldo do jogador
+                            guita -= valorItem;
+                            //Ação por tomar...
+                        }
+                        break;
+                    case "4":
+                        // Verifica se o jogador tem saldo suficiente para comprar o item
+                        if (valorItem > guita)
+                        {
+                            Console.WriteLine("Você não tem saldo suficiente para realizar esta compra.");
+                        }
+                        else
+                        {
+                            // Deduz o valor do item do saldo do jogador
+                            guita -= valorItem;
+                            inventario.Add("Curativo");
+                        }
+
+                        Console.Clear();
+                        Graficos.SubMenuLoja();
+                        break;
+                    default:
+                        Console.Clear();
+                        Graficos.SubMenuLoja();
+                        break;
+
+                }
+
+                switch (Console.ReadKey().Key)
+                {
+
+
+                    //COMANDOS PADRÃO ****
+                    case ConsoleKey.Tab://se TAB
+                        Console.Clear();
+                        Graficos.MenuInicial();//volta ao menu inicial
+                        menuAtual = menu.menuInicial;//passa a estar no menu inicial
+                        subMenuAtual = menu.menuInicial;
+                        break;
+                    case ConsoleKey.Escape://se ESC
+                        Environment.Exit(0);//sai do programa
+                        break;
+                    //COMANDOS PADRÃO ****
+
+                    case ConsoleKey.Enter:
+                        subMenuCorrida(0, cavalo);
+                        break;
+                    case ConsoleKey.I:
+                        subMenuCeleiro(cavalo);
+                        break;
+                    case ConsoleKey.E:
+                        subMenuInventario(cavalo);
+                        break;
+
+                    default:
+                        Console.Clear();
+                        Graficos.SubMenuLoja();
+
+                        break;
+                }
+            }
+
+        }
+        public static void subMenuInventario(Cavalo cavalo)
+        {
+            
+            if (BootJogo.inventario.Contains("Curativo")) { curativo = "Curativo" ; } else { curativo = "        "; }
+            Console.Clear();
+            subMenuAtual = menu.subMenuInventario;
+            Graficos.SubMenuInventario();
+
                 switch (Console.ReadKey().Key)
                 {
 
@@ -403,10 +559,11 @@ namespace HorseProject
 
                     default:
                         Console.Clear();
-                        
+                        Graficos.SubMenuLoja();
+
                         break;
                 }
-            }
+
         }
     }
 }
