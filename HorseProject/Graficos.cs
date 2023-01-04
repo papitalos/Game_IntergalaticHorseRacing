@@ -596,5 +596,68 @@ namespace HorseProject
                                    "│                         │ [T]Treinar [V]Vender  [R]Mudar Nome                                 │\r\n" +
                                    "└─────────────────────────┴─────────────────────────────────────────────────────────────────────┘");
         }
+
+        static public void MenuStatusDoCavaloCompra(string opcao)
+        {
+            switch (opcao)
+            {
+                case "1":
+                    Console.WriteLine("┌─────────────────────────┬─────────────────────────────────────────────────────────────────────┐\r\n" +
+                                  "│  Madrugada * Nevoeiro   │                           STATUS DO CAVALO                          │\r\n" +
+                                  "│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─│─────────────────────────────────────────────────────────────────────│\r\n" +
+                                  "│  Carteira »  " + BootJogo.guita + " ß    │ Nome: Geremias                                                      │\r\n" +
+                                  "│─────────────────────────│                                                                     │\r\n" +
+                                  "│                         │ Raça: Luzitano                      Recebe Bônus  »  Nevoeiro ▲ 10% │\r\n" +
+                                  "│                         │ Peso:  180Kg                   Velocidade Maxima  »  ■■■■■■■■□□□□□□ │\r\n" +
+                                  "│-» VOLTAR[TAB]           │ Idade: 02 Anos                       Resistencia  »  ■■■□□□□□□□□□□□ │\r\n" +
+                                  "│                         │ Estado: Saudável                           Força  »  ■■■■□□□□□□□□□□ │\r\n" +
+                                  "│-» SAIR[ESC]             │                                                                     │\r\n" +
+                                  "│                         │ [C]Comprar                                                          │\r\n" +
+                                  "└─────────────────────────┴─────────────────────────────────────────────────────────────────────┘");
+                    break;
+                case "2":
+                    Console.WriteLine("┌─────────────────────────┬─────────────────────────────────────────────────────────────────────┐\r\n" +
+                                  "│  Madrugada * Nevoeiro   │                           STATUS DO CAVALO                          │\r\n" +
+                                  "│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─│─────────────────────────────────────────────────────────────────────│\r\n" +
+                                  "│  Carteira »  " + BootJogo.guita + " ß    │ Nome: Montanelas                                                      │\r\n" +
+                                  "│─────────────────────────│                                                                     │\r\n" +
+                                  "│                         │ Raça: Quarto de Milha               Recebe Bônus  »  Nevoeiro ▲ 10% │\r\n" +
+                                  "│                         │ Peso:  180Kg                   Velocidade Maxima  »  ■■■■■■■■□□□□□□ │\r\n" +
+                                  "│-» VOLTAR[TAB]           │ Idade: 02 Anos                       Resistencia  »  ■■■□□□□□□□□□□□ │\r\n" +
+                                  "│                         │ Estado: Saudável                           Força  »  ■■■■□□□□□□□□□□ │\r\n" +
+                                  "│-» SAIR[ESC]             │                                                                     │\r\n" +
+                                  "│                         │ [C]Comprar                                                          │\r\n" +
+                                  "└─────────────────────────┴─────────────────────────────────────────────────────────────────────┘");
+                    break;
+                case "3":
+                    Console.WriteLine("┌─────────────────────────┬─────────────────────────────────────────────────────────────────────┐\r\n" +
+                                  "│  Madrugada * Nevoeiro   │                           STATUS DO CAVALO                          │\r\n" +
+                                  "│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─│─────────────────────────────────────────────────────────────────────│\r\n" +
+                                  "│  Carteira »  " + BootJogo.guita + " ß    │ Nome: Osvaldo                                                      │\r\n" +
+                                  "│─────────────────────────│                                                                     │\r\n" +
+                                  "│                         │ Raça: Percheron                      Recebe Bônus  »  Nevoeiro ▲ 10% │\r\n" +
+                                  "│                         │ Peso:  180Kg                   Velocidade Maxima  »  ■■■■■■■■□□□□□□ │\r\n" +
+                                  "│-» VOLTAR[TAB]           │ Idade: 02 Anos                       Resistencia  »  ■■■□□□□□□□□□□□ │\r\n" +
+                                  "│                         │ Estado: Saudável                           Força  »  ■■■■□□□□□□□□□□ │\r\n" +
+                                  "│-» SAIR[ESC]             │                                                                     │\r\n" +
+                                  "│                         │ [C]Comprar                                                          │\r\n" +
+                                  "└─────────────────────────┴─────────────────────────────────────────────────────────────────────┘");
+                    break;
+                case "4":
+                    Console.WriteLine("┌─────────────────────────┬─────────────────────────────────────────────────────────────────────┐\r\n" +
+                                  "│  Madrugada * Nevoeiro   │                           STATUS DO CAVALO                          │\r\n" +
+                                  "│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─│─────────────────────────────────────────────────────────────────────│\r\n" +
+                                  "│  Carteira »  " + BootJogo.guita + " ß    │ Nome: Amaro                                                      │\r\n" +
+                                  "│─────────────────────────│                                                                     │\r\n" +
+                                  "│                         │ Raça: Andaluz                      Recebe Bônus  »  Nevoeiro ▲ 10% │\r\n" +
+                                  "│                         │ Peso:  180Kg                   Velocidade Maxima  »  ■■■■■■■■□□□□□□ │\r\n" +
+                                  "│-» VOLTAR[TAB]           │ Idade: 02 Anos                       Resistencia  »  ■■■□□□□□□□□□□□ │\r\n" +
+                                  "│                         │ Estado: Saudável                           Força  »  ■■■■□□□□□□□□□□ │\r\n" +
+                                  "│-» SAIR[ESC]             │                                                                     │\r\n" +
+                                  "│                         │ [C]Comprar                                                          │\r\n" +
+                                  "└─────────────────────────┴─────────────────────────────────────────────────────────────────────┘");
+                    break;
+            }
+        }
     }
 }
