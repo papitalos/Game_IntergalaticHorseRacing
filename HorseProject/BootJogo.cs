@@ -18,7 +18,7 @@ namespace HorseProject
         public static bool estaRodando = false, primeiraVez = true;//jogo nao esta rodando
         public static menu menuAtual, subMenuAtual;
         
-        public static int qntdSaves = 1, escolhaCorrida = 0, guita = 10000;
+        public static int qntdSaves = 1, escolhaCorrida = 0, guita = 10000, valorItem = 0;
         
         public enum menu
         {
@@ -30,6 +30,7 @@ namespace HorseProject
             subMenuInventario,
             menuEscolhaInicial,
             menuJogos,
+            subMenuStatusCompra,
             nenhum
 
         }
@@ -398,7 +399,7 @@ namespace HorseProject
             {
                 string opcao = Console.ReadLine();
                 // Armazena o valor do item escolhido
-                int valorItem = 0;
+                
                 if (opcao == "1")
                 {
                     valorItem = 1000;
@@ -431,9 +432,10 @@ namespace HorseProject
                         }
                         else
                         {
-                            guita -= valorItem;
+                           
                             Console.Clear();
                             Graficos.MenuStatusDoCavaloCompra(opcao);
+                            subMenuStatusCompra(cavalo, valorItem);
                         }
                         /*
                         Console.Clear();
@@ -453,7 +455,7 @@ namespace HorseProject
                         }
 
                         Console.Clear();
-                        Graficos.SubMenuLoja();
+                     
                         break;
                     case "3":
                         // Verifica se o jogador tem saldo suficiente para comprar o item
@@ -555,6 +557,45 @@ namespace HorseProject
                         break;
                     case ConsoleKey.I:
                         subMenuCeleiro(cavalo);
+                        break;
+
+                    default:
+                        Console.Clear();
+                        Graficos.SubMenuLoja();
+
+                        break;
+                }
+
+        }
+
+        public static void subMenuStatusCompra(Cavalo cavalo, int valoritem)
+        {
+            
+            
+            subMenuAtual = menu.subMenuStatusCompra;
+
+                switch (Console.ReadKey().Key)
+                {
+
+
+                    //COMANDOS PADRÃO ****
+                    case ConsoleKey.Tab://se TAB
+                        Console.Clear();
+                        Graficos.MenuInicial();//volta ao menu inicial
+                        menuAtual = menu.menuInicial;//passa a estar no menu inicial
+                        subMenuAtual = menu.menuInicial;
+                        break;
+                    case ConsoleKey.Escape://se ESC
+                        Environment.Exit(0);//sai do programa
+                        break;
+                    //COMANDOS PADRÃO ****
+
+                    case ConsoleKey.Enter:
+                        subMenuCorrida(0, cavalo);
+                        break;
+                    case ConsoleKey.C:
+                        guita -= valorItem;
+                        subMenuLoja(cavalo);
                         break;
 
                     default:

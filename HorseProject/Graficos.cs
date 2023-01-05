@@ -710,7 +710,7 @@ namespace HorseProject
                                   "│-» VOLTAR[TAB]           │ Idade: 02 Anos                       Resistencia  »  ■■■□□□□□□□□□□□ │\r\n" +
                                   "│                         │ Estado: Saudável                           Força  »  ■■■■□□□□□□□□□□ │\r\n" +
                                   "│-» SAIR[ESC]             │                                                                     │\r\n" +
-                                  "│                         │ [C]Comprar pppppppppppppppppppp                                                         │\r\n" +
+                                  "│                         │ [C]Comprar                                                          │\r\n" +
                                   "└─────────────────────────┴─────────────────────────────────────────────────────────────────────┘");
                     break;
             }
