@@ -21,8 +21,10 @@ namespace HorseProject
         public static bool pistaAberta;
         public static string[] cicloRelogio = new string[4] { "Manhã    ", "Tarde    ", "Noite    ", "Madrugada" };
         public static string[] possiveisEstados = new string[4] { "Neve    ", "Chuva   ", "Nevoeiro", "Limpo   " };
-        public static string condicoesPista, horaDoDia;
+        public static string[] diasDaSemana = new string[7] { "Segunda-feira         ","Terça-feira  ","Quarta-feira ","Quinta-feira ","Sexta-feira  ","Sabado       ","Domingo      " };
+        public static string condicoesPista, horaDoDia, diaAtual;                                                                                                                    
         public static int myDelay = 5000;
+        public static int contadorDia = 1;
 
 
         public static void ThreadTimerDiario()
@@ -37,52 +39,55 @@ namespace HorseProject
 
         public static void PassarTempo()
         {
-
-            //mudar os periodos do dia
-            for (int i = 0; i < 4; i++)
-            {
-                horaDoDia = cicloRelogio[i];
-
-
-                //randomizar estado da pista
-                Random rdm = new Random();
-                int randomize = rdm.Next(1, 4);
-                condicoesPista = possiveisEstados[randomize];
-
-
-
-
-                //determinar se a pista esta aberta ou fechada dependendo do periodo do dia
-                if (i == 0 || i == 1)
+            for (contadorDia = 0; contadorDia < 7; contadorDia++) {
+                diaAtual = diasDaSemana[contadorDia];
+                for (int i = 0; i < 4; i++)
                 {
-                    pistaAberta = true;
-                }
-                else
-                {
-                    pistaAberta = false;
-                }
+                    horaDoDia = cicloRelogio[i];
+
+
+                    //randomizar estado da pista
+                    Random rdm = new Random();
+                    int randomize = rdm.Next(1, 4);
+                    condicoesPista = possiveisEstados[randomize];
 
 
 
-                if(BootJogo.menuAtual == BootJogo.menu.menuJogos)
-                {
-                    switch (BootJogo.subMenuAtual)
+
+                    //determinar se a pista esta aberta ou fechada dependendo do periodo do dia
+                    if (i == 0 || i == 1)
                     {
-                        case BootJogo.menu.subMenuCeleiro:
-                            Console.Clear();
-                            Graficos.SubMenuCeleiro();
-                            break;
-                        case BootJogo.menu.subMenuCorridas:
-                            Console.Clear();
-                            Graficos.SubMenuCorrida(escolhaCorrida,numVitoria, cavalo);
-                            break;
-                        case BootJogo.menu.subMenuLoja:
-                            break;
+                        pistaAberta = true;
                     }
+                    else
+                    {
+                        pistaAberta = false;
+                    }
+
+
+
+                    if (BootJogo.menuAtual == BootJogo.menu.menuJogos)
+                    {
+                        switch (BootJogo.subMenuAtual)
+                        {
+                            case BootJogo.menu.subMenuCeleiro:
+                                Console.Clear();
+                                Graficos.SubMenuCeleiro();
+                                break;
+                            case BootJogo.menu.subMenuCorridas:
+                                Console.Clear();
+                                Graficos.SubMenuCorrida(escolhaCorrida, numVitoria, cavalo);
+                                break;
+                            case BootJogo.menu.subMenuLoja:
+                                break;
+                        }
+                    }
+
+                    Thread.Sleep(myDelay);
                 }
 
-                Thread.Sleep(myDelay);
             }
+           
 
 
         }

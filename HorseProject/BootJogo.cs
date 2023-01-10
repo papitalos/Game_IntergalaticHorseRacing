@@ -237,7 +237,7 @@ namespace HorseProject
                                     Graficos.MenuLoading(qntdSaves);//imprime
                                 }
                                 else if (slot == "0")
-                                {//se for 0
+                                {//se for 0 
                                     Console.Clear();
                                     Graficos.MenuLoading(qntdSaves);//imprime sem alterar o valor
 
@@ -343,7 +343,7 @@ namespace HorseProject
         {
             Console.Clear();
             Graficos.SubMenuCeleiro();
-            subMenuAtual = menu.subMenuCeleiro;
+            
             while (subMenuAtual == menu.subMenuCeleiro)
             {
                 switch (Console.ReadKey().Key)

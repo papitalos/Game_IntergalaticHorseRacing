@@ -121,7 +121,7 @@ namespace HorseProject
         public Cavalo(string nome, raca racas, int velocidadeMax, int aceleracao, int peso, int idade)
         {
             this.nome = nome;
-            this.podeParticipar = podeParticipar;
+           
             this.racas = racas;
             this.idade = idade;
             this.velocidadeMax = velocidadeMax;

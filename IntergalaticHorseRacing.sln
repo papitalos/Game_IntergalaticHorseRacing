@@ -5,6 +5,11 @@ VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HorseProject", "HorseProject\HorseProject.csproj", "{C8CA1FEA-082C-4033-AB20-849B508CF4B4}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{27ECCE6B-EE98-4753-8298-C5CBEEC7DDCD}"
+	ProjectSection(SolutionItems) = preProject
+		Player.cs = Player.cs
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

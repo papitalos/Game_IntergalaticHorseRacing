@@ -13,9 +13,9 @@ namespace HorseProject
             Cavalo cavalo = new Cavalo("Pangaré Desnutrido ", Cavalo.raca.shire, 100, 2, 15, 4);
             CicloDiario.ThreadTimerDiario();
             BootJogo.RodarJogo(cavalo);
+
+
             
-
-
 
             
 

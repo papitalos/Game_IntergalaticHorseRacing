@@ -10,7 +10,7 @@ namespace HorseProject
     static public class Graficos
     {
         static public string[] data = new string[4] { "00/00/00", "00/00/00", "00/00/00", "00/00/00"}, hora = new string[4] { "00:00", "00:00", "00:00", "00:00"};
-        
+       
         
         static public void MenuInicial()
         {
@@ -251,7 +251,7 @@ namespace HorseProject
                     if(posicaoVitoria == 1)
                     {
                         Console.WriteLine("┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
-                                          "│ " + CicloDiario.cicloRelogio[1] + " * " + CicloDiario.condicoesPista[1] + "  │      CORRIDAS (Equipe seu cavalo no celeiro)      │\r\n" +
+                                          "│ " + CicloDiario.horaDoDia + " * " + CicloDiario.condicoesPista + "  │      CORRIDAS (Equipe seu cavalo no celeiro)      │\r\n" +
                                           "│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─│───────────────────────────────────────────────────│\r\n" +
                                           "│  Carteira »  10.000 ß   │ [h] » help?                                       │\r\n" +
                                           "│─────────────────────────│                        1º                         │\r\n" +
@@ -437,7 +437,7 @@ namespace HorseProject
                                           "│                         │         _____|---»   VITORIA   «---|_____         │\r\n" +
                                           "│-» VOLTAR[TAB]           │                                                   │\r\n" +
                                           "│                         │                                                   │\r\n" +
-                                          "│-» SAIR[ESC]             │                                                   │\r\n" +
+                                          "│-» SAIR[ESC]             │             Rank Atual:"+"              │\r\n" +
                                           "│                         │                                                   │\r\n" +
                                           "└─────────────────────────┴───────────────────────────────────────────────────┘");
                     }
@@ -556,7 +556,8 @@ namespace HorseProject
         static public void SubMenuCeleiro()
         { 
             Console.WriteLine(            "┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
-                                          "│  " + CicloDiario.horaDoDia + " * " + CicloDiario.condicoesPista + "   │                   CELEIRO (Max.4)                 │\r\n" +
+                                          "│ » " + CicloDiario.horaDoDia + " » " + CicloDiario.condicoesPista + "  │                   CELEIRO (Max.4)                 │\r\n" +
+                                          "│ » " + CicloDiario.diaAtual + "│                                                   │\r\n" +
                                           "│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─│───────────────────────────────────────────────────│\r\n" +
                                           "│  Carteira »  10.000 ß   │ [h] » help?                                       │\r\n" +
                                           "│─────────────────────────│                                                   │\r\n" +
@@ -691,7 +692,7 @@ namespace HorseProject
                                   "│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─│─────────────────────────────────────────────────────────────────────│\r\n" +
                                   "│  Carteira »  " + BootJogo.guita + " ß    │ Nome: Osvaldo                                                      │\r\n" +
                                   "│─────────────────────────│                                                                     │\r\n" +
-                                  "│                         │ Raça: Percheron                      Recebe Bônus  »  Nevoeiro ▲ 10% │\r\n" +
+                                  "│                         │ Raça: Percheron                      Recebe Bônus  »  Nevoeiro ▲ 10%│\r\n" +
                                   "│                         │ Peso:  180Kg                   Velocidade Maxima  »  ■■■■■■■■□□□□□□ │\r\n" +
                                   "│-» VOLTAR[TAB]           │ Idade: 02 Anos                       Resistencia  »  ■■■□□□□□□□□□□□ │\r\n" +
                                   "│                         │ Estado: Saudável                           Força  »  ■■■■□□□□□□□□□□ │\r\n" +
