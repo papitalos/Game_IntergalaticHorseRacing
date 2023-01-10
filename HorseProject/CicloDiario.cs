@@ -26,6 +26,17 @@ namespace HorseProject
         public static int myDelay = 5000;
         public static int contadorDia = 1;
 
+        public static void Musica()
+        {
+            Thread musica = new Thread(TocarMusica);
+            musica.Start();
+        }
+
+        public static void TocarMusica()
+        {
+            System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"C:\Users\guilh\source\repos\papitalos\IntergalaticHorseRacing\HorseProject\Som_de_trompetas.wav");
+            player.Play();
+        }
 
         public static void ThreadTimerDiario()
         {
