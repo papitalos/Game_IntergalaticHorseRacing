@@ -147,6 +147,7 @@ namespace HorseProject
 
                 if(menuAtual == menu.menuJogos)
                 {
+                    
                     switch (Console.ReadKey().Key)
                     {
                         case ConsoleKey.Enter://se ENTER
@@ -278,6 +279,7 @@ namespace HorseProject
         {
             Console.Clear();
             Graficos.SubMenuCorrida(escolhaCorrida, posicaoVitoria, cavalo);
+            CicloDiario.Musica();
             subMenuAtual = menu.subMenuCorridas;
             escolhaCorrida = 0;
             while (subMenuAtual == menu.subMenuCorridas)
@@ -536,6 +538,48 @@ namespace HorseProject
             subMenuAtual = menu.subMenuInventario;
             Graficos.SubMenuInventario();
 
+            while (subMenuAtual == menu.subMenuInventario)
+            {
+                string opcao = Console.ReadLine();
+
+                switch (opcao)//Mecanica de uso de itens
+                {
+                    case "1":
+                        
+                        // Verifica se o jogador tem saldo suficiente para comprar o item
+                        if (!BootJogo.inventario.Contains("Curativo"))
+                        {
+                            Console.WriteLine("Você não tem curativos");
+                        }
+                        else
+                        {
+                            //fazer o cavalo ganhar vida ex: cavalo.vida++
+                            curativo = "        ";
+                            Console.Clear();
+                            Graficos.SubMenuInventario();
+                            
+                        }
+                        /*
+                        Console.Clear();
+                        Graficos.SubMenuLoja();*/
+                        break;
+                    case "2":
+                        
+                     
+                        break;
+                    case "3":
+                       
+                        break;
+                    case "4":
+                        
+                        break;
+                    default:
+                        Console.Clear();
+                        Graficos.SubMenuLoja();
+                        break;
+
+                }
+
                 switch (Console.ReadKey().Key)
                 {
 
@@ -566,6 +610,7 @@ namespace HorseProject
                         break;
                 }
 
+            }
         }
 
         public static void subMenuStatusCompra(Cavalo cavalo, int valoritem)

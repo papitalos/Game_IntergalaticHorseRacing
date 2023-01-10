@@ -12,19 +12,27 @@ namespace HorseProject
         static public string[] data = new string[4] { "00/00/00", "00/00/00", "00/00/00", "00/00/00"}, hora = new string[4] { "00:00", "00:00", "00:00", "00:00"};
         
         
+        
         static public void MenuInicial()
         {
+
+            void PrintColoredText(string text, ConsoleColor color)
+        {
+            Console.ForegroundColor = color;
+            Console.Write(text);
+            Console.ResetColor();
+        }
            
-            Console.WriteLine("┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
+            Console.Write("┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
                               "│           Menu          │            *clique na tecla para ação*            │\r\n" +
                               "│─────────────────────────│───────────────────────────────────────────────────│\r\n" +
                               "│                         │                                                   │\r\n" +
                               "│                         │                                                   │\r\n" +
-                              "│-» JOGAR[ENTER]          │                                                   │\r\n" +
+                              "│-» ");  PrintColoredText("JOGAR", ConsoleColor.Green);  Console.Write("[ENTER]          │                                                   │\r\n" +
                               "│                         │                        ~~%%%%%%%% _,_,            │\r\n" +
-                              "│-» CARREGAR[TAB]         │                       ~~%%%%%%%%% -|/./           │\r\n" +
+                              "│-» ");  PrintColoredText("CARREGAR", ConsoleColor.Yellow);  Console.Write("[TAB]         │                       ~~%%%%%%%%% -|/./           │\r\n" +
                               "│                         │                     ~~%%%%%%% -'   /  `.          │\r\n" +
-                              "│-» SAIR[ESC]             │                   ~~%%%%%%%% '  .     ,__;        │\r\n" +
+                              "│-» ");  PrintColoredText("SAIR", ConsoleColor.Red);  Console.WriteLine("[ESC]             │                   ~~%%%%%%%% '  .     ,__;        │\r\n" +
                               "│                         │                 ~~%%%%%%%% '   :      .|O|        │\r\n" +
                               "│                         │               ~~%%%%%%%% '    :          `.       │\r\n" +
                               "│                         │             ~~%%%%%%%% '       `. _,        '     │\r\n" +
@@ -525,6 +533,7 @@ namespace HorseProject
                     }
                     break;
                 default:
+                    
                     Console.WriteLine("┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
                                       "│  Madrugada * Nevoeiro   │      CORRIDAS (Equipe seu cavalo no celeiro)      │\r\n" +
                                       "│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─│───────────────────────────────────────────────────│\r\n" +
