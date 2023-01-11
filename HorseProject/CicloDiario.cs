@@ -21,8 +21,8 @@ namespace HorseProject
         public static bool pistaAberta;
         public static string[] cicloRelogio = new string[4] { "Manhã    ", "Tarde    ", "Noite    ", "Madrugada" };
         public static string[] possiveisEstados = new string[4] { "Neve    ", "Chuva   ", "Nevoeiro", "Limpo   " };
-        public static string[] diasDaSemana = new string[7] { "Segunda-feira         ","Terça-feira  ","Quarta-feira ","Quinta-feira ","Sexta-feira  ","Sabado       ","Domingo      " };
-        public static string condicoesPista, horaDoDia, diaAtual;                                                                                                                    
+        public static string[] diasDaSemana = new string[7] { "Segunda-feira         ","Terça-feira           ","Quarta-feira          ","Quinta-feira          ","Sexta-feira           ","Sabado                ","Domingo               " };
+        public static string condicoesPista, horaDoDia, diaAtual;                                                                                                                                                                                                                                               
         public static int myDelay = 5000;
         public static int contadorDia = 1;
 
@@ -34,7 +34,7 @@ namespace HorseProject
 
         public static void TocarMusica()
         {
-            System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"C:\Users\guilh\source\repos\papitalos\IntergalaticHorseRacing\HorseProject\Som_de_trompetas.wav");
+            System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"C:\Users\italo\Desktop\Projetos\Universidade\C#\IntergalaticHorseRacing\HorseProject\Som_De_Trompetas.wav");
             player.Play();
         }
 
@@ -43,10 +43,11 @@ namespace HorseProject
             //Criar uma nova thread para rodar o relogio do dia de maneira independente
             Thread dia = new Thread(PassarTempo);
             dia.Start();
-
+     
 
 
         }
+
 
         public static void PassarTempo()
         {
@@ -92,6 +93,14 @@ namespace HorseProject
                             case BootJogo.menu.subMenuLoja:
                                 break;
                         }
+                    }
+                    while(BootJogo.menuAtual == BootJogo.menu.menuInicial)
+                    {
+                        if (BootJogo.menuAtual == BootJogo.menu.menuJogos)
+                        {
+                            BootJogo.menuAtual = BootJogo.menu.menuInicial;
+                        }
+
                     }
 
                     Thread.Sleep(myDelay);

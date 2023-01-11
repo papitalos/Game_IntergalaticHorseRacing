@@ -45,7 +45,7 @@ namespace HorseProject
             while (estaRodando) //enquanto o jogo estiver rodando
             {
 
-
+            
                 
                 switch (Console.ReadKey().Key) //verifica a KEY clicada
                 {
@@ -399,7 +399,7 @@ namespace HorseProject
 
             while (subMenuAtual == menu.subMenuLoja)
             {
-                string opcao = Console.ReadLine();
+                
                 // Armazena o valor do item escolhido
                 
                 if (opcao == "1")
