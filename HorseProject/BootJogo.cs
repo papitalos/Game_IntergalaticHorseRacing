@@ -399,7 +399,7 @@ namespace HorseProject
 
             while (subMenuAtual == menu.subMenuLoja)
             {
-                
+                string opcao = Console.ReadLine();
                 // Armazena o valor do item escolhido
                 
                 if (opcao == "1")

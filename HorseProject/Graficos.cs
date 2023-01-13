@@ -7,21 +7,23 @@ using System.Threading.Tasks;
 
 namespace HorseProject
 {
+
     static public class Graficos
     {
         static public string[] data = new string[4] { "00/00/00", "00/00/00", "00/00/00", "00/00/00"}, hora = new string[4] { "00:00", "00:00", "00:00", "00:00"};
        
         
         
+        
         static public void MenuInicial()
         {
-
             void PrintColoredText(string text, ConsoleColor color)
         {
             Console.ForegroundColor = color;
             Console.Write(text);
             Console.ResetColor();
         }
+            
            
             Console.Write("┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
                               "│           Menu          │            *clique na tecla para ação*            │\r\n" +
@@ -49,20 +51,26 @@ namespace HorseProject
         }
         static public void MenuLoading(int qntdSaves)
         {
+            void PrintColoredText(string text, ConsoleColor color)
+        {
+            Console.ForegroundColor = color;
+            Console.Write(text);
+            Console.ResetColor();
+        }
 
             switch (qntdSaves)
             {
                 case 1:
-                    Console.WriteLine("┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
+                    Console.Write("┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
                                       "│           Menu          │                 SEUS SAVES (Max.4)                │\r\n" +
                                       "│─────────────────────────│───────────────────────────────────────────────────│\r\n" +
                                       "│                         │                                                   │\r\n" +
                                       "│                         │                  ┌──────────────────────────┐     │\r\n" +
-                                      "│-» JOGAR[ENTER]          │     SLOT[1]  »»  │ " + data[0] + "           " + hora[0] + " │     │\r\n" +
+                                      "│-» ");  PrintColoredText("JOGAR", ConsoleColor.Green);  Console.Write("[ENTER]          │     SLOT[1]  »»  │ " + data[0] + "           " + hora[0] + " │     │\r\n" +
                                       "│                         │                  └──────────────────────────┘     │\r\n" +
-                                      "│-» CARREGAR[TAB]         │                                                   │\r\n" +
+                                      "│-» ");  PrintColoredText("CARREGAR", ConsoleColor.Yellow);  Console.Write("[TAB]         │                                                   │\r\n" +
                                       "│                         │                                                   │\r\n" +
-                                      "│-» SAIR[ESC]             │     NOVO SLOT [A]                                 │\r\n" +
+                                      "│-» ");  PrintColoredText("SAIR", ConsoleColor.Red);  Console.WriteLine("[ESC]             │     NOVO SLOT [A]                                 │\r\n" +
                                       "│                         │                                                   │\r\n" +
                                       "│                         │                                                   │\r\n" +
                                       "│                         │                                                   │\r\n" +
@@ -79,16 +87,16 @@ namespace HorseProject
                                       "└─────────────────────────┴───────────────────────────────────────────────────┘");
                     break;
                   case 2:
-                    Console.WriteLine("┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
+                    Console.Write("┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
                                       "│           Menu          │                 SEUS SAVES (Max.4)                │\r\n" +
                                       "│─────────────────────────│───────────────────────────────────────────────────│\r\n" +
                                       "│                         │                                                   │\r\n" +
                                       "│                         │                  ┌──────────────────────────┐     │\r\n" +
-                                      "│-» JOGAR[ENTER]          │     SLOT[1]  »»  │ " + data[0] + "           " + hora[0] + " │     │\r\n" +
+                                      "│-» ");  PrintColoredText("JOGAR", ConsoleColor.Green);  Console.Write("[ENTER]          │     SLOT[1]  »»  │ " + data[0] + "           " + hora[0] + " │     │\r\n" +
                                       "│                         │                  └──────────────────────────┘     │\r\n" +
-                                      "│-» CARREGAR[TAB]         │                                                   │\r\n" +
+                                      "│-» ");  PrintColoredText("CARREGAR", ConsoleColor.Yellow);  Console.Write("[TAB]         │                                                   │\r\n" +
                                       "│                         │                  ┌──────────────────────────┐     │\r\n" +
-                                      "│-» SAIR[ESC]             │     SLOT[2]  »»  │ " + data[1] + "           " + hora[1] + " │     │\r\n" +
+                                      "│-» ");  PrintColoredText("SAIR", ConsoleColor.Red);  Console.WriteLine("[ESC]             │     SLOT[2]  »»  │ " + data[1] + "           " + hora[1] + " │     │\r\n" +
                                       "│                         │                  └──────────────────────────┘     │\r\n" +
                                       "│                         │                                                   │\r\n" +
                                       "│                         │                                                   │\r\n" +
@@ -105,16 +113,16 @@ namespace HorseProject
                                       "└─────────────────────────┴───────────────────────────────────────────────────┘");
                     break;
                 case 3:
-                    Console.WriteLine("┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
+                    Console.Write("┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
                                       "│           Menu          │                 SEUS SAVES (Max.4)                │\r\n" +
                                       "│─────────────────────────│───────────────────────────────────────────────────│\r\n" +
                                       "│                         │                                                   │\r\n" +
                                       "│                         │                  ┌──────────────────────────┐     │\r\n" +
-                                      "│-» JOGAR[ENTER]          │     SLOT[1]  »»  │ " + data[0] + "           " + hora[0] + " │     │\r\n" +
+                                      "│-» ");  PrintColoredText("JOGAR", ConsoleColor.Green);  Console.Write("[ENTER]          │     SLOT[1]  »»  │ " + data[0] + "           " + hora[0] + " │     │\r\n" +
                                       "│                         │                  └──────────────────────────┘     │\r\n" +
-                                      "│-» CARREGAR[TAB]         │                                                   │\r\n" +
+                                      "│-» ");  PrintColoredText("CARREGAR", ConsoleColor.Yellow);  Console.Write("[TAB]         │                                                   │\r\n" +
                                       "│                         │                  ┌──────────────────────────┐     │\r\n" +
-                                      "│-» SAIR[ESC]             │     SLOT[2]  »»  │ " + data[1] + "           " + hora[1] + " │     │\r\n" +
+                                      "│-» ");  PrintColoredText("SAIR", ConsoleColor.Red);  Console.WriteLine("[ESC]             │     SLOT[2]  »»  │ " + data[1] + "           " + hora[1] + " │     │\r\n" +
                                       "│                         │                  └──────────────────────────┘     │\r\n" +
                                       "│                         │                                                   │\r\n" +
                                       "│                         │                  ┌──────────────────────────┐     │\r\n" +
@@ -131,16 +139,16 @@ namespace HorseProject
                                       "└─────────────────────────┴───────────────────────────────────────────────────┘");
                     break;
                 case 4:
-                    Console.WriteLine("┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
+                    Console.Write("┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
                                       "│           Menu          │                 SEUS SAVES (Max.4)                │\r\n" +
                                       "│─────────────────────────│───────────────────────────────────────────────────│\r\n" +
                                       "│                         │                                                   │\r\n" +
                                       "│                         │                  ┌──────────────────────────┐     │\r\n" +
-                                      "│-» JOGAR[ENTER]          │     SLOT[1]  »»  │ " + data[0] + "           " + hora[0] + " │     │\r\n" +
+                                      "│-» ");  PrintColoredText("JOGAR", ConsoleColor.Green);  Console.Write("[ENTER]          │     SLOT[1]  »»  │ " + data[0] + "           " + hora[0] + " │     │\r\n" +
                                       "│                         │                  └──────────────────────────┘     │\r\n" +
-                                      "│-» CARREGAR[TAB]         │                                                   │\r\n" +
+                                      "│-» ");  PrintColoredText("CARREGAR", ConsoleColor.Yellow);  Console.Write("[TAB]         │                                                   │\r\n" +
                                       "│                         │                  ┌──────────────────────────┐     │\r\n" +
-                                      "│-» SAIR[ESC]             │     SLOT[2]  »»  │ " + data[1] + "           " + hora[1] + " │     │\r\n" +
+                                      "│-» ");  PrintColoredText("SAIR", ConsoleColor.Red);  Console.WriteLine("[ESC]             │     SLOT[2]  »»  │ " + data[1] + "           " + hora[1] + " │     │\r\n" +
                                       "│                         │                  └──────────────────────────┘     │\r\n" +
                                       "│                         │                                                   │\r\n" +
                                       "│                         │                  ┌──────────────────────────┐     │\r\n" +
@@ -164,11 +172,18 @@ namespace HorseProject
         }
         static public void MenuEscolhaInicial(int escolha)
         {
+            void PrintColoredText(string text, ConsoleColor color)
+        {
+            Console.ForegroundColor = color;
+            Console.Write(text);
+            Console.ResetColor();
+        }
             switch (escolha)
             {
+
                 case 1:
-                    Console.WriteLine("┌──────────────────────────────────────────────────────────────────────────────┐\r\n" +
-                                      "│                         ESCOLHA SEU CAVALO INICIAL                           │\r\n" +
+                    Console.Write("┌──────────────────────────────────────────────────────────────────────────────┐\r\n" +
+                                      "│                         ");  PrintColoredText("ESCOLHA SEU CAVALO INICIAL", ConsoleColor.Red);  Console.WriteLine("                           │\r\n" +
                                       "│──────────────────────────────────────────────────────────────────────────────│\r\n" +
                                       "│            *Seu cavalo inicial é um Noob Imortal, literalmente*              │\r\n" +
                                       "│                                                                              │\r\n" +
@@ -193,8 +208,8 @@ namespace HorseProject
                                       "└──────────────────────────────────────────────────────────────────────────────┘");
                     break;
                 case 2:
-                    Console.WriteLine("┌──────────────────────────────────────────────────────────────────────────────┐\r\n" +
-                                      "│                         ESCOLHA SEU CAVALO INICIAL                           │\r\n" +
+                    Console.Write("┌──────────────────────────────────────────────────────────────────────────────┐\r\n" +
+                                      "│                         ");  PrintColoredText("ESCOLHA SEU CAVALO INICIAL", ConsoleColor.Red);  Console.WriteLine("                           │\r\n" +
                                       "│──────────────────────────────────────────────────────────────────────────────│\r\n" +
                                       "│            *Seu cavalo inicial é um Noob Imortal, literalmente*              │\r\n" +
                                       "│                                                                              │\r\n" +
@@ -219,8 +234,8 @@ namespace HorseProject
                                       "└──────────────────────────────────────────────────────────────────────────────┘");
                     break;
                 case 3:
-                    Console.WriteLine("┌──────────────────────────────────────────────────────────────────────────────┐\r\n" +
-                                      "│                         ESCOLHA SEU CAVALO INICIAL                           │\r\n" +
+                    Console.Write("┌──────────────────────────────────────────────────────────────────────────────┐\r\n" +
+                                      "│                         ");  PrintColoredText("ESCOLHA SEU CAVALO INICIAL", ConsoleColor.Red);  Console.WriteLine("                           │\r\n" +
                                       "│──────────────────────────────────────────────────────────────────────────────│\r\n" +
                                       "│            *Seu cavalo inicial é um Noob Imortal, literalmente*              │\r\n" +
                                       "│                                                                              │\r\n" +
@@ -252,13 +267,18 @@ namespace HorseProject
         }
         static public void SubMenuCorrida(int escolha, int posicaoVitoria, Cavalo cavalo)
         {
-            
+            void PrintColoredText(string text, ConsoleColor color)
+        {
+            Console.ForegroundColor = color;
+            Console.Write(text);
+            Console.ResetColor();
+        }
             switch (escolha)
             {
                 case 1:
                     if(posicaoVitoria == 1)
                     {
-                        Console.WriteLine("┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
+                        Console.Write("┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
                                           "│ » " + CicloDiario.horaDoDia + " » " + CicloDiario.condicoesPista + "  │      CORRIDAS (Equipe seu cavalo no celeiro)      │\r\n" +
                                           "│ » " + CicloDiario.diaAtual + "│                                                   │\r\n" +
                                           "│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─│───────────────────────────────────────────────────│\r\n" +
@@ -274,19 +294,19 @@ namespace HorseProject
                                           "│                         │                            └────────────────────┘ │\r\n" +
                                           "│-» LOJA[L]               │                                                   │\r\n" +
                                           "│                         │                                                   │\r\n" +
-                                          "│-» Inventario[E]         │                                                   │\r\n" +
+                                          "│-» INVENTARIO[E]         │                                                   │\r\n" +
                                           "│                         │                                                   │\r\n" +
                                           "│─────────────────────────│                                                   │\r\n" +
                                           "│                         │         _____|---»   VITORIA   «---|_____         │\r\n" +
-                                          "│-» VOLTAR[TAB]           │                                                   │\r\n" +
+                                          "│-» ");  PrintColoredText("VOLTAR", ConsoleColor.Yellow);  Console.Write("[TAB]           │                                                   │\r\n" +
                                           "│                         │                                                   │\r\n" +
-                                          "│-» SAIR[ESC]             │                                                   │\r\n" +
+                                          "│-» ");  PrintColoredText("SAIR", ConsoleColor.Red);  Console.WriteLine("[ESC]             │                                                   │\r\n" +
                                           "│                         │                                                   │\r\n" +
                                           "└─────────────────────────┴───────────────────────────────────────────────────┘");
                     }
                     else if(posicaoVitoria == 2)
                     {
-                        Console.WriteLine("┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
+                        Console.Write("┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
                                           "│ » " + CicloDiario.horaDoDia + " » " + CicloDiario.condicoesPista + "  │      CORRIDAS (Equipe seu cavalo no celeiro)      │\r\n" +
                                           "│ » " + CicloDiario.diaAtual + "│                                                   │\r\n" +
                                          "│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─│───────────────────────────────────────────────────│\r\n" +
@@ -302,19 +322,19 @@ namespace HorseProject
                                          "│                         │                            └────────────────────┘ │\r\n" +
                                          "│-» LOJA[L]               │                                                   │\r\n" +
                                          "│                         │                                                   │\r\n" +
-                                         "│-» Inventario[E]         │                                                   │\r\n" +
+                                         "│-» INVENTARIO[E]         │                                                   │\r\n" +
                                          "│                         │                                                   │\r\n" +
                                          "│─────────────────────────│                                                   │\r\n" +
                                          "│                         │         _____|---»   VITORIA   «---|_____         │\r\n" +
-                                         "│-» VOLTAR[TAB]           │                                                   │\r\n" +
+                                         "│-» ");  PrintColoredText("VOLTAR", ConsoleColor.Yellow);  Console.Write("[TAB]           │                                                   │\r\n" +
                                          "│                         │                                                   │\r\n" +
-                                         "│-» SAIR[ESC]             │                                                   │\r\n" +
+                                         "│-» ");  PrintColoredText("SAIR", ConsoleColor.Red);  Console.WriteLine("[ESC]             │                                                   │\r\n" +
                                          "│                         │                                                   │\r\n" +
                                          "└─────────────────────────┴───────────────────────────────────────────────────┘");
                     }
                     else if(posicaoVitoria == 3)
                     {
-                        Console.WriteLine("┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
+                        Console.Write("┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
                                           "│ » " + CicloDiario.horaDoDia + " » " + CicloDiario.condicoesPista + "  │      CORRIDAS (Equipe seu cavalo no celeiro)      │\r\n" +
                                           "│ » " + CicloDiario.diaAtual + "│                                                   │\r\n" +
                                          "│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─│───────────────────────────────────────────────────│\r\n" +
@@ -330,19 +350,19 @@ namespace HorseProject
                                          "│                         │                            └────────────────────┘ │\r\n" +
                                          "│-» LOJA[L]               │                                                   │\r\n" +
                                          "│                         │                                                   │\r\n" +
-                                         "│-» Inventario[E]         │                                                   │\r\n" +
+                                         "│-» INVENTARIO[E]         │                                                   │\r\n" +
                                          "│                         │                                                   │\r\n" +
                                          "│─────────────────────────│                                                   │\r\n" +
                                          "│                         │         _____|---»   VITORIA   «---|_____         │\r\n" +
-                                         "│-» VOLTAR[TAB]           │                                                   │\r\n" +
+                                         "│-» ");  PrintColoredText("VOLTAR", ConsoleColor.Yellow);  Console.Write("[TAB]           │                                                   │\r\n" +
                                          "│                         │                                                   │\r\n" + 
-                                         "│-» SAIR[ESC]             │                                                   │\r\n" +
+                                         "│-» ");  PrintColoredText("SAIR", ConsoleColor.Red);  Console.WriteLine("[ESC]             │                                                   │\r\n" +
                                          "│                         │                                                   │\r\n" +
                                          "└─────────────────────────┴───────────────────────────────────────────────────┘");
                     }
                     else if (posicaoVitoria == 4)
                     {
-                        Console.WriteLine("┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
+                        Console.Write("┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
                                           "│ » " + CicloDiario.horaDoDia + " » " + CicloDiario.condicoesPista + "  │      CORRIDAS (Equipe seu cavalo no celeiro)      │\r\n" +
                                           "│ » " + CicloDiario.diaAtual + "│                                                  │\r\n" +
                                          "│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─│───────────────────────────────────────────────────│\r\n" +
@@ -362,9 +382,9 @@ namespace HorseProject
                                          "│                         │                                                   │\r\n" +
                                          "│─────────────────────────│                                                   │\r\n" +
                                          "│                         │         _____|---»   DERROTA   «---|_____         │\r\n" +
-                                         "│-» VOLTAR[TAB]           │                                                   │\r\n" +
+                                         "│-» ");  PrintColoredText("Voltar", ConsoleColor.Yellow);  Console.Write("[TAB]           │                                                   │\r\n" +
                                          "│                         │                                                   │\r\n" +
-                                         "│-» SAIR[ESC]             │                                                   │\r\n" +
+                                         "│-» ");  PrintColoredText("SAIR", ConsoleColor.Red);  Console.WriteLine("[ESC]             │                                                   │\r\n" +
                                          "│                         │                                                   │\r\n" +
                                          "└─────────────────────────┴───────────────────────────────────────────────────┘");
                     }
@@ -372,7 +392,7 @@ namespace HorseProject
                 case 2:
                     if (posicaoVitoria == 1)
                     {
-                        Console.WriteLine("┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
+                        Console.Write("┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
                                           "│ » " + CicloDiario.horaDoDia + " » " + CicloDiario.condicoesPista + "  │      CORRIDAS (Equipe seu cavalo no celeiro)      │\r\n" +
                                           "│ » " + CicloDiario.diaAtual + "│                                                   │\r\n" +
                                           "│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─│───────────────────────────────────────────────────│\r\n" +
@@ -388,19 +408,19 @@ namespace HorseProject
                                           "│                         │                                                   │\r\n" +
                                           "│-» LOJA[L]               │                                                   │\r\n" +
                                           "│                         │                                                   │\r\n" +
-                                          "│-» Inventario[E]         │                                                   │\r\n" +
+                                          "│-» INVENTARIO[E]         │                                                   │\r\n" +
                                           "│                         │                                                   │\r\n" +
                                           "│─────────────────────────│                                                   │\r\n" +
                                           "│                         │         _____|---»   VITORIA   «---|_____         │\r\n" +
-                                          "│-» VOLTAR[TAB]           │                                                   │\r\n" +
+                                          "│-» ");  PrintColoredText("VOLTAR", ConsoleColor.Yellow);  Console.Write("[TAB]           │                                                   │\r\n" +
                                           "│                         │                                                   │\r\n" +
-                                          "│-» SAIR[ESC]             │                                                   │\r\n" +
+                                          "│-» ");  PrintColoredText("SAIR", ConsoleColor.Red);  Console.WriteLine("[ESC]             │                                                   │\r\n" +
                                           "│                         │                                                   │\r\n" +
                                           "└─────────────────────────┴───────────────────────────────────────────────────┘");
                     }
                     else if (posicaoVitoria == 2)
                     {
-                        Console.WriteLine("┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
+                        Console.Write("┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
                                           "│ » " + CicloDiario.horaDoDia + " » " + CicloDiario.condicoesPista + "  │      CORRIDAS (Equipe seu cavalo no celeiro)      │\r\n" +
                                           "│ » " + CicloDiario.diaAtual + "│                                                   │\r\n" +
                                           "│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─│───────────────────────────────────────────────────│\r\n" +
@@ -416,13 +436,13 @@ namespace HorseProject
                                           "│                         │                                                   │\r\n" +
                                           "│-» LOJA[L]               │                                                   │\r\n" +
                                           "│                         │                                                   │\r\n" +
-                                          "│-» Inventario[E]         │                                                   │\r\n" +
+                                          "│-» INVENTARIO[E]         │                                                   │\r\n" +
                                           "│                         │                                                   │\r\n" +
                                           "│─────────────────────────│                                                   │\r\n" +
                                           "│                         │         _____|---»   DERROTA   «---|_____         │\r\n" +
-                                          "│-» VOLTAR[TAB]           │                                                   │\r\n" +
+                                          "│-» ");  PrintColoredText("VOLTAR", ConsoleColor.Yellow);  Console.Write("[TAB]           │                                                   │\r\n" +
                                           "│                         │                                                   │\r\n" +
-                                          "│-» SAIR[ESC]             │                                                   │\r\n" +
+                                          "│-» ");  PrintColoredText("SAIR", ConsoleColor.Red);  Console.WriteLine("[ESC]             │                                                   │\r\n" +
                                           "│                         │                                                   │\r\n" +
                                           "└─────────────────────────┴───────────────────────────────────────────────────┘");
                     }
@@ -430,7 +450,7 @@ namespace HorseProject
                 case 3:
                     if (posicaoVitoria == 1)
                     {
-                        Console.WriteLine("┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
+                        Console.Write("┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
                                           "│ » " + CicloDiario.horaDoDia + " » " + CicloDiario.condicoesPista + "  │      CORRIDAS (Equipe seu cavalo no celeiro)      │\r\n" +
                                           "│ » " + CicloDiario.diaAtual + "│                                                   │\r\n" +
                                           "│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─│───────────────────────────────────────────────────│\r\n" +
@@ -446,19 +466,19 @@ namespace HorseProject
                                           "│                         │                            └────────────────────┘ │\r\n" +
                                           "│-» LOJA[L]               │                                                   │\r\n" +
                                           "│                         │                      00/03  ⇡                     │\r\n" +
-                                          "│-» Inventario[E]         │            Corridas para subir o rank             │\r\n" +
+                                          "│-» INVENTARIO[E]         │            Corridas para subir o rank             │\r\n" +
                                           "│                         │                                                   │\r\n" +
                                           "│─────────────────────────│                                                   │\r\n" +
                                           "│                         │         _____|---»   VITORIA   «---|_____         │\r\n" +
-                                          "│-» VOLTAR[TAB]           │                                                   │\r\n" +
+                                          "│-» ");  PrintColoredText("VOLTAR", ConsoleColor.Yellow);  Console.Write("[TAB]           │                                                   │\r\n" +
                                           "│                         │                                                   │\r\n" +
-                                          "│-» SAIR[ESC]             │             Rank Atual:"+"              │\r\n" +
+                                          "│-» ");  PrintColoredText("SAIR", ConsoleColor.Red);  Console.WriteLine("[ESC]             │             Rank Atual:"+"              │\r\n" +
                                           "│                         │                                                   │\r\n" +
                                           "└─────────────────────────┴───────────────────────────────────────────────────┘");
                     }
                     else if (posicaoVitoria == 2)
                     {
-                        Console.WriteLine("┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
+                        Console.Write("┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
                                           "│ » " + CicloDiario.horaDoDia + " » " + CicloDiario.condicoesPista + "  │      CORRIDAS (Equipe seu cavalo no celeiro)      │\r\n" +
                                           "│ » " + CicloDiario.diaAtual + "│                                                   │\r\n" +
                                           "│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─│───────────────────────────────────────────────────│\r\n" +
@@ -474,20 +494,20 @@ namespace HorseProject
                                           "│                         │                            └────────────────────┘ │\r\n" +
                                           "│-» LOJA[L]               │                                                   │\r\n" +
                                           "│                         │                      00/03  ⇡                     │\r\n" +
-                                          "│-» Inventario[E]         │            Corridas para subir o rank             │\r\n" +
+                                          "│-» INVENTARIO[E]         │            Corridas para subir o rank             │\r\n" +
                                           "│                         │                                                   │\r\n" +
                                           "│─────────────────────────│                                                   │\r\n" +
                                           "│                         │         _____|---»   VITORIA   «---|_____         │\r\n" +
-                                          "│-» VOLTAR[TAB]           │                                                   │\r\n" +
+                                          "│-» ");  PrintColoredText("VOLTAR", ConsoleColor.Yellow);  Console.Write("[TAB]           │                                                   │\r\n" +
                                           "│                         │                                                   │\r\n" +
-                                          "│-» SAIR[ESC]             │                                                   │\r\n" +
+                                          "│-» ");  PrintColoredText("SAIR", ConsoleColor.Red);  Console.WriteLine("[ESC]             │                                                   │\r\n" +
                                           "│                         │                                                   │\r\n" +
                                           "└─────────────────────────┴───────────────────────────────────────────────────┘");
                         
                     }
                     else if (posicaoVitoria == 3)
                     {
-                        Console.WriteLine("┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
+                        Console.Write("┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
                                           "│ » " + CicloDiario.horaDoDia + " » " + CicloDiario.condicoesPista + "  │      CORRIDAS (Equipe seu cavalo no celeiro)      │\r\n" +
                                           "│ » " + CicloDiario.diaAtual + "│                                                   │\r\n" +
                                           "│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─│───────────────────────────────────────────────────│\r\n" +
@@ -503,19 +523,19 @@ namespace HorseProject
                                           "│                         │                            └────────────────────┘ │\r\n" +
                                           "│-» LOJA[L]               │                                                   │\r\n" +
                                           "│                         │                      00/03  ⇡                     │\r\n" +
-                                          "│-» Inventario[E]         │            Corridas para subir o rank             │\r\n" +
+                                          "│-» INVENTARIO[E]         │            Corridas para subir o rank             │\r\n" +
                                           "│                         │                                                   │\r\n" +
                                           "│─────────────────────────│                                                   │\r\n" +
                                           "│                         │         _____|---»   VITORIA   «---|_____         │\r\n" +
-                                          "│-» VOLTAR[TAB]           │                                                   │\r\n" +
+                                          "│-» ");  PrintColoredText("VOLTAR", ConsoleColor.Yellow);  Console.Write("[TAB]           │                                                   │\r\n" +
                                           "│                         │                                                   │\r\n" +
-                                          "│-» SAIR[ESC]             │                                                   │\r\n" +
+                                          "│-» ");  PrintColoredText("SAIR", ConsoleColor.Red);  Console.WriteLine("[ESC]             │                                                   │\r\n" +
                                           "│                         │                                                   │\r\n" +
                                           "└─────────────────────────┴───────────────────────────────────────────────────┘");
                     }
                     else if(posicaoVitoria == 4)
                     {
-                        Console.WriteLine("┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
+                        Console.Write("┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
                                           "│ » " + CicloDiario.horaDoDia + " » " + CicloDiario.condicoesPista + "  │      CORRIDAS (Equipe seu cavalo no celeiro)      │\r\n" +
                                           "│ » " + CicloDiario.diaAtual + "│                                                   │\r\n" +
                                          "│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─│───────────────────────────────────────────────────│\r\n" +
@@ -531,20 +551,20 @@ namespace HorseProject
                                          "│                         │                            └────────────────────┘ │\r\n" +
                                          "│-» LOJA[L]               │                                                   │\r\n" +
                                          "│                         │                       00/03  ⇣                    │\r\n" +
-                                         "│-» Inventario[E]         │             Corridas para subir o rank            │\r\n" +
+                                         "│-» INVENTARIO[E]         │             Corridas para subir o rank            │\r\n" +
                                          "│                         │                                                   │\r\n" +
                                          "│─────────────────────────│                                                   │\r\n" +
                                          "│                         │         _____|---»   DERROTA   «---|_____         │\r\n" +
-                                         "│-» VOLTAR[TAB]           │                                                   │\r\n" +
+                                         "│-» ");  PrintColoredText("VOLTAR", ConsoleColor.Yellow);  Console.Write("[TAB]           │                                                   │\r\n" +
                                          "│                         │                                                   │\r\n" +
-                                         "│-» SAIR[ESC]             │                                                   │\r\n" +
+                                         "│-» ");  PrintColoredText("SAIR", ConsoleColor.Red);  Console.WriteLine("[ESC]             │                                                   │\r\n" +
                                          "│                         │                                                   │\r\n" +
                                          "└─────────────────────────┴───────────────────────────────────────────────────┘");
                     }
                     break;
                 default:
                     
-                    Console.WriteLine("┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
+                    Console.Write("┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
                                           "│ » " + CicloDiario.horaDoDia + " » " + CicloDiario.condicoesPista + "  │       CORRIDAS (Equipe seu cavalo no celeiro)     │\r\n" +
                                           "│ » " + CicloDiario.diaAtual + "│                                                   │\r\n" +
                                       "│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─│───────────────────────────────────────────────────│\r\n" +
@@ -560,13 +580,13 @@ namespace HorseProject
                                       "│                         │                                                   │\r\n" +
                                       "│-» LOJA[L]               │                    Esta Pronto?                   │\r\n" +
                                       "│                         │                                                   │\r\n" +
-                                      "│-» Inventario[E]         │                ESCOLHA SUA CORRIDA                │\r\n" +
+                                      "│-» INVENTARIO[E]         │                ESCOLHA SUA CORRIDA                │\r\n" +
                                       "│                         │                                                   │\r\n" +
                                       "│─────────────────────────│                                                   │\r\n" +
                                       "│                         │                                                   │\r\n" +
-                                      "│-» VOLTAR[TAB]           │       [1]              [2]              [3]       │\r\n" +
+                                      "│-» ");  PrintColoredText("VOLTAR", ConsoleColor.Yellow);  Console.Write("[TAB]           │       [1]              [2]              [3]       │\r\n" +
                                       "│                         │  ┌───────────┐    ┌───────────┐    ┌───────────┐  │\r\n" +
-                                      "│-» SAIR[ESC]             │  │  CASUAL   │    │RESISTENCIA│    │  RANKED   │  │\r\n" +
+                                      "│-» ");  PrintColoredText("SAIR", ConsoleColor.Red);  Console.WriteLine("[ESC]             │  │  CASUAL   │    │RESISTENCIA│    │  RANKED   │  │\r\n" +
                                       "│                         │  └───────────┘    └───────────┘    └───────────┘  │\r\n" +
                                       "└─────────────────────────┴───────────────────────────────────────────────────┘");
                     break;
@@ -575,7 +595,13 @@ namespace HorseProject
         }
         static public void SubMenuCeleiro()
         { 
-            Console.WriteLine(            "┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
+            void PrintColoredText(string text, ConsoleColor color)
+        {
+            Console.ForegroundColor = color;
+            Console.Write(text);
+            Console.ResetColor();
+        }
+            Console.Write(            "┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
                                           "│ » " + CicloDiario.horaDoDia + " » " + CicloDiario.condicoesPista + "  │                   CELEIRO (Max.4)                 │\r\n" +
                                           "│ » " + CicloDiario.diaAtual + "│                                                   │\r\n" +
                                           "│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─│───────────────────────────────────────────────────│\r\n" +
@@ -591,37 +617,49 @@ namespace HorseProject
                                           "│                         │ [2] │  Puro Sangue Inglês  │                      │\r\n" +
                                           "│-» LOJA[L]               │     └──────────────────────┘                      │\r\n" +
                                           "│                         │                                                   │\r\n" +
-                                          "│-» Inventario[E]         │     ┌──────────────────────┐                      │\r\n" +
+                                          "│-» INVENTARIO[E]         │     ┌──────────────────────┐                      │\r\n" +
                                           "│                         │ [3] │  Pedro Pereira       │                      │\r\n" +
                                           "│─────────────────────────│     └──────────────────────┘                      │\r\n" +
                                           "│                         │                                                   │\r\n" +
-                                          "│-» VOLTAR[TAB]           │     ┌──────────────────────┐                      │\r\n" +
+                                          "│-» ");  PrintColoredText("VOLTAR", ConsoleColor.Yellow);  Console.Write("[TAB]           │     ┌──────────────────────┐                      │\r\n" +
                                           "│                         │ [4] │  Silveira            │                      │\r\n" +
-                                          "│-» SAIR[ESC]             │     └──────────────────────┘                      │\r\n" +
+                                          "│-» ");  PrintColoredText("SAIR", ConsoleColor.Red);  Console.WriteLine("[ESC]             │     └──────────────────────┘                      │\r\n" +
                                           "│                         │                                                   │\r\n" +
                                           "└─────────────────────────┴───────────────────────────────────────────────────┘");
         }
 
         static public void MenuStatusDoCavalo(Cavalo cavaloEscolhido)
         {
-             Console.WriteLine(    "┌─────────────────────────┬─────────────────────────────────────────────────────────────────────┐\r\n" +
+            void PrintColoredText(string text, ConsoleColor color)
+        {
+            Console.ForegroundColor = color;
+            Console.Write(text);
+            Console.ResetColor();
+        }
+             Console.Write(    "┌─────────────────────────┬─────────────────────────────────────────────────────────────────────┐\r\n" +
                                    "│  Madrugada * Nevoeiro   │                           STATUS DO CAVALO                          │\r\n" +
                                    "│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─│─────────────────────────────────────────────────────────────────────│\r\n" +
                                    "│  Carteira »  10.000 ß   │ Nome: Pangaré Desnutrido                                            │\r\n" +
                                    "│─────────────────────────│                                                                     │\r\n" +
                                    "│                         │ Raça: Puro Sangue Ingles            Recebe Bônus  »  Nevoeiro ▲ 10% │\r\n" +
                                    "│                         │ Peso:  150Kg                   Velocidade Maxima  »  ■■■■□□□□□□□□□□ │\r\n" +
-                                   "│-» VOLTAR[TAB]           │ Idade: 03 Anos                       Resistencia  »  ■□□□□□□□□□□□□□ │\r\n" +
+                                   "│-» ");  PrintColoredText("VOLTAR", ConsoleColor.Yellow);  Console.Write("[TAB]           │ Idade: 03 Anos                       Resistencia  »  ■□□□□□□□□□□□□□ │\r\n" +
                                    "│                         │ Estado: Extremamente Doente                Força  »  ■■□□□□□□□□□□□□ │\r\n" +
-                                   "│-» SAIR[ESC]             │                                                                     │\r\n" +
+                                   "│-» ");  PrintColoredText("SAIR", ConsoleColor.Red);  Console.WriteLine("[ESC]             │                                                                     │\r\n" +
                                    "│                         │ [T]Treinar [V]Vender  [R]Mudar Nome                                 │\r\n" +
                                    "└─────────────────────────┴─────────────────────────────────────────────────────────────────────┘");
         }
 
         static public void SubMenuLoja()
         {
-            Console.WriteLine(            "┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
-                                          "│ » " + CicloDiario.horaDoDia + " » " + CicloDiario.condicoesPista + "  │                          Loja                     │\r\n" +
+            void PrintColoredText(string text, ConsoleColor color)
+        {
+            Console.ForegroundColor = color;
+            Console.Write(text);
+            Console.ResetColor();
+        }
+            Console.Write(            "┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
+                                          "│ » " + CicloDiario.horaDoDia + " » " + CicloDiario.condicoesPista + "  │                        Loja                       │\r\n" +
                                           "│ » " + CicloDiario.diaAtual + "│                                                   │\r\n" +
                                           "│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─│───────────────────────────────────────────────────│\r\n" +
                                           "│  Carteira »  " + BootJogo.guita + " ß    │ [h] » help?                                       │\r\n" +
@@ -640,17 +678,23 @@ namespace HorseProject
                                           "│                         │ [3] │      Percheron       │                      │\r\n" +
                                           "│─────────────────────────│     └──────────────────────┘                      │\r\n" +
                                           "│                         │  -->                                              │\r\n" +
-                                          "│-» VOLTAR[TAB]           │                                                   │\r\n" +
+                                          "│-» ");  PrintColoredText("VOLTAR", ConsoleColor.Yellow);  Console.Write("[TAB]           │                                                   │\r\n" +
                                           "│                         │ [4] Comprar curativos ß100                        │\r\n" +
-                                          "│-» SAIR[ESC]             │ [5] Comprar alimentação ß500                      │\r\n" +
+                                          "│-» ");  PrintColoredText("SAIR", ConsoleColor.Red);  Console.WriteLine("[ESC]             │ [5] Comprar alimentação ß500                      │\r\n" +
                                           "│                         │ [6] Comprar equipamentos                          │\r\n" +
                                           "└─────────────────────────┴───────────────────────────────────────────────────┘");
         }
 
         static public void SubMenuInventario()
         {
-            Console.WriteLine(            "┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
-                                          "│ » " + CicloDiario.horaDoDia + " » " + CicloDiario.condicoesPista + "  │                          Loja                     │\r\n" +
+            void PrintColoredText(string text, ConsoleColor color)
+        {
+            Console.ForegroundColor = color;
+            Console.Write(text);
+            Console.ResetColor();
+        }
+            Console.Write(            "┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
+                                          "│ » " + CicloDiario.horaDoDia + " » " + CicloDiario.condicoesPista + "  │                    Inventario                     │\r\n" +
                                           "│ » " + CicloDiario.diaAtual + "│                                                   │\r\n" +
                                           "│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─│───────────────────────────────────────────────────│\r\n" +
                                           "│  Carteira »  " + BootJogo.guita + " ß    │ [h] » help?                                       │\r\n" +
@@ -669,70 +713,76 @@ namespace HorseProject
                                           "│                         │ [3] │                      │                      │\r\n" +
                                           "│─────────────────────────│     └──────────────────────┘                      │\r\n" +
                                           "│                         │                                                   │\r\n" +
-                                          "│-» VOLTAR[TAB]           │                                                   │\r\n" +
+                                          "│-» ");  PrintColoredText("VOLTAR", ConsoleColor.Yellow);  Console.Write("[TAB]           │                                                   │\r\n" +
                                           "│                         │                                                   │\r\n" +
-                                          "│-» SAIR[ESC]             │                                                   │\r\n" +
+                                          "│-» ");  PrintColoredText("SAIR", ConsoleColor.Red);  Console.WriteLine("[ESC]             │                                                   │\r\n" +
                                           "│                         │                                                   │\r\n" +
                                           "└─────────────────────────┴───────────────────────────────────────────────────┘");
         }
 
         static public void MenuStatusDoCavaloCompra(string opcao)
         {
+            void PrintColoredText(string text, ConsoleColor color)
+        {
+            Console.ForegroundColor = color;
+            Console.Write(text);
+            Console.ResetColor();
+        }
             switch (opcao)
             {
                 case "1":
-                    Console.WriteLine("┌─────────────────────────┬─────────────────────────────────────────────────────────────────────┐\r\n" +
+                    Console.Write("┌─────────────────────────┬─────────────────────────────────────────────────────────────────────┐\r\n" +
                                   "│  Madrugada * Nevoeiro   │                           STATUS DO CAVALO                          │\r\n" +
                                   "│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─│─────────────────────────────────────────────────────────────────────│\r\n" +
                                   "│  Carteira »  " + BootJogo.guita + " ß    │ Nome: Geremias                                                      │\r\n" +
                                   "│─────────────────────────│                                                                     │\r\n" +
                                   "│                         │ Raça: Luzitano                      Recebe Bônus  »  Nevoeiro ▲ 10% │\r\n" +
                                   "│                         │ Peso:  180Kg                   Velocidade Maxima  »  ■■■■■■■■□□□□□□ │\r\n" +
-                                  "│-» VOLTAR[TAB]           │ Idade: 02 Anos                       Resistencia  »  ■■■□□□□□□□□□□□ │\r\n" +
+                                  "│-» ");  PrintColoredText("VOLTAR", ConsoleColor.Yellow);  Console.Write("[TAB]           │ Idade: 02 Anos                       Resistencia  »  ■■■□□□□□□□□□□□ │\r\n" +
                                   "│                         │ Estado: Saudável                           Força  »  ■■■■□□□□□□□□□□ │\r\n" +
-                                  "│-» SAIR[ESC]             │                                                                     │\r\n" +
+                                  "│-» ");  PrintColoredText("SAIR", ConsoleColor.Red);  Console.WriteLine("[ESC]             │                                                                     │\r\n" +
                                   "│                         │ [C]Comprar                                                          │\r\n" +
                                   "└─────────────────────────┴─────────────────────────────────────────────────────────────────────┘");
                     break;
                 case "2":
-                    Console.WriteLine("┌─────────────────────────┬─────────────────────────────────────────────────────────────────────┐\r\n" +
+                    Console.Write("┌─────────────────────────┬─────────────────────────────────────────────────────────────────────┐\r\n" +
                                   "│  Madrugada * Nevoeiro   │                           STATUS DO CAVALO                          │\r\n" +
                                   "│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─│─────────────────────────────────────────────────────────────────────│\r\n" +
                                   "│  Carteira »  " + BootJogo.guita + " ß    │ Nome: Montanelas                                                      │\r\n" +
                                   "│─────────────────────────│                                                                     │\r\n" +
                                   "│                         │ Raça: Quarto de Milha               Recebe Bônus  »  Nevoeiro ▲ 10% │\r\n" +
                                   "│                         │ Peso:  180Kg                   Velocidade Maxima  »  ■■■■■■■■□□□□□□ │\r\n" +
-                                  "│-» VOLTAR[TAB]           │ Idade: 02 Anos                       Resistencia  »  ■■■□□□□□□□□□□□ │\r\n" +
+                                  "│-» ");  PrintColoredText("VOLTAR", ConsoleColor.Yellow);  Console.Write("[TAB]           │ Idade: 02 Anos                       Resistencia  »  ■■■□□□□□□□□□□□ │\r\n" +
                                   "│                         │ Estado: Saudável                           Força  »  ■■■■□□□□□□□□□□ │\r\n" +
-                                  "│-» SAIR[ESC]             │                                                                     │\r\n" +
+                                  "│-» ");  PrintColoredText("SAIR", ConsoleColor.Red);  Console.WriteLine("[ESC]             │                                                                     │\r\n" +
                                   "│                         │ [C]Comprar                                                          │\r\n" +
                                   "└─────────────────────────┴─────────────────────────────────────────────────────────────────────┘");
                     break;
                 case "3":
-                    Console.WriteLine("┌─────────────────────────┬─────────────────────────────────────────────────────────────────────┐\r\n" +
+                    Console.Write("┌─────────────────────────┬─────────────────────────────────────────────────────────────────────┐\r\n" +
                                   "│  Madrugada * Nevoeiro   │                           STATUS DO CAVALO                          │\r\n" +
                                   "│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─│─────────────────────────────────────────────────────────────────────│\r\n" +
                                   "│  Carteira »  " + BootJogo.guita + " ß    │ Nome: Osvaldo                                                      │\r\n" +
                                   "│─────────────────────────│                                                                     │\r\n" +
                                   "│                         │ Raça: Percheron                      Recebe Bônus  »  Nevoeiro ▲ 10%│\r\n" +
                                   "│                         │ Peso:  180Kg                   Velocidade Maxima  »  ■■■■■■■■□□□□□□ │\r\n" +
-                                  "│-» VOLTAR[TAB]           │ Idade: 02 Anos                       Resistencia  »  ■■■□□□□□□□□□□□ │\r\n" +
+                                  "│-» ");  PrintColoredText("VOLTAR", ConsoleColor.Yellow);  Console.Write("[TAB]           │ Idade: 02 Anos                       Resistencia  »  ■■■□□□□□□□□□□□ │\r\n" +
                                   "│                         │ Estado: Saudável                           Força  »  ■■■■□□□□□□□□□□ │\r\n" +
-                                  "│-» SAIR[ESC]             │                                                                     │\r\n" +
+                                  "│-» ");  PrintColoredText("SAIR", ConsoleColor.Red);  Console.WriteLine("[ESC]             │                                                                     │\r\n" +
                                   "│                         │ [C]Comprar                                                          │\r\n" +
                                   "└─────────────────────────┴─────────────────────────────────────────────────────────────────────┘");
                     break;
                 case "4":
-                    Console.WriteLine("┌─────────────────────────┬─────────────────────────────────────────────────────────────────────┐\r\n" +
+                    Console.Write("┌─────────────────────────┬─────────────────────────────────────────────────────────────────────┐\r\n" +
                                   "│  Madrugada * Nevoeiro   │                           STATUS DO CAVALO                          │\r\n" +
                                   "│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─│─────────────────────────────────────────────────────────────────────│\r\n" +
                                   "│  Carteira »  " + BootJogo.guita + " ß    │ Nome: Amaro                                                      │\r\n" +
                                   "│─────────────────────────│                                                                     │\r\n" +
                                   "│                         │ Raça: Andaluz                      Recebe Bônus  »  Nevoeiro ▲ 10% │\r\n" +
                                   "│                         │ Peso:  180Kg                   Velocidade Maxima  »  ■■■■■■■■□□□□□□ │\r\n" +
-                                  "│-» VOLTAR[TAB]           │ Idade: 02 Anos                       Resistencia  »  ■■■□□□□□□□□□□□ │\r\n" +
+                                  "│-» ");  PrintColoredText("VOLTAR", ConsoleColor.Yellow);  Console.Write("[TAB]           │ Idade: 02 Anos                       Resistencia  »  ■■■□□□□□□□□□□□ │\r\n" +
                                   "│                         │ Estado: Saudável                           Força  »  ■■■■□□□□□□□□□□ │\r\n" +
-                                  "│-» SAIR[ESC]             │                                                                     │\r\n" +
+                                  "│-» ");  PrintColoredText("SAIR", ConsoleColor.Red);  Console.WriteLine("[ESC]             │                                                                     │\r\n" +
                                   "│                         │ [C]Comprar                                                          │\r\n" +
                                   "└─────────────────────────┴─────────────────────────────────────────────────────────────────────┘");
                     break;
