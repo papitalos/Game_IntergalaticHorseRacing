@@ -49,6 +49,8 @@
     <Compile Include="Graficos.cs" />
     <Compile Include="BootJogo.cs" />
     <Compile Include="CicloDiario.cs" />
+    <Compile Include="Inventario.cs" />
+    <Compile Include="Loja.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -25,7 +25,6 @@ namespace HorseProject
         public static string condicoesPista, horaDoDia, diaAtual;                                                                                                                                                                                                                                               
         public static int myDelay = 5000;
         public static int contadorDia = 1;
-
         public static void Musica()
         {
             Thread musica = new Thread(TocarMusica);
@@ -34,10 +33,10 @@ namespace HorseProject
 
         public static void TocarMusica()
         {
-            System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"C:\Users\italo\Desktop\Projetos\Universidade\C#\IntergalaticHorseRacing\HorseProject\Som_De_Trompetas.wav");
+            System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"C:\Users\italo\Source\Repos\papitalos\IntergalaticHorseRacing\HorseProject\Som_de_trompetas.wav");
             player.Play();
         }
-
+    
         public static void ThreadTimerDiario()
         {
             //Criar uma nova thread para rodar o relogio do dia de maneira independente
@@ -55,6 +54,7 @@ namespace HorseProject
                 diaAtual = diasDaSemana[contadorDia];
                 for (int i = 0; i < 4; i++)
                 {
+
                     horaDoDia = cicloRelogio[i];
 
 
@@ -84,7 +84,7 @@ namespace HorseProject
                         {
                             case BootJogo.menu.subMenuCeleiro:
                                 Console.Clear();
-                                Graficos.SubMenuCeleiro();
+                                Graficos.SubMenuCeleiro(); ;
                                 break;
                             case BootJogo.menu.subMenuCorridas:
                                 Console.Clear();

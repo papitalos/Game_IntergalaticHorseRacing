@@ -6,30 +6,22 @@ using System.Threading.Tasks;
 
 namespace HorseProject
 {
-    class Player
+    public static class Player
     {
-        private string[] ranks = new string[5] { "Madeira", "Prata", "Ouro", "Diamante", "Intergalatic" };
-        private string rankAtual;
-        private int nRankeadas;
-        private int nCorridasGanhas, nCorridasPerdidas;
-        private int Carteira;
+        static private string[] ranks = new string[5] { "Madeira", "Prata", "Ouro", "Diamante", "Intergalatic" };
+        static private string rankAtual = ranks[0];
+        static private int nRankeadas = 0;
+        static private int nCorridasGanhas = 0, nCorridasPerdidas = 0;
+        public static string Carteira = "10000";
 
-        public Player(string rankAtual, int nRankeadas, int nCorridasGanhas, int nCorridasPerdidas, int carteira)
-        {
-            this.rankAtual = rankAtual;
-            this.nRankeadas = nRankeadas;
-            this.nCorridasGanhas = nCorridasGanhas;
-            this.nCorridasPerdidas = nCorridasPerdidas;
-            Carteira = carteira;
-        }
 
-        public int NCorridasGanhas { get => nCorridasGanhas; set => nCorridasGanhas = value; }
-        public int NCorridasPerdidas { get => nCorridasPerdidas; set => nCorridasPerdidas = value; }
-        public int Carteira1 { get => Carteira; set => Carteira = value; }
-        public int NRankeadas { get => nRankeadas; set => nRankeadas = value; }
-        public string RankAtual { get => rankAtual; set => rankAtual = value; }
+ 
+        static public int NCorridasGanhas { get => nCorridasGanhas; set => nCorridasGanhas = value; }
+        static public int NCorridasPerdidas { get => nCorridasPerdidas; set => nCorridasPerdidas = value; }
+        static public int NRankeadas { get => nRankeadas; set => nRankeadas = value; }
+        static public string RankAtual { get => rankAtual; set => rankAtual = value; }
 
-        private void SelecaoDeRank()
+        static private void SelecaoDeRank()
         {
             switch (nRankeadas)
             {
