@@ -415,71 +415,95 @@ namespace HorseProject
                         Console.Clear();
                         Graficos.SubMenuLoja(0);
                         //LIMPA O 4 DA TELA
-
-                        Loja.ComprarRemedios();
-                        if (adquirido == true)
+                        if(Inventario.nRemedios < Inventario.limite)
                         {
-                            Console.Clear();
-                            Graficos.SubMenuLoja(4);
-                            Thread.Sleep(700);
-                            Console.Clear();
-                            Graficos.SubMenuLoja(0);
+                            Loja.ComprarRemedios();
+                            if (adquirido == true)
+                            {
+                                Console.Clear();
+                                Graficos.SubMenuLoja(4);
+                                Thread.Sleep(700);
+                                Console.Clear();
+                                Graficos.SubMenuLoja(0);
+                            }
+                            if (adquirido == false)
+                            {
+                                Console.WriteLine("SEM DINHEIRO NA CARTEIRA!");
+                                Thread.Sleep(700);
+                                Console.Clear();
+                                Graficos.SubMenuLoja(0);
+                            }
                         }
-                        if(adquirido == false)
+                        else if(Inventario.nRemedios >= 0)
                         {
-                            Console.WriteLine("SEM DINHEIRO NA CARTEIRA!");
-                            Thread.Sleep(700);
-                            Console.Clear() ;
-                            Graficos.SubMenuLoja(0);
+                            Console.WriteLine("SEM ESPAÇOS NO INVENTARIOS!");
                         }
+                        
+                        
                         
 
                         break;
                     case ConsoleKey.D5:
+
                         //LIMPA O 5 DA TELA
                         Console.Clear();
                         Graficos.SubMenuLoja(0);
                         //LIMPA O 5 DA TELA
+                        if (Inventario.nAlimentos < Inventario.limite)
+                        {
+                            Loja.ComprarAlimentação();
+                            if (adquirido == true)
+                            {
+                                Console.Clear();
+                                Graficos.SubMenuLoja(5);
+                                Thread.Sleep(700);
+                                Console.Clear();
+                                Graficos.SubMenuLoja(0);
+                            }
+                            else if (adquirido == false)
+                            {
+                                Console.WriteLine("SEM DINHEIRO NA CARTEIRA!");
+                                Thread.Sleep(700);
+                                Console.Clear();
+                                Graficos.SubMenuLoja(0);
+                            }
+                        }
+                        else if (Inventario.nAlimentos >= 0)
+                        {
+                            Console.WriteLine("SEM ESPAÇOS NO INVENTARIOS!");
+                        }
 
-                        Loja.ComprarAlimentação();
-                        if (adquirido == true)
-                        {
-                            Console.Clear();
-                            Graficos.SubMenuLoja(5);
-                            Thread.Sleep(700);
-                            Console.Clear();
-                            Graficos.SubMenuLoja(0);
-                        }
-                        if (adquirido == false)
-                        {
-                            Console.WriteLine("SEM DINHEIRO NA CARTEIRA!");
-                            Thread.Sleep(700);
-                            Console.Clear();
-                            Graficos.SubMenuLoja(0);
-                        }
                         break;
                     case ConsoleKey.D6:
+
                         //LIMPA O 6 DA TELA
                         Console.Clear();
                         Graficos.SubMenuLoja(0);
                         //LIMPA O 6 DA TELA
+                        if (Inventario.nSelas < Inventario.limite)
+                        {
+                            Loja.ComprarSela();
+                            if (adquirido == true)
+                            {
+                                Console.Clear();
+                                Graficos.SubMenuLoja(6);
+                                Thread.Sleep(700);
+                                Console.Clear();
+                                Graficos.SubMenuLoja(0);
+                            }
+                            if (adquirido == false)
+                            {
+                                Console.WriteLine("SEM DINHEIRO NA CARTEIRA!");
+                                Thread.Sleep(700);
+                                Console.Clear();
+                                Graficos.SubMenuLoja(0);
+                            }
+                        }
+                        else if (Inventario.nSelas >= 0)
+                        {
+                            Console.WriteLine("SEM ESPAÇOS NO INVENTARIOS!");
+                        }
 
-                        Loja.ComprarSela();
-                        if (adquirido == true)
-                        {
-                            Console.Clear();
-                            Graficos.SubMenuLoja(6);
-                            Thread.Sleep(700);
-                            Console.Clear();
-                            Graficos.SubMenuLoja(0);
-                        }
-                        if (adquirido == false)
-                        {
-                            Console.WriteLine("SEM DINHEIRO NA CARTEIRA!");
-                            Thread.Sleep(700);
-                            Console.Clear();
-                            Graficos.SubMenuLoja(0);
-                        }
                         break;
 
                     //COMANDOS PADRÃO ****
@@ -514,8 +538,51 @@ namespace HorseProject
         }
         public static void subMenuInventario(Cavalo cavalo)
         {
+            Console.Clear();
+            subMenuAtual = menu.subMenuInventario;
+            Inventario.VerificarStatus();
+            Graficos.SubMenuInventario();
+            
 
-         
+            while (subMenuAtual == menu.subMenuInventario)
+            {
+                Inventario.VerificarStatus();
+                switch (Console.ReadKey().Key)
+                {
+
+
+
+
+                    //COMANDOS PADRÃO ****
+                    case ConsoleKey.Tab://se TAB
+                        Console.Clear();
+                        Graficos.MenuInicial();//volta ao menu inicial
+                        menuAtual = menu.menuInicial;//passa a estar no menu inicial
+                        subMenuAtual = menu.nenhum;
+                        break;
+                    case ConsoleKey.Escape://se ESC
+                        Environment.Exit(0);//sai do programa
+                        break;
+
+                    case ConsoleKey.Enter:
+                        subMenuCorrida(0, cavalo);
+                        break;
+                    case ConsoleKey.I:
+                        subMenuCeleiro(cavalo);
+                        break;
+                    case ConsoleKey.L:
+                        subMenuLoja(cavalo);
+                        break;
+                    //COMANDOS PADRÃO ****
+                    default:
+                        Console.Clear();
+                        Graficos.SubMenuLoja(0);
+                        break;
+                }
+
+
+            }
+
         }
 
         public static void subMenuStatusCompra(Cavalo cavalo, int valoritem)

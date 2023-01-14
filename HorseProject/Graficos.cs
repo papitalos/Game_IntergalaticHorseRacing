@@ -377,7 +377,7 @@ namespace HorseProject
                                          "│                         │                            └────────────────────┘ │\r\n" +
                                          "│-» LOJA[L]               │                                                   │\r\n" +
                                          "│                         │                                                   │\r\n" +
-                                         "│-» Inventario[E]         │                                                   │\r\n" +
+                                         "│-» INVENTARIO[E]         │                                                   │\r\n" +
                                          "│                         │                                                   │\r\n" +
                                          "│─────────────────────────│                                                   │\r\n" +
                                          "│                         │         _____|---»   DERROTA   «---|_____         │\r\n" +
@@ -657,7 +657,7 @@ namespace HorseProject
                                           "│                         │ [2] │   Quarto de Milha    │                      │\r\n" +
                                           "│-» LOJA[L]               │     └──────────────────────┘                      │\r\n" +
                                           "│                         │                                                   │\r\n" +
-                                          "│-» Inventario[E]         │     ┌──────────────────────┐                      │\r\n" +
+                                          "│-» INVENTARIO[E]         │     ┌──────────────────────┐                      │\r\n" +
                                           "│                         │ [3] │      Percheron       │                      │\r\n" +
                                           "│─────────────────────────│     └──────────────────────┘                      │\r\n" +
                                           "│                         │                                                   │\r\n" +
@@ -684,7 +684,7 @@ namespace HorseProject
                             "│                         │ [2] │   Quarto de Milha    │                      │\r\n" +
                             "│-» LOJA[L]               │     └──────────────────────┘                      │\r\n" +
                             "│                         │                                                   │\r\n" +
-                            "│-» Inventario[E]         │     ┌──────────────────────┐                      │\r\n" +
+                            "│-» INVENTARIO[E]         │     ┌──────────────────────┐                      │\r\n" +
                             "│                         │ [3] │      Percheron       │                      │\r\n" +
                             "│─────────────────────────│     └──────────────────────┘                      │\r\n" +
                             "│                         │                                                   │\r\n" +
@@ -711,7 +711,7 @@ namespace HorseProject
                                           "│                         │ [2] │   Quarto de Milha    │                      │\r\n" +
                                           "│-» LOJA[L]               │     └──────────────────────┘                      │\r\n" +
                                           "│                         │                                                   │\r\n" +
-                                          "│-» Inventario[E]         │     ┌──────────────────────┐                      │\r\n" +
+                                          "│-» INVENTARIO[E]         │     ┌──────────────────────┐                      │\r\n" +
                                           "│                         │ [3] │      Percheron       │                      │\r\n" +
                                           "│─────────────────────────│     └──────────────────────┘                      │\r\n" +
                                           "│                         │                                                   │\r\n" +
@@ -738,7 +738,7 @@ namespace HorseProject
                                           "│                         │ [2] │   Quarto de Milha    │                      │\r\n" +
                                           "│-» LOJA[L]               │     └──────────────────────┘                      │\r\n" +
                                           "│                         │                                                   │\r\n" +
-                                          "│-» Inventario[E]         │     ┌──────────────────────┐                      │\r\n" +
+                                          "│-» INVENTARIO[E]         │     ┌──────────────────────┐                      │\r\n" +
                                           "│                         │ [3] │      Percheron       │                      │\r\n" +
                                           "│─────────────────────────│     └──────────────────────┘                      │\r\n" +
                                           "│                         │                                                   │\r\n" +
@@ -769,15 +769,15 @@ namespace HorseProject
                                           "│                         │      » Itens armazenados «                        │\r\n" +
                                           "│                         │                                                   │\r\n" +
                                           "│                         │     ┌──────────────────────┐                      │\r\n" +
-                                          "│                         │ [1] │                      │                      │\r\n" +
+                                          "│                         │ [1] │ Remedios             │  »  " + Inventario.statusRemedio+"     │\r\n" +
                                           "│-» CORRIDAS[ENTER]       │     └──────────────────────┘                      │\r\n" +
                                           "│                         │                                                   │\r\n" +
                                           "│-» CELEIRO[I]            │     ┌──────────────────────┐                      │\r\n" +
-                                          "│                         │ [2] │                      │                      │\r\n" +
+                                          "│                         │ [2] │ Alimentos            │  »  " + Inventario.statusAlimentos+"     │\r\n" +
                                           "│-» LOJA[L]               │     └──────────────────────┘                      │\r\n" +
                                           "│                         │                                                   │\r\n" +
-                                          "│-» Inventario[E]         │     ┌──────────────────────┐                      │\r\n" +
-                                          "│                         │ [3] │                      │                      │\r\n" +
+                                          "│-» INVENTARIO[E]         │     ┌──────────────────────┐                      │\r\n" +
+                                          "│                         │ [3] │ Selas                |  »  "+Inventario.statusSelas+"     │\r\n" +
                                           "│─────────────────────────│     └──────────────────────┘                      │\r\n" +
                                           "│                         │                                                   │\r\n" +
                                           "│-» "); PrintColoredText("VOLTAR", ConsoleColor.Yellow); Console.Write("[TAB]           │                                                   │\r\n" +

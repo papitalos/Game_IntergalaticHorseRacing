@@ -94,14 +94,7 @@ namespace HorseProject
                                 break;
                         }
                     }
-                    while(BootJogo.menuAtual == BootJogo.menu.menuInicial)
-                    {
-                        if (BootJogo.menuAtual == BootJogo.menu.menuJogos)
-                        {
-                            BootJogo.menuAtual = BootJogo.menu.menuInicial;
-                        }
-
-                    }
+              
 
                     Thread.Sleep(myDelay);
                 }
