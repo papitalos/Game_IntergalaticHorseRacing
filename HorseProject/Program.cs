@@ -14,11 +14,15 @@ namespace HorseProject
             
             //define os dados do cavalo inicial de acordo com a escolha do player
             
-            Cavalo cavalo = new Cavalo("Pangaré Desnutrido ", Cavalo.raca.shire, 100, 2, 15, 4);
+            Cavalo cavalo = new Cavalo(1,5,"Pangare Desnutrido", Cavalo.raca.purosangueingles, 400,5,2);
             //define os dados iniciais do jogador
-        
+
             CicloDiario.ThreadTimerDiario();
-            BootJogo.RodarJogo(cavalo);
+
+
+            cavalo.ToString();
+
+          
 
 
             

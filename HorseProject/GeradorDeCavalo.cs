@@ -14,10 +14,7 @@ namespace HorseProject
         static string[] nomeNV4 = new string[5] { "Pegasus             ","Poseidon            ", "Loki                ", "Kratos              ", "Atreus              " };
         static string[] nomeNV5 = new string[5] { "Uranus              ","Andromeda           ", "Mr.Meeseks          ", "Pissmaster          ", "Mr.Poppybutthole    " };
         
-        static Cavalo GerarCavalo() {
-            
-            return new Cavalo();
-        }
+     
 
 
     }

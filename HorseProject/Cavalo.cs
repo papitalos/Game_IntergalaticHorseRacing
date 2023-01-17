@@ -1,19 +1,33 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices.ComTypes;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace HorseProject
 {
     public class Cavalo
     {
+        public int id, idade;
         public string nome;
         public bool podeParticipar = true;
-        public estadoDaDoenca doente;
-        public raca racas;
-        public int idade;
-        public double resistencia, velocidadeMax, aceleracao, peso;
+        public estadoDaDoenca estadoAtual;
+        public raca racaAtual;
+        public double Kg,tA,tR,tD,tTotal,bonus;
+        public double r = 0, VMax = 0, a = 0;
+
+        public Cavalo(int id, int idade, string nome, raca racaAtual, double kg,double vMax, double a)
+        {
+            this.id = id;
+            this.idade = idade;
+            this.nome = nome;
+            this.racaAtual = racaAtual;
+            Kg = kg;
+            VMax = vMax;
+            this.a = a;
+        }
 
         public enum estadoDaDoenca
         {
@@ -30,109 +44,197 @@ namespace HorseProject
             purosangueingles
         }
 
-
-
-
-        public double CalculoResistencia(raca racaAtual)
+        //define o bonus que o cavalo recebe
+        public double Bonus()
         {
-            string condicoesDaPista = CicloDiario.condicoesPista;//pega o estado atual da pista
-            double u = 0.1;
-            switch (condicoesDaPista)
-            {
-                case "neve    ":
-                    u = 0.3;
-                    break;
-                case "chuva   ":
-                    u = 0.3;
-                    break;
-                case "nevoeiro":
-                    u = 0.3;
-                    break;
-                case "limpo   ":
-                    u = 0.3;
-                    break;
-            }
-
-            double fC = (peso * aceleracao); //força do cavalo
-            double fA = ((u/ 4)) * (fC);//calcular a força de atrito usando o coeficiente de atrito da condiçao da pista
-            resistencia = fA - fC;
-            //ver estado de doença
-            if (doente == estadoDaDoenca.poucoDoente)
-            {
-                resistencia = resistencia - (0.05 * resistencia);//tirar 5% da resistencia
-            }
-            else if (doente == estadoDaDoenca.medioDoente)
-            {
-                resistencia = resistencia - (0.20 * resistencia);//tirar 20% da resistencia
-            }
-            else if (doente == estadoDaDoenca.muitoDoente)
-            {
-                resistencia = resistencia - (0.60 * resistencia);//tirar 60% da resistencia
-            }
-            else if (doente == estadoDaDoenca.extremamenteDoente)
-            {
-                podeParticipar = false;//nao pode mais participar
-            }
-            switch (racaAtual)
-            {
+            switch(racaAtual){
                 case raca.shire:
-                    if (condicoesDaPista == "neve    ")
+                    if (Pista.condicoesPistaAtual == "Neve    ")
                     {
-                        resistencia = resistencia + (0.10 * resistencia);//adicionar 10% a mais de resistencia na neve
+                        bonus = 10;
+                        r = r + (r * (bonus/100));//adiciona 10% de bonus
+
+                    }
+                    else if(Pista.condicoesPistaAtual == "Chuva   " || Pista.condicoesPistaAtual == "Nevoeiro")
+                    {
+                        bonus = 5;
+                        r = r - (r * (bonus / 100));//tira 5% de bonus
                     }
                     break;
                 case raca.parcheron:
-                    if (condicoesDaPista == "chuva   ")
+                    if (Pista.condicoesPistaAtual == "Chuva   ")
                     {
-                        resistencia = resistencia + (0.10 * resistencia);//adicionar 10% a mais de resistencia na chuva
+                        bonus = 10;
+                        r = r + (r * (bonus / 100));//adiciona 10% de bonus
+
+                    }
+                    else if (Pista.condicoesPistaAtual == "Neve    ")
+                    {
+                        bonus = 5;
+                        r = r - (r * (bonus / 100));//tira 5% de bonus
+                    }
+                    else if (Pista.condicoesPistaAtual == "Nevoeiro")
+                    {
+                        bonus = 2;
+                        r = r - (r * (bonus / 100));//tira 2% de bonus
                     }
                     break;
                 case raca.arabe:
-                    if (condicoesDaPista == "nevoeiro")
+                    if (Pista.condicoesPistaAtual == "Nevoeiro")
                     {
-                        resistencia = resistencia + (0.10 * resistencia);//adicionar 10% a mais de resistencia no nevoeiro
+                        bonus = 10;
+                        r = r + (r * (bonus / 100));//adiciona 10% de bonus
+
+                    }
+                    else if (Pista.condicoesPistaAtual == "Chuva   " || Pista.condicoesPistaAtual == "Neve    ")
+                    {
+                        bonus = 5;
+                        r = r - (r * (bonus / 100));//tira 5% de bonus
                     }
                     break;
                 case raca.purosangueingles:
-                    if (condicoesDaPista == "limpo   ")
+                    if (Pista.condicoesPistaAtual == "Limpo   ")
                     {
-                        resistencia = resistencia + (0.10 * resistencia);//adicionar 10% a mais de resistencia no sol (em condições perfeitas)
+                        bonus = 10;
+                        r = r + (r * (bonus / 100));//adiciona 10% de bonus
+                    }
+                    else if (Pista.condicoesPistaAtual == "Chuva   " || Pista.condicoesPistaAtual == "Neve    " || Pista.condicoesPistaAtual == "Nevoeiro")
+                    {
+                        bonus = 5;
+                        r = r - (r * (bonus / 100));//tira 5% de bonus
+                    }
+                    break;
+            
+            }
+
+            return bonus;
+        }
+
+        //randomiza a resistencia
+        public double RandR(Cavalo cavalo)
+        {
+            switch (Player.RankAtual)
+            {
+                case "Madeira     ":
+                    cavalo.r = Randomize.randomizeMadeira;
+                    return cavalo.r;
+                case "Prata       ":
+                    cavalo.r = Randomize.randomizePrata;
+                    return cavalo.r;
+                case "Ouro        ":
+                    cavalo.r = Randomize.randomizeOuro;
+                    return cavalo.r;
+                case "Diamante    ":
+                    cavalo.r = Randomize.randomizeDiamante;
+                    return cavalo.r;
+                case "Intergalatic":
+                    cavalo.r = Randomize.randomizeIntergalatic;
+                    return cavalo.r;
+                default:
+                    Console.WriteLine("ERROR RANDOMIZING");
+                    break;
+            }
+            return r;
+        }
+   
+        //faz a barra de status
+        public string Barra(string parametro)
+        {
+            
+            string Barra = "";
+            switch (parametro)
+            {
+                case "VMax":
+                    for (int i = 0; i != 15; i++)
+                    {
+                        if (i < VMax)
+                        {
+                            Barra = Barra + "■";
+                        }
+                        if (i >= VMax)
+                        {
+                            Barra = Barra + "¤";
+                        }
+                    }
+                    break;
+                case "a":
+                    for (int i = 0; i != 15; i++)
+                    {
+                        if (i < a)
+                        {
+                            Barra = Barra + "■";
+                        }
+                        if (i >= a)
+                        {
+                            Barra = Barra + "¤";
+                        }
+                    }
+                    break;
+                case "r":
+                    for (int i = 0; i != 15; i++)
+                    {
+                        if (i < r)
+                        {
+                            Barra = Barra + "■";
+                        }
+                        if (i >= r)
+                        {
+                            Barra = Barra + "¤";
+                        }
                     }
                     break;
             }
-
-            return resistencia;
+            
+            
+            return Barra;
         }
-
-        //Cavalo inicial - Pangaré desnutrido
-        public Cavalo()
-        {
-            this.podeParticipar = true;
-            this.racas = raca.shire;
-            this.idade = 3;
-            this.velocidadeMax = 20.1;//m/s
-            this.aceleracao = 1;//m/s^2
-            this.peso = 900;
-
-        }
-
-
-        //cavalo geral
-        public Cavalo(string nome, raca racas, int velocidadeMax, int aceleracao, int peso, int idade)
-        {
-            this.nome = nome;
-           
-            this.racas = racas;
-            this.idade = idade;
-            this.velocidadeMax = velocidadeMax;
-            this.aceleracao = aceleracao;
-            this.peso = peso;
-
-        }
-
-
-
  
+        //galopa
+        public void Galopar(Cavalo cavalo)
+        {
+            cavalo.tA = cavalo.VMax / cavalo.a; //tempo pra acelerar ate velocidade max
+            cavalo.tR = 5 * cavalo.r; //define o tempo de resistencia derrubando 1 de resistencia a cada 5 segundos
+            cavalo.tD = cavalo.tA - (cavalo.tA * 0.03); //define o tempo de desaceleração sendo esse 3% mais rapido que a aceleração
+
+            cavalo.tTotal = cavalo.tA + cavalo.tR + cavalo.tD;
+
+        }
+
+
+
+
+
+
+
+        public override string ToString()
+        {
+            void PrintColoredText(string text, ConsoleColor color)
+            {
+                Console.ForegroundColor = color;
+                Console.Write(text);
+                Console.ResetColor();
+            }
+            Console.WriteLine(            "┌─────────────────────────┬──────────────────────────────────────────────────────────────────────────────────────┐\r\n" +
+                                          "│ » " + CicloDiario.horaDoDiaAtual + " » " + Pista.condicoesPistaAtual + "  │                                         Status                                       │\r\n" +
+                                          "│ » " + CicloDiario.diaAtual +"│                      » o jogo esta pausado enquanto nesse menu«                      │\r\n" +
+                                          "│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─│──────────────────────────────────────────────────────────────────────────────────────│\r\n" +
+                                          "│  Carteira »  " + Player.Carteira + " ß    │ [h] » help?                                                                   Id - "+id+" │\r\n" +
+                                          "│─────────────────────────│                                                                                      │\r\n" +
+                                          "│                         │ Raça: "+racaAtual+"                                       Bonûs » "+Pista.condicoesPistaAtual+" "+bonus+" %    │\r\n" +
+                                          "│                         │ Idade: "+idade+"                                               Resistencia » "+Barra("r")+ " │\r\n" +
+                                          "│                         │ Peso: "+Kg+"kg                                            Aceleração  » "+ Barra("a") + " │\r\n" +
+                                          "│                         │ Nome: "+nome+"                               Velocidade  » "+ Barra("VMax") + " │\r\n" +
+                                          "│                         │ Estado: "+estadoAtual+"                                                                            │\r\n" +
+                                          "│                         │                                                                                      │\r\n" +
+                                          "│                         │                                                                                      │\r\n" +
+                                          "│─────────────────────────│──────────────────────────────────────────────────────────────────────────────────────|\r\n" +
+                                          "│        Noticia:         │ " + Jornal.Noticiar()+" │\r\n" +
+                                          "└─────────────────────────┴──────────────────────────────────────────────────────────────────────────────────────┘") ;
+
+            return base.ToString();
+        }
+
+
 
 
 

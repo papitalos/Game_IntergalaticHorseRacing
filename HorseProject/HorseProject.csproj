@@ -44,16 +44,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cavalo.cs" />
+    <Compile Include="Celeiro.cs" />
     <Compile Include="Corrida.cs" />
     <Compile Include="GeradorDeCavalo.cs" />
     <Compile Include="Graficos.cs" />
     <Compile Include="BootJogo.cs" />
     <Compile Include="CicloDiario.cs" />
     <Compile Include="Inventario.cs" />
+    <Compile Include="Jornal.cs" />
     <Compile Include="Loja.cs" />
+    <Compile Include="Pista.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Randomize.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

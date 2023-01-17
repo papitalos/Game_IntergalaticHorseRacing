@@ -8,8 +8,8 @@ namespace HorseProject
 {
     public static class Player
     {
-        static private string[] ranks = new string[5] { "Madeira", "Prata", "Ouro", "Diamante", "Intergalatic" };
-        static private string rankAtual = ranks[0];
+        static private string[] ranks = new string[5] { "Madeira     ", "Prata       ", "Ouro        ", "Diamante    ", "Intergalatic" };
+        static private string rankAtual = ranks[0];     
         static private int nRankeadas = 0;
         static private int nCorridasGanhas = 0, nCorridasPerdidas = 0;
         public static string Carteira = "10000";

@@ -20,9 +20,8 @@ namespace HorseProject
         public static int numVitoria = 1, escolhaCorrida = BootJogo.escolhaCorrida;
         public static bool pistaAberta;
         public static string[] cicloRelogio = new string[4] { "Manhã    ", "Tarde    ", "Noite    ", "Madrugada" };
-        public static string[] possiveisEstados = new string[4] { "Neve    ", "Chuva   ", "Nevoeiro", "Limpo   " };
         public static string[] diasDaSemana = new string[7] { "Segunda-feira         ","Terça-feira           ","Quarta-feira          ","Quinta-feira          ","Sexta-feira           ","Sabado                ","Domingo               " };
-        public static string condicoesPista, horaDoDia, diaAtual;                                                                                                                                                                                                                                               
+        public static string horaDoDiaAtual, diaAtual;                                                                                                                                                                                                                                               
         public static int myDelay = 5000;
         public static int contadorDia = 1;
         public static void Musica()
@@ -55,13 +54,11 @@ namespace HorseProject
                 for (int i = 0; i < 4; i++)
                 {
 
-                    horaDoDia = cicloRelogio[i];
+                    horaDoDiaAtual = cicloRelogio[i];
 
 
                     //randomizar estado da pista
-                    Random rdm = new Random();
-                    int randomize = rdm.Next(1, 4);
-                    condicoesPista = possiveisEstados[randomize];
+                    Pista.condicoesPistaAtual = Pista.possiveisEstados[Randomize.randomizeEstados];
 
 
 

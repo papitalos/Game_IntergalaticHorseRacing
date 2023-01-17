@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace HorseProject
 {
-    class Corrida
+    public class Corrida
     {
-
+        public List<Cavalo> cavalosCorrendo;
 
     }
 }

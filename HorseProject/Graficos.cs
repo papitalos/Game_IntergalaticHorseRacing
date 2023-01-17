@@ -196,11 +196,11 @@ namespace HorseProject
                                       "│  |   peso: 150kg      |    |   peso: 150kg      |    |   peso: 150kg      |  │\r\n" +
                                       "│  |                    |    |                    |    |                    |  │\r\n" +
                                       "│  |   Resistencia      |    |   Resistencia      |    |   Resistencia      |  │\r\n" +
-                                      "│  |   ■¤¤¤¤¤¤¤¤¤¤¤¤¤   |    |   ■■■■¤¤¤¤¤¤¤¤¤¤   |    |   ■■■¤¤¤¤¤¤¤¤¤¤¤   |  │\r\n" +
+                                      "│  |   ■¤¤¤¤¤¤¤¤¤¤¤¤¤¤  |    |   ■■■■¤¤¤¤¤¤¤¤¤¤¤  |    |   ■■■¤¤¤¤¤¤¤¤¤¤¤¤  |  │\r\n" +
                                       "│  |   Aceleração       |    |   Aceleração       |    |   Aceleração       |  │\r\n" +
-                                      "│  |   ■■■¤¤¤¤¤¤¤¤¤¤¤   |    |   ■■■¤¤¤¤¤¤¤¤¤¤¤   |    |   ■¤¤¤¤¤¤¤¤¤¤¤¤¤   |  │\r\n" +
+                                      "│  |   ■■■¤¤¤¤¤¤¤¤¤¤¤¤  |    |   ■■■¤¤¤¤¤¤¤¤¤¤¤¤  |    |   ■¤¤¤¤¤¤¤¤¤¤¤¤¤¤  |  │\r\n" +
                                       "│  |   Velocidade       |    |   Velocidade       |    |   Velocidade       |  │\r\n" +
-                                      "│  |   ■■■■¤¤¤¤¤¤¤¤¤¤   |    |   ■¤¤¤¤¤¤¤¤¤¤¤¤¤   |    |   ■■■■¤¤¤¤¤¤¤¤¤¤   |  │\r\n" +
+                                      "│  |   ■■■■¤¤¤¤¤¤¤¤¤¤¤  |    |   ■¤¤¤¤¤¤¤¤¤¤¤¤¤¤  |    |   ■■■■¤¤¤¤¤¤¤¤¤¤¤  |  │\r\n" +
                                       "│  |                    |    |                    |    |                    |  │\r\n" +
                                       "│  └────────────────────┘    └────────────────────┘    └────────────────────┘  │\r\n" +
                                       "│            ▲                                                                 │\r\n" +
@@ -278,7 +278,7 @@ namespace HorseProject
                     if (posicaoVitoria == 1)
                     {
                         Console.Write("┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
-                                          "│ » " + CicloDiario.horaDoDia + " » " + CicloDiario.condicoesPista + "  │      CORRIDAS (Equipe seu cavalo no celeiro)      │\r\n" +
+                                          "│ » " + CicloDiario.horaDoDiaAtual + " » " + Pista.condicoesPistaAtual + "  │      CORRIDAS (Equipe seu cavalo no celeiro)      │\r\n" +
                                           "│ » " + CicloDiario.diaAtual + "│                                                   │\r\n" +
                                           "│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─│───────────────────────────────────────────────────│\r\n" +
                                           "│  Carteira »  " + Player.Carteira + " ß    │ [h] » help?                                       │\r\n" +
@@ -306,7 +306,7 @@ namespace HorseProject
                     else if (posicaoVitoria == 2)
                     {
                         Console.Write("┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
-                                          "│ » " + CicloDiario.horaDoDia + " » " + CicloDiario.condicoesPista + "  │      CORRIDAS (Equipe seu cavalo no celeiro)      │\r\n" +
+                                          "│ » " + CicloDiario.horaDoDiaAtual + " » " + Pista.condicoesPistaAtual + "  │      CORRIDAS (Equipe seu cavalo no celeiro)      │\r\n" +
                                           "│ » " + CicloDiario.diaAtual + "│                                                   │\r\n" +
                                          "│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─│───────────────────────────────────────────────────│\r\n" +
                                          "│  Carteira »  10.000 ß   │ [h] » help?                                       │\r\n" +
@@ -334,7 +334,7 @@ namespace HorseProject
                     else if (posicaoVitoria == 3)
                     {
                         Console.Write("┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
-                                          "│ » " + CicloDiario.horaDoDia + " » " + CicloDiario.condicoesPista + "  │      CORRIDAS (Equipe seu cavalo no celeiro)      │\r\n" +
+                                          "│ » " + CicloDiario.horaDoDiaAtual + " » " + Pista.condicoesPistaAtual + "  │      CORRIDAS (Equipe seu cavalo no celeiro)      │\r\n" +
                                           "│ » " + CicloDiario.diaAtual + "│                                                   │\r\n" +
                                          "│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─│───────────────────────────────────────────────────│\r\n" +
                                          "│  Carteira »  10.000 ß   │ [h] » help?                                       │\r\n" +
@@ -362,7 +362,7 @@ namespace HorseProject
                     else if (posicaoVitoria == 4)
                     {
                         Console.Write("┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
-                                          "│ » " + CicloDiario.horaDoDia + " » " + CicloDiario.condicoesPista + "  │      CORRIDAS (Equipe seu cavalo no celeiro)      │\r\n" +
+                                          "│ » " + CicloDiario.horaDoDiaAtual + " » " + Pista.condicoesPistaAtual + "  │      CORRIDAS (Equipe seu cavalo no celeiro)      │\r\n" +
                                           "│ » " + CicloDiario.diaAtual + "│                                                  │\r\n" +
                                          "│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─│───────────────────────────────────────────────────│\r\n" +
                                          "│  Carteira »  10.000 ß   │ [h] » help?                                       │\r\n" +
@@ -392,7 +392,7 @@ namespace HorseProject
                     if (posicaoVitoria == 1)
                     {
                         Console.Write("┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
-                                          "│ » " + CicloDiario.horaDoDia + " » " + CicloDiario.condicoesPista + "  │      CORRIDAS (Equipe seu cavalo no celeiro)      │\r\n" +
+                                          "│ » " + CicloDiario.horaDoDiaAtual + " » " + Pista.condicoesPistaAtual + "  │      CORRIDAS (Equipe seu cavalo no celeiro)      │\r\n" +
                                           "│ » " + CicloDiario.diaAtual + "│                                                   │\r\n" +
                                           "│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─│───────────────────────────────────────────────────│\r\n" +
                                           "│  Carteira »  10.000 ß   │ [h] » help?                                       │\r\n" +
@@ -420,7 +420,7 @@ namespace HorseProject
                     else if (posicaoVitoria == 2)
                     {
                         Console.Write("┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
-                                          "│ » " + CicloDiario.horaDoDia + " » " + CicloDiario.condicoesPista + "  │      CORRIDAS (Equipe seu cavalo no celeiro)      │\r\n" +
+                                          "│ » " + CicloDiario.horaDoDiaAtual + " » " + Pista.condicoesPistaAtual + "  │      CORRIDAS (Equipe seu cavalo no celeiro)      │\r\n" +
                                           "│ » " + CicloDiario.diaAtual + "│                                                   │\r\n" +
                                           "│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─│───────────────────────────────────────────────────│\r\n" +
                                           "│  Carteira »  10.000 ß   │ [h] » help?                                       │\r\n" +
@@ -450,7 +450,7 @@ namespace HorseProject
                     if (posicaoVitoria == 1)
                     {
                         Console.Write("┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
-                                          "│ » " + CicloDiario.horaDoDia + " » " + CicloDiario.condicoesPista + "  │      CORRIDAS (Equipe seu cavalo no celeiro)      │\r\n" +
+                                          "│ » " + CicloDiario.horaDoDiaAtual + " » " + Pista.condicoesPistaAtual + "  │      CORRIDAS (Equipe seu cavalo no celeiro)      │\r\n" +
                                           "│ » " + CicloDiario.diaAtual + "│                                                   │\r\n" +
                                           "│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─│───────────────────────────────────────────────────│\r\n" +
                                           "│  Carteira »  10.000 ß   │ [h] » help?                                       │\r\n" +
@@ -478,7 +478,7 @@ namespace HorseProject
                     else if (posicaoVitoria == 2)
                     {
                         Console.Write("┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
-                                          "│ » " + CicloDiario.horaDoDia + " » " + CicloDiario.condicoesPista + "  │      CORRIDAS (Equipe seu cavalo no celeiro)      │\r\n" +
+                                          "│ » " + CicloDiario.horaDoDiaAtual + " » " + Pista.condicoesPistaAtual + "  │      CORRIDAS (Equipe seu cavalo no celeiro)      │\r\n" +
                                           "│ » " + CicloDiario.diaAtual + "│                                                   │\r\n" +
                                           "│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─│───────────────────────────────────────────────────│\r\n" +
                                           "│  Carteira »  10.000 ß   │ [h] » help?                                       │\r\n" +
@@ -507,7 +507,7 @@ namespace HorseProject
                     else if (posicaoVitoria == 3)
                     {
                         Console.Write("┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
-                                          "│ » " + CicloDiario.horaDoDia + " » " + CicloDiario.condicoesPista + "  │      CORRIDAS (Equipe seu cavalo no celeiro)      │\r\n" +
+                                          "│ » " + CicloDiario.horaDoDiaAtual + " » " + Pista.condicoesPistaAtual + "  │      CORRIDAS (Equipe seu cavalo no celeiro)      │\r\n" +
                                           "│ » " + CicloDiario.diaAtual + "│                                                   │\r\n" +
                                           "│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─│───────────────────────────────────────────────────│\r\n" +
                                           "│  Carteira »  10.000 ß   │ [h] » help?                                       │\r\n" +
@@ -535,7 +535,7 @@ namespace HorseProject
                     else if (posicaoVitoria == 4)
                     {
                         Console.Write("┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
-                                          "│ » " + CicloDiario.horaDoDia + " » " + CicloDiario.condicoesPista + "  │      CORRIDAS (Equipe seu cavalo no celeiro)      │\r\n" +
+                                          "│ » " + CicloDiario.horaDoDiaAtual + " » " + Pista.condicoesPistaAtual + "  │      CORRIDAS (Equipe seu cavalo no celeiro)      │\r\n" +
                                           "│ » " + CicloDiario.diaAtual + "│                                                   │\r\n" +
                                          "│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─│───────────────────────────────────────────────────│\r\n" +
                                          "│  Carteira »  10.000 ß   │ [h] » help?                                       │\r\n" +
@@ -564,7 +564,7 @@ namespace HorseProject
                 default:
 
                     Console.Write("┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
-                                          "│ » " + CicloDiario.horaDoDia + " » " + CicloDiario.condicoesPista + "  │       CORRIDAS (Equipe seu cavalo no celeiro)     │\r\n" +
+                                          "│ » " + CicloDiario.horaDoDiaAtual + " » " + Pista.condicoesPistaAtual + "  │       CORRIDAS (Equipe seu cavalo no celeiro)     │\r\n" +
                                           "│ » " + CicloDiario.diaAtual + "│                                                   │\r\n" +
                                       "│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─│───────────────────────────────────────────────────│\r\n" +
                                       "│  Carteira »  10.000 ß   │ [h] » help?                                       │\r\n" +
@@ -601,7 +601,7 @@ namespace HorseProject
                 Console.ResetColor();
             }
             Console.Write("┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
-                                          "│ » " + CicloDiario.horaDoDia + " » " + CicloDiario.condicoesPista + "  │                   CELEIRO (Max.4)                 │\r\n" +
+                                          "│ » " + CicloDiario.horaDoDiaAtual + " » " + Pista.condicoesPistaAtual + "  │                   CELEIRO (Max.4)                 │\r\n" +
                                           "│ » " + CicloDiario.diaAtual + "│                                                   │\r\n" +
                                           "│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─│───────────────────────────────────────────────────│\r\n" +
                                           "│  Carteira »  " + Player.Carteira + " ß    │ [h] » help?                                       │\r\n" +
@@ -642,7 +642,7 @@ namespace HorseProject
             {
                 case 4:
                     Console.Write("┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
-                                          "│ » " + CicloDiario.horaDoDia + " » " + CicloDiario.condicoesPista + "  │                        Loja                       │\r\n" +
+                                          "│ » " + CicloDiario.horaDoDiaAtual + " » " + Pista.condicoesPistaAtual + "  │                        Loja                       │\r\n" +
                                           "│ » " + CicloDiario.diaAtual + "│                                                   │\r\n" +
                                           "│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─│───────────────────────────────────────────────────│\r\n" +
                                           "│  Carteira »  " + Player.Carteira + " ß    │ [h] » help?                                       │\r\n" +
@@ -669,7 +669,7 @@ namespace HorseProject
                     break;
                 case 5:
                     Console.Write("┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
-                            "│ » " + CicloDiario.horaDoDia + " » " + CicloDiario.condicoesPista + "  │                        Loja                       │\r\n" +
+                            "│ » " + CicloDiario.horaDoDiaAtual + " » " + Pista.condicoesPistaAtual + "  │                        Loja                       │\r\n" +
                             "│ » " + CicloDiario.diaAtual + "│                                                   │\r\n" +
                             "│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─│───────────────────────────────────────────────────│\r\n" +
                             "│  Carteira »  " + Player.Carteira + " ß    │ [h] » help?                                       │\r\n" +
@@ -696,7 +696,7 @@ namespace HorseProject
                     break;
                 case 6:
                     Console.Write("┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
-                                          "│ » " + CicloDiario.horaDoDia + " » " + CicloDiario.condicoesPista + "  │                        Loja                       │\r\n" +
+                                          "│ » " + CicloDiario.horaDoDiaAtual + " » " + Pista.condicoesPistaAtual + "  │                        Loja                       │\r\n" +
                                           "│ » " + CicloDiario.diaAtual + "│                                                   │\r\n" +
                                           "│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─│───────────────────────────────────────────────────│\r\n" +
                                           "│  Carteira »  " + Player.Carteira + " ß    │ [h] » help?                                       │\r\n" +
@@ -723,7 +723,7 @@ namespace HorseProject
                     break;
                 default:
                     Console.Write("┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
-                                          "│ » " + CicloDiario.horaDoDia + " » " + CicloDiario.condicoesPista + "  │                        Loja                       │\r\n" +
+                                          "│ » " + CicloDiario.horaDoDiaAtual + " » " + Pista.condicoesPistaAtual + "  │                        Loja                       │\r\n" +
                                           "│ » " + CicloDiario.diaAtual + "│                                                   │\r\n" +
                                           "│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─│───────────────────────────────────────────────────│\r\n" +
                                           "│  Carteira »  " + Player.Carteira + " ß    │ [h] » help?                                       │\r\n" +
@@ -760,8 +760,8 @@ namespace HorseProject
                 Console.Write(text);
                 Console.ResetColor();
             }
-            Console.Write("┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
-                                          "│ » " + CicloDiario.horaDoDia + " » " + CicloDiario.condicoesPista + "  │                    Inventario                     │\r\n" +
+            Console.Write(                "┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
+                                          "│ » " + CicloDiario.horaDoDiaAtual + " » " + Pista.condicoesPistaAtual + "  │                    Inventario                     │\r\n" +
                                           "│ » " + CicloDiario.diaAtual + "│                                                   │\r\n" +
                                           "│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─│───────────────────────────────────────────────────│\r\n" +
                                           "│  Carteira »  " + Player.Carteira + " ß    │ [h] » help?                                       │\r\n" +
