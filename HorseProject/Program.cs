@@ -18,9 +18,11 @@ namespace HorseProject
             //define os dados iniciais do jogador
 
             CicloDiario.ThreadTimerDiario();
-
+           
             BootJogo.RodarJogo(cavalo);
-            //cavalo.ToString();
+            
+           
+            
 
 
 

@@ -25,6 +25,7 @@ namespace HorseProject
         {
             menuInicial = 1,
             menuLoading,
+            menuSleep,
             subMenuCorridas,
             subMenuCeleiro,
             subMenuLoja,
@@ -116,6 +117,7 @@ namespace HorseProject
                             break;
                         case ConsoleKey.Enter://se ENTER
                             escolhaFinal = true;//usuario escolheu
+                            
                             menuAtual = menu.menuJogos;
                             subMenuAtual = menu.subMenuCeleiro;
                             Console.Clear();
@@ -139,6 +141,10 @@ namespace HorseProject
 
             while (menuAtual == menu.menuJogos)
             {
+                if (CicloDiario.lojaAberta != true)
+                {
+                    menuSleep(cavalo);
+                }
                 if (subMenuAtual == menu.subMenuCeleiro)
                 {
                     Console.Clear();
@@ -152,13 +158,37 @@ namespace HorseProject
                     switch (Console.ReadKey().Key)
                     {
                         case ConsoleKey.Enter://se ENTER
-                            subMenuCorrida(1, cavalo);
+                            if (CicloDiario.pistaAberta == true)
+                            {
+                                subMenuCorrida(1, cavalo);
+                            }
+                            if (CicloDiario.pistaAberta != true)
+                            {
+                                Console.WriteLine("A Pista esta fechada nesse momento!");
+                                Thread.Sleep(700);
+                                Console.Clear();
+                                if(subMenuAtual == menu.subMenuCeleiro)
+                                {
+                                    subMenuCeleiro(cavalo);
+                                }
+                                if (subMenuAtual == menu.subMenuLoja)
+                                {
+                                    subMenuLoja(cavalo);
+                                }
+                                if (subMenuAtual == menu.subMenuInventario)
+                                {
+                                    subMenuInventario(cavalo);
+                                }
+
+                            }
+                            
                             break;
                         case ConsoleKey.I://se I
                             subMenuCeleiro(cavalo);
                             break;
                         case ConsoleKey.L://se L
                             subMenuLoja(cavalo);
+
                             break;
                         case ConsoleKey.E://Se E
                             subMenuInventario(cavalo);
@@ -195,8 +225,10 @@ namespace HorseProject
                             break;
 
                     }//verifique a KEY clicada
+              
+                
                 }
-
+              
             }//enquanto nao estiver no menu incial, ou seja, estiver no menu de jogar
 
 
@@ -285,6 +317,10 @@ namespace HorseProject
             escolhaCorrida = 0;
             while (subMenuAtual == menu.subMenuCorridas)
             {
+                if (CicloDiario.lojaAberta != true)
+                {
+                    menuSleep(cavalo);
+                }
                 switch (Console.ReadKey().Key)
                 {
                     case ConsoleKey.D1:
@@ -325,6 +361,8 @@ namespace HorseProject
                         break;
                     case ConsoleKey.L:
                         subMenuLoja(cavalo);
+
+
                         break;
                     case ConsoleKey.E:
                         subMenuInventario(cavalo);
@@ -347,6 +385,10 @@ namespace HorseProject
 
             while (subMenuAtual == menu.subMenuCeleiro)
             {
+                if (CicloDiario.lojaAberta == false)
+                {
+                    menuSleep(cavalo);
+                }
                 switch (Console.ReadKey().Key)
                 {
 
@@ -366,10 +408,34 @@ namespace HorseProject
                     //COMANDOS PADRÃO ****
 
                     case ConsoleKey.Enter:
-                        subMenuCorrida(0, cavalo);
-                        break;
+                            if (CicloDiario.pistaAberta == true)
+                            {
+                                subMenuCorrida(1, cavalo);
+                            }
+                            if(CicloDiario.pistaAberta != true)
+                            {
+                                Console.WriteLine("A Pista esta fechada nesse momento!");
+                                Thread.Sleep(700);
+                                Console.Clear();
+                                if (subMenuAtual == menu.subMenuCeleiro)
+                                {
+                                    subMenuCeleiro(cavalo);
+                                }
+                                if (subMenuAtual == menu.subMenuLoja)
+                                {
+                                    subMenuLoja(cavalo);
+                                }
+                                if (subMenuAtual == menu.subMenuInventario)
+                                {
+                                    subMenuInventario(cavalo);
+                                }
+                            }
+                            break;
                     case ConsoleKey.L:
-                        subMenuLoja(cavalo);
+                     
+                         subMenuLoja(cavalo);
+                     
+                       
                         break;
                     case ConsoleKey.E:
                         subMenuInventario(cavalo);
@@ -397,6 +463,10 @@ namespace HorseProject
 
             while (subMenuAtual == menu.subMenuLoja)
             {
+                if (CicloDiario.lojaAberta != true)
+                {
+                    menuSleep(cavalo);
+                }
                 switch (Console.ReadKey().Key)
                 {
                     case ConsoleKey.D1:
@@ -520,7 +590,28 @@ namespace HorseProject
                         break;
 
                     case ConsoleKey.Enter:
-                        subMenuCorrida(0, cavalo);
+                        if (CicloDiario.pistaAberta == true)
+                        {
+                            subMenuCorrida(1, cavalo);
+                        }
+                        if (CicloDiario.pistaAberta != true)
+                        {
+                            Console.WriteLine("A Pista esta fechada nesse momento!");
+                            Thread.Sleep(700);
+                            Console.Clear();
+                            if (subMenuAtual == menu.subMenuCeleiro)
+                            {
+                                subMenuCeleiro(cavalo);
+                            }
+                            if (subMenuAtual == menu.subMenuLoja)
+                            {
+                                subMenuLoja(cavalo);
+                            }
+                            if (subMenuAtual == menu.subMenuInventario)
+                            {
+                                subMenuInventario(cavalo);
+                            }
+                        }
                         break;
                     case ConsoleKey.I:
                         subMenuCeleiro(cavalo);
@@ -548,6 +639,10 @@ namespace HorseProject
 
             while (subMenuAtual == menu.subMenuInventario)
             {
+                if (CicloDiario.lojaAberta != true)
+                {
+                    menuSleep(cavalo);
+                }
                 Inventario.VerificarStatus();
                 switch (Console.ReadKey().Key)
                 {
@@ -567,13 +662,35 @@ namespace HorseProject
                         break;
 
                     case ConsoleKey.Enter:
-                        subMenuCorrida(0, cavalo);
+                        if (CicloDiario.pistaAberta == true)
+                        {
+                            subMenuCorrida(1, cavalo);
+                        }
+                        if (CicloDiario.pistaAberta != true)
+                        {
+                            Console.WriteLine("A Pista esta fechada nesse momento!");
+                            Thread.Sleep(700);
+                            Console.Clear();
+                            if (subMenuAtual == menu.subMenuCeleiro)
+                            {
+                                subMenuCeleiro(cavalo);
+                            }
+                            if (subMenuAtual == menu.subMenuLoja)
+                            {
+                                subMenuLoja(cavalo);
+                            }
+                            if (subMenuAtual == menu.subMenuInventario)
+                            {
+                                subMenuInventario(cavalo);
+                            }
+                        }
                         break;
                     case ConsoleKey.I:
                         subMenuCeleiro(cavalo);
                         break;
                     case ConsoleKey.L:
                         subMenuLoja(cavalo);
+
                         break;
                     //COMANDOS PADRÃO ****
                     default:
@@ -587,45 +704,41 @@ namespace HorseProject
 
         }
 
-        public static void subMenuStatusCompra(Cavalo cavalo, int valoritem)
+    
+
+        public static void menuSleep(Cavalo cavalo)
         {
-
-
-            subMenuAtual = menu.subMenuStatusCompra;
-
-            switch (Console.ReadKey().Key)
+            menuAtual =  menu.menuSleep;
+            Console.Clear();
+            Graficos.MenuSleep();
+            while (menuAtual == menu.menuSleep)
             {
+                switch(Console.ReadKey().Key) {
 
+                    case ConsoleKey.Enter:
+                        menuAtual = menu.menuJogos;
+                        subMenuAtual = menu.subMenuCeleiro;
+                        CicloDiario.lojaAberta= true;
+                        CicloDiario.pistaAberta = true;
+                        Console.Clear();
+                        Console.WriteLine("Dormindo...");
+                        
+                        Thread.Sleep(2000);
 
-                //COMANDOS PADRÃO ****
-                case ConsoleKey.Tab://se TAB
-                    Console.Clear();
-                    Graficos.MenuInicial();//volta ao menu inicial
-                    menuAtual = menu.menuInicial;//passa a estar no menu inicial
-                    subMenuAtual = menu.menuInicial;
-                    break;
-                case ConsoleKey.Escape://se ESC
-                    Environment.Exit(0);//sai do programa
-                    break;
-                //COMANDOS PADRÃO ****
+                        menuJogar(cavalo);
+                       break;
+                    default:
+                        Console.Clear();
+                        Graficos.MenuSleep();
+                        break;
+                }
 
-                case ConsoleKey.Enter:
-                    subMenuCorrida(0, cavalo);
-                    break;
-                case ConsoleKey.C:
-       
-                    subMenuLoja(cavalo);
-                    break;
-
-                default:
-                    Console.Clear();
-                    Graficos.SubMenuLoja(0);
-
-                    break;
             }
+            
 
         }
     }
+
 
         
 }

@@ -13,7 +13,6 @@ namespace HorseProject
         static public string[] data = new string[4] { "00/00/00", "00/00/00", "00/00/00", "00/00/00" }, hora = new string[4] { "00:00", "00:00", "00:00", "00:00" };
 
 
-
         static public void MenuInicial()
         {
             void PrintColoredText(string text, ConsoleColor color)
@@ -785,6 +784,18 @@ namespace HorseProject
                                           "│-» "); PrintColoredText("SAIR", ConsoleColor.Red); Console.WriteLine("[ESC]             │                                                   │\r\n" +
                                           "│                         │                                                   │\r\n" +
                                           "└─────────────────────────┴───────────────────────────────────────────────────┘");
+        }
+
+
+        static public void MenuSleep()
+        {
+            Console.WriteLine("┌────────────────────────────────────────────────────────────────────────────┐\r\n" +
+                              "│                                                                            │\r\n" +
+                              "│                 ESTA NA HORA DE DORMIR, A LOJA ESTA FECHADA!               │\r\n" +
+                              "│                     OS CAVALOS CANSADOS E VOCÊ EXAUSTO.                    │\r\n" +
+                              "│                                                                            │\r\n" +
+                              "│                              [ENTER] DORMIR                                │\r\n" +
+                              "└────────────────────────────────────────────────────────────────────────────┘");
         }
 
     }

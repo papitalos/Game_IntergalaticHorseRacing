@@ -12,7 +12,7 @@ namespace HorseProject
     {
         public int id, idade;
         public string nome;
-        public bool podeParticipar = true;
+        public bool podeParticipar = true, foiAlimentadoHoje = false;
         public estadoDaDoenca estadoAtual;
         public raca racaAtual;
         public double Kg,tA,tR,tD,tTotal,bonus;
@@ -44,6 +44,20 @@ namespace HorseProject
             purosangueingles
         }
 
+
+        //método que faz com que o cavalo vá perdendo peso a cada dia que passa
+        public void Alímentacao()
+        {
+            foiAlimentadoHoje = true;
+            if(foiAlimentadoHoje == true)
+            {
+                CicloDiario.diasSemComer = 0;
+            }
+            if(foiAlimentadoHoje == false && CicloDiario.lojaAberta == false)
+            {
+                Kg = Kg-10;
+            }
+        }
         //define o bonus que o cavalo recebe
         public double Bonus()
         {

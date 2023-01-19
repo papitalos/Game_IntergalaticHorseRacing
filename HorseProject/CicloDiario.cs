@@ -18,12 +18,13 @@ namespace HorseProject
     {
         public static Cavalo cavalo;
         public static int numVitoria = 1, escolhaCorrida = BootJogo.escolhaCorrida;
-        public static bool pistaAberta;
+        public static bool pistaAberta,lojaAberta;
         public static string[] cicloRelogio = new string[4] { "Manhã    ", "Tarde    ", "Noite    ", "Madrugada" };
         public static string[] diasDaSemana = new string[7] { "Segunda-feira         ","Terça-feira           ","Quarta-feira          ","Quinta-feira          ","Sexta-feira           ","Sabado                ","Domingo               " };
         public static string horaDoDiaAtual, diaAtual;                                                                                                                                                                                                                                               
         public static int myDelay = 5000;
-        public static int contadorDia = 1;
+        public static int contadorDia = 1, diasSemComer = 0, i;
+        
 
         public static void Musica(int audio)
         {
@@ -36,12 +37,12 @@ namespace HorseProject
         {
             if (audio == 1)
             {
-                System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"C:\Users\Utilizador\source\repos\papitalos\IntergalaticHorseRacing\HorseProject\Menu.wav");
+                System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"C:\Users\italo\Source\Repos\papitalos\IntergalaticHorseRacing\HorseProject\Menu.wav");
                 player.Play();
             }
             else if (audio == 2)
             {
-                System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"C:\Users\Utilizador\source\repos\papitalos\IntergalaticHorseRacing\HorseProject\Som_de_trompetas.wav");
+                System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"C:\Users\italo\Source\Repos\papitalos\IntergalaticHorseRacing\HorseProject\Som_de_trompetas.wav");
                 player.Play();
             }
         }
@@ -50,9 +51,28 @@ namespace HorseProject
         {
             //Criar uma nova thread para rodar o relogio do dia de maneira independente
             Thread dia = new Thread(PassarTempo);
-            dia.Start();
-     
-
+            if(BootJogo.menuAtual != BootJogo.menu.menuEscolhaInicial && BootJogo.menuAtual != BootJogo.menu.menuInicial && BootJogo.menuAtual != BootJogo.menu.menuLoading) {
+                dia.Start();
+            }
+            while (BootJogo.estaRodando == true)
+            {
+                if (BootJogo.menuAtual == BootJogo.menu.menuEscolhaInicial || BootJogo.menuAtual == BootJogo.menu.menuInicial || BootJogo.menuAtual == BootJogo.menu.menuLoading)
+                {
+                    dia.Suspend();
+                }
+                else if(BootJogo.menuAtual == BootJogo.menu.menuSleep)
+                {
+                    dia.Abort();
+                    i = 0;
+                    dia.Start();
+                }
+                else
+                {
+                    dia.Resume();
+                }
+            }
+            
+           
 
         }
 
@@ -61,7 +81,8 @@ namespace HorseProject
         {
             for (contadorDia = 0; contadorDia < 7; contadorDia++) {
                 diaAtual = diasDaSemana[contadorDia];
-                for (int i = 0; i < 4; i++)
+                
+                for (i = 0; i < 4; i++)
                 {
 
                     horaDoDiaAtual = cicloRelogio[i];
@@ -77,10 +98,17 @@ namespace HorseProject
                     if (i == 0 || i == 1)
                     {
                         pistaAberta = true;
+                        lojaAberta = true;
                     }
-                    else
+                    if(i == 2)
                     {
                         pistaAberta = false;
+                        lojaAberta = true;
+                    }
+                    if(i == 3)
+                    {
+                        pistaAberta = false;
+                        lojaAberta= false;
                     }
 
 
@@ -101,15 +129,13 @@ namespace HorseProject
                                 break;
                         }
                     }
-              
 
+       
+                        
                     Thread.Sleep(myDelay);
                 }
-
+                
             }
-           
-
-
         }
     }
 }
