@@ -181,13 +181,13 @@ namespace HorseProject
 
                 case 1:
                     Console.Write("┌──────────────────────────────────────────────────────────────────────────────┐\r\n" +
-                                      "│                         "); PrintColoredText("ESCOLHA SEU CAVALO INICIAL", ConsoleColor.Red); Console.WriteLine("                           │\r\n" +
+                                      "│                         "); PrintColoredText("ESCOLHA SEU CAVALO INICIAL", ConsoleColor.Red); Console.Write("                           │\r\n" +
                                       "│──────────────────────────────────────────────────────────────────────────────│\r\n" +
-                                      "│            *Seu cavalo inicial é um Noob Imortal, literalmente*              │\r\n" +
+                                      "│            *Seu cavalo inicial é um "); PrintColoredText("Noob Imortal", ConsoleColor.Red); Console.Write(", literalmente*              │\r\n" +
                                       "│                                                                              │\r\n" +
                                       "│            ▼                                                                 │\r\n" +
                                       "│  ┌────────────────────┐    ┌────────────────────┐    ┌────────────────────┐  │\r\n" +
-                                      "│  | Pangaré Desnutrido |    |  Montaria Peluda   |    |    Corsel Burro    |  │\r\n" +
+                                      "│  | "); PrintColoredText("Pangaré Desnutrido", ConsoleColor.Red); Console.Write(" |    |  "); PrintColoredText("Montaria Peluda", ConsoleColor.Red); Console.Write("   |    |    "); PrintColoredText("Corsel Burro", ConsoleColor.Red); Console.Write("    |  │\r\n" +
                                       "│  |────────────────────|    |────────────────────|    |────────────────────|  │\r\n" +
                                       "│  |                    |    |                    |    |                    |  │\r\n" +
                                       "│  |   raça: ÁRABE      |    |   raça: ÁRABE      |    |   raça: ÁRABE      |  │\r\n" +
@@ -207,13 +207,13 @@ namespace HorseProject
                     break;
                 case 2:
                     Console.Write("┌──────────────────────────────────────────────────────────────────────────────┐\r\n" +
-                                      "│                         "); PrintColoredText("ESCOLHA SEU CAVALO INICIAL", ConsoleColor.Red); Console.WriteLine("                           │\r\n" +
+                                      "│                         "); PrintColoredText("ESCOLHA SEU CAVALO INICIAL", ConsoleColor.Red); Console.Write("                           │\r\n" +
                                       "│──────────────────────────────────────────────────────────────────────────────│\r\n" +
-                                      "│            *Seu cavalo inicial é um Noob Imortal, literalmente*              │\r\n" +
+                                      "│            *Seu cavalo inicial é um "); PrintColoredText("Noob Imortal", ConsoleColor.Red); Console.Write(", literalmente*              │\r\n" +
                                       "│                                                                              │\r\n" +
                                       "│                                       ▼                                      │\r\n" +
                                       "│  ┌────────────────────┐    ┌────────────────────┐    ┌────────────────────┐  │\r\n" +
-                                      "│  | Pangaré Desnutrido |    |  Montaria Peluda   |    |    Corsel Burro    |  │\r\n" +
+                                      "│  | "); PrintColoredText("Pangaré Desnutrido", ConsoleColor.Red); Console.Write(" |    |  "); PrintColoredText("Montaria Peluda", ConsoleColor.Red); Console.Write("   |    |    "); PrintColoredText("Corsel Burro", ConsoleColor.Red); Console.Write("    |  │\r\n" +
                                       "│  |────────────────────|    |────────────────────|    |────────────────────|  │\r\n" +
                                       "│  |                    |    |                    |    |                    |  │\r\n" +
                                       "│  |   raça: ÁRABE      |    |   raça: ÁRABE      |    |   raça: ÁRABE      |  │\r\n" +
@@ -221,11 +221,11 @@ namespace HorseProject
                                       "│  |   peso: 150kg      |    |   peso: 150kg      |    |   peso: 150kg      |  │\r\n" +
                                       "│  |                    |    |                    |    |                    |  │\r\n" +
                                       "│  |   Resistencia      |    |   Resistencia      |    |   Resistencia      |  │\r\n" +
-                                      "│  |   ■¤¤¤¤¤¤¤¤¤¤¤¤¤¤  |    |   ■■■■¤¤¤¤¤¤¤¤¤¤¤  |    |   ■■■¤¤¤¤¤¤¤¤¤¤¤¤  |  │\r\n" +
+                                      "│  |   ■¤¤¤¤¤¤¤¤¤¤¤¤¤   |    |   ■■■■¤¤¤¤¤¤¤¤¤¤   |    |   ■■■¤¤¤¤¤¤¤¤¤¤¤   |  │\r\n" +
                                       "│  |   Aceleração       |    |   Aceleração       |    |   Aceleração       |  │\r\n" +
-                                      "│  |   ■■■¤¤¤¤¤¤¤¤¤¤¤¤  |    |   ■■■¤¤¤¤¤¤¤¤¤¤¤¤  |    |   ■¤¤¤¤¤¤¤¤¤¤¤¤¤¤  |  │\r\n" +
+                                      "│  |   ■■■¤¤¤¤¤¤¤¤¤¤¤   |    |   ■■■¤¤¤¤¤¤¤¤¤¤¤   |    |   ■¤¤¤¤¤¤¤¤¤¤¤¤¤   |  │\r\n" +
                                       "│  |   Velocidade       |    |   Velocidade       |    |   Velocidade       |  │\r\n" +
-                                      "│  |   ■■■■¤¤¤¤¤¤¤¤¤¤¤  |    |   ■¤¤¤¤¤¤¤¤¤¤¤¤¤¤  |    |   ■■■■¤¤¤¤¤¤¤¤¤¤¤  |  │\r\n" +
+                                      "│  |   ■■■■¤¤¤¤¤¤¤¤¤¤   |    |   ■¤¤¤¤¤¤¤¤¤¤¤¤¤   |    |   ■■■■¤¤¤¤¤¤¤¤¤¤   |  │\r\n" +
                                       "│  |                    |    |                    |    |                    |  │\r\n" +
                                       "│  └────────────────────┘    └────────────────────┘    └────────────────────┘  │\r\n" +
                                       "│                                       ▲                                      │\r\n" +
@@ -233,13 +233,13 @@ namespace HorseProject
                     break;
                 case 3:
                     Console.Write("┌──────────────────────────────────────────────────────────────────────────────┐\r\n" +
-                                      "│                         "); PrintColoredText("ESCOLHA SEU CAVALO INICIAL", ConsoleColor.Red); Console.WriteLine("                           │\r\n" +
+                                      "│                         "); PrintColoredText("ESCOLHA SEU CAVALO INICIAL", ConsoleColor.Red); Console.Write("                           │\r\n" +
                                       "│──────────────────────────────────────────────────────────────────────────────│\r\n" +
-                                      "│            *Seu cavalo inicial é um Noob Imortal, literalmente*              │\r\n" +
+                                      "│            *Seu cavalo inicial é um "); PrintColoredText("Noob Imortal", ConsoleColor.Red); Console.Write(", literalmente*              │\r\n" +
                                       "│                                                                              │\r\n" +
                                       "│                                                                ▼             │\r\n" +
                                       "│  ┌────────────────────┐    ┌────────────────────┐    ┌────────────────────┐  │\r\n" +
-                                      "│  | Pangaré Desnutrido |    |  Montaria Peluda   |    |    Corsel Burro    |  │\r\n" +
+                                      "│  | "); PrintColoredText("Pangaré Desnutrido", ConsoleColor.Red); Console.Write(" |    |  "); PrintColoredText("Montaria Peluda", ConsoleColor.Red); Console.Write("   |    |    "); PrintColoredText("Corsel Burro", ConsoleColor.Red); Console.Write("    |  │\r\n" +
                                       "│  |────────────────────|    |────────────────────|    |────────────────────|  │\r\n" +
                                       "│  |                    |    |                    |    |                    |  │\r\n" +
                                       "│  |   raça: ÁRABE      |    |   raça: ÁRABE      |    |   raça: ÁRABE      |  │\r\n" +
@@ -247,11 +247,11 @@ namespace HorseProject
                                       "│  |   peso: 150kg      |    |   peso: 150kg      |    |   peso: 150kg      |  │\r\n" +
                                       "│  |                    |    |                    |    |                    |  │\r\n" +
                                       "│  |   Resistencia      |    |   Resistencia      |    |   Resistencia      |  │\r\n" +
-                                      "│  |   ■¤¤¤¤¤¤¤¤¤¤¤¤¤¤  |    |   ■■■■¤¤¤¤¤¤¤¤¤¤¤  |    |   ■■■¤¤¤¤¤¤¤¤¤¤¤¤  |  │\r\n" +
+                                      "│  |   ■¤¤¤¤¤¤¤¤¤¤¤¤¤   |    |   ■■■■¤¤¤¤¤¤¤¤¤¤   |    |   ■■■¤¤¤¤¤¤¤¤¤¤¤   |  │\r\n" +
                                       "│  |   Aceleração       |    |   Aceleração       |    |   Aceleração       |  │\r\n" +
-                                      "│  |   ■■■¤¤¤¤¤¤¤¤¤¤¤¤  |    |   ■■■¤¤¤¤¤¤¤¤¤¤¤¤  |    |   ■¤¤¤¤¤¤¤¤¤¤¤¤¤¤  |  │\r\n" +
+                                      "│  |   ■■■¤¤¤¤¤¤¤¤¤¤¤   |    |   ■■■¤¤¤¤¤¤¤¤¤¤¤   |    |   ■¤¤¤¤¤¤¤¤¤¤¤¤¤   |  │\r\n" +
                                       "│  |   Velocidade       |    |   Velocidade       |    |   Velocidade       |  │\r\n" +
-                                      "│  |   ■■■■¤¤¤¤¤¤¤¤¤¤¤  |    |   ■¤¤¤¤¤¤¤¤¤¤¤¤¤¤  |    |   ■■■■¤¤¤¤¤¤¤¤¤¤¤  |  │\r\n" +
+                                      "│  |   ■■■■¤¤¤¤¤¤¤¤¤¤   |    |   ■¤¤¤¤¤¤¤¤¤¤¤¤¤   |    |   ■■■■¤¤¤¤¤¤¤¤¤¤   |  │\r\n" +
                                       "│  |                    |    |                    |    |                    |  │\r\n" +
                                       "│  └────────────────────┘    └────────────────────┘    └────────────────────┘  │\r\n" +
                                       "│                                                                ▲             │\r\n" +
@@ -759,7 +759,7 @@ namespace HorseProject
                 Console.Write(text);
                 Console.ResetColor();
             }
-            Console.Write(                "┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
+            Console.Write("┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
                                           "│ » " + CicloDiario.horaDoDiaAtual + " » " + Pista.condicoesPistaAtual + "  │                    Inventario                     │\r\n" +
                                           "│ » " + CicloDiario.diaAtual + "│                                                   │\r\n" +
                                           "│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─│───────────────────────────────────────────────────│\r\n" +
@@ -768,15 +768,15 @@ namespace HorseProject
                                           "│                         │      » Itens armazenados «                        │\r\n" +
                                           "│                         │                                                   │\r\n" +
                                           "│                         │     ┌──────────────────────┐                      │\r\n" +
-                                          "│                         │ [1] │ Remedios             │  »  " + Inventario.statusRemedio+"     │\r\n" +
+                                          "│                         │ [1] │ Remedios             │  »  " + Inventario.statusRemedio + "     │\r\n" +
                                           "│-» CORRIDAS[ENTER]       │     └──────────────────────┘                      │\r\n" +
                                           "│                         │                                                   │\r\n" +
                                           "│-» CELEIRO[I]            │     ┌──────────────────────┐                      │\r\n" +
-                                          "│                         │ [2] │ Alimentos            │  »  " + Inventario.statusAlimentos+"     │\r\n" +
+                                          "│                         │ [2] │ Alimentos            │  »  " + Inventario.statusAlimentos + "     │\r\n" +
                                           "│-» LOJA[L]               │     └──────────────────────┘                      │\r\n" +
                                           "│                         │                                                   │\r\n" +
                                           "│-» INVENTARIO[E]         │     ┌──────────────────────┐                      │\r\n" +
-                                          "│                         │ [3] │ Selas                |  »  "+Inventario.statusSelas+"     │\r\n" +
+                                          "│                         │ [3] │ Selas                |  »  " + Inventario.statusSelas + "     │\r\n" +
                                           "│─────────────────────────│     └──────────────────────┘                      │\r\n" +
                                           "│                         │                                                   │\r\n" +
                                           "│-» "); PrintColoredText("VOLTAR", ConsoleColor.Yellow); Console.Write("[TAB]           │                                                   │\r\n" +
@@ -789,12 +789,18 @@ namespace HorseProject
 
         static public void MenuSleep()
         {
-            Console.WriteLine("┌────────────────────────────────────────────────────────────────────────────┐\r\n" +
+            void PrintColoredText(string text, ConsoleColor color)
+            {
+                Console.ForegroundColor = color;
+                Console.Write(text);
+                Console.ResetColor();
+            }
+            Console.Write("┌────────────────────────────────────────────────────────────────────────────┐\r\n" +
                               "│                                                                            │\r\n" +
-                              "│                 ESTA NA HORA DE DORMIR, A LOJA ESTA FECHADA!               │\r\n" +
+                              "│                 ESTA NA HORA DE "); PrintColoredText("DORMIR", ConsoleColor.Red); Console.Write(", A LOJA ESTA FECHADA!               │\r\n" +
                               "│                     OS CAVALOS CANSADOS E VOCÊ EXAUSTO.                    │\r\n" +
                               "│                                                                            │\r\n" +
-                              "│                              [ENTER] DORMIR                                │\r\n" +
+                              "│                              [ENTER] "); PrintColoredText("DORMIR", ConsoleColor.Red); Console.Write("                                │\r\n" +
                               "└────────────────────────────────────────────────────────────────────────────┘");
         }
 
