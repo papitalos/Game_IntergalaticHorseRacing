@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.NetworkInformation;
 using System.Runtime.CompilerServices;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -11,7 +12,6 @@ namespace HorseProject
     static public class Loja
     {
         static public int Gastos, carteiraConverted;
-       
         static public void ComprarRemedios()
         {
             carteiraConverted = Int32.Parse(Player.Carteira);

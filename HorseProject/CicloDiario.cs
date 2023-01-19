@@ -51,9 +51,8 @@ namespace HorseProject
         {
             //Criar uma nova thread para rodar o relogio do dia de maneira independente
             Thread dia = new Thread(PassarTempo);
-            if(BootJogo.menuAtual != BootJogo.menu.menuEscolhaInicial && BootJogo.menuAtual != BootJogo.menu.menuInicial && BootJogo.menuAtual != BootJogo.menu.menuLoading) {
-                dia.Start();
-            }
+            
+            dia.Start();
             while (BootJogo.estaRodando == true)
             {
                 if (BootJogo.menuAtual == BootJogo.menu.menuEscolhaInicial || BootJogo.menuAtual == BootJogo.menu.menuInicial || BootJogo.menuAtual == BootJogo.menu.menuLoading)

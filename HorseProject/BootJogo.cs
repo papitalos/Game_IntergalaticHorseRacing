@@ -16,7 +16,7 @@ namespace HorseProject
         public static List<string> inventario = new List<string>();
         public static bool adquirido;
 
-        public static bool estaRodando = false, primeiraVez = true;//jogo nao esta rodando
+        public static bool estaRodando = false, primeiraVez = true, rodarDia, resetarDia;//jogo nao esta rodando
         public static menu menuAtual, subMenuAtual;
 
         public static int qntdSaves = 1, escolhaCorrida = 0, valorItem = 0;
@@ -44,7 +44,7 @@ namespace HorseProject
             Console.Clear();
             Graficos.MenuInicial(); //inicia o menu principal
             menuAtual = menu.menuInicial;//MENU ATUAL: menu inicial
-
+            rodarDia = false;
             while (estaRodando) //enquanto o jogo estiver rodando
             {
 
@@ -470,6 +470,7 @@ namespace HorseProject
                 switch (Console.ReadKey().Key)
                 {
                     case ConsoleKey.D1:
+                        
                         Console.Clear();
                         Graficos.SubMenuLoja(0);
                         break;
@@ -711,6 +712,7 @@ namespace HorseProject
             menuAtual =  menu.menuSleep;
             Console.Clear();
             Graficos.MenuSleep();
+
             while (menuAtual == menu.menuSleep)
             {
                 switch(Console.ReadKey().Key) {
