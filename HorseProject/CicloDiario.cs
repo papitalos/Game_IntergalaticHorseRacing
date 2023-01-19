@@ -16,6 +16,7 @@ namespace HorseProject
 {
     public static class CicloDiario
     {
+        public static int currentAudio;
         public static Cavalo cavalo;
         public static int numVitoria = 1, escolhaCorrida = BootJogo.escolhaCorrida;
         public static bool pistaAberta,lojaAberta;
@@ -24,7 +25,7 @@ namespace HorseProject
         public static string horaDoDiaAtual, diaAtual;                                                                                                                                                                                                                                               
         public static int myDelay = 5000;
         public static int contadorDia = 1, diasSemComer = 0, i;
-        
+
 
         public static void Musica(int audio)
         {
@@ -35,16 +36,23 @@ namespace HorseProject
 
         public static void TocarMusica(int audio)
         {
+            System.Media.SoundPlayer player;
             if (audio == 1)
             {
-                System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"C:\Users\italo\Source\Repos\papitalos\IntergalaticHorseRacing\HorseProject\Menu.wav");
+                player = new System.Media.SoundPlayer(@"C:\Users\Utilizador\source\repos\papitalos\IntergalaticHorseRacing\HorseProject\Menu.wav");
                 player.Play();
             }
             else if (audio == 2)
             {
-                System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"C:\Users\italo\Source\Repos\papitalos\IntergalaticHorseRacing\HorseProject\Som_de_trompetas.wav");
+                player = new System.Media.SoundPlayer(@"C:\Users\Utilizador\source\repos\papitalos\IntergalaticHorseRacing\HorseProject\Som_de_trompetas.wav");
                 player.Play();
             }
+            else if (audio == 3)
+            {
+                player = new System.Media.SoundPlayer(@"C:\Users\Utilizador\source\repos\papitalos\IntergalaticHorseRacing\HorseProject\Corrida.wav");
+                player.Play();
+            }
+            currentAudio = audio;
         }
 
         public static void ThreadTimerDiario()
