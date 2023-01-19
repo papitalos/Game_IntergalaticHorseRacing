@@ -312,7 +312,7 @@ namespace HorseProject
         {
             Console.Clear();
             Graficos.SubMenuCorrida(escolhaCorrida, posicaoVitoria, cavalo);
-            CicloDiario.Musica(2);
+            CicloDiario.Musica(3);
             subMenuAtual = menu.subMenuCorridas;
             escolhaCorrida = 0;
             while (subMenuAtual == menu.subMenuCorridas)
@@ -324,6 +324,7 @@ namespace HorseProject
                 switch (Console.ReadKey().Key)
                 {
                     case ConsoleKey.D1:
+                        CicloDiario.Musica(2);
                         escolhaCorrida = 1;
                         Console.Clear();
                         Graficos.SubMenuCorrida(escolhaCorrida, posicaoVitoria, cavalo);
@@ -331,6 +332,7 @@ namespace HorseProject
                         escolhaCorrida = 0;
                         break;
                     case ConsoleKey.D2:
+                        CicloDiario.Musica(2);
                         escolhaCorrida = 2;
                         Console.Clear();
                         Graficos.SubMenuCorrida(escolhaCorrida, posicaoVitoria, cavalo);
@@ -338,6 +340,7 @@ namespace HorseProject
                         escolhaCorrida = 0;
                         break;
                     case ConsoleKey.D3:
+                        CicloDiario.Musica(2);
                         escolhaCorrida = 3;
                         Console.Clear();
                         Graficos.SubMenuCorrida(escolhaCorrida, posicaoVitoria, cavalo);
@@ -380,6 +383,10 @@ namespace HorseProject
         }
         public static void subMenuCeleiro(Cavalo cavalo)
         {
+            if (CicloDiario.currentAudio != 1)
+            {
+                CicloDiario.Musica(1);
+            }
             Console.Clear();
             Graficos.SubMenuCeleiro();
 
@@ -457,6 +464,10 @@ namespace HorseProject
 
         public static void subMenuLoja(Cavalo cavalo)
         {
+            if (CicloDiario.currentAudio != 1)
+            {
+                CicloDiario.Musica(1);
+            }
             Console.Clear();
             subMenuAtual = menu.subMenuLoja;
             Graficos.SubMenuLoja(0); //default
@@ -631,6 +642,10 @@ namespace HorseProject
         }
         public static void subMenuInventario(Cavalo cavalo)
         {
+            if (CicloDiario.currentAudio != 1)
+            {
+                CicloDiario.Musica(1);
+            }
             Console.Clear();
             subMenuAtual = menu.subMenuInventario;
             Inventario.VerificarStatus();
