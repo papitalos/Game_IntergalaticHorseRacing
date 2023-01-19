@@ -24,18 +24,28 @@ namespace HorseProject
         public static string horaDoDiaAtual, diaAtual;                                                                                                                                                                                                                                               
         public static int myDelay = 5000;
         public static int contadorDia = 1;
-        public static void Musica()
+
+        public static void Musica(int audio)
         {
-            Thread musica = new Thread(TocarMusica);
+            Thread musica = new Thread(new ThreadStart(() => TocarMusica(audio)));
             musica.Start();
+            musica.Join();
         }
 
-        public static void TocarMusica()
+        public static void TocarMusica(int audio)
         {
-            System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"C:\Users\italo\Source\Repos\papitalos\IntergalaticHorseRacing\HorseProject\Som_de_trompetas.wav");
-            player.Play();
+            if (audio == 1)
+            {
+                System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"C:\Users\Utilizador\source\repos\papitalos\IntergalaticHorseRacing\HorseProject\Menu.wav");
+                player.Play();
+            }
+            else if (audio == 2)
+            {
+                System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"C:\Users\Utilizador\source\repos\papitalos\IntergalaticHorseRacing\HorseProject\Som_de_trompetas.wav");
+                player.Play();
+            }
         }
-    
+
         public static void ThreadTimerDiario()
         {
             //Criar uma nova thread para rodar o relogio do dia de maneira independente

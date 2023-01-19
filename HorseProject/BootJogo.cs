@@ -11,6 +11,7 @@ namespace HorseProject
 {
     public static class BootJogo
     {
+        
         // Declara a lista de itens do inventário
         public static List<string> inventario = new List<string>();
         public static bool adquirido;
@@ -36,7 +37,8 @@ namespace HorseProject
         }
         public static void RodarJogo(Cavalo cavalo)
         {
-
+            
+            CicloDiario.Musica(1);
             estaRodando = true;//o jogo passa a estar rodando
             Console.Clear();
             Graficos.MenuInicial(); //inicia o menu principal
@@ -278,7 +280,7 @@ namespace HorseProject
         {
             Console.Clear();
             Graficos.SubMenuCorrida(escolhaCorrida, posicaoVitoria, cavalo);
-            CicloDiario.Musica();
+            CicloDiario.Musica(2);
             subMenuAtual = menu.subMenuCorridas;
             escolhaCorrida = 0;
             while (subMenuAtual == menu.subMenuCorridas)

@@ -19,15 +19,15 @@ namespace HorseProject
 
             CicloDiario.ThreadTimerDiario();
 
-
-            cavalo.ToString();
-
-          
+            BootJogo.RodarJogo(cavalo);
+            //cavalo.ToString();
 
 
-            
 
-            
+
+
+
+
 
         }
     }
