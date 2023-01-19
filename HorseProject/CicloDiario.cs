@@ -19,14 +19,14 @@ namespace HorseProject
         public static int currentAudio;
         public static Cavalo cavalo;
         public static int numVitoria = 1, escolhaCorrida = BootJogo.escolhaCorrida;
-        public static bool pistaAberta,lojaAberta;
+        public static bool pistaAberta = true,lojaAberta = true;
         public static string[] cicloRelogio = new string[4] { "Manhã    ", "Tarde    ", "Noite    ", "Madrugada" };
         public static string[] diasDaSemana = new string[7] { "Segunda-feira         ","Terça-feira           ","Quarta-feira          ","Quinta-feira          ","Sexta-feira           ","Sabado                ","Domingo               " };
         public static string horaDoDiaAtual, diaAtual;                                                                                                                                                                                                                                               
         public static int myDelay = 5000;
         public static int contadorDia = 1, diasSemComer = 0, i;
-
-
+        public static Thread dia = new Thread(PassarTempo);//Criar uma nova thread para rodar o relogio do dia de maneira independente
+        
         public static void Musica(int audio)
         {
             Thread musica = new Thread(new ThreadStart(() => TocarMusica(audio)));
@@ -39,17 +39,17 @@ namespace HorseProject
             System.Media.SoundPlayer player;
             if (audio == 1)
             {
-                player = new System.Media.SoundPlayer(@"C:\Users\Utilizador\source\repos\papitalos\IntergalaticHorseRacing\HorseProject\Menu.wav");
+                player = new System.Media.SoundPlayer(@"C:\Users\italo\Source\Repos\papitalos\IntergalaticHorseRacing\HorseProject\Menu.wav");
                 player.Play();
             }
             else if (audio == 2)
             {
-                player = new System.Media.SoundPlayer(@"C:\Users\Utilizador\source\repos\papitalos\IntergalaticHorseRacing\HorseProject\Som_de_trompetas.wav");
+                player = new System.Media.SoundPlayer(@"C:\Users\italo\Source\Repos\papitalos\IntergalaticHorseRacing\HorseProject\Som_de_trompetas.wav");
                 player.Play();
             }
             else if (audio == 3)
             {
-                player = new System.Media.SoundPlayer(@"C:\Users\Utilizador\source\repos\papitalos\IntergalaticHorseRacing\HorseProject\Corrida.wav");
+                player = new System.Media.SoundPlayer(@"C:\Users\italo\Source\Repos\papitalos\IntergalaticHorseRacing\HorseProject\Corrida.wav");
                 player.Play();
             }
             currentAudio = audio;
@@ -57,12 +57,10 @@ namespace HorseProject
 
         public static void ThreadTimerDiario()
         {
-            //Criar uma nova thread para rodar o relogio do dia de maneira independente
-            Thread dia = new Thread(PassarTempo);
-            
-            dia.Start();
+
             while (BootJogo.estaRodando == true)
             {
+              
                 if (BootJogo.menuAtual == BootJogo.menu.menuEscolhaInicial || BootJogo.menuAtual == BootJogo.menu.menuInicial || BootJogo.menuAtual == BootJogo.menu.menuLoading)
                 {
                     dia.Suspend();
@@ -82,10 +80,14 @@ namespace HorseProject
            
 
         }
-
+        
+ 
+     
 
         public static void PassarTempo()
         {
+            
+
             for (contadorDia = 0; contadorDia < 7; contadorDia++) {
                 diaAtual = diasDaSemana[contadorDia];
                 
@@ -137,9 +139,10 @@ namespace HorseProject
                         }
                     }
 
-       
+                    
                         
                     Thread.Sleep(myDelay);
+                    
                 }
                 
             }
