@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Xml.Linq;
+using System.IO;
 
 
 namespace HorseProject
@@ -39,21 +40,31 @@ namespace HorseProject
             System.Media.SoundPlayer player;
             if (audio == 1)
             {
-                player = new System.Media.SoundPlayer(@"C:\Users\italo\Source\Repos\papitalos\IntergalaticHorseRacing\HorseProject\Menu.wav");
+                player = new System.Media.SoundPlayer(@"C:\Users\Utilizador\source\repos\papitalos\IntergalaticHorseRacing\HorseProject\Menu.wav");
                 player.Play();
             }
             else if (audio == 2)
             {
-                player = new System.Media.SoundPlayer(@"C:\Users\italo\Source\Repos\papitalos\IntergalaticHorseRacing\HorseProject\Som_de_trompetas.wav");
+                player = new System.Media.SoundPlayer(@"C:\Users\Utilizador\source\repos\papitalos\IntergalaticHorseRacing\HorseProject\Som_de_trompetas.wav");
                 player.Play();
             }
             else if (audio == 3)
             {
-                player = new System.Media.SoundPlayer(@"C:\Users\italo\Source\Repos\papitalos\IntergalaticHorseRacing\HorseProject\Corrida.wav");
+                player = new System.Media.SoundPlayer(@"C:\Users\Utilizador\source\repos\papitalos\IntergalaticHorseRacing\HorseProject\Corrida.wav");
                 player.Play();
             }
             currentAudio = audio;
         }
+
+        public static void SaveGameData(string gameData, string filePath)
+        {
+            using (StreamWriter file = new StreamWriter(File.Open(filePath, FileMode.Create)))
+            {
+                file.Write(gameData);
+            }
+            Console.WriteLine("Informações do jogo salvas com sucesso em: " + filePath);
+        }
+
 
         public static void ThreadTimerDiario()
         {
