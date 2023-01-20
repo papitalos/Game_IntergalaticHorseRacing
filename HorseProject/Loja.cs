@@ -98,104 +98,32 @@ namespace HorseProject
         {
             //Carteira Converted
             int CarteiraConverted = Int32.Parse(Player.Carteira);
+  
             //Valor do Cavalo
-            double ValorC;
-            //Resitência do Cavalo
-            double y = cavalo.r;
-            //Velocidade Máxima do Cavalo
-            double v = cavalo.VMax;
-            //Peso do Cavalo
-            double p = cavalo.Kg;
-            //Valor dos Stats
-            double ValorS;
-            //Valor Final
-            double ValorF;
-            if (y <= 3)
-            {
-                ValorC = cavalo.valor;
-                ValorS = (y * 100) + (v * 10) + p;
-                ValorF = ValorC + ValorS;
+            double Valor = 0;
+  
+         
+            Valor = Randomize.RandomizeValue(3);
 
-                if (CarteiraConverted >= ValorF)
+            if (CarteiraConverted >= Valor)
+            {
+                BootJogo.adquirido = true;
+                Player.Carteira = (carteiraConverted - Valor).ToString();
+                foreach (Cavalo cavaloparaceleiro in cavalosLoja)
                 {
-                    BootJogo.adquirido = true;
-                    Player.Carteira = (carteiraConverted - ValorF).ToString();
-                    Celeiro.AddCavalo(cavalo);
+                    if(idCavalo == cavaloparaceleiro.id)
+                    {
+                        Celeiro.AddCavalo(cavaloparaceleiro);
+                    }
                 }
-                else 
-                {
-                    BootJogo.adquirido = false;
-                }
+                
+            }
+            else 
+            {
+                BootJogo.adquirido = false;
+            }
                     
-            }
-            if (y > 3 && y <= 6)
-            {
-                ValorC = cavalo.valor;
-                ValorS = (y * 100) + (v / 10) + p;
-                ValorF = ValorC + ValorS;
-                if (CarteiraConverted >= ValorF)
-                {
-                    BootJogo.adquirido = true;
-                    Player.Carteira = (carteiraConverted - ValorF).ToString();
-                    Celeiro.AddCavalo(cavalo);
-                }
-                else
-                {
-                    BootJogo.adquirido = false;
-                }
-
-            }
-            if (y > 6 && y <= 9)
-            {
-                ValorC = cavalo.valor;
-                ValorS = (y * 100) + (v / 10) + p;
-                ValorF = ValorC + ValorS;
-                if (CarteiraConverted >= ValorF)
-                {
-                    BootJogo.adquirido = true;
-                    Player.Carteira = (carteiraConverted - ValorF).ToString();
-                    Celeiro.AddCavalo(cavalo);
-                }
-                else
-                {
-                    BootJogo.adquirido = false;
-                }
-
-            }
-            if (y > 9 && y <= 12)
-            {
-                ValorC = cavalo.valor;
-                ValorS = (y * 100) + (v / 10) + p;
-                ValorF = ValorC + ValorS;
-                if (CarteiraConverted >= ValorF)
-                {
-                    BootJogo.adquirido = true;
-                    Player.Carteira = (carteiraConverted - ValorF).ToString();
-                    Celeiro.AddCavalo(cavalo);
-                }
-                else
-                {
-                    BootJogo.adquirido = false;
-                }
-
-            }
-            if (y > 12)
-            {
-                ValorC = cavalo.valor;
-                ValorS = (y * 100) + (v / 10) + p;
-                ValorF = ValorC + ValorS;
-                if (CarteiraConverted >= ValorF)
-                {
-                    BootJogo.adquirido = true;
-                    Player.Carteira = (carteiraConverted - ValorF).ToString();
-                    Celeiro.AddCavalo(cavalo);
-                }
-                else
-                {
-                    BootJogo.adquirido = false;
-                }
-
-            }
+          
         }
     }
 }
