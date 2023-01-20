@@ -24,7 +24,7 @@ namespace HorseProject
         public static string[] cicloRelogio = new string[4] { "Manhã    ", "Tarde    ", "Noite    ", "Madrugada" };
         public static string[] diasDaSemana = new string[7] { "Segunda-feira         ","Terça-feira           ","Quarta-feira          ","Quinta-feira          ","Sexta-feira           ","Sabado                ","Domingo               " };
         public static string horaDoDiaAtual, diaAtual;                                                                                                                                                                                                                                               
-        public static int myDelay = 5000;
+        public static int myDelay = 10000;
         public static int contadorDia = 1, diasSemComer = 0, i;
         public static Thread dia = new Thread(PassarTempo);//Criar uma nova thread para rodar o relogio do dia de maneira independente
         

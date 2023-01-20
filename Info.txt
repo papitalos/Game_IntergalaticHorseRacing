@@ -1,4 +1,10 @@
 Cavalo:
 
 Nome: Pangare Desnutrido
+ID: 1
 Idade: 5
+Peso: 400
+Resistencia: 1
+Velocidade Máxima: 5
+Aceleração: 2
+Valor: 0

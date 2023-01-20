@@ -14,7 +14,7 @@ namespace HorseProject
         public static string[] nomeNV3 = new string[5] { "Vegeta              ","Eros                ", "Icarus              ", "Marco Polo          ", "Brutus              " };
         public static string[] nomeNV4 = new string[5] { "Pegasus             ","Poseidon            ", "Loki                ", "Kratos              ", "Atreus              " };
         public static string[] nomeNV5 = new string[5] { "Uranus              ","Andromeda           ", "Mr.Meeseks          ", "Pissmaster          ", "Mr.Poppybutthole    " };
-
+                                                        
 
 
         //PrimeiroCavalo
@@ -24,17 +24,17 @@ namespace HorseProject
             switch (SlotEscolhido)
             {
                 case 1:
-                    Cavalo PD = new Cavalo(1,5,"Pangaré Desnutrido",Cavalo.raca.arabe,150,3, 1, 2, 150);
+                    Cavalo PD = new Cavalo(1,5, "Pangaré Desnutrido  ", Cavalo.raca.arabe,150,3, 1, 2, 150);
                     escolhido= PD;
            
 
                     break;
                 case 2:
-                    Cavalo MP = new Cavalo(1, 5, "Montaria Peluda", Cavalo.raca.shire, 600, 1, 3, 2, 150);
+                    Cavalo MP = new Cavalo(1, 5,"Montaria Peluda     ", Cavalo.raca.shire, 600, 1, 3, 2, 150);
                     escolhido= MP;
                     break;
                 case 3:
-                    Cavalo CB = new Cavalo(1, 5, "Corsel Burro", Cavalo.raca.parcheron, 450, 3, 2, 1, 150);
+                    Cavalo CB = new Cavalo(1, 5,"Corsel Burro        ", Cavalo.raca.parcheron, 450, 3, 2, 1, 150);
                     escolhido= CB;
                     break;
             }

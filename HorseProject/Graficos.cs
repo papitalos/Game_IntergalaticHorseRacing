@@ -650,15 +650,15 @@ namespace HorseProject
                                           "│                         │        » Selecione o cavalo que deseja ver «      │\r\n" +
                                           "│                         │                                                   │\r\n" +
                                           "│                         │     ┌──────────────────────┐                      │\r\n" +
-                                          "│                         │ [1] │  "+Celeiro.MostrarCavalo(1)+"  │                      │\r\n" +
+                                          "│                         │ [1] │  "+Celeiro.VerificarEMostrar(1)+"│                      │\r\n" +
                                           "│-» CORRIDAS[ENTER]       │     └──────────────────────┘                      │\r\n" +
                                           "│                         │                                                   │\r\n" +
                                           "│-» CELEIRO[I]            │     ┌──────────────────────┐                      │\r\n" +
-                                          "│                         │ [2] │  "+Celeiro.MostrarCavalo(2)+"  │                      │\r\n" +
+                                          "│                         │ [2] │  "+Celeiro.VerificarEMostrar(2)+"│                      │\r\n" +
                                           "│-» LOJA[L]               │     └──────────────────────┘                      │\r\n" +
                                           "│                         │                                                   │\r\n" +
                                           "│-» INVENTARIO[E]         │     ┌──────────────────────┐                      │\r\n" +
-                                          "│                         │ [3] │  "+Celeiro.MostrarCavalo(3)+"  │                      │\r\n" +
+                                          "│                         │ [3] │  "+Celeiro.VerificarEMostrar(3)+"│                      │\r\n" +
                                           "│─────────────────────────│     └──────────────────────┘                      │\r\n" +
                                           "│                         │                                                   │\r\n" +
                                           "│-» "); PrintColoredText("VOLTAR", ConsoleColor.Yellow); Console.Write("[TAB]           │     ┌──────────────────────┐                      │\r\n" +

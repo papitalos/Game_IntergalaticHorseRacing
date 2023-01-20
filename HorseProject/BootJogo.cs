@@ -745,6 +745,7 @@ namespace HorseProject
                                     Loja.ComprarCavalo(cavalo, 1);
                                     if (Celeiro.CapacidadeCeleiro() < 4)
                                     {
+
                                         Thread.Sleep(100);
                                         Console.Clear();
                                         Graficos.SubMenuLoja(1);
