@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -9,8 +10,6 @@ namespace HorseProject
     static public class Celeiro
     {
         static private List<Cavalo> cavalosCeleiro = new List<Cavalo>();
-        
-        
         // Adiciona cavalos ao celeiro
         static public void AddCavalo(Cavalo cavalo)
         {
@@ -43,7 +42,7 @@ namespace HorseProject
             else
             if (y <= 4)
             {
-                ValorC = Randomize.randomizeVMadeira;
+                ValorC = cavalo.valor;
                 ValorS = (y * 100) + (v / 10) + p;
                 ValorF = ValorC + ValorS;
                 Player.Carteira = Player.Carteira + ValorF;
@@ -52,7 +51,7 @@ namespace HorseProject
             else
             if (y > 4 || y <= 7)
             {
-                ValorC = Randomize.randomizeVPrata;
+                ValorC = cavalo.valor;
                 ValorS = (y * 100) + (v / 10) + p;
                 ValorF = ValorC + ValorS;
                 Player.Carteira = Player.Carteira + ValorF;
@@ -61,7 +60,7 @@ namespace HorseProject
             else
             if (y > 7 || y <= 10)
             {
-                ValorC = Randomize.randomizeVOuro;
+                ValorC = cavalo.valor;
                 ValorS = (y * 100) + (v / 10) + p;
                 ValorF = ValorC + ValorS;
                 Player.Carteira = Player.Carteira + ValorF;
@@ -70,7 +69,7 @@ namespace HorseProject
             else
             if (y > 10 || y <= 13)
             {
-                ValorC = Randomize.randomizeVDiamante;
+                ValorC = cavalo.valor;
                 ValorS = (y * 100) + (v / 10) + p;
                 ValorF = ValorC + ValorS;
                 Player.Carteira = Player.Carteira + ValorF;
@@ -79,7 +78,7 @@ namespace HorseProject
             else
             if (y > 13)
             {
-                ValorC = Randomize.randomizeVIntergalatic;
+                ValorC = cavalo.valor;
                 ValorS = (y * 100) + (v / 10) + p;
                 ValorF = ValorC + ValorS;
                 Player.Carteira = Player.Carteira + ValorF;

@@ -15,7 +15,7 @@ namespace HorseProject
         public bool podeParticipar = true, foiAlimentadoHoje = false;
         public estadoDaDoenca estadoAtual;
         public raca racaAtual;
-        public double Kg,tA,tR,tD,tTotal,bonus;
+        public double Kg,tA,tR,tD,tTotal,bonus,KgInicial;
         public double r = 0, VMax = 0, a = 0;
 
         public Cavalo(int id, int idade, string nome, raca racaAtual, double kg,double vMax, double a, int valor)
@@ -56,6 +56,7 @@ namespace HorseProject
             }
             if(foiAlimentadoHoje == false && CicloDiario.lojaAberta == false)
             {
+                CicloDiario.diasSemComer++;
                 Kg = Kg-10;
             }
         }
@@ -125,32 +126,6 @@ namespace HorseProject
             return bonus;
         }
 
-        //randomiza a resistencia
-        public double RandR(Cavalo cavalo)
-        {
-            switch (Player.RankAtual)
-            {
-                case "Madeira     ":
-                    cavalo.r = Randomize.randomizeMadeira;
-                    return cavalo.r;
-                case "Prata       ":
-                    cavalo.r = Randomize.randomizePrata;
-                    return cavalo.r;
-                case "Ouro        ":
-                    cavalo.r = Randomize.randomizeOuro;
-                    return cavalo.r;
-                case "Diamante    ":
-                    cavalo.r = Randomize.randomizeDiamante;
-                    return cavalo.r;
-                case "Intergalatic":
-                    cavalo.r = Randomize.randomizeIntergalatic;
-                    return cavalo.r;
-                default:
-                    Console.WriteLine("ERROR RANDOMIZING");
-                    break;
-            }
-            return r;
-        }
    
         //faz a barra de status
         public string Barra(string parametro)

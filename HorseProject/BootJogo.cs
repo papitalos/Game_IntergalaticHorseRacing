@@ -22,7 +22,7 @@ namespace HorseProject
         public static menu menuAtual, subMenuAtual;
         public static int slotEscolhido = 1; //começa no primeiro cavalo
         public static string filePath = @"C:\Users\Utilizador\source\repos\papitalos\IntergalaticHorseRacing\Info.txt";
-
+        
         public static int qntdSaves = 1, escolhaCorrida = 0, valorItem = 0;
 
         public enum menu
@@ -128,6 +128,7 @@ namespace HorseProject
                             
                             escolhaFinal = true;//usuario escolheu
                             GeradorDeCavalo.GerarPrimeiro(slotEscolhido);
+                            
                             CicloDiario.dia.Start();
 
                             Thread.Sleep(100);

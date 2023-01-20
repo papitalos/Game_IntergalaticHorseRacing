@@ -112,7 +112,7 @@ namespace HorseProject
             double ValorF;
             if (y <= 3)
             {
-                ValorC = Randomize.randomizeVMadeira + (Randomize.randomizeVMadeira / 3);
+                ValorC = cavalo.valor;
                 ValorS = (y * 100) + (v * 10) + p;
                 ValorF = ValorC + ValorS;
 
@@ -130,7 +130,7 @@ namespace HorseProject
             }
             if (y > 3 && y <= 6)
             {
-                ValorC = Randomize.randomizeVPrata + (Randomize.randomizeVPrata / 3);
+                ValorC = cavalo.valor;
                 ValorS = (y * 100) + (v / 10) + p;
                 ValorF = ValorC + ValorS;
                 if (CarteiraConverted >= ValorF)
@@ -147,7 +147,7 @@ namespace HorseProject
             }
             if (y > 6 && y <= 9)
             {
-                ValorC = Randomize.randomizeVOuro + (Randomize.randomizeVOuro / 3);
+                ValorC = cavalo.valor;
                 ValorS = (y * 100) + (v / 10) + p;
                 ValorF = ValorC + ValorS;
                 if (CarteiraConverted >= ValorF)
@@ -164,7 +164,7 @@ namespace HorseProject
             }
             if (y > 9 && y <= 12)
             {
-                ValorC = Randomize.randomizeVDiamante + (Randomize.randomizeVDiamante / 3);
+                ValorC = cavalo.valor;
                 ValorS = (y * 100) + (v / 10) + p;
                 ValorF = ValorC + ValorS;
                 if (CarteiraConverted >= ValorF)
@@ -181,7 +181,7 @@ namespace HorseProject
             }
             if (y > 12)
             {
-                ValorC = Randomize.randomizeVIntergalatic + (Randomize.randomizeVIntergalatic / 3);
+                ValorC = cavalo.valor;
                 ValorS = (y * 100) + (v / 10) + p;
                 ValorF = ValorC + ValorS;
                 if (CarteiraConverted >= ValorF)
