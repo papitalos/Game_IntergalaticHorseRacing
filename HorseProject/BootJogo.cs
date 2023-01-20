@@ -15,12 +15,15 @@ namespace HorseProject
         
      
         public static bool adquirido;
-
+        public static int horse1Position = 0;
+        public static int horse2Position = 0;
+        public static int horse3Position = 0;
+        public static bool raceEnded = false;
         public static bool estaRodando = false, primeiraVez = true, rodarDia, resetarDia;//jogo nao esta rodando
         public static bool escolhaFinal = false;//usuario ainda nao fez sua escolha final
         public static menu menuAtual, subMenuAtual;
         public static int slotEscolhido = 1; //começa no primeiro cavalo
-        public static string filePath = @"C:\Users\italo\Source\Repos\papitalos\IntergalaticHorseRacing\Info.txt";
+        public static string filePath = @"C:\Users\guilh\source\repos\papitalos\IntergalaticHorseRacingInfo.txt";
         
         public static int qntdSaves = 1, escolhaCorrida = 0, valorItem = 0;
 
@@ -429,6 +432,7 @@ namespace HorseProject
                 {
                     case ConsoleKey.D1:
                         if (CicloDiario.i != 3) {CicloDiario.Musica(2);
+
                         escolhaCorrida = 1;
                         Thread.Sleep(100);
                         Console.Clear();
