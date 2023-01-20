@@ -15,7 +15,7 @@ namespace HorseProject
         public static string[] nomeNV4 = new string[5] { "Pegasus             ","Poseidon            ", "Loki                ", "Kratos              ", "Atreus              " };
         public static string[] nomeNV5 = new string[5] { "Uranus              ","Andromeda           ", "Mr.Meeseks          ", "Pissmaster          ", "Mr.Poppybutthole    " };
                                                     
-        public static string filePath = @"C:\Users\guilh\source\repos\papitalos\IntergalaticHorseRacing\Info.txt";
+        public static string filePath = @"C:\Users\italo\Source\Repos\papitalos\IntergalaticHorseRacing\Info.txt";
 
         //PrimeiroCavalo
         static public void GerarPrimeiro(int SlotEscolhido, string filepath)

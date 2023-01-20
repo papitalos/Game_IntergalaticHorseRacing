@@ -1,10 +1,10 @@
 Cavalo:
 
-Nome: Montaria Peluda     
+Nome: Pangaré Desnutrido  
 ID: 1
 Idade: 5
-Peso: 600
-Resistencia: 3
-Velocidade Máxima: 1
+Peso: 150
+Resistencia: 1
+Velocidade Máxima: 3
 Aceleração: 2
 Valor: 150
