@@ -97,15 +97,27 @@ namespace HorseProject
         // Mostra os cavalos
         static public string MostrarCavalo(int id)
         {
-
+            
             foreach (Cavalo cavalo in cavalosCeleiro)
             {
                 if (id == cavalo.id)
                 {
                     return cavalo.nome;
                 }
+          
             }
             return null;
+        }
+        static public string VerificarEMostrar(int id)
+        {
+            if(MostrarCavalo(id) == null)
+            {
+                return "[VAZIO]             ";
+            }
+            else
+            {
+                return MostrarCavalo(id);
+            }
         }
         static public void Reorganizar()
         {
