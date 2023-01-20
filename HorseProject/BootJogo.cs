@@ -432,6 +432,36 @@ namespace HorseProject
                 {
                     case ConsoleKey.D1:
                         if (CicloDiario.i != 3) {CicloDiario.Musica(2);
+                            while (!raceEnded)
+        {
+                    while (horse1Position < 100 && horse2Position < 100 && horse3Position < 100)
+                    {
+                        Console.Clear(); // Clear the screen
+
+                        // Draw the horses
+                        Console.SetCursorPosition(horse1Position, 0);
+                        Console.Write("Horse 1");
+
+                        Console.SetCursorPosition(horse2Position, 1);
+                        Console.Write("Horse 2");
+
+                        Console.SetCursorPosition(horse3Position, 2);
+                        Console.Write("Horse 3");
+
+                        // Update the positions of the horses
+                        horse1Position += 1;
+                        horse2Position += 2;
+                        horse3Position += 3;
+                        if (horse1Position >= 100)
+                            Console.WriteLine("\nHorse 1 wins!");
+                        else if (horse2Position >= 100)
+                            Console.WriteLine("\nHorse 2 wins!");
+                        else if (horse3Position >= 100)
+                            Console.WriteLine("\nHorse 3 wins!");
+
+                        System.Threading.Thread.Sleep(100);
+                    }
+                }
 
                         escolhaCorrida = 1;
                         Thread.Sleep(100);
