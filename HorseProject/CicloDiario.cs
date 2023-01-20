@@ -50,7 +50,7 @@ namespace HorseProject
             }
             else if (audio == 3)
             {
-                player = new System.Media.SoundPlayer(@"C:\Users\italo\Source\Repos\papitalos\IntergalaticHorseRacing\HorseProjectCorrida.wav");
+                player = new System.Media.SoundPlayer(@"C:\Users\italo\Source\Repos\papitalos\IntergalaticHorseRacing\HorseProject\Corrida.wav");
                 player.Play();
             }
             currentAudio = audio;
@@ -89,6 +89,18 @@ namespace HorseProject
             }
             
            
+
+        }
+        //Método que altera o estado de Doença
+        public static void CicloDoenca(Cavalo cavalo)
+        {
+            double diferenca;
+            diferenca = cavalo.KgInicial - cavalo.Kg;
+
+            if (diferenca >= 50)
+            {
+                cavalo.contadorDoenca = cavalo.contadorDoenca + 1;
+            }
 
         }
 
@@ -173,6 +185,7 @@ namespace HorseProject
 
 
                 }
+                CicloDoenca(cavalo);
 
             }
             contadorDia = 0;

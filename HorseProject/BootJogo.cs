@@ -13,15 +13,14 @@ namespace HorseProject
     public static class BootJogo
     {
         
-        // Declara a lista de itens do inventário
-        public static List<string> inventario = new List<string>();
+     
         public static bool adquirido;
 
         public static bool estaRodando = false, primeiraVez = true, rodarDia, resetarDia;//jogo nao esta rodando
         public static bool escolhaFinal = false;//usuario ainda nao fez sua escolha final
         public static menu menuAtual, subMenuAtual;
         public static int slotEscolhido = 1; //começa no primeiro cavalo
-        public static string filePath = @"C:\Users\Utilizador\source\repos\papitalos\IntergalaticHorseRacing\Info.txt";
+        public static string filePath = @"C:\Users\italo\Source\Repos\papitalos\IntergalaticHorseRacing\Info.txt";
         
         public static int qntdSaves = 1, escolhaCorrida = 0, valorItem = 0;
 
@@ -733,26 +732,41 @@ namespace HorseProject
 
                             //LIMPA O 1 DA TELA
                             Console.Clear();
-                            Graficos.SubMenuLoja(0);
+                            cavalo.ToString();
+                            Console.WriteLine("┌──────────────────────┐ ┌──────────────────────┐ \r\n" +
+                                              "│ C - Comprar          │ │ Tab - Voltar         │ \r\n" +
+                                              "└──────────────────────┘ └──────────────────────┘ \r\n");
                             //LIMPA O 1 DA TELA
+                            switch (Console.ReadKey().Key)
+                            {
 
-                            Loja.ComprarCavalo(cavalo, 1);
-                            if(Celeiro.CapacidadeCeleiro() < 4)
-                            {
-                                Thread.Sleep(100);
-                                Console.Clear();
-                                Graficos.SubMenuLoja(1);
-                                Thread.Sleep(700);
-                                Console.Clear();
-                                Graficos.SubMenuLoja(0);
+                                case ConsoleKey.C:
+                                    Loja.ComprarCavalo(cavalo, 1);
+                                    if (Celeiro.CapacidadeCeleiro() < 4)
+                                    {
+                                        Thread.Sleep(100);
+                                        Console.Clear();
+                                        Graficos.SubMenuLoja(1);
+                                        Thread.Sleep(1200);
+                                        Console.Clear();
+                                        Graficos.SubMenuLoja(0);
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("SEM ESPAÇO NO CELEIRO!");
+                                        Thread.Sleep(700);
+                                        Console.Clear();
+                                        Graficos.SubMenuLoja(0);
+                                    }
+                                    break;
+                                case ConsoleKey.Tab:
+                                    Thread.Sleep(100);
+                                    Console.Clear();
+                                    Graficos.SubMenuLoja(0);
+                                    break;
                             }
-                            else
-                            {
-                                Console.WriteLine("SEM ESPAÇO NO CELEIRO!");
-                                Thread.Sleep(700);
-                                Console.Clear();
-                                Graficos.SubMenuLoja(0);
-                            }
+
+                          
 
                              }
                         else
@@ -769,55 +783,67 @@ namespace HorseProject
                         if (CicloDiario.i != 3)
                         {   //LIMPA O 2 DA TELA
                             Console.Clear();
-                            Graficos.SubMenuLoja(0);
+                            cavalo.ToString();
+                            Console.WriteLine("┌──────────────────────┐ ┌──────────────────────┐ \r\n" +
+                                              "│ C - Comprar          │ │ Tab - Voltar         │ \r\n" +
+                                              "└──────────────────────┘ └──────────────────────┘ \r\n");
                             //LIMPA O 2 DA TELA
+                            switch (Console.ReadKey().Key)
+                            {
 
-                            if (Celeiro.CapacidadeCeleiro() < 4)
-                            {
-                                Thread.Sleep(100);
-                                Console.Clear();
-                                Graficos.SubMenuLoja(2);
-                                Thread.Sleep(700);
-                                Console.Clear();
-                                Graficos.SubMenuLoja(0);
+                                case ConsoleKey.C:
+                                    if (Celeiro.CapacidadeCeleiro() < 4)
+                                    {
+                                        Thread.Sleep(100);
+                                        Console.Clear();
+                                        Graficos.SubMenuLoja(2);
+                                        Thread.Sleep(1200);
+                                        Console.Clear();
+                                        Graficos.SubMenuLoja(0);
+                                    }
+                                    else
+                                    {
+                                        menuAtual = menu.menuJogos;
+                                        subMenuAtual = menu.subMenuCeleiro;
+                                        Console.Clear();
+                                        Console.WriteLine("Dormindo...");
+                                        Thread.Sleep(2000);
+                                    }
+                                    break;
+                                case ConsoleKey.Tab:
+                                    Thread.Sleep(100);
+                                    Console.Clear();
+                                    Graficos.SubMenuLoja(0);
+                                    break;
                             }
-                            else
-                            {
-                                Console.WriteLine("SEM ESPAÇO NO CELEIRO!");
-                                Thread.Sleep(700);
-                                Console.Clear();
-                                Graficos.SubMenuLoja(0);
-                            }
+                            
                         }
-                        else
-                        {
-                            menuAtual = menu.menuJogos;
-                            subMenuAtual = menu.subMenuCeleiro;
-                            Console.Clear();
-                            Console.WriteLine("Dormindo...");
-                            Thread.Sleep(2000);
-                        }
+                       
                         break;
                         case ConsoleKey.D3:
                         if (CicloDiario.i != 3)
                         {   //LIMPA O 3 DA TELA
                             Console.Clear();
-                            Graficos.SubMenuLoja(0);
+                            cavalo.ToString();
+                            Console.WriteLine("┌──────────────────────┐ ┌──────────────────────┐ \r\n" +
+                                              "│ C - Comprar          │ │ Tab - Voltar         │ \r\n" +
+                                              "└──────────────────────┘ └──────────────────────┘ \r\n");
                             //LIMPA O 3 DA TELA
+
                             Loja.ComprarCavalo(cavalo, 3);
                             if (Celeiro.CapacidadeCeleiro() < 4)
                             {
                                 Thread.Sleep(100);
                                 Console.Clear();
                                 Graficos.SubMenuLoja(3);
-                                Thread.Sleep(700);
+                                Thread.Sleep(1200);
                                 Console.Clear();
                                 Graficos.SubMenuLoja(0);
                             }
                             else
                             {
                                 Console.WriteLine("SEM ESPAÇO NO CELEIRO!");
-                                Thread.Sleep(700);
+                                Thread.Sleep(1200);
                                 Console.Clear();
                                 Graficos.SubMenuLoja(0);
                             }

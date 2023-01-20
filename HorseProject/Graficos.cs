@@ -688,15 +688,15 @@ namespace HorseProject
                                           "│                         │      » Selecione o cavalo que deseja comprar «    │\r\n" +
                                           "│                         │                                                   │\r\n" +
                                           "│                         │     ┌──────────────────────┐                      │\r\n" +
-                                          "│                         │ [1] │       Luzitano       │  [ADQUIRIDO]         │\r\n" +
+                                          "│                         │ [1] │  "+Loja.MostrarCavalo(1)+"│  [ADQUIRIDO]         │\r\n" +
                                           "│-» CORRIDAS[ENTER]       │     └──────────────────────┘                      │\r\n" +
                                           "│                         │                                                   │\r\n" +
                                           "│-» CELEIRO[I]            │     ┌──────────────────────┐                      │\r\n" +
-                                          "│                         │ [2] │   Quarto de Milha    │                      │\r\n" +
+                                          "│                         │ [2] │  "+Loja.MostrarCavalo(2)+"│                      │\r\n" +
                                           "│-» LOJA[L]               │     └──────────────────────┘                      │\r\n" +
                                           "│                         │                                                   │\r\n" +
                                           "│-» INVENTARIO[E]         │     ┌──────────────────────┐                      │\r\n" +
-                                          "│                         │ [3] │      Percheron       │                      │\r\n" +
+                                          "│                         │ [3] │  "+Loja.MostrarCavalo(3)+"│                      │\r\n" +
                                           "│─────────────────────────│     └──────────────────────┘                      │\r\n" +
                                           "│                         │                                                   │\r\n" +
                                           "│-» "); PrintColoredText("VOLTAR", ConsoleColor.Yellow); Console.Write("[TAB]           │                                                   │\r\n" +
@@ -715,15 +715,15 @@ namespace HorseProject
                                           "│                         │      » Selecione o cavalo que deseja comprar «    │\r\n" +
                                           "│                         │                                                   │\r\n" +
                                           "│                         │     ┌──────────────────────┐                      │\r\n" +
-                                          "│                         │ [1] │       Luzitano       │                      │\r\n" +
+                                          "│                         │ [1] │  "+Loja.MostrarCavalo(1)+"│                      │\r\n" +
                                           "│-» CORRIDAS[ENTER]       │     └──────────────────────┘                      │\r\n" +
                                           "│                         │                                                   │\r\n" +
                                           "│-» CELEIRO[I]            │     ┌──────────────────────┐                      │\r\n" +
-                                          "│                         │ [2] │   Quarto de Milha    │   [ADQUIRIDO]        │\r\n" +
+                                          "│                         │ [2] │  "+Loja.MostrarCavalo(2)+"│   [ADQUIRIDO]        │\r\n" +
                                           "│-» LOJA[L]               │     └──────────────────────┘                      │\r\n" +
                                           "│                         │                                                   │\r\n" +
                                           "│-» INVENTARIO[E]         │     ┌──────────────────────┐                      │\r\n" +
-                                          "│                         │ [3] │      Percheron       │                      │\r\n" +
+                                          "│                         │ [3] │  "+Loja.MostrarCavalo(3)+"│                      │\r\n" +
                                           "│─────────────────────────│     └──────────────────────┘                      │\r\n" +
                                           "│                         │                                                   │\r\n" +
                                           "│-» "); PrintColoredText("VOLTAR", ConsoleColor.Yellow); Console.Write("[TAB]           │                                                   │\r\n" +
@@ -742,15 +742,15 @@ namespace HorseProject
                                           "│                         │      » Selecione o cavalo que deseja comprar «    │\r\n" +
                                           "│                         │                                                   │\r\n" +
                                           "│                         │     ┌──────────────────────┐                      │\r\n" +
-                                          "│                         │ [1] │       Luzitano       │                      │\r\n" +
+                                          "│                         │ [1] │   "+Loja.MostrarCavalo(1)+"│                      │\r\n" +
                                           "│-» CORRIDAS[ENTER]       │     └──────────────────────┘                      │\r\n" +
                                           "│                         │                                                   │\r\n" +
                                           "│-» CELEIRO[I]            │     ┌──────────────────────┐                      │\r\n" +
-                                          "│                         │ [2] │   Quarto de Milha    │                      │\r\n" +
+                                          "│                         │ [2] │   "+Loja.MostrarCavalo(2)+"│                      │\r\n" +
                                           "│-» LOJA[L]               │     └──────────────────────┘                      │\r\n" +
                                           "│                         │                                                   │\r\n" +
                                           "│-» INVENTARIO[E]         │     ┌──────────────────────┐                      │\r\n" +
-                                          "│                         │ [3] │      Percheron       │   [ADQUIRIDO]        │\r\n" +
+                                          "│                         │ [3] │   "+Loja.MostrarCavalo(3)+"│   [ADQUIRIDO]        │\r\n" +
                                           "│─────────────────────────│     └──────────────────────┘                      │\r\n" +
                                           "│                         │                                                   │\r\n" +
                                           "│-» "); PrintColoredText("VOLTAR", ConsoleColor.Yellow); Console.Write("[TAB]           │                                                   │\r\n" +
@@ -769,15 +769,15 @@ namespace HorseProject
                                           "│                         │      » Selecione o cavalo que deseja comprar «    │\r\n" +
                                           "│                         │                                                   │\r\n" +
                                           "│                         │     ┌──────────────────────┐                      │\r\n" +
-                                          "│                         │ [1] │       Luzitano       │                      │\r\n" +
+                                          "│                         │ [1] │  "+Loja.MostrarCavalo(1)+"│                      │\r\n" +
                                           "│-» CORRIDAS[ENTER]       │     └──────────────────────┘                      │\r\n" +
                                           "│                         │                                                   │\r\n" +
                                           "│-» CELEIRO[I]            │     ┌──────────────────────┐                      │\r\n" +
-                                          "│                         │ [2] │   Quarto de Milha    │                      │\r\n" +
+                                          "│                         │ [2] │  "+Loja.MostrarCavalo(2)+"│                      │\r\n" +
                                           "│-» LOJA[L]               │     └──────────────────────┘                      │\r\n" +
                                           "│                         │                                                   │\r\n" +
                                           "│-» INVENTARIO[E]         │     ┌──────────────────────┐                      │\r\n" +
-                                          "│                         │ [3] │      Percheron       │                      │\r\n" +
+                                          "│                         │ [3] │  "+Loja.MostrarCavalo(3)+"│                      │\r\n" +
                                           "│─────────────────────────│     └──────────────────────┘                      │\r\n" +
                                           "│                         │                                                   │\r\n" +
                                           "│-» "); PrintColoredText("VOLTAR", ConsoleColor.Yellow); Console.Write("[TAB]           │                                                   │\r\n" +
@@ -796,15 +796,15 @@ namespace HorseProject
                             "│                         │      » Selecione o cavalo que deseja comprar «    │\r\n" +
                             "│                         │                                                   │\r\n" +
                             "│                         │     ┌──────────────────────┐                      │\r\n" +
-                            "│                         │ [1] │       Luzitano       │                      │\r\n" +
+                            "│                         │ [1] │  "+Loja.MostrarCavalo(1)+"│                      │\r\n" +
                             "│-» CORRIDAS[ENTER]       │     └──────────────────────┘                      │\r\n" +
                             "│                         │                                                   │\r\n" +
                             "│-» CELEIRO[I]            │     ┌──────────────────────┐                      │\r\n" +
-                            "│                         │ [2] │   Quarto de Milha    │                      │\r\n" +
+                            "│                         │ [2] │  "+Loja.MostrarCavalo(2)+"│                      │\r\n" +
                             "│-» LOJA[L]               │     └──────────────────────┘                      │\r\n" +
                             "│                         │                                                   │\r\n" +
                             "│-» INVENTARIO[E]         │     ┌──────────────────────┐                      │\r\n" +
-                            "│                         │ [3] │      Percheron       │                      │\r\n" +
+                            "│                         │ [3] │  "+Loja.MostrarCavalo(3)+"│                      │\r\n" +
                             "│─────────────────────────│     └──────────────────────┘                      │\r\n" +
                             "│                         │                                                   │\r\n" +
                             "│-» "); PrintColoredText("VOLTAR", ConsoleColor.Yellow); Console.Write("[TAB]           │                                                   │\r\n" +
@@ -823,15 +823,15 @@ namespace HorseProject
                                           "│                         │      » Selecione o cavalo que deseja comprar «    │\r\n" +
                                           "│                         │                                                   │\r\n" +
                                           "│                         │     ┌──────────────────────┐                      │\r\n" +
-                                          "│                         │ [1] │       Luzitano       │                      │\r\n" +
+                                          "│                         │ [1] │  "+Loja.MostrarCavalo(1)+"│                      │\r\n" +
                                           "│-» CORRIDAS[ENTER]       │     └──────────────────────┘                      │\r\n" +
                                           "│                         │                                                   │\r\n" +
                                           "│-» CELEIRO[I]            │     ┌──────────────────────┐                      │\r\n" +
-                                          "│                         │ [2] │   Quarto de Milha    │                      │\r\n" +
+                                          "│                         │ [2] │  "+Loja.MostrarCavalo(2)+"│                      │\r\n" +
                                           "│-» LOJA[L]               │     └──────────────────────┘                      │\r\n" +
                                           "│                         │                                                   │\r\n" +
                                           "│-» INVENTARIO[E]         │     ┌──────────────────────┐                      │\r\n" +
-                                          "│                         │ [3] │      Percheron       │                      │\r\n" +
+                                          "│                         │ [3] │  "+Loja.MostrarCavalo(3)+"│                      │\r\n" +
                                           "│─────────────────────────│     └──────────────────────┘                      │\r\n" +
                                           "│                         │                                                   │\r\n" +
                                           "│-» "); PrintColoredText("VOLTAR", ConsoleColor.Yellow); Console.Write("[TAB]           │                                                   │\r\n" +

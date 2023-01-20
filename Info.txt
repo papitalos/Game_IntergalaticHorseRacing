@@ -1,4 +1,4 @@
 Cavalo:
 
- Nome: Pangare Desnutrido
+Nome: Pangare Desnutrido
 Idade: 5
