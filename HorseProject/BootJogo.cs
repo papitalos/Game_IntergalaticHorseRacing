@@ -130,7 +130,7 @@ namespace HorseProject
                         case ConsoleKey.Enter://se ENTER
                             
                             escolhaFinal = true;//usuario escolheu
-                            GeradorDeCavalo.GerarPrimeiro(slotEscolhido);
+                            GeradorDeCavalo.GerarPrimeiro(slotEscolhido, filePath);
                             
                             CicloDiario.dia.Start();
 
@@ -417,7 +417,7 @@ namespace HorseProject
 
         public static void subMenuCorrida(int posicaoVitoria, Cavalo cavalo)
         {
-            CicloDiario.SaveGameData("Cavalo:\n\nNome: " + cavalo.nome + "\nID: " + cavalo.id + "\nIdade: " + cavalo.idade + "\nPeso: " + cavalo.Kg + "\nResistencia: " + cavalo.r + "\nVelocidade Máxima: " + cavalo.VMax + "\nAceleração: " + cavalo.a + "\nValor: " + cavalo.valor, filePath);
+            //CicloDiario.SaveGameData("Cavalo:\n\nNome: " + cavalo.nome + "\nID: " + cavalo.id + "\nIdade: " + cavalo.idade + "\nPeso: " + cavalo.Kg + "\nResistencia: " + cavalo.r + "\nVelocidade Máxima: " + cavalo.VMax + "\nAceleração: " + cavalo.a + "\nValor: " + cavalo.valor, filePath);
             Thread.Sleep(100);
             Console.Clear();
             Graficos.SubMenuCorrida(escolhaCorrida, posicaoVitoria, cavalo);

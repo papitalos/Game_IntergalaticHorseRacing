@@ -14,28 +14,32 @@ namespace HorseProject
         public static string[] nomeNV3 = new string[5] { "Vegeta              ","Eros                ", "Icarus              ", "Marco Polo          ", "Brutus              " };
         public static string[] nomeNV4 = new string[5] { "Pegasus             ","Poseidon            ", "Loki                ", "Kratos              ", "Atreus              " };
         public static string[] nomeNV5 = new string[5] { "Uranus              ","Andromeda           ", "Mr.Meeseks          ", "Pissmaster          ", "Mr.Poppybutthole    " };
-                                                        
-
+                                                    
+        public static string filePath = @"C:\Users\guilh\source\repos\papitalos\IntergalaticHorseRacing\Info.txt";
 
         //PrimeiroCavalo
-        static public void GerarPrimeiro(int SlotEscolhido)
+        static public void GerarPrimeiro(int SlotEscolhido, string filepath)
         {
             Cavalo escolhido = null;
+            
             switch (SlotEscolhido)
             {
                 case 1:
                     Cavalo PD = new Cavalo(1,5, "Pangaré Desnutrido  ", Cavalo.raca.arabe,150,3, 1, 2, 150);
                     escolhido= PD;
+                    CicloDiario.SaveGameData("Cavalo:\n\nNome: " + PD.nome + "\nID: " + PD.id + "\nIdade: " + PD.idade + "\nPeso: " + PD.Kg + "\nResistencia: " + PD.r + "\nVelocidade Máxima: " + PD.VMax + "\nAceleração: " + PD.a + "\nValor: " + PD.valor, filePath);
            
 
                     break;
                 case 2:
                     Cavalo MP = new Cavalo(1, 5,"Montaria Peluda     ", Cavalo.raca.shire, 600, 1, 3, 2, 150);
                     escolhido= MP;
+                    CicloDiario.SaveGameData("Cavalo:\n\nNome: " + MP.nome + "\nID: " + MP.id + "\nIdade: " + MP.idade + "\nPeso: " + MP.Kg + "\nResistencia: " + MP.r + "\nVelocidade Máxima: " + MP.VMax + "\nAceleração: " + MP.a + "\nValor: " + MP.valor, filePath);
                     break;
                 case 3:
                     Cavalo CB = new Cavalo(1, 5,"Corsel Burro        ", Cavalo.raca.parcheron, 450, 3, 2, 1, 150);
                     escolhido= CB;
+                    CicloDiario.SaveGameData("Cavalo:\n\nNome: " + CB.nome + "\nID: " + CB.id + "\nIdade: " + CB.idade + "\nPeso: " + CB.Kg + "\nResistencia: " + CB.r + "\nVelocidade Máxima: " + CB.VMax + "\nAceleração: " + CB.a + "\nValor: " + CB.valor, filePath);
                     break;
             }
 
