@@ -662,7 +662,7 @@ namespace HorseProject
                                           "│─────────────────────────│     └──────────────────────┘                      │\r\n" +
                                           "│                         │                                                   │\r\n" +
                                           "│-» "); PrintColoredText("VOLTAR", ConsoleColor.Yellow); Console.Write("[TAB]           │     ┌──────────────────────┐                      │\r\n" +
-                                          "│                         │ [4] │  Silveira            │                      │\r\n" +
+                                          "│                         │ [4] │  "+Celeiro.VerificarEMostrar(4)+"│                      │\r\n" +
                                           "│-» "); PrintColoredText("SAIR", ConsoleColor.Red); Console.WriteLine("[ESC]             │     └──────────────────────┘                      │\r\n" +
                                           "│                         │                                                   │\r\n" +
                                           "└─────────────────────────┴───────────────────────────────────────────────────┘");
