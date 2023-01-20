@@ -40,17 +40,17 @@ namespace HorseProject
             System.Media.SoundPlayer player;
             if (audio == 1)
             {
-                player = new System.Media.SoundPlayer(@"C:\Users\Utilizador\source\repos\papitalos\IntergalaticHorseRacing\HorseProject\Menu.wav");
+                player = new System.Media.SoundPlayer(@"C:\Users\italo\Source\Repos\papitalos\IntergalaticHorseRacing\HorseProject\Menu.wav");
                 player.Play();
             }
             else if (audio == 2)
             {
-                player = new System.Media.SoundPlayer(@"C:\Users\Utilizador\source\repos\papitalos\IntergalaticHorseRacing\HorseProject\Som_de_trompetas.wav");
+                player = new System.Media.SoundPlayer(@"C:\Users\italo\Source\Repos\papitalos\IntergalaticHorseRacing\HorseProject\Som_de_trompetas.wav");
                 player.Play();
             }
             else if (audio == 3)
             {
-                player = new System.Media.SoundPlayer(@"C:\Users\Utilizador\source\repos\papitalos\IntergalaticHorseRacing\HorseProject\Corrida.wav");
+                player = new System.Media.SoundPlayer(@"C:\Users\italo\Source\Repos\papitalos\IntergalaticHorseRacing\HorseProjectCorrida.wav");
                 player.Play();
             }
             currentAudio = audio;
@@ -113,7 +113,8 @@ namespace HorseProject
 
 
                         //randomizar estado da pista
-                        Pista.condicoesPistaAtual = Pista.possiveisEstados[Randomize.randomizeEstados];
+                        int randomizeEstados = Randomize.rdm.Next(1, 4);
+                        Pista.condicoesPistaAtual = Pista.possiveisEstados[randomizeEstados];
 
 
 

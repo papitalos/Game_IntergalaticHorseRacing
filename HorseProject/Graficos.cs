@@ -190,16 +190,16 @@ namespace HorseProject
                                       "│  | "); PrintColoredText("Pangaré Desnutrido", ConsoleColor.Red); Console.Write(" |    |  "); PrintColoredText("Montaria Peluda", ConsoleColor.Red); Console.Write("   |    |    "); PrintColoredText("Corsel Burro", ConsoleColor.Red); Console.Write("    |  │\r\n" +
                                       "│  |────────────────────|    |────────────────────|    |────────────────────|  │\r\n" +
                                       "│  |                    |    |                    |    |                    |  │\r\n" +
-                                      "│  |   raça: ÁRABE      |    |   raça: ÁRABE      |    |   raça: ÁRABE      |  │\r\n" +
+                                      "│  |   raça: ÁRABE      |    |   raça: SHIRE      |    |   raça: PARCHERON  |  │\r\n" +
                                       "│  |   idade: 5 anos    |    |   idade: 5 anos    |    |   idade: 5 anos    |  │\r\n" +
-                                      "│  |   peso: 150kg      |    |   peso: 150kg      |    |   peso: 150kg      |  │\r\n" +
+                                      "│  |   peso: 150kg      |    |   peso: 600kg      |    |   peso: 450kg      |  │\r\n" +
                                       "│  |                    |    |                    |    |                    |  │\r\n" +
                                       "│  |   Resistencia      |    |   Resistencia      |    |   Resistencia      |  │\r\n" +
-                                      "│  |   ■¤¤¤¤¤¤¤¤¤¤¤¤¤¤  |    |   ■■■■¤¤¤¤¤¤¤¤¤¤¤  |    |   ■■■¤¤¤¤¤¤¤¤¤¤¤¤  |  │\r\n" +
+                                      "│  |   ■¤¤¤¤¤¤¤¤¤¤¤¤¤¤  |    |   ■■■¤¤¤¤¤¤¤¤¤¤¤¤  |    |   ■■¤¤¤¤¤¤¤¤¤¤¤¤¤  |  │\r\n" +
                                       "│  |   Aceleração       |    |   Aceleração       |    |   Aceleração       |  │\r\n" +
-                                      "│  |   ■■■¤¤¤¤¤¤¤¤¤¤¤¤  |    |   ■■■¤¤¤¤¤¤¤¤¤¤¤¤  |    |   ■¤¤¤¤¤¤¤¤¤¤¤¤¤¤  |  │\r\n" +
+                                      "│  |   ■■¤¤¤¤¤¤¤¤¤¤¤¤¤  |    |   ■■¤¤¤¤¤¤¤¤¤¤¤¤¤  |    |   ■¤¤¤¤¤¤¤¤¤¤¤¤¤¤  |  │\r\n" +
                                       "│  |   Velocidade       |    |   Velocidade       |    |   Velocidade       |  │\r\n" +
-                                      "│  |   ■■■■¤¤¤¤¤¤¤¤¤¤¤  |    |   ■¤¤¤¤¤¤¤¤¤¤¤¤¤¤  |    |   ■■■■¤¤¤¤¤¤¤¤¤¤¤  |  │\r\n" +
+                                      "│  |   ■■■¤¤¤¤¤¤¤¤¤¤¤¤  |    |   ■¤¤¤¤¤¤¤¤¤¤¤¤¤¤  |    |   ■■■¤¤¤¤¤¤¤¤¤¤¤¤  |  │\r\n" +
                                       "│  |                    |    |                    |    |                    |  │\r\n" +
                                       "│  └────────────────────┘    └────────────────────┘    └────────────────────┘  │\r\n" +
                                       "│            ▲                                                                 │\r\n" +
@@ -216,16 +216,16 @@ namespace HorseProject
                                       "│  | "); PrintColoredText("Pangaré Desnutrido", ConsoleColor.Red); Console.Write(" |    |  "); PrintColoredText("Montaria Peluda", ConsoleColor.Red); Console.Write("   |    |    "); PrintColoredText("Corsel Burro", ConsoleColor.Red); Console.Write("    |  │\r\n" +
                                       "│  |────────────────────|    |────────────────────|    |────────────────────|  │\r\n" +
                                       "│  |                    |    |                    |    |                    |  │\r\n" +
-                                      "│  |   raça: ÁRABE      |    |   raça: ÁRABE      |    |   raça: ÁRABE      |  │\r\n" +
+                                      "│  |   raça: ÁRABE      |    |   raça: SHIRE      |    |   raça: PARCHERON  |  │\r\n" +
                                       "│  |   idade: 5 anos    |    |   idade: 5 anos    |    |   idade: 5 anos    |  │\r\n" +
-                                      "│  |   peso: 150kg      |    |   peso: 150kg      |    |   peso: 150kg      |  │\r\n" +
+                                      "│  |   peso: 150kg      |    |   peso: 600kg      |    |   peso: 450kg      |  │\r\n" +
                                       "│  |                    |    |                    |    |                    |  │\r\n" +
                                       "│  |   Resistencia      |    |   Resistencia      |    |   Resistencia      |  │\r\n" +
-                                      "│  |   ■¤¤¤¤¤¤¤¤¤¤¤¤¤   |    |   ■■■■¤¤¤¤¤¤¤¤¤¤   |    |   ■■■¤¤¤¤¤¤¤¤¤¤¤   |  │\r\n" +
+                                      "│  |   ■¤¤¤¤¤¤¤¤¤¤¤¤¤¤  |    |   ■■■¤¤¤¤¤¤¤¤¤¤¤¤  |    |   ■■¤¤¤¤¤¤¤¤¤¤¤¤¤  |  │\r\n" +
                                       "│  |   Aceleração       |    |   Aceleração       |    |   Aceleração       |  │\r\n" +
-                                      "│  |   ■■■¤¤¤¤¤¤¤¤¤¤¤   |    |   ■■■¤¤¤¤¤¤¤¤¤¤¤   |    |   ■¤¤¤¤¤¤¤¤¤¤¤¤¤   |  │\r\n" +
+                                      "│  |   ■■¤¤¤¤¤¤¤¤¤¤¤¤¤  |    |   ■■¤¤¤¤¤¤¤¤¤¤¤¤¤  |    |   ■¤¤¤¤¤¤¤¤¤¤¤¤¤¤  |  │\r\n" +
                                       "│  |   Velocidade       |    |   Velocidade       |    |   Velocidade       |  │\r\n" +
-                                      "│  |   ■■■■¤¤¤¤¤¤¤¤¤¤   |    |   ■¤¤¤¤¤¤¤¤¤¤¤¤¤   |    |   ■■■■¤¤¤¤¤¤¤¤¤¤   |  │\r\n" +
+                                      "│  |   ■■■¤¤¤¤¤¤¤¤¤¤¤¤  |    |   ■¤¤¤¤¤¤¤¤¤¤¤¤¤¤  |    |   ■■■¤¤¤¤¤¤¤¤¤¤¤¤  |  │\r\n" +
                                       "│  |                    |    |                    |    |                    |  │\r\n" +
                                       "│  └────────────────────┘    └────────────────────┘    └────────────────────┘  │\r\n" +
                                       "│                                       ▲                                      │\r\n" +
@@ -242,16 +242,16 @@ namespace HorseProject
                                       "│  | "); PrintColoredText("Pangaré Desnutrido", ConsoleColor.Red); Console.Write(" |    |  "); PrintColoredText("Montaria Peluda", ConsoleColor.Red); Console.Write("   |    |    "); PrintColoredText("Corsel Burro", ConsoleColor.Red); Console.Write("    |  │\r\n" +
                                       "│  |────────────────────|    |────────────────────|    |────────────────────|  │\r\n" +
                                       "│  |                    |    |                    |    |                    |  │\r\n" +
-                                      "│  |   raça: ÁRABE      |    |   raça: ÁRABE      |    |   raça: ÁRABE      |  │\r\n" +
+                                      "│  |   raça: ÁRABE      |    |   raça: SHIRE      |    |   raça: PARCHERON  |  │\r\n" +
                                       "│  |   idade: 5 anos    |    |   idade: 5 anos    |    |   idade: 5 anos    |  │\r\n" +
-                                      "│  |   peso: 150kg      |    |   peso: 150kg      |    |   peso: 150kg      |  │\r\n" +
+                                      "│  |   peso: 150kg      |    |   peso: 600kg      |    |   peso: 450kg      |  │\r\n" +
                                       "│  |                    |    |                    |    |                    |  │\r\n" +
                                       "│  |   Resistencia      |    |   Resistencia      |    |   Resistencia      |  │\r\n" +
-                                      "│  |   ■¤¤¤¤¤¤¤¤¤¤¤¤¤   |    |   ■■■■¤¤¤¤¤¤¤¤¤¤   |    |   ■■■¤¤¤¤¤¤¤¤¤¤¤   |  │\r\n" +
+                                      "│  |   ■¤¤¤¤¤¤¤¤¤¤¤¤¤¤  |    |   ■■■¤¤¤¤¤¤¤¤¤¤¤¤  |    |   ■■■¤¤¤¤¤¤¤¤¤¤¤¤  |  │\r\n" +
                                       "│  |   Aceleração       |    |   Aceleração       |    |   Aceleração       |  │\r\n" +
-                                      "│  |   ■■■¤¤¤¤¤¤¤¤¤¤¤   |    |   ■■■¤¤¤¤¤¤¤¤¤¤¤   |    |   ■¤¤¤¤¤¤¤¤¤¤¤¤¤   |  │\r\n" +
+                                      "│  |   ■■¤¤¤¤¤¤¤¤¤¤¤¤¤  |    |   ■■¤¤¤¤¤¤¤¤¤¤¤¤¤  |    |   ■¤¤¤¤¤¤¤¤¤¤¤¤¤¤  |  │\r\n" +
                                       "│  |   Velocidade       |    |   Velocidade       |    |   Velocidade       |  │\r\n" +
-                                      "│  |   ■■■■¤¤¤¤¤¤¤¤¤¤   |    |   ■¤¤¤¤¤¤¤¤¤¤¤¤¤   |    |   ■■■■¤¤¤¤¤¤¤¤¤¤   |  │\r\n" +
+                                      "│  |   ■■■¤¤¤¤¤¤¤¤¤¤¤¤  |    |   ■¤¤¤¤¤¤¤¤¤¤¤¤¤¤  |    |   ■■¤¤¤¤¤¤¤¤¤¤¤¤¤  |  │\r\n" +
                                       "│  |                    |    |                    |    |                    |  │\r\n" +
                                       "│  └────────────────────┘    └────────────────────┘    └────────────────────┘  │\r\n" +
                                       "│                                                                ▲             │\r\n" +
@@ -263,6 +263,9 @@ namespace HorseProject
             }
 
         }
+
+
+
         static public void SubMenuCorrida(int escolha, int posicaoVitoria, Cavalo cavalo)
         {
             void PrintColoredText(string text, ConsoleColor color)
@@ -664,9 +667,6 @@ namespace HorseProject
                                           "│                         │                                                   │\r\n" +
                                           "└─────────────────────────┴───────────────────────────────────────────────────┘");
         }
-
-
-
         static public void SubMenuLoja(int escolha)
         {
             void PrintColoredText(string text, ConsoleColor color)
@@ -678,6 +678,87 @@ namespace HorseProject
 
             switch (escolha)
             {
+                case 1:
+                    Console.Write("┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
+                                          "│ » " + CicloDiario.horaDoDiaAtual + " » " + Pista.condicoesPistaAtual + "  │                        Loja                       │\r\n" +
+                                          "│ » " + CicloDiario.diaAtual + "│                                                   │\r\n" +
+                                          "│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─│───────────────────────────────────────────────────│\r\n" +
+                                          "│  Carteira »  " + Player.Carteira + " ß    │ [h] » help?                                       │\r\n" +
+                                          "│─────────────────────────│                                                   │\r\n" +
+                                          "│                         │      » Selecione o cavalo que deseja comprar «    │\r\n" +
+                                          "│                         │                                                   │\r\n" +
+                                          "│                         │     ┌──────────────────────┐                      │\r\n" +
+                                          "│                         │ [1] │       Luzitano       │  [ADQUIRIDO]         │\r\n" +
+                                          "│-» CORRIDAS[ENTER]       │     └──────────────────────┘                      │\r\n" +
+                                          "│                         │                                                   │\r\n" +
+                                          "│-» CELEIRO[I]            │     ┌──────────────────────┐                      │\r\n" +
+                                          "│                         │ [2] │   Quarto de Milha    │                      │\r\n" +
+                                          "│-» LOJA[L]               │     └──────────────────────┘                      │\r\n" +
+                                          "│                         │                                                   │\r\n" +
+                                          "│-» INVENTARIO[E]         │     ┌──────────────────────┐                      │\r\n" +
+                                          "│                         │ [3] │      Percheron       │                      │\r\n" +
+                                          "│─────────────────────────│     └──────────────────────┘                      │\r\n" +
+                                          "│                         │                                                   │\r\n" +
+                                          "│-» "); PrintColoredText("VOLTAR", ConsoleColor.Yellow); Console.Write("[TAB]           │                                                   │\r\n" +
+                                          "│                         │ [4] Comprar remedios ß80                          │\r\n" +
+                                          "│-» "); PrintColoredText("SAIR", ConsoleColor.Red); Console.WriteLine("[ESC]             │ [5] Comprar alimentação ß250                      │\r\n" +
+                                          "│                         │ [6] Comprar sela                                  │\r\n" +
+                                          "└─────────────────────────┴───────────────────────────────────────────────────┘");
+                    break;
+                case 2:
+                    Console.Write("┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
+                                          "│ » " + CicloDiario.horaDoDiaAtual + " » " + Pista.condicoesPistaAtual + "  │                        Loja                       │\r\n" +
+                                          "│ » " + CicloDiario.diaAtual + "│                                                   │\r\n" +
+                                          "│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─│───────────────────────────────────────────────────│\r\n" +
+                                          "│  Carteira »  " + Player.Carteira + " ß    │ [h] » help?                                       │\r\n" +
+                                          "│─────────────────────────│                                                   │\r\n" +
+                                          "│                         │      » Selecione o cavalo que deseja comprar «    │\r\n" +
+                                          "│                         │                                                   │\r\n" +
+                                          "│                         │     ┌──────────────────────┐                      │\r\n" +
+                                          "│                         │ [1] │       Luzitano       │                      │\r\n" +
+                                          "│-» CORRIDAS[ENTER]       │     └──────────────────────┘                      │\r\n" +
+                                          "│                         │                                                   │\r\n" +
+                                          "│-» CELEIRO[I]            │     ┌──────────────────────┐                      │\r\n" +
+                                          "│                         │ [2] │   Quarto de Milha    │   [ADQUIRIDO]        │\r\n" +
+                                          "│-» LOJA[L]               │     └──────────────────────┘                      │\r\n" +
+                                          "│                         │                                                   │\r\n" +
+                                          "│-» INVENTARIO[E]         │     ┌──────────────────────┐                      │\r\n" +
+                                          "│                         │ [3] │      Percheron       │                      │\r\n" +
+                                          "│─────────────────────────│     └──────────────────────┘                      │\r\n" +
+                                          "│                         │                                                   │\r\n" +
+                                          "│-» "); PrintColoredText("VOLTAR", ConsoleColor.Yellow); Console.Write("[TAB]           │                                                   │\r\n" +
+                                          "│                         │ [4] Comprar remedios ß80                          │\r\n" +
+                                          "│-» "); PrintColoredText("SAIR", ConsoleColor.Red); Console.WriteLine("[ESC]             │ [5] Comprar alimentação ß250                      │\r\n" +
+                                          "│                         │ [6] Comprar sela                                  │\r\n" +
+                                          "└─────────────────────────┴───────────────────────────────────────────────────┘");
+                    break;
+                case 3:
+                    Console.Write("┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
+                                          "│ » " + CicloDiario.horaDoDiaAtual + " » " + Pista.condicoesPistaAtual + "  │                        Loja                       │\r\n" +
+                                          "│ » " + CicloDiario.diaAtual + "│                                                   │\r\n" +
+                                          "│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─│───────────────────────────────────────────────────│\r\n" +
+                                          "│  Carteira »  " + Player.Carteira + " ß    │ [h] » help?                                       │\r\n" +
+                                          "│─────────────────────────│                                                   │\r\n" +
+                                          "│                         │      » Selecione o cavalo que deseja comprar «    │\r\n" +
+                                          "│                         │                                                   │\r\n" +
+                                          "│                         │     ┌──────────────────────┐                      │\r\n" +
+                                          "│                         │ [1] │       Luzitano       │                      │\r\n" +
+                                          "│-» CORRIDAS[ENTER]       │     └──────────────────────┘                      │\r\n" +
+                                          "│                         │                                                   │\r\n" +
+                                          "│-» CELEIRO[I]            │     ┌──────────────────────┐                      │\r\n" +
+                                          "│                         │ [2] │   Quarto de Milha    │                      │\r\n" +
+                                          "│-» LOJA[L]               │     └──────────────────────┘                      │\r\n" +
+                                          "│                         │                                                   │\r\n" +
+                                          "│-» INVENTARIO[E]         │     ┌──────────────────────┐                      │\r\n" +
+                                          "│                         │ [3] │      Percheron       │   [ADQUIRIDO]        │\r\n" +
+                                          "│─────────────────────────│     └──────────────────────┘                      │\r\n" +
+                                          "│                         │                                                   │\r\n" +
+                                          "│-» "); PrintColoredText("VOLTAR", ConsoleColor.Yellow); Console.Write("[TAB]           │                                                   │\r\n" +
+                                          "│                         │ [4] Comprar remedios ß80                          │\r\n" +
+                                          "│-» "); PrintColoredText("SAIR", ConsoleColor.Red); Console.WriteLine("[ESC]             │ [5] Comprar alimentação ß250                      │\r\n" +
+                                          "│                         │ [6] Comprar sela                                  │\r\n" +
+                                          "└─────────────────────────┴───────────────────────────────────────────────────┘");
+                    break;
                 case 4:
                     Console.Write("┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
                                           "│ » " + CicloDiario.horaDoDiaAtual + " » " + Pista.condicoesPistaAtual + "  │                        Loja                       │\r\n" +
@@ -769,15 +850,15 @@ namespace HorseProject
                                           "│                         │      » Selecione o cavalo que deseja comprar «    │\r\n" +
                                           "│                         │                                                   │\r\n" +
                                           "│                         │     ┌──────────────────────┐                      │\r\n" +
-                                          "│                         │ [1] │       Luzitano       │                      │\r\n" +
+                                          "│                         │ [1] │       "+Loja.MostrarCavalo(1)+"       │                      │\r\n" +
                                           "│-» CORRIDAS[ENTER]       │     └──────────────────────┘                      │\r\n" +
                                           "│                         │                                                   │\r\n" +
                                           "│-» CELEIRO[I]            │     ┌──────────────────────┐                      │\r\n" +
-                                          "│                         │ [2] │   Quarto de Milha    │                      │\r\n" +
+                                          "│                         │ [2] │   "+Loja.MostrarCavalo(2)+"    │                      │\r\n" +
                                           "│-» LOJA[L]               │     └──────────────────────┘                      │\r\n" +
                                           "│                         │                                                   │\r\n" +
                                           "│-» INVENTARIO[E]         │     ┌──────────────────────┐                      │\r\n" +
-                                          "│                         │ [3] │      Percheron       │                      │\r\n" +
+                                          "│                         │ [3] │      " + Loja.MostrarCavalo(3) + "       │                      │\r\n" +
                                           "│─────────────────────────│     └──────────────────────┘                      │\r\n" +
                                           "│                         │                                                   │\r\n" +
                                           "│-» "); PrintColoredText("VOLTAR", ConsoleColor.Yellow); Console.Write("[TAB]           │                                                   │\r\n" +
@@ -789,7 +870,6 @@ namespace HorseProject
             }
 
         }
-
         static public void SubMenuInventario()
         {
             void PrintColoredText(string text, ConsoleColor color)
@@ -839,7 +919,7 @@ namespace HorseProject
                               "│                 ESTA NA HORA DE "); PrintColoredText("DORMIR", ConsoleColor.Red); Console.Write(", A LOJA ESTA FECHADA!               │\r\n" +
                               "│                     OS CAVALOS CANSADOS E VOCÊ EXAUSTO.                    │\r\n" +
                               "│                                                                            │\r\n" +
-                              "│                              [ENTER] DORMIR                                │\r\n" +
+                              "│                            [QUALQUER BOTÃO] DORMIR                         │\r\n" +
                               "└────────────────────────────────────────────────────────────────────────────┘");
         }
 

@@ -20,6 +20,7 @@ namespace HorseProject
         public static bool estaRodando = false, primeiraVez = true, rodarDia, resetarDia;//jogo nao esta rodando
         public static bool escolhaFinal = false;//usuario ainda nao fez sua escolha final
         public static menu menuAtual, subMenuAtual;
+        public static int slotEscolhido = 1; //começa no primeiro cavalo
         public static string filePath = @"C:\Users\Utilizador\source\repos\papitalos\IntergalaticHorseRacing\Info.txt";
 
         public static int qntdSaves = 1, escolhaCorrida = 0, valorItem = 0;
@@ -88,7 +89,7 @@ namespace HorseProject
                 primeiraVez = false;//deixa de ser a primeira vez
                 menuAtual = menu.menuEscolhaInicial;//MENU ATUAL: ESCOLHA INICIAL
 
-                int slotEscolhido = 1; //começa no primeiro cavalo
+               
             
                 Console.Clear();
                 Graficos.MenuEscolhaInicial(slotEscolhido);
@@ -124,8 +125,9 @@ namespace HorseProject
                             
                             break;
                         case ConsoleKey.Enter://se ENTER
-                            escolhaFinal = true;//usuario escolheu
                             
+                            escolhaFinal = true;//usuario escolheu
+                            GeradorDeCavalo.GerarPrimeiro(slotEscolhido);
                             CicloDiario.dia.Start();
 
                             Thread.Sleep(100);
@@ -407,6 +409,8 @@ namespace HorseProject
 
 
         }
+
+
         public static void subMenuCorrida(int posicaoVitoria, Cavalo cavalo)
         {
             CicloDiario.SaveGameData("Cavalo:\n\nNome: " + cavalo.nome + "\nIdade: " + cavalo.idade, filePath);
@@ -705,9 +709,9 @@ namespace HorseProject
             }
 
         }
-
         public static void subMenuLoja(Cavalo cavalo)
         {
+            GeradorDeCavalo.GerarAleatorioLoja();
             if (CicloDiario.currentAudio != 1)
             {
                 CicloDiario.Musica(1);
@@ -723,9 +727,33 @@ namespace HorseProject
                     switch (Console.ReadKey().Key)
                     {
                         case ConsoleKey.D1:
-                        if (CicloDiario.i != 3) {Thread.Sleep(100);
+                        if (CicloDiario.i != 3)
+                        {
+
+                            //LIMPA O 1 DA TELA
                             Console.Clear();
-                            Graficos.SubMenuLoja(0); }
+                            Graficos.SubMenuLoja(0);
+                            //LIMPA O 1 DA TELA
+
+                            Loja.ComprarCavalo(cavalo, 1);
+                            if(Celeiro.CapacidadeCeleiro() < 4)
+                            {
+                                Thread.Sleep(100);
+                                Console.Clear();
+                                Graficos.SubMenuLoja(1);
+                                Thread.Sleep(700);
+                                Console.Clear();
+                                Graficos.SubMenuLoja(0);
+                            }
+                            else
+                            {
+                                Console.WriteLine("SEM ESPAÇO NO CELEIRO!");
+                                Thread.Sleep(700);
+                                Console.Clear();
+                                Graficos.SubMenuLoja(0);
+                            }
+
+                             }
                         else
                         {
                             menuAtual = menu.menuJogos;
@@ -736,9 +764,30 @@ namespace HorseProject
                         }
                         break;
                         case ConsoleKey.D2:
-                        if (CicloDiario.i != 3) {Thread.Sleep(100);
+                        Loja.ComprarCavalo(cavalo, 2);
+                        if (CicloDiario.i != 3)
+                        {   //LIMPA O 2 DA TELA
                             Console.Clear();
-                            Graficos.SubMenuLoja(0); }
+                            Graficos.SubMenuLoja(0);
+                            //LIMPA O 2 DA TELA
+
+                            if (Celeiro.CapacidadeCeleiro() < 4)
+                            {
+                                Thread.Sleep(100);
+                                Console.Clear();
+                                Graficos.SubMenuLoja(2);
+                                Thread.Sleep(700);
+                                Console.Clear();
+                                Graficos.SubMenuLoja(0);
+                            }
+                            else
+                            {
+                                Console.WriteLine("SEM ESPAÇO NO CELEIRO!");
+                                Thread.Sleep(700);
+                                Console.Clear();
+                                Graficos.SubMenuLoja(0);
+                            }
+                        }
                         else
                         {
                             menuAtual = menu.menuJogos;
@@ -749,9 +798,29 @@ namespace HorseProject
                         }
                         break;
                         case ConsoleKey.D3:
-                        if (CicloDiario.i != 3) {Thread.Sleep(100);
+                        if (CicloDiario.i != 3)
+                        {   //LIMPA O 3 DA TELA
                             Console.Clear();
-                            Graficos.SubMenuLoja(0); }
+                            Graficos.SubMenuLoja(0);
+                            //LIMPA O 3 DA TELA
+                            Loja.ComprarCavalo(cavalo, 3);
+                            if (Celeiro.CapacidadeCeleiro() < 4)
+                            {
+                                Thread.Sleep(100);
+                                Console.Clear();
+                                Graficos.SubMenuLoja(3);
+                                Thread.Sleep(700);
+                                Console.Clear();
+                                Graficos.SubMenuLoja(0);
+                            }
+                            else
+                            {
+                                Console.WriteLine("SEM ESPAÇO NO CELEIRO!");
+                                Thread.Sleep(700);
+                                Console.Clear();
+                                Graficos.SubMenuLoja(0);
+                            }
+                        }
                         else
                         {
                             menuAtual = menu.menuJogos;
@@ -763,7 +832,7 @@ namespace HorseProject
                         break;
                         case ConsoleKey.D4:
                         if (CicloDiario.i != 3)
-                        {//LIMPA O 4 DA TELA
+                        {   //LIMPA O 4 DA TELA
                             Console.Clear();
                             Graficos.SubMenuLoja(0);
                             //LIMPA O 4 DA TELA

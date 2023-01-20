@@ -10,7 +10,7 @@ namespace HorseProject
 {
     public class Cavalo
     {
-        public int id, idade;
+        public int id, idade, valor;
         public string nome;
         public bool podeParticipar = true, foiAlimentadoHoje = false;
         public estadoDaDoenca estadoAtual;
@@ -18,8 +18,9 @@ namespace HorseProject
         public double Kg,tA,tR,tD,tTotal,bonus;
         public double r = 0, VMax = 0, a = 0;
 
-        public Cavalo(int id, int idade, string nome, raca racaAtual, double kg,double vMax, double a)
+        public Cavalo(int id, int idade, string nome, raca racaAtual, double kg,double vMax, double a, int valor)
         {
+            this.valor= valor;
             this.id = id;
             this.idade = idade;
             this.nome = nome;

@@ -6,34 +6,100 @@ using System.Threading.Tasks;
 
 namespace HorseProject
 {
-    class Celeiro
+    static public class Celeiro
     {
-        private List<Cavalo> cavalosCeleiro;
-
-        public Celeiro()
-        {
-            cavalosCeleiro = new List<Cavalo>();
-        }
-
-        public void AddCavalo(Cavalo cavalo)
+        static private List<Cavalo> cavalosCeleiro = new List<Cavalo>();
+        
+        
+        // Adiciona cavalos ao celeiro
+        static public void AddCavalo(Cavalo cavalo)
         {
             cavalosCeleiro.Add(cavalo);
-        } 
-        public void RemoveCavalo(Cavalo cavalo)
+        }
+        // Remove cavalos do celeiro
+        static public void RemoveCavalo(Cavalo cavalo)
         {
             cavalosCeleiro.Remove(cavalo);
         }
-        public int CapacidadeCeleiro()
+        static public void VenderCavalo(Cavalo cavalo)
+        {
+            //Valor do Cavalo
+            double ValorC;
+            //Resitência do Cavalo
+            double y = cavalo.r;
+            //Velocidade Máxima do Cavalo
+            double v = cavalo.VMax;
+            //Peso do Cavalo
+            double p = cavalo.Kg;
+            //Valor dos Stats
+            double ValorS;
+            //Valor Final
+            double ValorF;
+            int x = CapacidadeCeleiro();
+            if (x == 1)
+            {
+                Console.WriteLine("Venda Cancelada, é necessário ter pelo menos 1 Cavalo no Celeiro");
+            }
+            else
+            if (y <= 4)
+            {
+                ValorC = Randomize.randomizeVMadeira;
+                ValorS = (y * 100) + (v / 10) + p;
+                ValorF = ValorC + ValorS;
+                Player.Carteira = Player.Carteira + ValorF;
+                RemoveCavalo(cavalo);
+            }
+            else
+            if (y > 4 || y <= 7)
+            {
+                ValorC = Randomize.randomizeVPrata;
+                ValorS = (y * 100) + (v / 10) + p;
+                ValorF = ValorC + ValorS;
+                Player.Carteira = Player.Carteira + ValorF;
+                RemoveCavalo(cavalo);
+            }
+            else
+            if (y > 7 || y <= 10)
+            {
+                ValorC = Randomize.randomizeVOuro;
+                ValorS = (y * 100) + (v / 10) + p;
+                ValorF = ValorC + ValorS;
+                Player.Carteira = Player.Carteira + ValorF;
+                RemoveCavalo(cavalo);
+            }
+            else
+            if (y > 10 || y <= 13)
+            {
+                ValorC = Randomize.randomizeVDiamante;
+                ValorS = (y * 100) + (v / 10) + p;
+                ValorF = ValorC + ValorS;
+                Player.Carteira = Player.Carteira + ValorF;
+                RemoveCavalo(cavalo);
+            }
+            else
+            if (y > 13)
+            {
+                ValorC = Randomize.randomizeVIntergalatic;
+                ValorS = (y * 100) + (v / 10) + p;
+                ValorF = ValorC + ValorS;
+                Player.Carteira = Player.Carteira + ValorF;
+                RemoveCavalo(cavalo);
+            }
+            else
+                Console.WriteLine("Erro ao Vender Cavalo");
+        }
+        // Retrona a quantia de cavalos no celeiro
+        static public int CapacidadeCeleiro()
         {
             int quantia;
             quantia = cavalosCeleiro.Count;
             return quantia;
         }
-       
-        public Cavalo MostrarCavalo(int valor)
+        // Mostra os cavalos
+        static public Cavalo MostrarCavalo(int valor)
         {
 
-            foreach  (Cavalo cavalo in cavalosCeleiro)
+            foreach (Cavalo cavalo in cavalosCeleiro)
             {
                 if (valor == cavalo.id)
                 {
@@ -42,6 +108,6 @@ namespace HorseProject
             }
             return null;
         }
-        
+
     }
 }
