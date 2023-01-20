@@ -119,7 +119,7 @@ namespace HorseProject
 
             if (diferenca >= 50)
             {
-                cavalo.contadorDoenca = cavalo.contadorDoenca + 1;
+                Cavalo.contadorDoenca = Cavalo.contadorDoenca + 1;
             }
 
         }

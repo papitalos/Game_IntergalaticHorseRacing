@@ -12,14 +12,13 @@ namespace HorseProject
     {
         public int id, idade, valor;
         public string nome;
-        public bool podeParticipar = true, foiAlimentadoHoje = false;
-        public estadoDaDoenca estadoAtual;
+        public bool podeParticipar = true, foiAlimentadoHoje = false; 
         public raca racaAtual;
         public double Kg,tA,tR,tD,tTotal,bonus,KgInicial;
         public double r = 0, VMax = 0, a = 0;
-        public int contadorDoenca = 0;
+        public static int contadorDoenca = 0;
         public static string[] estadodoenca = new string[5] { "Saudável ", "Ligeiramente Doente    ", "Pouco Doente    ", "Muito Doente    ", "Extremamente Doente" };
-
+        public string estadoDoencaAtual = estadodoenca[contadorDoenca];
         public Cavalo(int id, int idade, string nome, raca racaAtual, double kg,double vMax, double r,double a, int valor)
         {
             this.valor= valor;
@@ -33,13 +32,7 @@ namespace HorseProject
             this.a = a;
         }
 
-        public enum estadoDaDoenca
-        {
-            poucoDoente = 1,
-            medioDoente,
-            muitoDoente,
-            extremamenteDoente
-        }
+        
         public enum raca
         {
             shire = 1,
@@ -217,7 +210,7 @@ namespace HorseProject
                                           "│                         │ Idade: "+idade+"                                               Resistencia » "+Barra("r")+ " │\r\n" +
                                           "│                         │ Peso: "+Kg+"kg                                            Aceleração  » "+ Barra("a") + " │\r\n" +
                                           "│                         │ Nome: "+nome+"                               Velocidade  » "+ Barra("VMax") + " │\r\n" +
-                                          "│                         │ Estado: "+estadoAtual+"                                                                            │\r\n" +
+                                          "│                         │                                                                                      │\r\n" +
                                           "│                         │                                                                                      │\r\n" +
                                           "│                         │                                                                                      │\r\n" +
                                           "│─────────────────────────│──────────────────────────────────────────────────────────────────────────────────────|\r\n" +

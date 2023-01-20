@@ -288,7 +288,7 @@ namespace HorseProject
                                               "│  Carteira »  " + Player.Carteira + " ß    │ [h] » help?                                       │\r\n" +
                                               "│─────────────────────────│                        1º                         │\r\n" +
                                               "│                         │              ┌────────────────────┐               │\r\n" +
-                                              "│                         │              │ " + cavalo.nome + "│               │\r\n" +
+                                              "│                         │              │" +Celeiro.MostrarCavalo(cavalo.id)+"│               │\r\n" +
                                               "│                         │              └────────────────────┘               │\r\n" +
                                               "│                         │           2º                                      │\r\n" +
                                               "│-» CORRIDAS[ENTER]       │ ┌────────────────────┐              3º            │\r\n" +

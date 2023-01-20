@@ -696,6 +696,42 @@ namespace HorseProject
               
                 switch (Console.ReadKey().Key)
                 {
+                    case ConsoleKey.D1:
+                        Thread.Sleep(100);
+                        Console.Clear();
+                        cavalo.ToString();
+                        Console.WriteLine(   "┌──────────────────────┐ ┌──────────────────────┐ \r\n" +
+                                             "│ S - Staff            │ │ Tab - Voltar         │ \r\n" +
+                                             "└──────────────────────┘ └──────────────────────┘ \r\n");
+                        switch (Console.ReadKey().Key)
+                        {
+
+                            case ConsoleKey.S:
+                                Thread.Sleep(100);
+                                if (CicloDiario.diaAtual == "Terça-feira           ")
+                                {
+                                    cavalo.VMax = +1;
+                                    Console.WriteLine("O seu cavalo recebeu +1 de Velocidade! "); 
+
+                                }
+                                if (CicloDiario.diaAtual == "Quarta-feira          ")
+                                {
+                                    Console.WriteLine("O estado do seu cavalo é: " + cavalo.estadoDoencaAtual);
+                                }
+                                if (CicloDiario.diaAtual == "Quinta-feira          ")
+                                {
+                                    cavalo.bonus = +1;
+                                    Console.WriteLine("O seu cavalo recebeu +1 de Bônus! ");
+                                }
+                                break;
+                            case ConsoleKey.Tab:
+                                Thread.Sleep(100);
+                                Console.Clear();
+                                Graficos.SubMenuLoja(0);
+                                break;
+                        }
+                        break;
+
 
                     //COMANDOS PADRÃO ****
                     
