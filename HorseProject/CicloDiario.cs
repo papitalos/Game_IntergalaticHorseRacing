@@ -65,6 +65,26 @@ namespace HorseProject
             Console.WriteLine("Informações do jogo salvas com sucesso em: " + filePath);
         }
 
+        /*
+        public static string LoadGameData(string filePath, Cavalo cavalo)
+        {
+            string gameData = File.ReadAllText(filePath);
+            Console.WriteLine("Informações do jogo carregadas com sucesso do arquivo: " + filePath);
+            AtualiarVariaveis(gameData, cavalo);
+            return gameData;
+        }
+
+        public static void AtualiarVariaveis(string gameData, Cavalo cavalo)
+        {
+            cavalo.nome = gameData.nome;
+            cavalo.idade = gameData.idade;
+            cavalo.id = gameData.id;
+            cavalo.VMax = gameData.VMax;
+            cavalo.valor = gameData.valor;
+            cavalo.a = gameData.a;
+            cavalo.r = gameData.r;
+
+        }*/
 
         public static void ThreadTimerDiario()
         {

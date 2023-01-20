@@ -24,17 +24,17 @@ namespace HorseProject
             switch (SlotEscolhido)
             {
                 case 1:
-                    Cavalo PD = new Cavalo(1,5,"Pangaré Desnutrido",Cavalo.raca.arabe,150,3,2, 150);
+                    Cavalo PD = new Cavalo(1,5,"Pangaré Desnutrido",Cavalo.raca.arabe,150,3, 1, 2, 150);
                     escolhido= PD;
            
 
                     break;
                 case 2:
-                    Cavalo MP = new Cavalo(1, 5, "Montaria Peluda", Cavalo.raca.shire, 600, 1, 2, 150);
+                    Cavalo MP = new Cavalo(1, 5, "Montaria Peluda", Cavalo.raca.shire, 600, 1, 3, 2, 150);
                     escolhido= MP;
                     break;
                 case 3:
-                    Cavalo CB = new Cavalo(1, 5, "Corsel Burro", Cavalo.raca.parcheron, 450, 3, 1, 150);
+                    Cavalo CB = new Cavalo(1, 5, "Corsel Burro", Cavalo.raca.parcheron, 450, 3, 2, 1, 150);
                     escolhido= CB;
                     break;
             }
@@ -47,9 +47,9 @@ namespace HorseProject
         {
             if (Player.RankAtual == "Madeira     ")
             {
-                Cavalo id1 = new Cavalo(1, Randomize.RandomizeAge(3), nomeNV1[Randomize.RandomizeName(3)], Cavalo.raca.arabe, Randomize.randomizeKgArabe, Randomize.RandomizeAtributos(15), Randomize.RandomizeAtributos(15), Randomize.RandomizeValue(3));
-                Cavalo id2 = new Cavalo(2, Randomize.RandomizeAge(3), nomeNV1[Randomize.RandomizeName(3)], Cavalo.raca.arabe, Randomize.randomizeKgArabe, Randomize.RandomizeAtributos(15), Randomize.RandomizeAtributos(15), Randomize.RandomizeValue(3));
-                Cavalo id3 = new Cavalo(3, Randomize.RandomizeAge(3), nomeNV1[Randomize.RandomizeName(3)], Cavalo.raca.arabe, Randomize.randomizeKgArabe, Randomize.RandomizeAtributos(15), Randomize.RandomizeAtributos(15), Randomize.RandomizeValue(3));
+                Cavalo id1 = new Cavalo(1, Randomize.RandomizeAge(3), nomeNV1[Randomize.RandomizeName(3)], Cavalo.raca.arabe, Randomize.randomizeKgArabe, Randomize.RandomizeAtributos(15), Randomize.RandomizeAtributos(15), Randomize.RandomizeAtributos(15), Randomize.RandomizeValue(3));
+                Cavalo id2 = new Cavalo(2, Randomize.RandomizeAge(3), nomeNV1[Randomize.RandomizeName(3)], Cavalo.raca.arabe, Randomize.randomizeKgArabe, Randomize.RandomizeAtributos(15), Randomize.RandomizeAtributos(15), Randomize.RandomizeAtributos(15), Randomize.RandomizeValue(3));
+                Cavalo id3 = new Cavalo(3, Randomize.RandomizeAge(3), nomeNV1[Randomize.RandomizeName(3)], Cavalo.raca.arabe, Randomize.randomizeKgArabe, Randomize.RandomizeAtributos(15), Randomize.RandomizeAtributos(15), Randomize.RandomizeAtributos(15), Randomize.RandomizeValue(3));
 
                 Loja.cavalosLoja.Add(id1);
                 Loja.cavalosLoja.Add(id2);
@@ -57,9 +57,9 @@ namespace HorseProject
             }
             else if (Player.RankAtual == "Prata       ")
             {
-                Cavalo id1 = new Cavalo(1, Randomize.RandomizeAge(3), nomeNV2[Randomize.RandomizeName(3)], Cavalo.raca.shire, Randomize.randomizeKgShire, Randomize.RandomizeAtributos(15), Randomize.RandomizeAtributos(15), Randomize.RandomizeValue(3));
-                Cavalo id2 = new Cavalo(2, Randomize.RandomizeAge(3), nomeNV2[Randomize.RandomizeName(3)], Cavalo.raca.parcheron, Randomize.randomizeKgParcheron, Randomize.RandomizeAtributos(15), Randomize.RandomizeAtributos(15), Randomize.RandomizeValue(3));
-                Cavalo id3 = new Cavalo(3, Randomize.RandomizeAge(3), nomeNV2[Randomize.RandomizeName(3)], Cavalo.raca.arabe, Randomize.randomizeKgArabe, Randomize.RandomizeAtributos(15), Randomize.RandomizeAtributos(15), Randomize.RandomizeValue(3));
+                Cavalo id1 = new Cavalo(1, Randomize.RandomizeAge(3), nomeNV2[Randomize.RandomizeName(3)], Cavalo.raca.shire, Randomize.randomizeKgShire, Randomize.RandomizeAtributos(15), Randomize.RandomizeAtributos(15), Randomize.RandomizeAtributos(15), Randomize.RandomizeValue(3));
+                Cavalo id2 = new Cavalo(2, Randomize.RandomizeAge(3), nomeNV2[Randomize.RandomizeName(3)], Cavalo.raca.parcheron, Randomize.randomizeKgParcheron, Randomize.RandomizeAtributos(15), Randomize.RandomizeAtributos(15), Randomize.RandomizeAtributos(15), Randomize.RandomizeValue(3));
+                Cavalo id3 = new Cavalo(3, Randomize.RandomizeAge(3), nomeNV2[Randomize.RandomizeName(3)], Cavalo.raca.arabe, Randomize.randomizeKgArabe, Randomize.RandomizeAtributos(15), Randomize.RandomizeAtributos(15), Randomize.RandomizeAtributos(15), Randomize.RandomizeValue(3));
 
                 Loja.cavalosLoja.Add(id1);
                 Loja.cavalosLoja.Add(id2);
@@ -68,9 +68,9 @@ namespace HorseProject
             }
             else if (Player.RankAtual == "Ouro        ")
             {
-                Cavalo id1 = new Cavalo(1, Randomize.RandomizeAge(3), nomeNV3[Randomize.RandomizeName(3)], Cavalo.raca.shire, Randomize.randomizeKgShire, Randomize.RandomizeAtributos(15), Randomize.RandomizeAtributos(15), Randomize.RandomizeValue(3));
-                Cavalo id2 = new Cavalo(2, Randomize.RandomizeAge(3), nomeNV3[Randomize.RandomizeName(3)], Cavalo.raca.parcheron, Randomize.randomizeKgParcheron, Randomize.RandomizeAtributos(15), Randomize.RandomizeAtributos(15), Randomize.RandomizeValue(3));
-                Cavalo id3 = new Cavalo(3, Randomize.RandomizeAge(3), nomeNV3[Randomize.RandomizeName(3)], Cavalo.raca.parcheron, Randomize.randomizeKgParcheron, Randomize.RandomizeAtributos(15), Randomize.RandomizeAtributos(15), Randomize.RandomizeValue(3));
+                Cavalo id1 = new Cavalo(1, Randomize.RandomizeAge(3), nomeNV3[Randomize.RandomizeName(3)], Cavalo.raca.shire, Randomize.randomizeKgShire, Randomize.RandomizeAtributos(15), Randomize.RandomizeAtributos(15), Randomize.RandomizeAtributos(15), Randomize.RandomizeValue(3));
+                Cavalo id2 = new Cavalo(2, Randomize.RandomizeAge(3), nomeNV3[Randomize.RandomizeName(3)], Cavalo.raca.parcheron, Randomize.randomizeKgParcheron, Randomize.RandomizeAtributos(15), Randomize.RandomizeAtributos(15), Randomize.RandomizeAtributos(15), Randomize.RandomizeValue(3));
+                Cavalo id3 = new Cavalo(3, Randomize.RandomizeAge(3), nomeNV3[Randomize.RandomizeName(3)], Cavalo.raca.parcheron, Randomize.randomizeKgParcheron, Randomize.RandomizeAtributos(15), Randomize.RandomizeAtributos(15), Randomize.RandomizeAtributos(15), Randomize.RandomizeValue(3));
 
                 Loja.cavalosLoja.Add(id1);
                 Loja.cavalosLoja.Add(id2);
@@ -79,9 +79,9 @@ namespace HorseProject
             }
             else if (Player.RankAtual == "Diamante    ")
             {
-                Cavalo id1 = new Cavalo(1, Randomize.RandomizeAge(3), nomeNV4[Randomize.RandomizeName(3)], Cavalo.raca.shire, Randomize.randomizeKgShire, Randomize.RandomizeAtributos(15), Randomize.RandomizeAtributos(15), Randomize.RandomizeValue(3));
-                Cavalo id2 = new Cavalo(2, Randomize.RandomizeAge(3), nomeNV4[Randomize.RandomizeName(3)], Cavalo.raca.parcheron, Randomize.randomizeKgParcheron, Randomize.RandomizeAtributos(15), Randomize.RandomizeAtributos(15), Randomize.RandomizeValue(3));
-                Cavalo id3 = new Cavalo(3, Randomize.RandomizeAge(3), nomeNV4[Randomize.RandomizeName(3)], Cavalo.raca.purosangueingles, Randomize.randomizeKgPuroSangueIngles, Randomize.RandomizeAtributos(15), Randomize.RandomizeAtributos(15), Randomize.RandomizeValue(3));
+                Cavalo id1 = new Cavalo(1, Randomize.RandomizeAge(3), nomeNV4[Randomize.RandomizeName(3)], Cavalo.raca.shire, Randomize.randomizeKgShire, Randomize.RandomizeAtributos(15), Randomize.RandomizeAtributos(15), Randomize.RandomizeAtributos(15), Randomize.RandomizeValue(3));
+                Cavalo id2 = new Cavalo(2, Randomize.RandomizeAge(3), nomeNV4[Randomize.RandomizeName(3)], Cavalo.raca.parcheron, Randomize.randomizeKgParcheron, Randomize.RandomizeAtributos(15), Randomize.RandomizeAtributos(15), Randomize.RandomizeAtributos(15), Randomize.RandomizeValue(3));
+                Cavalo id3 = new Cavalo(3, Randomize.RandomizeAge(3), nomeNV4[Randomize.RandomizeName(3)], Cavalo.raca.purosangueingles, Randomize.randomizeKgPuroSangueIngles, Randomize.RandomizeAtributos(15), Randomize.RandomizeAtributos(15), Randomize.RandomizeAtributos(15), Randomize.RandomizeValue(3));
 
                 Loja.cavalosLoja.Add(id1);
                 Loja.cavalosLoja.Add(id2);
@@ -90,9 +90,9 @@ namespace HorseProject
             }
             else if (Player.RankAtual == "Intergalatic")
             {
-                Cavalo id1 = new Cavalo(1, Randomize.RandomizeAge(3), nomeNV5[Randomize.RandomizeName(3)], Cavalo.raca.purosangueingles, Randomize.randomizeKgPuroSangueIngles, Randomize.RandomizeAtributos(15), Randomize.RandomizeAtributos(15), Randomize.RandomizeValue(3));
-                Cavalo id2 = new Cavalo(2, Randomize.RandomizeAge(3), nomeNV5[Randomize.RandomizeName(3)], Cavalo.raca.purosangueingles, Randomize.randomizeKgPuroSangueIngles, Randomize.RandomizeAtributos(15), Randomize.RandomizeAtributos(15), Randomize.RandomizeValue(3));
-                Cavalo id3 = new Cavalo(3, Randomize.RandomizeAge(3), nomeNV5[Randomize.RandomizeName(3)], Cavalo.raca.purosangueingles, Randomize.randomizeKgPuroSangueIngles, Randomize.RandomizeAtributos(15), Randomize.RandomizeAtributos(15), Randomize.RandomizeValue(3));
+                Cavalo id1 = new Cavalo(1, Randomize.RandomizeAge(3), nomeNV5[Randomize.RandomizeName(3)], Cavalo.raca.purosangueingles, Randomize.randomizeKgPuroSangueIngles, Randomize.RandomizeAtributos(15), Randomize.RandomizeAtributos(15), Randomize.RandomizeAtributos(15), Randomize.RandomizeValue(3));
+                Cavalo id2 = new Cavalo(2, Randomize.RandomizeAge(3), nomeNV5[Randomize.RandomizeName(3)], Cavalo.raca.purosangueingles, Randomize.randomizeKgPuroSangueIngles, Randomize.RandomizeAtributos(15), Randomize.RandomizeAtributos(15), Randomize.RandomizeAtributos(15), Randomize.RandomizeValue(3));
+                Cavalo id3 = new Cavalo(3, Randomize.RandomizeAge(3), nomeNV5[Randomize.RandomizeName(3)], Cavalo.raca.purosangueingles, Randomize.randomizeKgPuroSangueIngles, Randomize.RandomizeAtributos(15), Randomize.RandomizeAtributos(15), Randomize.RandomizeAtributos(15), Randomize.RandomizeValue(3));
 
                 Loja.cavalosLoja.Add(id1);
                 Loja.cavalosLoja.Add(id2);

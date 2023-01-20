@@ -20,7 +20,7 @@ namespace HorseProject
         public int contadorDoenca = 0;
         public static string[] estadodoenca = new string[5] { "Saudável ", "Ligeiramente Doente    ", "Pouco Doente    ", "Muito Doente    ", "Extremamente Doente" };
 
-        public Cavalo(int id, int idade, string nome, raca racaAtual, double kg,double vMax, double a, int valor)
+        public Cavalo(int id, int idade, string nome, raca racaAtual, double kg,double vMax, double r,double a, int valor)
         {
             this.valor= valor;
             this.id = id;
@@ -29,6 +29,7 @@ namespace HorseProject
             this.racaAtual = racaAtual;
             Kg = kg;
             VMax = vMax;
+            this.r = r;
             this.a = a;
         }
 
