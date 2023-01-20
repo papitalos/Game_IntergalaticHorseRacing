@@ -460,6 +460,7 @@ namespace HorseProject
                             Console.WriteLine("\nHorse 3 wins!");
 
                         System.Threading.Thread.Sleep(100);
+                        raceEnded = true;
                     }
                 }
 
@@ -468,7 +469,9 @@ namespace HorseProject
                         Console.Clear();
                         Graficos.SubMenuCorrida(escolhaCorrida, posicaoVitoria, cavalo);
                         Thread.Sleep(2000);
+                        
                         escolhaCorrida = 0;}
+                        
                         else
                         {
                             menuAtual = menu.menuJogos;
