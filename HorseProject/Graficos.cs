@@ -247,7 +247,7 @@ namespace HorseProject
                                       "│  |   peso: 150kg      |    |   peso: 600kg      |    |   peso: 450kg      |  │\r\n" +
                                       "│  |                    |    |                    |    |                    |  │\r\n" +
                                       "│  |   Resistencia      |    |   Resistencia      |    |   Resistencia      |  │\r\n" +
-                                      "│  |   ■¤¤¤¤¤¤¤¤¤¤¤¤¤¤  |    |   ■■■¤¤¤¤¤¤¤¤¤¤¤¤  |    |   ■■■¤¤¤¤¤¤¤¤¤¤¤¤  |  │\r\n" +
+                                      "│  |   ■¤¤¤¤¤¤¤¤¤¤¤¤¤¤  |    |   ■■■¤¤¤¤¤¤¤¤¤¤¤¤  |    |   ■■¤¤¤¤¤¤¤¤¤¤¤¤¤  |  │\r\n" +
                                       "│  |   Aceleração       |    |   Aceleração       |    |   Aceleração       |  │\r\n" +
                                       "│  |   ■■¤¤¤¤¤¤¤¤¤¤¤¤¤  |    |   ■■¤¤¤¤¤¤¤¤¤¤¤¤¤  |    |   ■¤¤¤¤¤¤¤¤¤¤¤¤¤¤  |  │\r\n" +
                                       "│  |   Velocidade       |    |   Velocidade       |    |   Velocidade       |  │\r\n" +
@@ -650,15 +650,15 @@ namespace HorseProject
                                           "│                         │        » Selecione o cavalo que deseja ver «      │\r\n" +
                                           "│                         │                                                   │\r\n" +
                                           "│                         │     ┌──────────────────────┐                      │\r\n" +
-                                          "│                         │ [1] │  Pangare Desnutrido  │                      │\r\n" +
+                                          "│                         │ [1] │  "+Celeiro.MostrarCavalo(1)+"  │                      │\r\n" +
                                           "│-» CORRIDAS[ENTER]       │     └──────────────────────┘                      │\r\n" +
                                           "│                         │                                                   │\r\n" +
                                           "│-» CELEIRO[I]            │     ┌──────────────────────┐                      │\r\n" +
-                                          "│                         │ [2] │  Puro Sangue Inglês  │                      │\r\n" +
+                                          "│                         │ [2] │  "+Celeiro.MostrarCavalo(2)+"  │                      │\r\n" +
                                           "│-» LOJA[L]               │     └──────────────────────┘                      │\r\n" +
                                           "│                         │                                                   │\r\n" +
                                           "│-» INVENTARIO[E]         │     ┌──────────────────────┐                      │\r\n" +
-                                          "│                         │ [3] │  Pedro Pereira       │                      │\r\n" +
+                                          "│                         │ [3] │  "+Celeiro.MostrarCavalo(3)+"  │                      │\r\n" +
                                           "│─────────────────────────│     └──────────────────────┘                      │\r\n" +
                                           "│                         │                                                   │\r\n" +
                                           "│-» "); PrintColoredText("VOLTAR", ConsoleColor.Yellow); Console.Write("[TAB]           │     ┌──────────────────────┐                      │\r\n" +

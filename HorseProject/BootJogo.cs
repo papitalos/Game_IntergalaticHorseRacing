@@ -613,6 +613,7 @@ namespace HorseProject
         }
         public static void subMenuCeleiro(Cavalo cavalo)
         {
+            Celeiro.Reorganizar();
             if (CicloDiario.currentAudio != 1)
             {
                 CicloDiario.Musica(1);
