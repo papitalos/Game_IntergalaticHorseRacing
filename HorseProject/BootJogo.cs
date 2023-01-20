@@ -15,12 +15,15 @@ namespace HorseProject
         
      
         public static bool adquirido;
-
+        public static int horse1Position = 0;
+        public static int horse2Position = 0;
+        public static int horse3Position = 0;
+        public static bool raceEnded = false;
         public static bool estaRodando = false, primeiraVez = true, rodarDia, resetarDia;//jogo nao esta rodando
         public static bool escolhaFinal = false;//usuario ainda nao fez sua escolha final
         public static menu menuAtual, subMenuAtual;
         public static int slotEscolhido = 1; //começa no primeiro cavalo
-        public static string filePath = @"C:\Users\italo\Source\Repos\papitalos\IntergalaticHorseRacing\Info.txt";
+        public static string filePath = @"C:\Users\guilh\source\repos\papitalos\IntergalaticHorseRacingInfo.txt";
         
         public static int qntdSaves = 1, escolhaCorrida = 0, valorItem = 0;
 
@@ -429,12 +432,46 @@ namespace HorseProject
                 {
                     case ConsoleKey.D1:
                         if (CicloDiario.i != 3) {CicloDiario.Musica(2);
+                            while (!raceEnded)
+        {
+                    while (horse1Position < 100 && horse2Position < 100 && horse3Position < 100)
+                    {
+                        Console.Clear(); // Clear the screen
+
+                        // Draw the horses
+                        Console.SetCursorPosition(horse1Position, 0);
+                        Console.Write("Horse 1");
+
+                        Console.SetCursorPosition(horse2Position, 1);
+                        Console.Write("Horse 2");
+
+                        Console.SetCursorPosition(horse3Position, 2);
+                        Console.Write("Horse 3");
+
+                        // Update the positions of the horses
+                        horse1Position += 1;
+                        horse2Position += 2;
+                        horse3Position += 3;
+                        if (horse1Position >= 100)
+                            Console.WriteLine("\nHorse 1 wins!");
+                        else if (horse2Position >= 100)
+                            Console.WriteLine("\nHorse 2 wins!");
+                        else if (horse3Position >= 100)
+                            Console.WriteLine("\nHorse 3 wins!");
+
+                        System.Threading.Thread.Sleep(100);
+                        raceEnded = true;
+                    }
+                }
+
                         escolhaCorrida = 1;
                         Thread.Sleep(100);
                         Console.Clear();
                         Graficos.SubMenuCorrida(escolhaCorrida, posicaoVitoria, cavalo);
                         Thread.Sleep(2000);
+                        
                         escolhaCorrida = 0;}
+                        
                         else
                         {
                             menuAtual = menu.menuJogos;
