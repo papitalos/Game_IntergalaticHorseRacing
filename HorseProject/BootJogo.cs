@@ -20,6 +20,7 @@ namespace HorseProject
         public static bool estaRodando = false, primeiraVez = true, rodarDia, resetarDia;//jogo nao esta rodando
         public static bool escolhaFinal = false;//usuario ainda nao fez sua escolha final
         public static menu menuAtual, subMenuAtual;
+        public static string filePath = @"C:\Users\Utilizador\source\repos\papitalos\IntergalaticHorseRacing\Info.txt";
 
         public static int qntdSaves = 1, escolhaCorrida = 0, valorItem = 0;
 
@@ -338,6 +339,7 @@ namespace HorseProject
         }
         public static void subMenuCorrida(int posicaoVitoria, Cavalo cavalo)
         {
+            CicloDiario.SaveGameData("Cavalo:\n\nNome: " + cavalo.nome + "\nIdade: " + cavalo.idade, filePath);
             Thread.Sleep(100);
             Console.Clear();
             Graficos.SubMenuCorrida(escolhaCorrida, posicaoVitoria, cavalo);

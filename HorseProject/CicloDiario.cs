@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Xml.Linq;
+using System.IO;
 
 
 namespace HorseProject
@@ -54,6 +55,16 @@ namespace HorseProject
             }
             currentAudio = audio;
         }
+
+        public static void SaveGameData(string gameData, string filePath)
+        {
+            using (StreamWriter file = new StreamWriter(File.Open(filePath, FileMode.Create)))
+            {
+                file.Write(gameData);
+            }
+            Console.WriteLine("Informações do jogo salvas com sucesso em: " + filePath);
+        }
+
 
         public static void ThreadTimerDiario()
         {
