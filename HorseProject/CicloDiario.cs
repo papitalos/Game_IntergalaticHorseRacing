@@ -80,72 +80,91 @@ namespace HorseProject
            
 
         }
-        
- 
-     
+
+
+
 
         public static void PassarTempo()
         {
-            
 
-            for (contadorDia = 0; contadorDia < 7; contadorDia++) {
-                diaAtual = diasDaSemana[contadorDia];
-                
-                for (i = 0; i < 4; i++)
+            while (BootJogo.estaRodando == true)
+            {
+                for (contadorDia = 0; contadorDia < 7; contadorDia++)
                 {
+                    lojaAberta = true;
+                    pistaAberta = true;
+                    diaAtual = diasDaSemana[contadorDia];
 
-                    horaDoDiaAtual = cicloRelogio[i];
-
-
-                    //randomizar estado da pista
-                    Pista.condicoesPistaAtual = Pista.possiveisEstados[Randomize.randomizeEstados];
-
-
-
-
-                    //determinar se a pista esta aberta ou fechada dependendo do periodo do dia
-                    if (i == 0 || i == 1)
+                    for (i = 0; i < 4; i++)
                     {
-                        pistaAberta = true;
-                        lojaAberta = true;
-                    }
-                    if(i == 2)
-                    {
-                        pistaAberta = false;
-                        lojaAberta = true;
-                    }
-                    if(i == 3)
-                    {
-                        pistaAberta = false;
-                        lojaAberta= false;
-                    }
+
+                        horaDoDiaAtual = cicloRelogio[i];
+
+
+                        //randomizar estado da pista
+                        Pista.condicoesPistaAtual = Pista.possiveisEstados[Randomize.randomizeEstados];
 
 
 
-                    if (BootJogo.menuAtual == BootJogo.menu.menuJogos)
-                    {
-                        switch (BootJogo.subMenuAtual)
+
+                        //determinar se a pista esta aberta ou fechada dependendo do periodo do dia
+                        if (i == 0 || i == 1)
                         {
-                            case BootJogo.menu.subMenuCeleiro:
-                                Console.Clear();
-                                Graficos.SubMenuCeleiro(); ;
-                                break;
-                            case BootJogo.menu.subMenuCorridas:
-                                Console.Clear();
-                                Graficos.SubMenuCorrida(escolhaCorrida, numVitoria, cavalo);
-                                break;
-                            case BootJogo.menu.subMenuLoja:
-                                break;
+                            pistaAberta = true;
+                            lojaAberta = true;
                         }
-                    }
+                        if (i == 2)
+                        {
+                            pistaAberta = false;
+                            lojaAberta = true;
+                        }
+                        if (i == 3)
+                        {
+                            pistaAberta = false;
+                            lojaAberta = false;
+                        }
 
-                    
+
+
+                        if (BootJogo.menuAtual == BootJogo.menu.menuJogos)
+                        {
+                            switch (BootJogo.subMenuAtual)
+                            {
+                                case BootJogo.menu.subMenuCeleiro:
+                                    Console.Clear();
+                                    Graficos.SubMenuCeleiro();
+                                    break;
+                                case BootJogo.menu.subMenuCorridas:
+                                    Console.Clear();
+                                    Graficos.SubMenuCorrida(escolhaCorrida, numVitoria, cavalo);
+                                    break;
+                                case BootJogo.menu.subMenuLoja:
+                                    break;
+                            }
+                        }
+
+
+                        if (i != 3)
+                        {
+                            Thread.Sleep(myDelay);
+                        }
+                        if (i == 3)
+                        {
+                            Thread.Sleep(2000);
+                            BootJogo.menuSleep();
+
+                        }
+                        while (BootJogo.menuAtual == BootJogo.menu.menuSleep) ;
                         
-                    Thread.Sleep(myDelay);
-                    
+                    }
+                    Thread.Sleep(2000);
+
+
                 }
-                
+
             }
+            contadorDia = 0;
+            diaAtual = diasDaSemana[0];
         }
     }
 }

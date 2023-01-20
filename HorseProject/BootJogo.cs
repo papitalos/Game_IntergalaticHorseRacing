@@ -80,6 +80,8 @@ namespace HorseProject
         }
         public static void menuJogar(Cavalo cavalo)
         {
+
+
             if (primeiraVez)
             {
                 primeiraVez = false;//deixa de ser a primeira vez
@@ -150,188 +152,256 @@ namespace HorseProject
 
             while (menuAtual == menu.menuJogos)
             {
-                if (CicloDiario.lojaAberta != true)
-                {
-                    menuSleep(cavalo);
-                }
-                if (subMenuAtual == menu.subMenuCeleiro)
-                {
-                    Thread.Sleep(100);
-                    Console.Clear();
-                    subMenuCeleiro(cavalo);
-                }
-
-
-                if (menuAtual == menu.menuJogos)
-                {
-
-                    switch (Console.ReadKey().Key)
+                
+                    if (subMenuAtual == menu.subMenuCeleiro)
                     {
-                        case ConsoleKey.Enter://se ENTER
-                            if (CicloDiario.pistaAberta == true)
+                        Thread.Sleep(100);
+                        Console.Clear();
+                        subMenuCeleiro(cavalo);
+                    }
+
+
+                    if (menuAtual == menu.menuJogos)
+                    {
+
+                        switch (Console.ReadKey().Key)
+                        {
+                            case ConsoleKey.Enter://se ENTER
+                                if (CicloDiario.i != 3) {if (CicloDiario.pistaAberta == true)
+                                {
+                                    Thread.Sleep(100);
+                                    subMenuCorrida(1, cavalo);
+                                }
+                                if (CicloDiario.pistaAberta != true)
+                                {
+
+                                    Console.WriteLine("A Pista esta fechada nesse momento!");
+                                    Thread.Sleep(700);
+                                    Console.Clear();
+                                    if(subMenuAtual == menu.subMenuCeleiro)
+                                    {
+                                        Thread.Sleep(100);
+                                        subMenuCeleiro(cavalo);
+                                    }
+                                    if (subMenuAtual == menu.subMenuLoja)
+                                    {
+                                        Thread.Sleep(100);
+                                        subMenuLoja(cavalo);
+                                    }
+                                    if (subMenuAtual == menu.subMenuInventario)
+                                    {
+                                        Thread.Sleep(100);
+                                        subMenuInventario(cavalo);
+                                    }
+
+                                } }
+                                else
+                            {
+                                menuAtual = menu.menuJogos;
+                                subMenuAtual = menu.subMenuCeleiro;
+                                Console.Clear();
+                                Console.WriteLine("Dormindo...");
+                                Thread.Sleep(2000);
+                            }
+
+                            break;
+                            case ConsoleKey.I://se I
+                                if (CicloDiario.i != 3) {
+                                    Thread.Sleep(100);
+                                subMenuCeleiro(cavalo); }
+                                else
+                            {
+                                menuAtual = menu.menuJogos;
+                                subMenuAtual = menu.subMenuCeleiro;
+                                Console.Clear();
+                                Console.WriteLine("Dormindo...");
+                                Thread.Sleep(2000);
+                            }
+                            break;
+                            case ConsoleKey.L://se L
+                                if (CicloDiario.i != 3)
+                                {
+                                    Thread.Sleep(100);
+                                subMenuLoja(cavalo);
+                                }
+                                else
+                            {
+                                menuAtual = menu.menuJogos;
+                                subMenuAtual = menu.subMenuCeleiro;
+                                Console.Clear();
+                                Console.WriteLine("Dormindo...");
+                                Thread.Sleep(2000);
+                            }
+
+
+                            break;
+                            case ConsoleKey.E://Se E
+                                if (CicloDiario.i != 3) { Thread.Sleep(100);
+                                subMenuInventario(cavalo); }
+                                else
+                            {
+                                menuAtual = menu.menuJogos;
+                                subMenuAtual = menu.subMenuCeleiro;
+                                Console.Clear();
+                                Console.WriteLine("Dormindo...");
+                                Thread.Sleep(2000);
+                            }
+                            break;
+
+                        case ConsoleKey.Tab://se TAB
+                            if (CicloDiario.i != 3)
                             {
                                 Thread.Sleep(100);
-                                subMenuCorrida(1, cavalo);
-                            }
-                            if (CicloDiario.pistaAberta != true)
-                            {
-
-                                Console.WriteLine("A Pista esta fechada nesse momento!");
-                                Thread.Sleep(700);
                                 Console.Clear();
-                                if(subMenuAtual == menu.subMenuCeleiro)
-                                {
-                                    Thread.Sleep(100);
-                                    subMenuCeleiro(cavalo);
-                                }
-                                if (subMenuAtual == menu.subMenuLoja)
-                                {
-                                    Thread.Sleep(100);
-                                    subMenuLoja(cavalo);
-                                }
-                                if (subMenuAtual == menu.subMenuInventario)
-                                {
-                                    Thread.Sleep(100);
-                                    subMenuInventario(cavalo);
-                                }
-
+                                Graficos.MenuInicial();//volta ao menu inicial
+                                menuAtual = menu.menuInicial;//passa a estar no menu inicial
+                                subMenuAtual = menu.nenhum;
                             }
-                            
-                            break;
-                        case ConsoleKey.I://se I
-                            Thread.Sleep(100);
-                            subMenuCeleiro(cavalo);
-                            break;
-                        case ConsoleKey.L://se L
-                            Thread.Sleep(100);
-                            subMenuLoja(cavalo);
+                            else
+                            {
+                                menuAtual = menu.menuJogos;
+                                subMenuAtual = menu.subMenuCeleiro;
+                                Console.Clear();
+                                Console.WriteLine("Dormindo...");
+                                Thread.Sleep(2000);
+                            }
 
                             break;
-                        case ConsoleKey.E://Se E
-                            Thread.Sleep(100);
-                            subMenuInventario(cavalo);
+                        case ConsoleKey.Escape://se ESC sai do programa
+                            if (CicloDiario.i != 3)
+                            {
+                                Thread.Sleep(100);
+                                Environment.Exit(0);
+                            }
+                            else
+                            {
+                                menuAtual = menu.menuJogos;
+                                subMenuAtual = menu.subMenuCeleiro;
+                                Console.Clear();
+                                Console.WriteLine("Dormindo...");
+                                Thread.Sleep(2000);
+                            }
                             break;
-
-                        //COMANDOS PADRÃO ****
-                        case ConsoleKey.Tab://se TAB
-                            Thread.Sleep(100);
-                            Console.Clear();
-                            Graficos.MenuInicial();//volta ao menu inicial
-                            menuAtual = menu.menuInicial;//passa a estar no menu inicial
-                            subMenuAtual = menu.nenhum;
-                            break;
-                        case ConsoleKey.Escape://se ESC
-                            Thread.Sleep(100);
-                            Environment.Exit(0);//sai do programa
-                            break;
-                        //COMANDOS PADRÃO ****
 
                         default:
-                            Thread.Sleep(100);
-                            Console.Clear();
-                            switch (menuAtual)
+                            if (CicloDiario.i != 3) {Thread.Sleep(100);
+                                Console.Clear();
+                                switch (menuAtual)
+                                {
+                                    case menu.subMenuCorridas:
+                                        Graficos.SubMenuCorrida(0, 1, cavalo);
+                                        break;
+                                    case menu.subMenuCeleiro:
+
+                                        Graficos.SubMenuCeleiro();
+                                        break;
+                                    case menu.subMenuLoja:
+
+                                        break;
+                                } }
+                            else
                             {
-                                case menu.subMenuCorridas:
-                                    Graficos.SubMenuCorrida(0, 1, cavalo);
-                                    break;
-                                case menu.subMenuCeleiro:
-
-                                    Graficos.SubMenuCeleiro();
-                                    break;
-                                case menu.subMenuLoja:
-
-                                    break;
+                                menuAtual = menu.menuJogos;
+                                subMenuAtual = menu.subMenuCeleiro;
+                                Console.Clear();
+                                Console.WriteLine("Dormindo...");
+                                Thread.Sleep(2000);
                             }
 
                             break;
 
-                    }//verifique a KEY clicada
+                        }//verifique a KEY clicada
               
                 
-                }
+                    }
               
+                
+                
             }//enquanto nao estiver no menu incial, ou seja, estiver no menu de jogar
 
 
         }
         public static void menuLoading(Cavalo cavalo)
         {
-
+            
             menuAtual = menu.menuLoading; //passa a estar no menu de Loading
             Console.Clear();
             Graficos.MenuLoading(qntdSaves);//CARREGA COM A QNTD SAVE ANTERIOR
 
             while (menuAtual == menu.menuLoading)
             {
-                switch (Console.ReadKey().Key)
-                {
-                    case ConsoleKey.A://se A
-                        if (qntdSaves < 4)//so adiciona se tiver menos que 4 saves
-                        {
-
-                            qntdSaves++;//adiciona mais um save
-                            Thread.Sleep(100);
-                            Console.Clear();
-                            Graficos.MenuLoading(qntdSaves);//imprime
-                        }//se quantidade de saves for menor que 4
-                        break;
-                    case ConsoleKey.D://se D
-                        if (qntdSaves > 1)//so apaga se tiver mais q 1 save
-                        {
-                           
-                            //LIMPA O D imprimido na tela ***
-                            Console.Clear();
-                            Graficos.MenuLoading(qntdSaves);
-                            //LIMPA O D imprimido na tela ***
-
-
-                            Console.WriteLine("Qual slot deseja apagar? [NUM + ENTER] [0 - cancelar]");//pergunta qual slot deve apagar
-                            string slot = Console.ReadLine();//cria uma variavel do slot a apagar (equivalente a linha a apagar no arquivo de saves)    
-
-                            if (slot == "1" || slot == "2" || slot == "3" || slot == "4")//se for 1, 2,3 ou 4
+               
+                    switch (Console.ReadKey().Key)
+                    {
+                        case ConsoleKey.A://se A
+                            if (qntdSaves < 4)//so adiciona se tiver menos que 4 saves
                             {
-                                qntdSaves--;//diminui a quantidade de saves
+
+                                qntdSaves++;//adiciona mais um save
                                 Thread.Sleep(100);
                                 Console.Clear();
                                 Graficos.MenuLoading(qntdSaves);//imprime
-                            }
-                            else if (slot == "0")
-                            {//se for 0 
-                                Thread.Sleep(100);
-                                Console.Clear();
-                                Graficos.MenuLoading(qntdSaves);//imprime sem alterar o valor
-
-                            }
-                            else//se for qualquer outra tecla
+                            }//se quantidade de saves for menor que 4
+                            break;
+                        case ConsoleKey.D://se D
+                            if (qntdSaves > 1)//so apaga se tiver mais q 1 save
                             {
-                                Thread.Sleep(100);
+                           
+                                //LIMPA O D imprimido na tela ***
                                 Console.Clear();
                                 Graficos.MenuLoading(qntdSaves);
-                                Console.WriteLine("Não existe esse SLOT!");//avisa que nao existe esse SLOT
-                                Thread.Sleep(1000);//espera 1 segundo
-                                Console.Clear();
-                                Graficos.MenuLoading(qntdSaves);//apaga o aviso
-                            }
+                                //LIMPA O D imprimido na tela ***
+
+
+                                Console.WriteLine("Qual slot deseja apagar? [NUM + ENTER] [0 - cancelar]");//pergunta qual slot deve apagar
+                                string slot = Console.ReadLine();//cria uma variavel do slot a apagar (equivalente a linha a apagar no arquivo de saves)    
+
+                                if (slot == "1" || slot == "2" || slot == "3" || slot == "4")//se for 1, 2,3 ou 4
+                                {
+                                    qntdSaves--;//diminui a quantidade de saves
+                                    Thread.Sleep(100);
+                                    Console.Clear();
+                                    Graficos.MenuLoading(qntdSaves);//imprime
+                                }
+                                else if (slot == "0")
+                                {//se for 0 
+                                    Thread.Sleep(100);
+                                    Console.Clear();
+                                    Graficos.MenuLoading(qntdSaves);//imprime sem alterar o valor
+
+                                }
+                                else//se for qualquer outra tecla
+                                {
+                                    Thread.Sleep(100);
+                                    Console.Clear();
+                                    Graficos.MenuLoading(qntdSaves);
+                                    Console.WriteLine("Não existe esse SLOT!");//avisa que nao existe esse SLOT
+                                    Thread.Sleep(1000);//espera 1 segundo
+                                    Console.Clear();
+                                    Graficos.MenuLoading(qntdSaves);//apaga o aviso
+                                }
 
 
 
-                        }//se quantidade de saves maior que 1
-                        break;
-                    default://se for qualquer outra KEY
-                        Thread.Sleep(100);
-                        Console.Clear();
-                        Graficos.MenuLoading(qntdSaves);//limpa e imprime o que estava antes
-                        break;
-                    case ConsoleKey.Enter:
-                        menuAtual = menu.menuJogos;
-                        subMenuAtual = menu.subMenuCeleiro;
-                        menuJogar(cavalo);
-                        break;
-                    case ConsoleKey.Escape:
-                        Thread.Sleep(100);
-                        Environment.Exit(0);
-                        break;
-                }//verifica a KEY clicada
+                            }//se quantidade de saves maior que 1
+                            break;
+                        default://se for qualquer outra KEY
+                            Thread.Sleep(100);
+                            Console.Clear();
+                            Graficos.MenuLoading(qntdSaves);//limpa e imprime o que estava antes
+                            break;
+                        case ConsoleKey.Enter:
+                            menuAtual = menu.menuJogos;
+                            subMenuAtual = menu.subMenuCeleiro;
+                            menuJogar(cavalo);
+                            break;
+                        case ConsoleKey.Escape:
+                            Thread.Sleep(100);
+                            Environment.Exit(0);
+                            break;
+                    }//verifica a KEY clicada
+               
+                
             } //enquanto estiver no Menu de Loading 
 
 
@@ -344,77 +414,161 @@ namespace HorseProject
             CicloDiario.Musica(3);
             subMenuAtual = menu.subMenuCorridas;
             escolhaCorrida = 0;
+
+            
             while (subMenuAtual == menu.subMenuCorridas)
             {
-                if (CicloDiario.lojaAberta != true)
-                {
-                    menuSleep(cavalo);
-                }
-                
+               
                 switch (Console.ReadKey().Key)
                 {
                     case ConsoleKey.D1:
-                        CicloDiario.Musica(2);
+                        if (CicloDiario.i != 3) {CicloDiario.Musica(2);
                         escolhaCorrida = 1;
                         Thread.Sleep(100);
                         Console.Clear();
                         Graficos.SubMenuCorrida(escolhaCorrida, posicaoVitoria, cavalo);
                         Thread.Sleep(2000);
-                        escolhaCorrida = 0;
+                        escolhaCorrida = 0;}
+                        else
+                        {
+                            menuAtual = menu.menuJogos;
+                            subMenuAtual = menu.subMenuCeleiro;
+                            Console.Clear();
+                            Console.WriteLine("Dormindo...");
+                            Thread.Sleep(2000);
+                        }
                         break;
                     case ConsoleKey.D2:
-                        CicloDiario.Musica(2);
+                        if (CicloDiario.i != 3) { CicloDiario.Musica(2);
                         escolhaCorrida = 2;
                         Thread.Sleep(100);
                         Console.Clear();
                         Graficos.SubMenuCorrida(escolhaCorrida, posicaoVitoria, cavalo);
-                        Thread.Sleep(2000);
+                        Thread.Sleep(2000); }
+                        else
+                        {
+                            menuAtual = menu.menuJogos;
+                            subMenuAtual = menu.subMenuCeleiro;
+                            Console.Clear();
+                            Console.WriteLine("Dormindo...");
+                            Thread.Sleep(2000);
+                        }
                         escolhaCorrida = 0;
                         break;
                     case ConsoleKey.D3:
-                        CicloDiario.Musica(2);
+                            
+                        if (CicloDiario.i != 3) {CicloDiario.Musica(2);
                         escolhaCorrida = 3;
                         Thread.Sleep(100);
                         Console.Clear();
                         Graficos.SubMenuCorrida(escolhaCorrida, posicaoVitoria, cavalo);
                         Thread.Sleep(2000);
-                        escolhaCorrida = 0;
+                        escolhaCorrida = 0; }
+                        else
+                        {
+                            menuAtual = menu.menuJogos;
+                            subMenuAtual = menu.subMenuCeleiro;
+                            Console.Clear();
+                            Console.WriteLine("Dormindo...");
+                            Thread.Sleep(2000);
+                        }
                         break;
 
 
                     //COMANDOS PADRÃO ****
                     case ConsoleKey.Tab://se TAB
-                        Thread.Sleep(100);
-                        Console.Clear();
-                        Graficos.MenuInicial();//volta ao menu inicial
-                        menuAtual = menu.menuInicial;//passa a estar no menu inicial
-                        subMenuAtual = menu.menuInicial;
+                        if (CicloDiario.i != 3)
+                        {
+                            Thread.Sleep(100);
+                            Console.Clear();
+                            Graficos.MenuInicial();//volta ao menu inicial
+                            menuAtual = menu.menuInicial;//passa a estar no menu inicial
+                            subMenuAtual = menu.nenhum;
+                        }
+                        else
+                        {
+                            menuAtual = menu.menuJogos;
+                            subMenuAtual = menu.subMenuCeleiro;
+                            Console.Clear();
+                            Console.WriteLine("Dormindo...");
+                            Thread.Sleep(2000);
+                        }
+
                         break;
-                    case ConsoleKey.Escape://se ESC
-                        Thread.Sleep(100);
-                        Environment.Exit(0);//sai do programa
+                    case ConsoleKey.Escape://se ESC sai do programa
+                        if (CicloDiario.i != 3)
+                        {
+                            Thread.Sleep(100);
+                            Environment.Exit(0);
+                        }
+                        else
+                        {
+                            menuAtual = menu.menuJogos;
+                            subMenuAtual = menu.subMenuCeleiro;
+                            Console.Clear();
+                            Console.WriteLine("Dormindo...");
+                            Thread.Sleep(2000);
+                        }
                         break;
+                   
                     case ConsoleKey.I:
-                        subMenuCeleiro(cavalo);
+                        if (CicloDiario.i != 3) {
+                            subMenuCeleiro(cavalo); }
+                        else
+                        {
+                            menuAtual = menu.menuJogos;
+                            subMenuAtual = menu.subMenuCeleiro;
+                            Console.Clear();
+                            Console.WriteLine("Dormindo...");
+                            Thread.Sleep(2000);
+                        }
                         break;
                     case ConsoleKey.L:
-                        subMenuLoja(cavalo);
+                        if (CicloDiario.i != 3) {  subMenuLoja(cavalo);
+                        }
+                        else
+                        {
+                            menuAtual = menu.menuJogos;
+                            subMenuAtual = menu.subMenuCeleiro;
+                            Console.Clear();
+                            Console.WriteLine("Dormindo...");
+                            Thread.Sleep(2000);
+                        }
 
 
                         break;
                     case ConsoleKey.E:
-                        subMenuInventario(cavalo);
+                        if (CicloDiario.i != 3) { subMenuInventario(cavalo);
+                        }
+                        else
+                        {
+                            menuAtual = menu.menuJogos;
+                            subMenuAtual = menu.subMenuCeleiro;
+                            Console.Clear();
+                            Console.WriteLine("Dormindo...");
+                            Thread.Sleep(2000);
+                        }
                         break;
                     //COMANDOS PADRÃO ****
 
-                   
+
                     default:
-                        escolhaCorrida = 0;
+                        if (CicloDiario.i != 3) { escolhaCorrida = 0;
                         Thread.Sleep(100);
                         Console.Clear();
-                        Graficos.SubMenuCorrida(escolhaCorrida, posicaoVitoria, cavalo);
+                        Graficos.SubMenuCorrida(escolhaCorrida, posicaoVitoria, cavalo); }
+                        else
+                        {
+                            menuAtual = menu.menuJogos;
+                            subMenuAtual = menu.subMenuCeleiro;
+                            Console.Clear();
+                            Console.WriteLine("Dormindo...");
+                            Thread.Sleep(2000);
+                        }
                         break;
                 }
+                
+                
             }
         }
         public static void subMenuCeleiro(Cavalo cavalo)
@@ -423,80 +577,128 @@ namespace HorseProject
             {
                 CicloDiario.Musica(1);
             }
+
             Thread.Sleep(100);
             Console.Clear();
             Graficos.SubMenuCeleiro();
 
             while (subMenuAtual == menu.subMenuCeleiro)
             {
-                if (CicloDiario.lojaAberta == false)
-                {
-                    menuSleep(cavalo);
-                }
+              
                 switch (Console.ReadKey().Key)
                 {
 
-
-
-
                     //COMANDOS PADRÃO ****
                     case ConsoleKey.Tab://se TAB
-                        Thread.Sleep(100);
+                        if (CicloDiario.i != 3)
+                        {Thread.Sleep(100);
                         Console.Clear();
                         Graficos.MenuInicial();//volta ao menu inicial
                         menuAtual = menu.menuInicial;//passa a estar no menu inicial
-                        subMenuAtual = menu.nenhum;
+                        subMenuAtual = menu.nenhum; }
+                        else
+                        {
+                            menuAtual = menu.menuJogos;
+                            subMenuAtual = menu.subMenuCeleiro;
+                            Console.Clear();
+                            Console.WriteLine("Dormindo...");
+                            Thread.Sleep(2000);
+                        }
+                                
                         break;
-                    case ConsoleKey.Escape://se ESC
-                        Thread.Sleep(100);
-                        Environment.Exit(0);//sai do programa
+                    case ConsoleKey.Escape://se ESC sai do programa
+                        if (CicloDiario.i != 3)
+                        {
+                            Thread.Sleep(100);
+                            Environment.Exit(0);
+                        }
+                        else
+                        {
+                            menuAtual = menu.menuJogos;
+                            subMenuAtual = menu.subMenuCeleiro;
+                            Console.Clear();
+                            Console.WriteLine("Dormindo...");
+                            Thread.Sleep(2000);
+                        }
                         break;
                     //COMANDOS PADRÃO ****
 
                     case ConsoleKey.Enter:
-                            if (CicloDiario.pistaAberta == true)
+                        if (CicloDiario.i != 3) {if (CicloDiario.pistaAberta == true)
+                        {
+                            subMenuCorrida(1, cavalo);
+                        }
+                        if (CicloDiario.pistaAberta != true)
+                        {
+                            Console.WriteLine("A Pista esta fechada nesse momento!");
+                            Thread.Sleep(700);
+                            Console.Clear();
+                            if (subMenuAtual == menu.subMenuCeleiro)
                             {
-                                subMenuCorrida(1, cavalo);
+                                subMenuCeleiro(cavalo);
                             }
-                            if(CicloDiario.pistaAberta != true)
+                            if (subMenuAtual == menu.subMenuLoja)
                             {
-                                Console.WriteLine("A Pista esta fechada nesse momento!");
-                                Thread.Sleep(700);
-                                Console.Clear();
-                                if (subMenuAtual == menu.subMenuCeleiro)
-                                {
-                                    subMenuCeleiro(cavalo);
-                                }
-                                if (subMenuAtual == menu.subMenuLoja)
-                                {
-                                    subMenuLoja(cavalo);
-                                }
-                                if (subMenuAtual == menu.subMenuInventario)
-                                {
-                                    subMenuInventario(cavalo);
-                                }
+                                subMenuLoja(cavalo);
                             }
-                            break;
+                            if (subMenuAtual == menu.subMenuInventario)
+                            {
+                                subMenuInventario(cavalo);
+                            }
+                        } }
+                        else
+                        {
+                            menuAtual = menu.menuJogos;
+                            subMenuAtual = menu.subMenuCeleiro;
+                            Console.Clear();
+                            Console.WriteLine("Dormindo...");
+                            Thread.Sleep(2000);
+                        }
+                        break;
                     case ConsoleKey.L:
-                     
-                         subMenuLoja(cavalo);
-                     
-                       
+                        if (CicloDiario.i != 3) {
+                            subMenuLoja(cavalo); }
+                        else
+                        {
+                            menuAtual = menu.menuJogos;
+                            subMenuAtual = menu.subMenuCeleiro;
+                            Console.Clear();
+                            Console.WriteLine("Dormindo...");
+                            Thread.Sleep(2000);
+                        }
+
+
                         break;
                     case ConsoleKey.E:
-                        subMenuInventario(cavalo);
+                        if (CicloDiario.i != 3) { 
+                            subMenuInventario(cavalo); }
+                        else
+                        {
+                            menuAtual = menu.menuJogos;
+                            subMenuAtual = menu.subMenuCeleiro;
+                            Console.Clear();
+                            Console.WriteLine("Dormindo...");
+                            Thread.Sleep(2000);
+                        }
                         break;
 
                     default:
-                        Thread.Sleep(100);
+                        if (CicloDiario.i != 3) {Thread.Sleep(100);
                         Console.Clear();
-                        Graficos.SubMenuCeleiro();
+                        Graficos.SubMenuCeleiro(); }
+                        else
+                        {
+                            menuAtual = menu.menuJogos;
+                            subMenuAtual = menu.subMenuCeleiro;
+                            Console.Clear();
+                            Console.WriteLine("Dormindo...");
+                            Thread.Sleep(2000);
+                        }
                         break;
 
                 }
-
-
-
+                
+                
 
             }
 
@@ -515,182 +717,284 @@ namespace HorseProject
 
             while (subMenuAtual == menu.subMenuLoja)
             {
-                if (CicloDiario.lojaAberta != true)
-                {
-                    menuSleep(cavalo);
-                }
-                switch (Console.ReadKey().Key)
-                {
-                    case ConsoleKey.D1:
-                        Thread.Sleep(100);
-                        Console.Clear();
-                        Graficos.SubMenuLoja(0);
-                        break;
-                    case ConsoleKey.D2:
-                        Thread.Sleep(100);
-                        Console.Clear();
-                        Graficos.SubMenuLoja(0);
-                        break;
-                    case ConsoleKey.D3:
-                        Thread.Sleep(100);
-                        Console.Clear();
-                        Graficos.SubMenuLoja(0);
-                        break;
-                    case ConsoleKey.D4:
-
-                        //LIMPA O 4 DA TELA
-                        Console.Clear();
-                        Graficos.SubMenuLoja(0);
-                        //LIMPA O 4 DA TELA
-                        if(Inventario.nRemedios < Inventario.limite)
+                
+                    switch (Console.ReadKey().Key)
+                    {
+                        case ConsoleKey.D1:
+                        if (CicloDiario.i != 3) {Thread.Sleep(100);
+                            Console.Clear();
+                            Graficos.SubMenuLoja(0); }
+                        else
                         {
-                            Loja.ComprarRemedios();
-                            if (adquirido == true)
+                            menuAtual = menu.menuJogos;
+                            subMenuAtual = menu.subMenuCeleiro;
+                            Console.Clear();
+                            Console.WriteLine("Dormindo...");
+                            Thread.Sleep(2000);
+                        }
+                        break;
+                        case ConsoleKey.D2:
+                        if (CicloDiario.i != 3) {Thread.Sleep(100);
+                            Console.Clear();
+                            Graficos.SubMenuLoja(0); }
+                        else
+                        {
+                            menuAtual = menu.menuJogos;
+                            subMenuAtual = menu.subMenuCeleiro;
+                            Console.Clear();
+                            Console.WriteLine("Dormindo...");
+                            Thread.Sleep(2000);
+                        }
+                        break;
+                        case ConsoleKey.D3:
+                        if (CicloDiario.i != 3) {Thread.Sleep(100);
+                            Console.Clear();
+                            Graficos.SubMenuLoja(0); }
+                        else
+                        {
+                            menuAtual = menu.menuJogos;
+                            subMenuAtual = menu.subMenuCeleiro;
+                            Console.Clear();
+                            Console.WriteLine("Dormindo...");
+                            Thread.Sleep(2000);
+                        }
+                        break;
+                        case ConsoleKey.D4:
+                        if (CicloDiario.i != 3)
+                        {//LIMPA O 4 DA TELA
+                            Console.Clear();
+                            Graficos.SubMenuLoja(0);
+                            //LIMPA O 4 DA TELA
+                            if (Inventario.nRemedios < Inventario.limite)
                             {
-                                Thread.Sleep(100);
-                                Console.Clear();
-                                Graficos.SubMenuLoja(4);
-                                Thread.Sleep(700);
-                                Console.Clear();
-                                Graficos.SubMenuLoja(0);
+                                Loja.ComprarRemedios();
+                                if (adquirido == true)
+                                {
+                                    Thread.Sleep(100);
+                                    Console.Clear();
+                                    Graficos.SubMenuLoja(4);
+                                    Thread.Sleep(700);
+                                    Console.Clear();
+                                    Graficos.SubMenuLoja(0);
+                                }
+                                if (adquirido == false)
+                                {
+                                    Console.WriteLine("SEM DINHEIRO NA CARTEIRA!");
+                                    Thread.Sleep(700);
+                                    Console.Clear();
+                                    Graficos.SubMenuLoja(0);
+                                }
                             }
-                            if (adquirido == false)
+                            else if (Inventario.nRemedios >= 0)
                             {
-                                Console.WriteLine("SEM DINHEIRO NA CARTEIRA!");
-                                Thread.Sleep(700);
-                                Console.Clear();
-                                Graficos.SubMenuLoja(0);
+                                Console.WriteLine("SEM ESPAÇOS NO INVENTARIOS!");
                             }
                         }
-                        else if(Inventario.nRemedios >= 0)
+                        else
                         {
-                            Console.WriteLine("SEM ESPAÇOS NO INVENTARIOS!");
-                        }
-                        
-                        
-                        
-
-                        break;
-                    case ConsoleKey.D5:
-
-                        //LIMPA O 5 DA TELA
-                        Console.Clear();
-                        Graficos.SubMenuLoja(0);
-                        //LIMPA O 5 DA TELA
-                        if (Inventario.nAlimentos < Inventario.limite)
-                        {
-                            Loja.ComprarAlimentação();
-                            if (adquirido == true)
-                            {
-                                Thread.Sleep(100);
-                                Console.Clear();
-                                Graficos.SubMenuLoja(5);
-                                Thread.Sleep(700);
-                                Console.Clear();
-                                Graficos.SubMenuLoja(0);
-                            }
-                            else if (adquirido == false)
-                            {
-                                Console.WriteLine("SEM DINHEIRO NA CARTEIRA!");
-                                Thread.Sleep(700);
-                                Console.Clear();
-                                Graficos.SubMenuLoja(0);
-                            }
-                        }
-                        else if (Inventario.nAlimentos >= 0)
-                        {
-                            Console.WriteLine("SEM ESPAÇOS NO INVENTARIOS!");
+                            menuAtual = menu.menuJogos;
+                            subMenuAtual = menu.subMenuCeleiro;
+                            Console.Clear();
+                            Console.WriteLine("Dormindo...");
+                            Thread.Sleep(2000);
                         }
 
                         break;
-                    case ConsoleKey.D6:
-
-                        //LIMPA O 6 DA TELA
-                        Console.Clear();
-                        Graficos.SubMenuLoja(0);
-                        //LIMPA O 6 DA TELA
-                        if (Inventario.nSelas < Inventario.limite)
-                        {
-                            Loja.ComprarSela();
-                            if (adquirido == true)
+                        case ConsoleKey.D5:
+                        if (CicloDiario.i != 3)
+                        {//LIMPA O 5 DA TELA
+                            Console.Clear();
+                            Graficos.SubMenuLoja(0);
+                            //LIMPA O 5 DA TELA
+                            if (Inventario.nAlimentos < Inventario.limite)
                             {
-                                Thread.Sleep(100);
-                                Console.Clear();
-                                Graficos.SubMenuLoja(6);
-                                Thread.Sleep(700);
-                                Console.Clear();
-                                Graficos.SubMenuLoja(0);
+                                Loja.ComprarAlimentação();
+                                if (adquirido == true)
+                                {
+                                    Thread.Sleep(100);
+                                    Console.Clear();
+                                    Graficos.SubMenuLoja(5);
+                                    Thread.Sleep(700);
+                                    Console.Clear();
+                                    Graficos.SubMenuLoja(0);
+                                }
+                                else if (adquirido == false)
+                                {
+                                    Console.WriteLine("SEM DINHEIRO NA CARTEIRA!");
+                                    Thread.Sleep(700);
+                                    Console.Clear();
+                                    Graficos.SubMenuLoja(0);
+                                }
                             }
-                            if (adquirido == false)
+                            else if (Inventario.nAlimentos >= 0)
                             {
-                                Console.WriteLine("SEM DINHEIRO NA CARTEIRA!");
-                                Thread.Sleep(700);
-                                Console.Clear();
-                                Graficos.SubMenuLoja(0);
+                                Console.WriteLine("SEM ESPAÇOS NO INVENTARIOS!");
                             }
                         }
-                        else if (Inventario.nSelas >= 0)
+                        else
                         {
-                            Console.WriteLine("SEM ESPAÇOS NO INVENTARIOS!");
+                            menuAtual = menu.menuJogos;
+                            subMenuAtual = menu.subMenuCeleiro;
+                            Console.Clear();
+                            Console.WriteLine("Dormindo...");
+                            Thread.Sleep(2000);
+                        }
+                        break;
+                        case ConsoleKey.D6:
+                        if (CicloDiario.i != 3) {//LIMPA O 6 DA TELA
+                            Console.Clear();
+                            Graficos.SubMenuLoja(0);
+                            //LIMPA O 6 DA TELA
+                            if (Inventario.nSelas < Inventario.limite)
+                            {
+                                Loja.ComprarSela();
+                                if (adquirido == true)
+                                {
+                                    Thread.Sleep(100);
+                                    Console.Clear();
+                                    Graficos.SubMenuLoja(6);
+                                    Thread.Sleep(700);
+                                    Console.Clear();
+                                    Graficos.SubMenuLoja(0);
+                                }
+                                if (adquirido == false)
+                                {
+                                    Console.WriteLine("SEM DINHEIRO NA CARTEIRA!");
+                                    Thread.Sleep(700);
+                                    Console.Clear();
+                                    Graficos.SubMenuLoja(0);
+                                }
+                            }
+                            else if (Inventario.nSelas >= 0)
+                            {
+                                Console.WriteLine("SEM ESPAÇOS NO INVENTARIOS!");
+                            } }
+                        else
+                        {
+                            menuAtual = menu.menuJogos;
+                            subMenuAtual = menu.subMenuCeleiro;
+                            Console.Clear();
+                            Console.WriteLine("Dormindo...");
+                            Thread.Sleep(2000);
                         }
 
                         break;
 
                     //COMANDOS PADRÃO ****
                     case ConsoleKey.Tab://se TAB
-                        Thread.Sleep(100);
-                        Console.Clear();
-                        Graficos.MenuInicial();//volta ao menu inicial
-                        menuAtual = menu.menuInicial;//passa a estar no menu inicial
-                        subMenuAtual = menu.nenhum;
-                        break;
-                    case ConsoleKey.Escape://se ESC
-                        Thread.Sleep(100);
-                        Environment.Exit(0);//sai do programa
-                        break;
-
-                    case ConsoleKey.Enter:
-                        if (CicloDiario.pistaAberta == true)
+                        if (CicloDiario.i != 3)
                         {
-                            subMenuCorrida(1, cavalo);
-                        }
-                        if (CicloDiario.pistaAberta != true)
-                        {
-                            Console.WriteLine("A Pista esta fechada nesse momento!");
-                            Thread.Sleep(700);
+                            Thread.Sleep(100);
                             Console.Clear();
-                            if (subMenuAtual == menu.subMenuCeleiro)
-                            {
-                                subMenuCeleiro(cavalo);
-                            }
-                            if (subMenuAtual == menu.subMenuLoja)
-                            {
-                                subMenuLoja(cavalo);
-                            }
-                            if (subMenuAtual == menu.subMenuInventario)
-                            {
-                                subMenuInventario(cavalo);
-                            }
+                            Graficos.MenuInicial();//volta ao menu inicial
+                            menuAtual = menu.menuInicial;//passa a estar no menu inicial
+                            subMenuAtual = menu.nenhum;
                         }
+                        else
+                        {
+                            menuAtual = menu.menuJogos;
+                            subMenuAtual = menu.subMenuCeleiro;
+                            Console.Clear();
+                            Console.WriteLine("Dormindo...");
+                            Thread.Sleep(2000);
+                        }
+
                         break;
-                    case ConsoleKey.I:
-                        subMenuCeleiro(cavalo);
-                        break;
-                    case ConsoleKey.E:
-                        subMenuInventario(cavalo);
+                    case ConsoleKey.Escape://se ESC sai do programa
+                        if (CicloDiario.i != 3)
+                        {
+                            Thread.Sleep(100);
+                            Environment.Exit(0);
+                        }
+                        else
+                        {
+                            menuAtual = menu.menuJogos;
+                            subMenuAtual = menu.subMenuCeleiro;
+                            Console.Clear();
+                            Console.WriteLine("Dormindo...");
+                            Thread.Sleep(2000);
+                        }
                         break;
                     //COMANDOS PADRÃO ****
 
-                    default:
-                        Thread.Sleep(100);
-                        Console.Clear();
-                        Graficos.SubMenuLoja(0);
+                    case ConsoleKey.Enter:
+                        if (CicloDiario.i != 3) { 
+                            if (CicloDiario.pistaAberta == true)
+                            {
+                                subMenuCorrida(1, cavalo);
+                            }
+                            if (CicloDiario.pistaAberta != true)
+                            {
+                                Console.WriteLine("A Pista esta fechada nesse momento!");
+                                Thread.Sleep(700);
+                                Console.Clear();
+                                if (subMenuAtual == menu.subMenuCeleiro)
+                                {
+                                    subMenuCeleiro(cavalo);
+                                }
+                                if (subMenuAtual == menu.subMenuLoja)
+                                {
+                                    subMenuLoja(cavalo);
+                                }
+                                if (subMenuAtual == menu.subMenuInventario)
+                                {
+                                    subMenuInventario(cavalo);
+                                }
+                            } }
+                        else
+                        {
+                            menuAtual = menu.menuJogos;
+                            subMenuAtual = menu.subMenuCeleiro;
+                            Console.Clear();
+                            Console.WriteLine("Dormindo...");
+                            Thread.Sleep(2000);
+                        }
                         break;
-                }
+                        case ConsoleKey.I:
+                        if (CicloDiario.i != 3) { 
+                            subMenuCeleiro(cavalo); }
+                        else
+                        {
+                            menuAtual = menu.menuJogos;
+                            subMenuAtual = menu.subMenuCeleiro;
+                            Console.Clear();
+                            Console.WriteLine("Dormindo...");
+                            Thread.Sleep(2000);
+                        }
+                        break;
+                        case ConsoleKey.E:
+                        if (CicloDiario.i != 3) {
+                            subMenuInventario(cavalo); }
+                        else
+                        {
+                            menuAtual = menu.menuJogos;
+                            subMenuAtual = menu.subMenuCeleiro;
+                            Console.Clear();
+                            Console.WriteLine("Dormindo...");
+                            Thread.Sleep(2000);
+                        }
+                        break;
+                        
+
+                        default:
+                        if (CicloDiario.i != 3) {Thread.Sleep(100);
+                            Console.Clear();
+                            Graficos.SubMenuLoja(0); }
+                        else
+                        {
+                            menuAtual = menu.menuJogos;
+                            subMenuAtual = menu.subMenuCeleiro;
+                            Console.Clear();
+                            Console.WriteLine("Dormindo...");
+                            Thread.Sleep(2000);
+                        }
+                        break;
+                    }
+                
 
             }
         }
-        public static void subMenuInventario(Cavalo cavalo)
+         public static void subMenuInventario(Cavalo cavalo)
         {
             if (CicloDiario.currentAudio != 1)
             {
@@ -705,68 +1009,127 @@ namespace HorseProject
 
             while (subMenuAtual == menu.subMenuInventario)
             {
-                if (CicloDiario.lojaAberta != true)
-                {
-                    menuSleep(cavalo);
-                }
                 Inventario.VerificarStatus();
-                switch (Console.ReadKey().Key)
-                {
 
+                
+                    switch (Console.ReadKey().Key)
+                    {
 
 
 
                     //COMANDOS PADRÃO ****
                     case ConsoleKey.Tab://se TAB
-                        Thread.Sleep(100);
-                        Console.Clear();
-                        Graficos.MenuInicial();//volta ao menu inicial
-                        menuAtual = menu.menuInicial;//passa a estar no menu inicial
-                        subMenuAtual = menu.nenhum;
-                        break;
-                    case ConsoleKey.Escape://se ESC
-                        Thread.Sleep(100);
-                        Environment.Exit(0);//sai do programa
-                        break;
-
-                    case ConsoleKey.Enter:
-                        if (CicloDiario.pistaAberta == true)
+                        if (CicloDiario.i != 3)
                         {
-                            subMenuCorrida(1, cavalo);
-                        }
-                        if (CicloDiario.pistaAberta != true)
-                        {
-                            Console.WriteLine("A Pista esta fechada nesse momento!");
-                            Thread.Sleep(700);
+                            Thread.Sleep(100);
                             Console.Clear();
-                            if (subMenuAtual == menu.subMenuCeleiro)
-                            {
-                                subMenuCeleiro(cavalo);
-                            }
-                            if (subMenuAtual == menu.subMenuLoja)
-                            {
-                                subMenuLoja(cavalo);
-                            }
-                            if (subMenuAtual == menu.subMenuInventario)
-                            {
-                                subMenuInventario(cavalo);
-                            }
+                            Graficos.MenuInicial();//volta ao menu inicial
+                            menuAtual = menu.menuInicial;//passa a estar no menu inicial
+                            subMenuAtual = menu.nenhum;
                         }
-                        break;
-                    case ConsoleKey.I:
-                        subMenuCeleiro(cavalo);
-                        break;
-                    case ConsoleKey.L:
-                        subMenuLoja(cavalo);
+                        else
+                        {
+                            menuAtual = menu.menuJogos;
+                            subMenuAtual = menu.subMenuCeleiro;
+                            Console.Clear();
+                            Console.WriteLine("Dormindo...");
+                            Thread.Sleep(2000);
+                        }
 
+                        break;
+                    case ConsoleKey.Escape://se ESC sai do programa
+                        if (CicloDiario.i != 3)
+                        {
+                            Thread.Sleep(100);
+                            Environment.Exit(0);
+                        }
+                        else
+                        {
+                            menuAtual = menu.menuJogos;
+                            subMenuAtual = menu.subMenuCeleiro;
+                            Console.Clear();
+                            Console.WriteLine("Dormindo...");
+                            Thread.Sleep(2000);
+                        }
                         break;
                     //COMANDOS PADRÃO ****
-                    default:
-                        Thread.Sleep(100);
-                        Console.Clear();
-                        Graficos.SubMenuLoja(0);
+
+                    case ConsoleKey.Enter:
+                        if (CicloDiario.i != 3) { if (CicloDiario.pistaAberta == true)
+                            {
+                                subMenuCorrida(1, cavalo);
+                            }
+                            if (CicloDiario.pistaAberta != true)
+                            {
+                                Console.WriteLine("A Pista esta fechada nesse momento!");
+                                Thread.Sleep(700);
+                                Console.Clear();
+                                if (subMenuAtual == menu.subMenuCeleiro)
+                                {
+                                    subMenuCeleiro(cavalo);
+                                }
+                                if (subMenuAtual == menu.subMenuLoja)
+                                {
+                                    subMenuLoja(cavalo);
+                                }
+                                if (subMenuAtual == menu.subMenuInventario)
+                                {
+                                    subMenuInventario(cavalo);
+                                }
+                            } }
+                        else
+                        {
+                            menuAtual = menu.menuJogos;
+                            subMenuAtual = menu.subMenuCeleiro;
+                            Console.Clear();
+                            Console.WriteLine("Dormindo...");
+                            Thread.Sleep(2000);
+                        }
                         break;
-                }
+                        case ConsoleKey.I:
+                        if (CicloDiario.i != 3)
+                        {subMenuCeleiro(cavalo);
+
+                        }
+                        else
+                        {
+                            menuAtual = menu.menuJogos;
+                            subMenuAtual = menu.subMenuCeleiro;
+                            Console.Clear();
+                            Console.WriteLine("Dormindo...");
+                            Thread.Sleep(2000);
+                        }
+                        break;
+                        case ConsoleKey.L:
+                        if (CicloDiario.i != 3) {
+                            subMenuLoja(cavalo); }
+                        else
+                        {
+                            menuAtual = menu.menuJogos;
+                            subMenuAtual = menu.subMenuCeleiro;
+                            Console.Clear();
+                            Console.WriteLine("Dormindo...");
+                            Thread.Sleep(2000);
+                        }
+
+                        break;
+                        //COMANDOS PADRÃO ****
+                        default:
+                        if (CicloDiario.i != 3) {Thread.Sleep(100);
+                            Console.Clear();
+                            Graficos.SubMenuLoja(0); }
+                        else
+                        {
+                            menuAtual = menu.menuJogos;
+                            subMenuAtual = menu.subMenuCeleiro;
+                            Console.Clear();
+                            Console.WriteLine("Dormindo...");
+                            Thread.Sleep(2000);
+                        }
+                        break;
+                    }
+
+                
 
 
             }
@@ -775,35 +1138,11 @@ namespace HorseProject
 
     
 
-        public static void menuSleep(Cavalo cavalo)
+        public static void menuSleep()
         {
             menuAtual =  menu.menuSleep;
             Console.Clear();
             Graficos.MenuSleep();
-
-            while (menuAtual == menu.menuSleep)
-            {
-                switch(Console.ReadKey().Key) {
-
-                    case ConsoleKey.Enter:
-                        menuAtual = menu.menuJogos;
-                        subMenuAtual = menu.subMenuCeleiro;
-                        CicloDiario.lojaAberta= true;
-                        CicloDiario.pistaAberta = true;
-                        Console.Clear();
-                        Console.WriteLine("Dormindo...");
-                        
-                        Thread.Sleep(2000);
-
-                        menuJogar(cavalo);
-                       break;
-                    default:
-                        Console.Clear();
-                        Graficos.MenuSleep();
-                        break;
-                }
-
-            }
             
 
         }

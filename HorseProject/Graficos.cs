@@ -271,300 +271,186 @@ namespace HorseProject
                 Console.Write(text);
                 Console.ResetColor();
             }
-            switch (escolha)
+            if (CicloDiario.diaAtual != "Domingo               ")
             {
-                case 1:
-                    if (posicaoVitoria == 1)
-                    {
+                switch (escolha)
+                {
+                    case 1:
+                        if (posicaoVitoria == 1)
+                        {
+                            Console.Write("┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
+                                              "│ » " + CicloDiario.horaDoDiaAtual + " » " + Pista.condicoesPistaAtual + "  │      CORRIDAS (Equipe seu cavalo no celeiro)      │\r\n" +
+                                              "│ » " + CicloDiario.diaAtual + "│                                                   │\r\n" +
+                                              "│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─│───────────────────────────────────────────────────│\r\n" +
+                                              "│  Carteira »  " + Player.Carteira + " ß    │ [h] » help?                                       │\r\n" +
+                                              "│─────────────────────────│                        1º                         │\r\n" +
+                                              "│                         │              ┌────────────────────┐               │\r\n" +
+                                              "│                         │              │ " + cavalo.nome + "│               │\r\n" +
+                                              "│                         │              └────────────────────┘               │\r\n" +
+                                              "│                         │           2º                                      │\r\n" +
+                                              "│-» CORRIDAS[ENTER]       │ ┌────────────────────┐              3º            │\r\n" +
+                                              "│                         │ │                    │     ┌────────────────────┐ │\r\n" +
+                                              "│-» CELEIRO[I]            │ └────────────────────┘     │                    │ │\r\n" +
+                                              "│                         │                            └────────────────────┘ │\r\n" +
+                                              "│-» LOJA[L]               │                                                   │\r\n" +
+                                              "│                         │                                                   │\r\n" +
+                                              "│-» INVENTARIO[E]         │                                                   │\r\n" +
+                                              "│                         │                                                   │\r\n" +
+                                              "│─────────────────────────│                                                   │\r\n" +
+                                              "│                         │         _____|---»   VITORIA   «---|_____         │\r\n" +
+                                              "│-» "); PrintColoredText("VOLTAR", ConsoleColor.Yellow); Console.Write("[TAB]           │                                                   │\r\n" +
+                                              "│                         │                                                   │\r\n" +
+                                              "│-» "); PrintColoredText("SAIR", ConsoleColor.Red); Console.WriteLine("[ESC]             │                                                   │\r\n" +
+                                              "│                         │                                                   │\r\n" +
+                                              "└─────────────────────────┴───────────────────────────────────────────────────┘");
+                        }
+                        else if (posicaoVitoria == 2)
+                        {
+                            Console.Write("┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
+                                              "│ » " + CicloDiario.horaDoDiaAtual + " » " + Pista.condicoesPistaAtual + "  │      CORRIDAS (Equipe seu cavalo no celeiro)      │\r\n" +
+                                              "│ » " + CicloDiario.diaAtual + "│                                                   │\r\n" +
+                                             "│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─│───────────────────────────────────────────────────│\r\n" +
+                                             "│  Carteira »  10.000 ß   │ [h] » help?                                       │\r\n" +
+                                             "│─────────────────────────│                        1º                         │\r\n" +
+                                             "│                         │              ┌────────────────────┐               │\r\n" +
+                                             "│                         │              │                    │               │\r\n" +
+                                             "│                         │              └────────────────────┘               │\r\n" +
+                                             "│                         │           2º                                      │\r\n" +
+                                             "│-» CORRIDAS[ENTER]       │ ┌────────────────────┐              3º            │\r\n" +
+                                             "│                         │ │ " + cavalo.nome + "│     ┌────────────────────┐ │\r\n" +
+                                             "│-» CELEIRO[I]            │ └────────────────────┘     │                    │ │\r\n" +
+                                             "│                         │                            └────────────────────┘ │\r\n" +
+                                             "│-» LOJA[L]               │                                                   │\r\n" +
+                                             "│                         │                                                   │\r\n" +
+                                             "│-» INVENTARIO[E]         │                                                   │\r\n" +
+                                             "│                         │                                                   │\r\n" +
+                                             "│─────────────────────────│                                                   │\r\n" +
+                                             "│                         │         _____|---»   VITORIA   «---|_____         │\r\n" +
+                                             "│-» "); PrintColoredText("VOLTAR", ConsoleColor.Yellow); Console.Write("[TAB]           │                                                   │\r\n" +
+                                             "│                         │                                                   │\r\n" +
+                                             "│-» "); PrintColoredText("SAIR", ConsoleColor.Red); Console.WriteLine("[ESC]             │                                                   │\r\n" +
+                                             "│                         │                                                   │\r\n" +
+                                             "└─────────────────────────┴───────────────────────────────────────────────────┘");
+                        }
+                        else if (posicaoVitoria == 3)
+                        {
+                            Console.Write("┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
+                                              "│ » " + CicloDiario.horaDoDiaAtual + " » " + Pista.condicoesPistaAtual + "  │      CORRIDAS (Equipe seu cavalo no celeiro)      │\r\n" +
+                                              "│ » " + CicloDiario.diaAtual + "│                                                   │\r\n" +
+                                             "│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─│───────────────────────────────────────────────────│\r\n" +
+                                             "│  Carteira »  10.000 ß   │ [h] » help?                                       │\r\n" +
+                                             "│─────────────────────────│                        1º                         │\r\n" +
+                                             "│                         │              ┌────────────────────┐               │\r\n" +
+                                             "│                         │              │                    │               │\r\n" +
+                                             "│                         │              └────────────────────┘               │\r\n" +
+                                             "│                         │           2º                                      │\r\n" +
+                                             "│-» CORRIDAS[ENTER]       │ ┌────────────────────┐              3º            │\r\n" +
+                                             "│                         │ │                    │     ┌────────────────────┐ │\r\n" +
+                                             "│-» CELEIRO[I]            │ └────────────────────┘     │ " + cavalo.nome + "│ │\r\n" +
+                                             "│                         │                            └────────────────────┘ │\r\n" +
+                                             "│-» LOJA[L]               │                                                   │\r\n" +
+                                             "│                         │                                                   │\r\n" +
+                                             "│-» INVENTARIO[E]         │                                                   │\r\n" +
+                                             "│                         │                                                   │\r\n" +
+                                             "│─────────────────────────│                                                   │\r\n" +
+                                             "│                         │         _____|---»   VITORIA   «---|_____         │\r\n" +
+                                             "│-» "); PrintColoredText("VOLTAR", ConsoleColor.Yellow); Console.Write("[TAB]           │                                                   │\r\n" +
+                                             "│                         │                                                   │\r\n" +
+                                             "│-» "); PrintColoredText("SAIR", ConsoleColor.Red); Console.WriteLine("[ESC]             │                                                   │\r\n" +
+                                             "│                         │                                                   │\r\n" +
+                                             "└─────────────────────────┴───────────────────────────────────────────────────┘");
+                        }
+                        else if (posicaoVitoria == 4)
+                        {
+                            Console.Write("┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
+                                              "│ » " + CicloDiario.horaDoDiaAtual + " » " + Pista.condicoesPistaAtual + "  │      CORRIDAS (Equipe seu cavalo no celeiro)      │\r\n" +
+                                              "│ » " + CicloDiario.diaAtual + "│                                                  │\r\n" +
+                                             "│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─│───────────────────────────────────────────────────│\r\n" +
+                                             "│  Carteira »  10.000 ß   │ [h] » help?                                       │\r\n" +
+                                             "│─────────────────────────│                        1º                         │\r\n" +
+                                             "│                         │              ┌────────────────────┐               │\r\n" +
+                                             "│                         │              │                    │               │\r\n" +
+                                             "│                         │              └────────────────────┘               │\r\n" +
+                                             "│                         │           2º                                      │\r\n" +
+                                             "│-» CORRIDAS[ENTER]       │ ┌────────────────────┐              3º            │\r\n" +
+                                             "│                         │ │                    │     ┌────────────────────┐ │\r\n" +
+                                             "│-» CELEIRO[I]            │ └────────────────────┘     │                    │ │\r\n" +
+                                             "│                         │                            └────────────────────┘ │\r\n" +
+                                             "│-» LOJA[L]               │                                                   │\r\n" +
+                                             "│                         │                                                   │\r\n" +
+                                             "│-» INVENTARIO[E]         │                                                   │\r\n" +
+                                             "│                         │                                                   │\r\n" +
+                                             "│─────────────────────────│                                                   │\r\n" +
+                                             "│                         │         _____|---»   DERROTA   «---|_____         │\r\n" +
+                                             "│-» "); PrintColoredText("Voltar", ConsoleColor.Yellow); Console.Write("[TAB]           │                                                   │\r\n" +
+                                             "│                         │                                                   │\r\n" +
+                                             "│-» "); PrintColoredText("SAIR", ConsoleColor.Red); Console.WriteLine("[ESC]             │                                                   │\r\n" +
+                                             "│                         │                                                   │\r\n" +
+                                             "└─────────────────────────┴───────────────────────────────────────────────────┘");
+                        }
+                        break;
+                    case 2:
+                        if (posicaoVitoria == 1)
+                        {
+                            Console.Write("┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
+                                              "│ » " + CicloDiario.horaDoDiaAtual + " » " + Pista.condicoesPistaAtual + "  │      CORRIDAS (Equipe seu cavalo no celeiro)      │\r\n" +
+                                              "│ » " + CicloDiario.diaAtual + "│                                                   │\r\n" +
+                                              "│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─│───────────────────────────────────────────────────│\r\n" +
+                                              "│  Carteira »  10.000 ß   │ [h] » help?                                       │\r\n" +
+                                              "│─────────────────────────│                                                   │\r\n" +
+                                              "│                         │                                                   │\r\n" +
+                                              "│                         │                                                   │\r\n" +
+                                              "│                         │                                                   │\r\n" +
+                                              "│                         │                                                   │\r\n" +
+                                              "│-» CORRIDAS[ENTER]       │ ┌────────────────────┐     ┌────────────────────┐ │\r\n" +
+                                              "│                         │ │ " + cavalo.nome + "│  x  │                    │ │\r\n" +
+                                              "│-» CELEIRO[I]            │ └────────────────────┘     └────────────────────┘ │\r\n" +
+                                              "│                         │                                                   │\r\n" +
+                                              "│-» LOJA[L]               │                                                   │\r\n" +
+                                              "│                         │                                                   │\r\n" +
+                                              "│-» INVENTARIO[E]         │                                                   │\r\n" +
+                                              "│                         │                                                   │\r\n" +
+                                              "│─────────────────────────│                                                   │\r\n" +
+                                              "│                         │         _____|---»   VITORIA   «---|_____         │\r\n" +
+                                              "│-» "); PrintColoredText("VOLTAR", ConsoleColor.Yellow); Console.Write("[TAB]           │                                                   │\r\n" +
+                                              "│                         │                                                   │\r\n" +
+                                              "│-» "); PrintColoredText("SAIR", ConsoleColor.Red); Console.WriteLine("[ESC]             │                                                   │\r\n" +
+                                              "│                         │                                                   │\r\n" +
+                                              "└─────────────────────────┴───────────────────────────────────────────────────┘");
+                        }
+                        else if (posicaoVitoria == 2)
+                        {
+                            Console.Write("┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
+                                              "│ » " + CicloDiario.horaDoDiaAtual + " » " + Pista.condicoesPistaAtual + "  │      CORRIDAS (Equipe seu cavalo no celeiro)      │\r\n" +
+                                              "│ » " + CicloDiario.diaAtual + "│                                                   │\r\n" +
+                                              "│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─│───────────────────────────────────────────────────│\r\n" +
+                                              "│  Carteira »  10.000 ß   │ [h] » help?                                       │\r\n" +
+                                              "│─────────────────────────│                                                   │\r\n" +
+                                              "│                         │                                                   │\r\n" +
+                                              "│                         │                                                   │\r\n" +
+                                              "│                         │                                                   │\r\n" +
+                                              "│                         │                                                   │\r\n" +
+                                              "│-» CORRIDAS[ENTER]       │ ┌────────────────────┐     ┌────────────────────┐ │\r\n" +
+                                              "│                         │ │                    │  x  │ " + cavalo.nome + "│ │\r\n" +
+                                              "│-» CELEIRO[I]            │ └────────────────────┘     └────────────────────┘ │\r\n" +
+                                              "│                         │                                                   │\r\n" +
+                                              "│-» LOJA[L]               │                                                   │\r\n" +
+                                              "│                         │                                                   │\r\n" +
+                                              "│-» INVENTARIO[E]         │                                                   │\r\n" +
+                                              "│                         │                                                   │\r\n" +
+                                              "│─────────────────────────│                                                   │\r\n" +
+                                              "│                         │         _____|---»   DERROTA   «---|_____         │\r\n" +
+                                              "│-» "); PrintColoredText("VOLTAR", ConsoleColor.Yellow); Console.Write("[TAB]           │                                                   │\r\n" +
+                                              "│                         │                                                   │\r\n" +
+                                              "│-» "); PrintColoredText("SAIR", ConsoleColor.Red); Console.WriteLine("[ESC]             │                                                   │\r\n" +
+                                              "│                         │                                                   │\r\n" +
+                                              "└─────────────────────────┴───────────────────────────────────────────────────┘");
+                        }
+                        break;
+                    default:
                         Console.Write("┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
-                                          "│ » " + CicloDiario.horaDoDiaAtual + " » " + Pista.condicoesPistaAtual + "  │      CORRIDAS (Equipe seu cavalo no celeiro)      │\r\n" +
-                                          "│ » " + CicloDiario.diaAtual + "│                                                   │\r\n" +
-                                          "│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─│───────────────────────────────────────────────────│\r\n" +
-                                          "│  Carteira »  " + Player.Carteira + " ß    │ [h] » help?                                       │\r\n" +
-                                          "│─────────────────────────│                        1º                         │\r\n" +
-                                          "│                         │              ┌────────────────────┐               │\r\n" +
-                                          "│                         │              │ " + cavalo.nome + "│               │\r\n" +
-                                          "│                         │              └────────────────────┘               │\r\n" +
-                                          "│                         │           2º                                      │\r\n" +
-                                          "│-» CORRIDAS[ENTER]       │ ┌────────────────────┐              3º            │\r\n" +
-                                          "│                         │ │                    │     ┌────────────────────┐ │\r\n" +
-                                          "│-» CELEIRO[I]            │ └────────────────────┘     │                    │ │\r\n" +
-                                          "│                         │                            └────────────────────┘ │\r\n" +
-                                          "│-» LOJA[L]               │                                                   │\r\n" +
-                                          "│                         │                                                   │\r\n" +
-                                          "│-» INVENTARIO[E]         │                                                   │\r\n" +
-                                          "│                         │                                                   │\r\n" +
-                                          "│─────────────────────────│                                                   │\r\n" +
-                                          "│                         │         _____|---»   VITORIA   «---|_____         │\r\n" +
-                                          "│-» "); PrintColoredText("VOLTAR", ConsoleColor.Yellow); Console.Write("[TAB]           │                                                   │\r\n" +
-                                          "│                         │                                                   │\r\n" +
-                                          "│-» "); PrintColoredText("SAIR", ConsoleColor.Red); Console.WriteLine("[ESC]             │                                                   │\r\n" +
-                                          "│                         │                                                   │\r\n" +
-                                          "└─────────────────────────┴───────────────────────────────────────────────────┘");
-                    }
-                    else if (posicaoVitoria == 2)
-                    {
-                        Console.Write("┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
-                                          "│ » " + CicloDiario.horaDoDiaAtual + " » " + Pista.condicoesPistaAtual + "  │      CORRIDAS (Equipe seu cavalo no celeiro)      │\r\n" +
-                                          "│ » " + CicloDiario.diaAtual + "│                                                   │\r\n" +
-                                         "│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─│───────────────────────────────────────────────────│\r\n" +
-                                         "│  Carteira »  10.000 ß   │ [h] » help?                                       │\r\n" +
-                                         "│─────────────────────────│                        1º                         │\r\n" +
-                                         "│                         │              ┌────────────────────┐               │\r\n" +
-                                         "│                         │              │                    │               │\r\n" +
-                                         "│                         │              └────────────────────┘               │\r\n" +
-                                         "│                         │           2º                                      │\r\n" +
-                                         "│-» CORRIDAS[ENTER]       │ ┌────────────────────┐              3º            │\r\n" +
-                                         "│                         │ │ " + cavalo.nome + "│     ┌────────────────────┐ │\r\n" +
-                                         "│-» CELEIRO[I]            │ └────────────────────┘     │                    │ │\r\n" +
-                                         "│                         │                            └────────────────────┘ │\r\n" +
-                                         "│-» LOJA[L]               │                                                   │\r\n" +
-                                         "│                         │                                                   │\r\n" +
-                                         "│-» INVENTARIO[E]         │                                                   │\r\n" +
-                                         "│                         │                                                   │\r\n" +
-                                         "│─────────────────────────│                                                   │\r\n" +
-                                         "│                         │         _____|---»   VITORIA   «---|_____         │\r\n" +
-                                         "│-» "); PrintColoredText("VOLTAR", ConsoleColor.Yellow); Console.Write("[TAB]           │                                                   │\r\n" +
-                                         "│                         │                                                   │\r\n" +
-                                         "│-» "); PrintColoredText("SAIR", ConsoleColor.Red); Console.WriteLine("[ESC]             │                                                   │\r\n" +
-                                         "│                         │                                                   │\r\n" +
-                                         "└─────────────────────────┴───────────────────────────────────────────────────┘");
-                    }
-                    else if (posicaoVitoria == 3)
-                    {
-                        Console.Write("┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
-                                          "│ » " + CicloDiario.horaDoDiaAtual + " » " + Pista.condicoesPistaAtual + "  │      CORRIDAS (Equipe seu cavalo no celeiro)      │\r\n" +
-                                          "│ » " + CicloDiario.diaAtual + "│                                                   │\r\n" +
-                                         "│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─│───────────────────────────────────────────────────│\r\n" +
-                                         "│  Carteira »  10.000 ß   │ [h] » help?                                       │\r\n" +
-                                         "│─────────────────────────│                        1º                         │\r\n" +
-                                         "│                         │              ┌────────────────────┐               │\r\n" +
-                                         "│                         │              │                    │               │\r\n" +
-                                         "│                         │              └────────────────────┘               │\r\n" +
-                                         "│                         │           2º                                      │\r\n" +
-                                         "│-» CORRIDAS[ENTER]       │ ┌────────────────────┐              3º            │\r\n" +
-                                         "│                         │ │                    │     ┌────────────────────┐ │\r\n" +
-                                         "│-» CELEIRO[I]            │ └────────────────────┘     │ " + cavalo.nome + "│ │\r\n" +
-                                         "│                         │                            └────────────────────┘ │\r\n" +
-                                         "│-» LOJA[L]               │                                                   │\r\n" +
-                                         "│                         │                                                   │\r\n" +
-                                         "│-» INVENTARIO[E]         │                                                   │\r\n" +
-                                         "│                         │                                                   │\r\n" +
-                                         "│─────────────────────────│                                                   │\r\n" +
-                                         "│                         │         _____|---»   VITORIA   «---|_____         │\r\n" +
-                                         "│-» "); PrintColoredText("VOLTAR", ConsoleColor.Yellow); Console.Write("[TAB]           │                                                   │\r\n" +
-                                         "│                         │                                                   │\r\n" +
-                                         "│-» "); PrintColoredText("SAIR", ConsoleColor.Red); Console.WriteLine("[ESC]             │                                                   │\r\n" +
-                                         "│                         │                                                   │\r\n" +
-                                         "└─────────────────────────┴───────────────────────────────────────────────────┘");
-                    }
-                    else if (posicaoVitoria == 4)
-                    {
-                        Console.Write("┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
-                                          "│ » " + CicloDiario.horaDoDiaAtual + " » " + Pista.condicoesPistaAtual + "  │      CORRIDAS (Equipe seu cavalo no celeiro)      │\r\n" +
-                                          "│ » " + CicloDiario.diaAtual + "│                                                  │\r\n" +
-                                         "│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─│───────────────────────────────────────────────────│\r\n" +
-                                         "│  Carteira »  10.000 ß   │ [h] » help?                                       │\r\n" +
-                                         "│─────────────────────────│                        1º                         │\r\n" +
-                                         "│                         │              ┌────────────────────┐               │\r\n" +
-                                         "│                         │              │                    │               │\r\n" +
-                                         "│                         │              └────────────────────┘               │\r\n" +
-                                         "│                         │           2º                                      │\r\n" +
-                                         "│-» CORRIDAS[ENTER]       │ ┌────────────────────┐              3º            │\r\n" +
-                                         "│                         │ │                    │     ┌────────────────────┐ │\r\n" +
-                                         "│-» CELEIRO[I]            │ └────────────────────┘     │                    │ │\r\n" +
-                                         "│                         │                            └────────────────────┘ │\r\n" +
-                                         "│-» LOJA[L]               │                                                   │\r\n" +
-                                         "│                         │                                                   │\r\n" +
-                                         "│-» INVENTARIO[E]         │                                                   │\r\n" +
-                                         "│                         │                                                   │\r\n" +
-                                         "│─────────────────────────│                                                   │\r\n" +
-                                         "│                         │         _____|---»   DERROTA   «---|_____         │\r\n" +
-                                         "│-» "); PrintColoredText("Voltar", ConsoleColor.Yellow); Console.Write("[TAB]           │                                                   │\r\n" +
-                                         "│                         │                                                   │\r\n" +
-                                         "│-» "); PrintColoredText("SAIR", ConsoleColor.Red); Console.WriteLine("[ESC]             │                                                   │\r\n" +
-                                         "│                         │                                                   │\r\n" +
-                                         "└─────────────────────────┴───────────────────────────────────────────────────┘");
-                    }
-                    break;
-                case 2:
-                    if (posicaoVitoria == 1)
-                    {
-                        Console.Write("┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
-                                          "│ » " + CicloDiario.horaDoDiaAtual + " » " + Pista.condicoesPistaAtual + "  │      CORRIDAS (Equipe seu cavalo no celeiro)      │\r\n" +
-                                          "│ » " + CicloDiario.diaAtual + "│                                                   │\r\n" +
-                                          "│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─│───────────────────────────────────────────────────│\r\n" +
-                                          "│  Carteira »  10.000 ß   │ [h] » help?                                       │\r\n" +
-                                          "│─────────────────────────│                                                   │\r\n" +
-                                          "│                         │                                                   │\r\n" +
-                                          "│                         │                                                   │\r\n" +
-                                          "│                         │                                                   │\r\n" +
-                                          "│                         │                                                   │\r\n" +
-                                          "│-» CORRIDAS[ENTER]       │ ┌────────────────────┐     ┌────────────────────┐ │\r\n" +
-                                          "│                         │ │ " + cavalo.nome + "│  x  │                    │ │\r\n" +
-                                          "│-» CELEIRO[I]            │ └────────────────────┘     └────────────────────┘ │\r\n" +
-                                          "│                         │                                                   │\r\n" +
-                                          "│-» LOJA[L]               │                                                   │\r\n" +
-                                          "│                         │                                                   │\r\n" +
-                                          "│-» INVENTARIO[E]         │                                                   │\r\n" +
-                                          "│                         │                                                   │\r\n" +
-                                          "│─────────────────────────│                                                   │\r\n" +
-                                          "│                         │         _____|---»   VITORIA   «---|_____         │\r\n" +
-                                          "│-» "); PrintColoredText("VOLTAR", ConsoleColor.Yellow); Console.Write("[TAB]           │                                                   │\r\n" +
-                                          "│                         │                                                   │\r\n" +
-                                          "│-» "); PrintColoredText("SAIR", ConsoleColor.Red); Console.WriteLine("[ESC]             │                                                   │\r\n" +
-                                          "│                         │                                                   │\r\n" +
-                                          "└─────────────────────────┴───────────────────────────────────────────────────┘");
-                    }
-                    else if (posicaoVitoria == 2)
-                    {
-                        Console.Write("┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
-                                          "│ » " + CicloDiario.horaDoDiaAtual + " » " + Pista.condicoesPistaAtual + "  │      CORRIDAS (Equipe seu cavalo no celeiro)      │\r\n" +
-                                          "│ » " + CicloDiario.diaAtual + "│                                                   │\r\n" +
-                                          "│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─│───────────────────────────────────────────────────│\r\n" +
-                                          "│  Carteira »  10.000 ß   │ [h] » help?                                       │\r\n" +
-                                          "│─────────────────────────│                                                   │\r\n" +
-                                          "│                         │                                                   │\r\n" +
-                                          "│                         │                                                   │\r\n" +
-                                          "│                         │                                                   │\r\n" +
-                                          "│                         │                                                   │\r\n" +
-                                          "│-» CORRIDAS[ENTER]       │ ┌────────────────────┐     ┌────────────────────┐ │\r\n" +
-                                          "│                         │ │                    │  x  │ " + cavalo.nome + "│ │\r\n" +
-                                          "│-» CELEIRO[I]            │ └────────────────────┘     └────────────────────┘ │\r\n" +
-                                          "│                         │                                                   │\r\n" +
-                                          "│-» LOJA[L]               │                                                   │\r\n" +
-                                          "│                         │                                                   │\r\n" +
-                                          "│-» INVENTARIO[E]         │                                                   │\r\n" +
-                                          "│                         │                                                   │\r\n" +
-                                          "│─────────────────────────│                                                   │\r\n" +
-                                          "│                         │         _____|---»   DERROTA   «---|_____         │\r\n" +
-                                          "│-» "); PrintColoredText("VOLTAR", ConsoleColor.Yellow); Console.Write("[TAB]           │                                                   │\r\n" +
-                                          "│                         │                                                   │\r\n" +
-                                          "│-» "); PrintColoredText("SAIR", ConsoleColor.Red); Console.WriteLine("[ESC]             │                                                   │\r\n" +
-                                          "│                         │                                                   │\r\n" +
-                                          "└─────────────────────────┴───────────────────────────────────────────────────┘");
-                    }
-                    break;
-                case 3:
-                    if (posicaoVitoria == 1)
-                    {
-                        Console.Write("┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
-                                          "│ » " + CicloDiario.horaDoDiaAtual + " » " + Pista.condicoesPistaAtual + "  │      CORRIDAS (Equipe seu cavalo no celeiro)      │\r\n" +
-                                          "│ » " + CicloDiario.diaAtual + "│                                                   │\r\n" +
-                                          "│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─│───────────────────────────────────────────────────│\r\n" +
-                                          "│  Carteira »  10.000 ß   │ [h] » help?                                       │\r\n" +
-                                          "│─────────────────────────│                        1º                         │\r\n" +
-                                          "│                         │              ┌────────────────────┐               │\r\n" +
-                                          "│                         │              │ " + cavalo.nome + "│               │\r\n" +
-                                          "│                         │              └────────────────────┘               │\r\n" +
-                                          "│                         │           2º                                      │\r\n" +
-                                          "│-» CORRIDAS[ENTER]       │ ┌────────────────────┐              3º            │\r\n" +
-                                          "│                         │ │                    │     ┌────────────────────┐ │\r\n" +
-                                          "│-» CELEIRO[I]            │ └────────────────────┘     │                    │ │\r\n" +
-                                          "│                         │                            └────────────────────┘ │\r\n" +
-                                          "│-» LOJA[L]               │                                                   │\r\n" +
-                                          "│                         │                      00/03  ⇡                     │\r\n" +
-                                          "│-» INVENTARIO[E]         │            Corridas para subir o rank             │\r\n" +
-                                          "│                         │                                                   │\r\n" +
-                                          "│─────────────────────────│                                                   │\r\n" +
-                                          "│                         │         _____|---»   VITORIA   «---|_____         │\r\n" +
-                                          "│-» "); PrintColoredText("VOLTAR", ConsoleColor.Yellow); Console.Write("[TAB]           │                                                   │\r\n" +
-                                          "│                         │                                                   │\r\n" +
-                                          "│-» "); PrintColoredText("SAIR", ConsoleColor.Red); Console.WriteLine("[ESC]             │             Rank Atual:" + "              │\r\n" +
-                                          "│                         │                                                   │\r\n" +
-                                          "└─────────────────────────┴───────────────────────────────────────────────────┘");
-                    }
-                    else if (posicaoVitoria == 2)
-                    {
-                        Console.Write("┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
-                                          "│ » " + CicloDiario.horaDoDiaAtual + " » " + Pista.condicoesPistaAtual + "  │      CORRIDAS (Equipe seu cavalo no celeiro)      │\r\n" +
-                                          "│ » " + CicloDiario.diaAtual + "│                                                   │\r\n" +
-                                          "│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─│───────────────────────────────────────────────────│\r\n" +
-                                          "│  Carteira »  10.000 ß   │ [h] » help?                                       │\r\n" +
-                                          "│─────────────────────────│                        1º                         │\r\n" +
-                                          "│                         │              ┌────────────────────┐               │\r\n" +
-                                          "│                         │              │                    │               │\r\n" +
-                                          "│                         │              └────────────────────┘               │\r\n" +
-                                          "│                         │           2º                                      │\r\n" +
-                                          "│-» CORRIDAS[ENTER]       │ ┌────────────────────┐              3º            │\r\n" +
-                                          "│                         │ │ " + cavalo.nome + "│     ┌────────────────────┐ │\r\n" +
-                                          "│-» CELEIRO[I]            │ └────────────────────┘     │                    │ │\r\n" +
-                                          "│                         │                            └────────────────────┘ │\r\n" +
-                                          "│-» LOJA[L]               │                                                   │\r\n" +
-                                          "│                         │                      00/03  ⇡                     │\r\n" +
-                                          "│-» INVENTARIO[E]         │            Corridas para subir o rank             │\r\n" +
-                                          "│                         │                                                   │\r\n" +
-                                          "│─────────────────────────│                                                   │\r\n" +
-                                          "│                         │         _____|---»   VITORIA   «---|_____         │\r\n" +
-                                          "│-» "); PrintColoredText("VOLTAR", ConsoleColor.Yellow); Console.Write("[TAB]           │                                                   │\r\n" +
-                                          "│                         │                                                   │\r\n" +
-                                          "│-» "); PrintColoredText("SAIR", ConsoleColor.Red); Console.WriteLine("[ESC]             │                                                   │\r\n" +
-                                          "│                         │                                                   │\r\n" +
-                                          "└─────────────────────────┴───────────────────────────────────────────────────┘");
-
-                    }
-                    else if (posicaoVitoria == 3)
-                    {
-                        Console.Write("┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
-                                          "│ » " + CicloDiario.horaDoDiaAtual + " » " + Pista.condicoesPistaAtual + "  │      CORRIDAS (Equipe seu cavalo no celeiro)      │\r\n" +
-                                          "│ » " + CicloDiario.diaAtual + "│                                                   │\r\n" +
-                                          "│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─│───────────────────────────────────────────────────│\r\n" +
-                                          "│  Carteira »  10.000 ß   │ [h] » help?                                       │\r\n" +
-                                          "│─────────────────────────│                        1º                         │\r\n" +
-                                          "│                         │              ┌────────────────────┐               │\r\n" +
-                                          "│                         │              │                    │               │\r\n" +
-                                          "│                         │              └────────────────────┘               │\r\n" +
-                                          "│                         │           2º                                      │\r\n" +
-                                          "│-» CORRIDAS[ENTER]       │ ┌────────────────────┐              3º            │\r\n" +
-                                          "│                         │ │                    │     ┌────────────────────┐ │\r\n" +
-                                          "│-» CELEIRO[I]            │ └────────────────────┘     │ " + cavalo.nome + "│ │\r\n" +
-                                          "│                         │                            └────────────────────┘ │\r\n" +
-                                          "│-» LOJA[L]               │                                                   │\r\n" +
-                                          "│                         │                      00/03  ⇡                     │\r\n" +
-                                          "│-» INVENTARIO[E]         │            Corridas para subir o rank             │\r\n" +
-                                          "│                         │                                                   │\r\n" +
-                                          "│─────────────────────────│                                                   │\r\n" +
-                                          "│                         │         _____|---»   VITORIA   «---|_____         │\r\n" +
-                                          "│-» "); PrintColoredText("VOLTAR", ConsoleColor.Yellow); Console.Write("[TAB]           │                                                   │\r\n" +
-                                          "│                         │                                                   │\r\n" +
-                                          "│-» "); PrintColoredText("SAIR", ConsoleColor.Red); Console.WriteLine("[ESC]             │                                                   │\r\n" +
-                                          "│                         │                                                   │\r\n" +
-                                          "└─────────────────────────┴───────────────────────────────────────────────────┘");
-                    }
-                    else if (posicaoVitoria == 4)
-                    {
-                        Console.Write("┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
-                                          "│ » " + CicloDiario.horaDoDiaAtual + " » " + Pista.condicoesPistaAtual + "  │      CORRIDAS (Equipe seu cavalo no celeiro)      │\r\n" +
-                                          "│ » " + CicloDiario.diaAtual + "│                                                   │\r\n" +
-                                         "│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─│───────────────────────────────────────────────────│\r\n" +
-                                         "│  Carteira »  10.000 ß   │ [h] » help?                                       │\r\n" +
-                                         "│─────────────────────────│                        1º                         │\r\n" +
-                                         "│                         │              ┌────────────────────┐               │\r\n" +
-                                         "│                         │              │                    │               │\r\n" +
-                                         "│                         │              └────────────────────┘               │\r\n" +
-                                         "│                         │           2º                                      │\r\n" +
-                                         "│-» CORRIDAS[ENTER]       │ ┌────────────────────┐              3º            │\r\n" +
-                                         "│                         │ │                    │     ┌────────────────────┐ │\r\n" +
-                                         "│-» CELEIRO[I]            │ └────────────────────┘     │                    │ │\r\n" +
-                                         "│                         │                            └────────────────────┘ │\r\n" +
-                                         "│-» LOJA[L]               │                                                   │\r\n" +
-                                         "│                         │                       00/03  ⇣                    │\r\n" +
-                                         "│-» INVENTARIO[E]         │             Corridas para subir o rank            │\r\n" +
-                                         "│                         │                                                   │\r\n" +
-                                         "│─────────────────────────│                                                   │\r\n" +
-                                         "│                         │         _____|---»   DERROTA   «---|_____         │\r\n" +
-                                         "│-» "); PrintColoredText("VOLTAR", ConsoleColor.Yellow); Console.Write("[TAB]           │                                                   │\r\n" +
-                                         "│                         │                                                   │\r\n" +
-                                         "│-» "); PrintColoredText("SAIR", ConsoleColor.Red); Console.WriteLine("[ESC]             │                                                   │\r\n" +
-                                         "│                         │                                                   │\r\n" +
-                                         "└─────────────────────────┴───────────────────────────────────────────────────┘");
-                    }
-                    break;
-                default:
-
-                    Console.Write("┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
-                                          "│ » " + CicloDiario.horaDoDiaAtual + " » " + Pista.condicoesPistaAtual + "  │       CORRIDAS (Equipe seu cavalo no celeiro)     │\r\n" +
-                                          "│ » " + CicloDiario.diaAtual + "│                                                   │\r\n" +
+                                      "│ » " + CicloDiario.horaDoDiaAtual + " » " + Pista.condicoesPistaAtual + "  │       CORRIDAS (Equipe seu cavalo no celeiro)     │\r\n" +
+                                      "│ » " + CicloDiario.diaAtual + "│                                                   │\r\n" +
                                       "│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─│───────────────────────────────────────────────────│\r\n" +
                                       "│  Carteira »  10.000 ß   │ [h] » help?                                       │\r\n" +
                                       "│─────────────────────────│                                                   │\r\n" +
@@ -572,8 +458,8 @@ namespace HorseProject
                                       "│                         │                                                   │\r\n" +
                                       "│                         │ Resistencia » 1x1 com recompensas para o vencedor │\r\n" +
                                       "│                         │                                                   │\r\n" +
-                                      "│-» CORRIDAS[ENTER]       │ Ranked » Suba de ligas ao ficar no top 3 e ganhe  │\r\n" +
-                                      "│                         │          recompensas                              │\r\n" +
+                                      "│-» CORRIDAS[ENTER]       │                                                   │\r\n" +
+                                      "│                         │                                                   │\r\n" +
                                       "│-» CELEIRO[I]            │                                                   │\r\n" +
                                       "│                         │                                                   │\r\n" +
                                       "│-» LOJA[L]               │                    Esta Pronto?                   │\r\n" +
@@ -582,13 +468,166 @@ namespace HorseProject
                                       "│                         │                                                   │\r\n" +
                                       "│─────────────────────────│                                                   │\r\n" +
                                       "│                         │                                                   │\r\n" +
-                                      "│-» "); PrintColoredText("VOLTAR", ConsoleColor.Yellow); Console.Write("[TAB]           │       [1]              [2]              [3]       │\r\n" +
-                                      "│                         │  ┌───────────┐    ┌───────────┐    ┌───────────┐  │\r\n" +
-                                      "│-» "); PrintColoredText("SAIR", ConsoleColor.Red); Console.WriteLine("[ESC]             │  │  CASUAL   │    │RESISTENCIA│    │  RANKED   │  │\r\n" +
-                                      "│                         │  └───────────┘    └───────────┘    └───────────┘  │\r\n" +
+                                      "│-» "); PrintColoredText("VOLTAR", ConsoleColor.Yellow); Console.Write("[TAB]           │              [1]                    [2]           │\r\n" +
+                                      "│                         │         ┌───────────┐          ┌───────────┐      │\r\n" +
+                                      "│-» "); PrintColoredText("SAIR", ConsoleColor.Red); Console.WriteLine("[ESC]             │         │  CASUAL   │          │RESISTENCIA│      │\r\n" +
+                                      "│                         │         └───────────┘          └───────────┘      │\r\n" +
                                       "└─────────────────────────┴───────────────────────────────────────────────────┘");
-                    break;
+                        break;
+                }
             }
+            else
+            {
+                switch (escolha)
+                {
+                    case 1:
+                        if (posicaoVitoria == 1)
+                        {
+                            Console.Write("┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
+                                              "│ » " + CicloDiario.horaDoDiaAtual + " » " + Pista.condicoesPistaAtual + "  │      CORRIDAS (Equipe seu cavalo no celeiro)      │\r\n" +
+                                              "│ » " + CicloDiario.diaAtual + "│                                                   │\r\n" +
+                                              "│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─│───────────────────────────────────────────────────│\r\n" +
+                                              "│  Carteira »  10.000 ß   │ [h] » help?                                       │\r\n" +
+                                              "│─────────────────────────│                        1º                         │\r\n" +
+                                              "│                         │              ┌────────────────────┐               │\r\n" +
+                                              "│                         │              │ " + cavalo.nome + "│               │\r\n" +
+                                              "│                         │              └────────────────────┘               │\r\n" +
+                                              "│                         │           2º                                      │\r\n" +
+                                              "│-» CORRIDAS[ENTER]       │ ┌────────────────────┐              3º            │\r\n" +
+                                              "│                         │ │                    │     ┌────────────────────┐ │\r\n" +
+                                              "│-» CELEIRO[I]            │ └────────────────────┘     │                    │ │\r\n" +
+                                              "│                         │                            └────────────────────┘ │\r\n" +
+                                              "│-» LOJA[L]               │                                                   │\r\n" +
+                                              "│                         │                      00/03  ⇡                     │\r\n" +
+                                              "│-» INVENTARIO[E]         │            Corridas para subir o rank             │\r\n" +
+                                              "│                         │                                                   │\r\n" +
+                                              "│─────────────────────────│                                                   │\r\n" +
+                                              "│                         │         _____|---»   VITORIA   «---|_____         │\r\n" +
+                                              "│-» "); PrintColoredText("VOLTAR", ConsoleColor.Yellow); Console.Write("[TAB]           │                                                   │\r\n" +
+                                              "│                         │                                                   │\r\n" +
+                                              "│-» "); PrintColoredText("SAIR", ConsoleColor.Red); Console.WriteLine("[ESC]             │             Rank Atual:" + "              │\r\n" +
+                                              "│                         │                                                   │\r\n" +
+                                              "└─────────────────────────┴───────────────────────────────────────────────────┘");
+                        }
+                        else if (posicaoVitoria == 2)
+                        {
+                            Console.Write("┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
+                                              "│ » " + CicloDiario.horaDoDiaAtual + " » " + Pista.condicoesPistaAtual + "  │      CORRIDAS (Equipe seu cavalo no celeiro)      │\r\n" +
+                                              "│ » " + CicloDiario.diaAtual + "│                                                   │\r\n" +
+                                              "│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─│───────────────────────────────────────────────────│\r\n" +
+                                              "│  Carteira »  10.000 ß   │ [h] » help?                                       │\r\n" +
+                                              "│─────────────────────────│                        1º                         │\r\n" +
+                                              "│                         │              ┌────────────────────┐               │\r\n" +
+                                              "│                         │              │                    │               │\r\n" +
+                                              "│                         │              └────────────────────┘               │\r\n" +
+                                              "│                         │           2º                                      │\r\n" +
+                                              "│-» CORRIDAS[ENTER]       │ ┌────────────────────┐              3º            │\r\n" +
+                                              "│                         │ │ " + cavalo.nome + "│     ┌────────────────────┐ │\r\n" +
+                                              "│-» CELEIRO[I]            │ └────────────────────┘     │                    │ │\r\n" +
+                                              "│                         │                            └────────────────────┘ │\r\n" +
+                                              "│-» LOJA[L]               │                                                   │\r\n" +
+                                              "│                         │                      00/03  ⇡                     │\r\n" +
+                                              "│-» INVENTARIO[E]         │            Corridas para subir o rank             │\r\n" +
+                                              "│                         │                                                   │\r\n" +
+                                              "│─────────────────────────│                                                   │\r\n" +
+                                              "│                         │         _____|---»   VITORIA   «---|_____         │\r\n" +
+                                              "│-» "); PrintColoredText("VOLTAR", ConsoleColor.Yellow); Console.Write("[TAB]           │                                                   │\r\n" +
+                                              "│                         │                                                   │\r\n" +
+                                              "│-» "); PrintColoredText("SAIR", ConsoleColor.Red); Console.WriteLine("[ESC]             │                                                   │\r\n" +
+                                              "│                         │                                                   │\r\n" +
+                                              "└─────────────────────────┴───────────────────────────────────────────────────┘");
+
+                        }
+                        else if (posicaoVitoria == 3)
+                        {
+                            Console.Write("┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
+                                              "│ » " + CicloDiario.horaDoDiaAtual + " » " + Pista.condicoesPistaAtual + "  │      CORRIDAS (Equipe seu cavalo no celeiro)      │\r\n" +
+                                              "│ » " + CicloDiario.diaAtual + "│                                                   │\r\n" +
+                                              "│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─│───────────────────────────────────────────────────│\r\n" +
+                                              "│  Carteira »  10.000 ß   │ [h] » help?                                       │\r\n" +
+                                              "│─────────────────────────│                        1º                         │\r\n" +
+                                              "│                         │              ┌────────────────────┐               │\r\n" +
+                                              "│                         │              │                    │               │\r\n" +
+                                              "│                         │              └────────────────────┘               │\r\n" +
+                                              "│                         │           2º                                      │\r\n" +
+                                              "│-» CORRIDAS[ENTER]       │ ┌────────────────────┐              3º            │\r\n" +
+                                              "│                         │ │                    │     ┌────────────────────┐ │\r\n" +
+                                              "│-» CELEIRO[I]            │ └────────────────────┘     │ " + cavalo.nome + "│ │\r\n" +
+                                              "│                         │                            └────────────────────┘ │\r\n" +
+                                              "│-» LOJA[L]               │                                                   │\r\n" +
+                                              "│                         │                      00/03  ⇡                     │\r\n" +
+                                              "│-» INVENTARIO[E]         │            Corridas para subir o rank             │\r\n" +
+                                              "│                         │                                                   │\r\n" +
+                                              "│─────────────────────────│                                                   │\r\n" +
+                                              "│                         │         _____|---»   VITORIA   «---|_____         │\r\n" +
+                                              "│-» "); PrintColoredText("VOLTAR", ConsoleColor.Yellow); Console.Write("[TAB]           │                                                   │\r\n" +
+                                              "│                         │                                                   │\r\n" +
+                                              "│-» "); PrintColoredText("SAIR", ConsoleColor.Red); Console.WriteLine("[ESC]             │                                                   │\r\n" +
+                                              "│                         │                                                   │\r\n" +
+                                              "└─────────────────────────┴───────────────────────────────────────────────────┘");
+                        }
+                        else if (posicaoVitoria == 4)
+                        {
+                            Console.Write("┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
+                                              "│ » " + CicloDiario.horaDoDiaAtual + " » " + Pista.condicoesPistaAtual + "  │      CORRIDAS (Equipe seu cavalo no celeiro)      │\r\n" +
+                                              "│ » " + CicloDiario.diaAtual + "│                                                   │\r\n" +
+                                             "│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─│───────────────────────────────────────────────────│\r\n" +
+                                             "│  Carteira »  10.000 ß   │ [h] » help?                                       │\r\n" +
+                                             "│─────────────────────────│                        1º                         │\r\n" +
+                                             "│                         │              ┌────────────────────┐               │\r\n" +
+                                             "│                         │              │                    │               │\r\n" +
+                                             "│                         │              └────────────────────┘               │\r\n" +
+                                             "│                         │           2º                                      │\r\n" +
+                                             "│-» CORRIDAS[ENTER]       │ ┌────────────────────┐              3º            │\r\n" +
+                                             "│                         │ │                    │     ┌────────────────────┐ │\r\n" +
+                                             "│-» CELEIRO[I]            │ └────────────────────┘     │                    │ │\r\n" +
+                                             "│                         │                            └────────────────────┘ │\r\n" +
+                                             "│-» LOJA[L]               │                                                   │\r\n" +
+                                             "│                         │                       00/03  ⇣                    │\r\n" +
+                                             "│-» INVENTARIO[E]         │             Corridas para subir o rank            │\r\n" +
+                                             "│                         │                                                   │\r\n" +
+                                             "│─────────────────────────│                                                   │\r\n" +
+                                             "│                         │         _____|---»   DERROTA   «---|_____         │\r\n" +
+                                             "│-» "); PrintColoredText("VOLTAR", ConsoleColor.Yellow); Console.Write("[TAB]           │                                                   │\r\n" +
+                                             "│                         │                                                   │\r\n" +
+                                             "│-» "); PrintColoredText("SAIR", ConsoleColor.Red); Console.WriteLine("[ESC]             │                                                   │\r\n" +
+                                             "│                         │                                                   │\r\n" +
+                                             "└─────────────────────────┴───────────────────────────────────────────────────┘");
+                        }
+                        break;
+                    default:
+
+                        Console.Write(    "┌─────────────────────────┬───────────────────────────────────────────────────┐\r\n" +
+                                          "│ » " + CicloDiario.horaDoDiaAtual + " » " + Pista.condicoesPistaAtual + "  │       CORRIDAS (Equipe seu cavalo no celeiro)     │\r\n" +
+                                          "│ » " + CicloDiario.diaAtual + "│                                                   │\r\n" +
+                                          "│─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─│───────────────────────────────────────────────────│\r\n" +
+                                          "│  Carteira »  10.000 ß   │ [h] » help?                                       │\r\n" +
+                                          "│─────────────────────────│                                                   │\r\n" +
+                                          "│                         │ Ranked » Suba de ligas ao ficar no top 3 e ganhe  │\r\n" +
+                                          "│                         │          recompensas                              │\r\n" +
+                                          "│                         │                                                   │\r\n" +
+                                          "│                         │                                                   │\r\n" +
+                                          "│-» CORRIDAS[ENTER]       │                                                   │\r\n" +
+                                          "│                         │                                                   │\r\n" +
+                                          "│-» CELEIRO[I]            │                                                   │\r\n" +
+                                          "│                         │                                                   │\r\n" +
+                                          "│-» LOJA[L]               │                    Esta Pronto?                   │\r\n" +
+                                          "│                         │                                                   │\r\n" +
+                                          "│-» INVENTARIO[E]         │                ESCOLHA SUA CORRIDA                │\r\n" +
+                                          "│                         │                                                   │\r\n" +
+                                          "│─────────────────────────│                                                   │\r\n" +
+                                          "│                         │                                                   │\r\n" +
+                                          "│-» "); PrintColoredText("VOLTAR", ConsoleColor.Yellow); Console.Write("[TAB]           │                        [1]                        │\r\n" +
+                                          "│                         │                   ┌───────────┐                   │\r\n" +
+                                          "│-» "); PrintColoredText("SAIR", ConsoleColor.Red); Console.WriteLine("[ESC]             │                   │  RANKED   │                   │\r\n" +
+                                          "│                         │                   └───────────┘                   │\r\n" +
+                                          "└─────────────────────────┴───────────────────────────────────────────────────┘");
+                        break;
+                }
+            
+            }
+            
+               
 
         }
         static public void SubMenuCeleiro()
@@ -794,7 +833,7 @@ namespace HorseProject
                               "│                 ESTA NA HORA DE DORMIR, A LOJA ESTA FECHADA!               │\r\n" +
                               "│                     OS CAVALOS CANSADOS E VOCÊ EXAUSTO.                    │\r\n" +
                               "│                                                                            │\r\n" +
-                              "│                              [ENTER] DORMIR                                │\r\n" +
+                              "│                          [QUALQUER BOTAO] DORMIR                           │\r\n" +
                               "└────────────────────────────────────────────────────────────────────────────┘");
         }
 
