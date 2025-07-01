@@ -1,6 +1,8 @@
 # 🐎 Intergalactic Horse Racing
+*Note: The game and documentation are in Portuguese, matching the original project.*
 
-***This document is in Portuguese, because the entire game was made in Portuguese at the time***
+***Created in 2022. In 2025, the project was restructured and documented to ensure usability.�󠁧
+Criado em 2022. Em 2025, o projeto foi reestruturado e documentado para garantir usabilidade.***
 
 Simulação de corridas de cavalos em modo console desenvolvida em C#. O projeto serve como prática de conceitos de Programação Orientada a Objetos e possui uma interface totalmente textual.
 
