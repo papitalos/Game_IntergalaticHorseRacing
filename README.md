@@ -1,5 +1,7 @@
 # 🐎 Intergalactic Horse Racing
 
+***This document is in Portuguese, because the entire game was made in Portuguese at the time***
+
 Simulação de corridas de cavalos em modo console desenvolvida em C#. O projeto serve como prática de conceitos de Programação Orientada a Objetos e possui uma interface totalmente textual.
 
 ## Funcionalidades
