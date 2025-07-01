@@ -29,7 +29,7 @@ Caso utilize outro sistema operacional, consulte a [documentação oficial do .N
 Clone este repositório e rode o projeto:
 
 ```bash
-git clone <url-do-repositorio>
+git clone https://github.com/papitalos/intergalatic-horse-racing.git
 cd intergalatic-horse-racing/HorseProject
 dotnet run
 ```
