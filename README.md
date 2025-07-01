@@ -1,21 +1,33 @@
-# 🐎 Horse Racing Console Game
+# 🐎 Intergalactic Horse Racing
 
-A console-based horse racing simulation game built with C#. Players can bet on horses, start races, and see who wins — all in a fun, 
-text-based environment. This project was developed to practice and demonstrate object-oriented programming (OOP) principles in C#.
+Simulação de corridas de cavalos em modo console desenvolvida em C#. O projeto serve como prática de conceitos de Programação Orientada a Objetos e possui uma interface totalmente textual.
 
-## 📌 Features
+## Funcionalidades
 
-- Console-based game interface
-- Betting system
-- Horse selection and race simulation
-- Real-time text-based race progression
-- Demonstrates core OOP concepts (classes, inheritance, encapsulation)
+- Sistema de apostas
+- Progresso da corrida em tempo real no console
+- Várias raças de cavalos e geração de competidores
+- Gerenciamento de inventário e loja
 
-## 🚀 Getting Started
+## Pré-requisitos
 
-To run this project locally:
+Para compilar e executar o jogo é necessário ter o **.NET SDK** instalado. Em distribuições baseadas em Debian/Ubuntu, você pode instalar com:
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-username/horse-racing-game.git
-   cd horse-racing-game
+```bash
+sudo apt-get update
+sudo apt-get install -y dotnet-sdk-9.0
+```
+
+Caso utilize outro sistema operacional, consulte a [documentação oficial do .NET](https://dotnet.microsoft.com/download).
+
+## Como executar
+
+Clone este repositório e rode o projeto:
+
+```bash
+git clone <url-do-repositorio>
+cd intergalatic-horse-racing/HorseProject
+dotnet run
+```
+
+A partir daí o menu principal será exibido no console e você poderá iniciar as corridas.
