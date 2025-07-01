@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -15,7 +14,7 @@ namespace HorseProject
         public static string[] nomeNV4 = new string[5] { "Pegasus             ","Poseidon            ", "Loki                ", "Kratos              ", "Atreus              " };
         public static string[] nomeNV5 = new string[5] { "Uranus              ","Andromeda           ", "Mr.Meeseks          ", "Pissmaster          ", "Mr.Poppybutthole    " };
                                                     
-        public static string filePath = @"C:\Users\italo\Source\Repos\papitalos\IntergalaticHorseRacing\Info.txt";
+        public static string filePath = "Data/Info.txt";
 
         //PrimeiroCavalo
         static public void GerarPrimeiro(int SlotEscolhido, string filepath)

@@ -11,6 +11,10 @@ namespace HorseProject
     {
         static void Main(string[] args)
         {
+            // Exibe informações do sistema de áudio
+            Console.WriteLine("🏇 Intergalactic Horse Racing - Inicializando...\n");
+            AudioManager.ShowAudioInfo();
+            Console.WriteLine();
             
             //define os dados do cavalo inicial de acordo com a escolha do player
             

@@ -30,29 +30,42 @@ namespace HorseProject
         
         public static void Musica(int audio)
         {
-            Thread musica = new Thread(new ThreadStart(() => TocarMusica(audio)));
-            musica.Start();
-            musica.Join();
+            // Reproduz música em background sem bloquear o jogo
+            TocarMusica(audio);
         }
 
         public static void TocarMusica(int audio)
         {
-            System.Media.SoundPlayer player;
-            if (audio == 1)
+            string audioFile = "";
+            
+            // Seleciona o arquivo de áudio baseado no parâmetro
+            switch (audio)
             {
-                player = new System.Media.SoundPlayer(@"C:\Users\italo\Source\Repos\papitalos\IntergalaticHorseRacing\HorseProject\Menu.wav");
-                player.Play();
+                case 1:
+                    audioFile = "Menu.wav";
+                    break;
+                case 2:
+                    audioFile = "Som_de_trompetas.wav";
+                    break;
+                case 3:
+                    audioFile = "Corrida.wav";
+                    break;
+                default:
+                    Console.WriteLine("⚠️  Código de áudio inválido: " + audio);
+                    return;
             }
-            else if (audio == 2)
+
+            // Usa o sistema de áudio em background para não bloquear
+            try
             {
-                player = new System.Media.SoundPlayer(@"C:\Users\italo\Source\Repos\papitalos\IntergalaticHorseRacing\HorseProject\Som_de_trompetas.wav");
-                player.Play();
+                AudioManager.PlayAudioInBackground(audioFile);
+                Console.WriteLine($"🎵 Reproduzindo em background: {audioFile}");
             }
-            else if (audio == 3)
+            catch (Exception ex)
             {
-                player = new System.Media.SoundPlayer(@"C:\Users\italo\Source\Repos\papitalos\IntergalaticHorseRacing\HorseProject\Corrida.wav");
-                player.Play();
+                Console.WriteLine($"⚠️  Erro ao reproduzir áudio: {ex.Message}");
             }
+            
             currentAudio = audio;
         }
 
